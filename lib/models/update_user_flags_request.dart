@@ -2,34 +2,28 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 import 'user_flags.dart';
 
-part 'update_user_flags_request.g.dart';
+part 'update_user_flags_request.mapper.dart';
 
-@JsonSerializable()
-class UpdateUserFlagsRequest {
+@MappableClass()
+class UpdateUserFlagsRequest with UpdateUserFlagsRequestMappable {
   const UpdateUserFlagsRequest({
     required this.userId,
     this.addFlags,
     this.removeFlags,
   });
 
-  factory UpdateUserFlagsRequest.fromJson(Map<String, Object?> json) =>
-      _$UpdateUserFlagsRequestFromJson(json);
-
-  @JsonKey(name: 'user_id')
+  @MappableField(key: 'user_id')
   final SnowflakeType userId;
-
-  /// User flags to add
-  @JsonKey(includeIfNull: false, name: 'add_flags')
+  @MappableField(key: 'add_flags')
   final List<UserFlags>? addFlags;
-
-  /// User flags to remove
-  @JsonKey(includeIfNull: false, name: 'remove_flags')
+  @MappableField(key: 'remove_flags')
   final List<UserFlags>? removeFlags;
 
-  Map<String, Object?> toJson() => _$UpdateUserFlagsRequestToJson(this);
+  static UpdateUserFlagsRequest fromJson(Map<String, dynamic> json) =>
+      UpdateUserFlagsRequestMapper.fromJson(json);
 }

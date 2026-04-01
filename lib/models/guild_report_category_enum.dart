@@ -2,49 +2,50 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'guild_report_category_enum.mapper.dart';
 
 /// Category of the guild report
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum GuildReportCategoryEnum {
-  @JsonValue('harassment')
-  harassment('harassment'),
-  @JsonValue('hate_speech')
-  hateSpeech('hate_speech'),
-  @JsonValue('extremist_community')
-  extremistCommunity('extremist_community'),
-  @JsonValue('illegal_activity')
-  illegalActivity('illegal_activity'),
-  @JsonValue('child_safety')
-  childSafety('child_safety'),
-  @JsonValue('raid_coordination')
-  raidCoordination('raid_coordination'),
-  @JsonValue('spam')
-  spam('spam'),
-  @JsonValue('malware_distribution')
-  malwareDistribution('malware_distribution'),
-  @JsonValue('other')
-  other('other'),
+  @MappableValue('harassment')
+  harassment,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue('hate_speech')
+  hateSpeech,
 
-  const GuildReportCategoryEnum(this.json);
+  @MappableValue('extremist_community')
+  extremistCommunity,
 
-  factory GuildReportCategoryEnum.fromJson(String json) => values.firstWhere(
-    (e) => e.json == json,
-    orElse: () => $unknown,
-  );
+  @MappableValue('illegal_activity')
+  illegalActivity,
 
-  final String? json;
+  @MappableValue('child_safety')
+  childSafety,
 
-  String toJson() => json ?? 'null';
+  @MappableValue('raid_coordination')
+  raidCoordination,
+
+  @MappableValue('spam')
+  spam,
+
+  @MappableValue('malware_distribution')
+  malwareDistribution,
+
+  @MappableValue('other')
+  other,
+
+  @MappableValue('unknown')
+  unknown;
+
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
-  static List<GuildReportCategoryEnum> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+  /// Returns all defined enum values excluding the unknown value.
+  static List<GuildReportCategoryEnum> get $valuesDefined => values
+      .where((value) => value != GuildReportCategoryEnum.unknown)
+      .toList();
 }

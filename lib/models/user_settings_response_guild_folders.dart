@@ -2,17 +2,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'int32_type.dart';
 import 'guild_folder_flags.dart';
 import 'user_settings_response_guild_folders_icon_icon.dart';
 import 'snowflake_type.dart';
 
-part 'user_settings_response_guild_folders.g.dart';
+part 'user_settings_response_guild_folders.mapper.dart';
 
-@JsonSerializable()
-class UserSettingsResponseGuildFolders {
+@MappableClass()
+class UserSettingsResponseGuildFolders
+    with UserSettingsResponseGuildFoldersMappable {
   const UserSettingsResponseGuildFolders({
     required this.guildIds,
     this.id,
@@ -22,32 +23,14 @@ class UserSettingsResponseGuildFolders {
     this.icon,
   });
 
-  factory UserSettingsResponseGuildFolders.fromJson(
-    Map<String, Object?> json,
-  ) => _$UserSettingsResponseGuildFoldersFromJson(json);
-
-  /// The unique identifier for the folder (-1 for uncategorized)
-  @JsonKey(includeIfNull: false)
+  @MappableField(key: 'guild_ids')
+  final List<SnowflakeType> guildIds;
   final int? id;
-
-  /// The display name of the folder
-  @JsonKey(includeIfNull: false)
   final String? name;
-
-  /// The color of the folder as an integer
-  @JsonKey(includeIfNull: false)
   final Int32Type? color;
-  @JsonKey(includeIfNull: false)
   final GuildFolderFlags? flags;
-
-  /// Selected icon for the guild folder
-  @JsonKey(includeIfNull: false)
   final UserSettingsResponseGuildFoldersIconIcon? icon;
 
-  /// The IDs of guilds contained in this folder
-  @JsonKey(name: 'guild_ids')
-  final List<SnowflakeType> guildIds;
-
-  Map<String, Object?> toJson() =>
-      _$UserSettingsResponseGuildFoldersToJson(this);
+  static UserSettingsResponseGuildFolders fromJson(Map<String, dynamic> json) =>
+      UserSettingsResponseGuildFoldersMapper.fromJson(json);
 }

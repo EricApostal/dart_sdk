@@ -2,19 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'delete_voice_region_request.g.dart';
+part 'delete_voice_region_request.mapper.dart';
 
-@JsonSerializable()
-class DeleteVoiceRegionRequest {
+@MappableClass()
+class DeleteVoiceRegionRequest with DeleteVoiceRegionRequestMappable {
   const DeleteVoiceRegionRequest({required this.id});
 
-  factory DeleteVoiceRegionRequest.fromJson(Map<String, Object?> json) =>
-      _$DeleteVoiceRegionRequestFromJson(json);
-
-  /// ID of the voice region to delete
   final String id;
 
-  Map<String, Object?> toJson() => _$DeleteVoiceRegionRequestToJson(this);
+  static DeleteVoiceRegionRequest fromJson(Map<String, dynamic> json) =>
+      DeleteVoiceRegionRequestMapper.fromJson(json);
 }

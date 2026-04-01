@@ -2,25 +2,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'int32_type.dart';
 
-part 'message_ack_request.g.dart';
+part 'message_ack_request.mapper.dart';
 
-@JsonSerializable()
-class MessageAckRequest {
+@MappableClass()
+class MessageAckRequest with MessageAckRequestMappable {
   const MessageAckRequest({this.mentionCount, this.manual});
 
-  factory MessageAckRequest.fromJson(Map<String, Object?> json) =>
-      _$MessageAckRequestFromJson(json);
-
-  @JsonKey(includeIfNull: false, name: 'mention_count')
+  @MappableField(key: 'mention_count')
   final Int32Type? mentionCount;
-
-  /// Whether this is a manual acknowledgement
-  @JsonKey(includeIfNull: false)
   final bool? manual;
 
-  Map<String, Object?> toJson() => _$MessageAckRequestToJson(this);
+  static MessageAckRequest fromJson(Map<String, dynamic> json) =>
+      MessageAckRequestMapper.fromJson(json);
 }

@@ -2,19 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'verify_email_request.g.dart';
+part 'verify_email_request.mapper.dart';
 
-@JsonSerializable()
-class VerifyEmailRequest {
+@MappableClass()
+class VerifyEmailRequest with VerifyEmailRequestMappable {
   const VerifyEmailRequest({required this.token});
 
-  factory VerifyEmailRequest.fromJson(Map<String, Object?> json) =>
-      _$VerifyEmailRequestFromJson(json);
-
-  /// Email verification token from email
   final String token;
 
-  Map<String, Object?> toJson() => _$VerifyEmailRequestToJson(this);
+  static VerifyEmailRequest fromJson(Map<String, dynamic> json) =>
+      VerifyEmailRequestMapper.fromJson(json);
 }

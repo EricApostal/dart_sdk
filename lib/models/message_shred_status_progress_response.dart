@@ -2,15 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'int32_type.dart';
 import 'message_shred_status_progress_response_status_status.dart';
 
-part 'message_shred_status_progress_response.g.dart';
+part 'message_shred_status_progress_response.mapper.dart';
 
-@JsonSerializable()
-class MessageShredStatusProgressResponse {
+@MappableClass()
+class MessageShredStatusProgressResponse
+    with MessageShredStatusProgressResponseMappable {
   const MessageShredStatusProgressResponse({
     required this.status,
     required this.requested,
@@ -23,25 +24,20 @@ class MessageShredStatusProgressResponse {
     this.error,
   });
 
-  factory MessageShredStatusProgressResponse.fromJson(
-    Map<String, Object?> json,
-  ) => _$MessageShredStatusProgressResponseFromJson(json);
-
-  /// Current message shred job status
   final MessageShredStatusProgressResponseStatusStatus status;
   final Int32Type requested;
   final Int32Type total;
   final Int32Type processed;
   final Int32Type skipped;
-  @JsonKey(includeIfNull: false, name: 'started_at')
+  @MappableField(key: 'started_at')
   final String? startedAt;
-  @JsonKey(includeIfNull: false, name: 'completed_at')
+  @MappableField(key: 'completed_at')
   final String? completedAt;
-  @JsonKey(includeIfNull: false, name: 'failed_at')
+  @MappableField(key: 'failed_at')
   final String? failedAt;
-  @JsonKey(includeIfNull: false)
   final String? error;
 
-  Map<String, Object?> toJson() =>
-      _$MessageShredStatusProgressResponseToJson(this);
+  static MessageShredStatusProgressResponse fromJson(
+    Map<String, dynamic> json,
+  ) => MessageShredStatusProgressResponseMapper.fromJson(json);
 }

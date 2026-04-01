@@ -2,15 +2,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'int32_type.dart';
 import 'message_attachment_flags.dart';
 
-part 'message_attachment_response.g.dart';
+part 'message_attachment_response.mapper.dart';
 
-@JsonSerializable()
-class MessageAttachmentResponse {
+@MappableClass()
+class MessageAttachmentResponse with MessageAttachmentResponseMappable {
   const MessageAttachmentResponse({
     required this.id,
     required this.filename,
@@ -32,74 +32,29 @@ class MessageAttachmentResponse {
     this.expired,
   });
 
-  factory MessageAttachmentResponse.fromJson(Map<String, Object?> json) =>
-      _$MessageAttachmentResponseFromJson(json);
-
-  /// The unique identifier for this attachment
   final String id;
-
-  /// The name of the attached file
   final String filename;
-
-  /// The title of the attachment
-  @JsonKey(includeIfNull: false)
-  final String? title;
-
-  /// The description of the attachment
-  @JsonKey(includeIfNull: false)
-  final String? description;
-
-  /// The MIME type of the attachment
-  @JsonKey(includeIfNull: false, name: 'content_type')
-  final String? contentType;
-
-  /// The hash of the attachment content
-  @JsonKey(includeIfNull: false, name: 'content_hash')
-  final String? contentHash;
-
-  /// The size of the attachment in bytes
   final int size;
-
-  /// The URL of the attachment
-  @JsonKey(includeIfNull: false)
-  final String? url;
-
-  /// The proxied URL of the attachment
-  @JsonKey(includeIfNull: false, name: 'proxy_url')
-  final String? proxyUrl;
-
-  /// The width of the attachment in pixels (for images/videos)
-  @JsonKey(includeIfNull: false)
-  final Int32Type? width;
-
-  /// The height of the attachment in pixels (for images/videos)
-  @JsonKey(includeIfNull: false)
-  final Int32Type? height;
-
-  /// The base64 encoded placeholder image for lazy loading
-  @JsonKey(includeIfNull: false)
-  final String? placeholder;
   final MessageAttachmentFlags flags;
-
-  /// Whether the attachment is flagged as NSFW
-  @JsonKey(includeIfNull: false)
+  final String? title;
+  final String? description;
+  @MappableField(key: 'content_type')
+  final String? contentType;
+  @MappableField(key: 'content_hash')
+  final String? contentHash;
+  final String? url;
+  @MappableField(key: 'proxy_url')
+  final String? proxyUrl;
+  final Int32Type? width;
+  final Int32Type? height;
+  final String? placeholder;
   final bool? nsfw;
-
-  /// The duration of the media in seconds
-  @JsonKey(includeIfNull: false)
   final Int32Type? duration;
-
-  /// The base64 encoded audio waveform data
-  @JsonKey(includeIfNull: false)
   final String? waveform;
-
-  /// The ISO 8601 timestamp when the attachment URL expires
-  @JsonKey(includeIfNull: false, name: 'expires_at')
+  @MappableField(key: 'expires_at')
   final String? expiresAt;
-
-  /// Whether the attachment URL has expired
-  @JsonKey(includeIfNull: false)
   final bool? expired;
 
-  Map<String, Object?> toJson() => _$MessageAttachmentResponseToJson(this);
+  static MessageAttachmentResponse fromJson(Map<String, dynamic> json) =>
+      MessageAttachmentResponseMapper.fromJson(json);
 }

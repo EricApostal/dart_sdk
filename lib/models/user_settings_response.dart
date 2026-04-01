@@ -2,7 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'custom_status_response.dart';
 import 'friend_source_flags.dart';
@@ -15,10 +15,10 @@ import 'sticker_animation_options.dart';
 import 'time_format_types.dart';
 import 'user_settings_response_guild_folders.dart';
 
-part 'user_settings_response.g.dart';
+part 'user_settings_response.mapper.dart';
 
-@JsonSerializable()
-class UserSettingsResponse {
+@MappableClass()
+class UserSettingsResponse with UserSettingsResponseMappable {
   const UserSettingsResponse({
     required this.status,
     required this.theme,
@@ -53,121 +53,66 @@ class UserSettingsResponse {
     this.sensitiveContentGuildFilter,
   });
 
-  factory UserSettingsResponse.fromJson(Map<String, Object?> json) =>
-      _$UserSettingsResponseFromJson(json);
-
-  /// The current online status of the user
   final String status;
-
-  /// ISO8601 timestamp of when the status will reset
-  @JsonKey(includeIfNull: false, name: 'status_resets_at')
-  final DateTime? statusResetsAt;
-
-  /// The status to reset to after the scheduled reset
-  @JsonKey(includeIfNull: false, name: 'status_resets_to')
-  final String? statusResetsTo;
-
-  /// The UI theme preference
   final String theme;
   final Locale locale;
-
-  /// Guild IDs where direct messages are restricted
-  @JsonKey(name: 'restricted_guilds')
+  @MappableField(key: 'restricted_guilds')
   final List<SnowflakeType> restrictedGuilds;
-
-  /// Guild IDs where bot direct messages are restricted
-  @JsonKey(name: 'bot_restricted_guilds')
+  @MappableField(key: 'bot_restricted_guilds')
   final List<SnowflakeType> botRestrictedGuilds;
-
-  /// Whether new guilds have DM restrictions by default
-  @JsonKey(name: 'default_guilds_restricted')
+  @MappableField(key: 'default_guilds_restricted')
   final bool defaultGuildsRestricted;
-
-  /// Whether new guilds have bot DM restrictions by default
-  @JsonKey(name: 'bot_default_guilds_restricted')
+  @MappableField(key: 'bot_default_guilds_restricted')
   final bool botDefaultGuildsRestricted;
-
-  /// Whether to display attachments inline in chat
-  @JsonKey(name: 'inline_attachment_media')
+  @MappableField(key: 'inline_attachment_media')
   final bool inlineAttachmentMedia;
-
-  /// Whether to display embed media inline in chat
-  @JsonKey(name: 'inline_embed_media')
+  @MappableField(key: 'inline_embed_media')
   final bool inlineEmbedMedia;
-
-  /// Whether GIFs auto-play in chat
-  @JsonKey(name: 'gif_auto_play')
+  @MappableField(key: 'gif_auto_play')
   final bool gifAutoPlay;
-
-  /// Whether to render message embeds
-  @JsonKey(name: 'render_embeds')
+  @MappableField(key: 'render_embeds')
   final bool renderEmbeds;
-
-  /// Whether to display reactions on messages
-  @JsonKey(name: 'render_reactions')
+  @MappableField(key: 'render_reactions')
   final bool renderReactions;
-
-  /// Whether to animate custom emoji
-  @JsonKey(name: 'animate_emoji')
+  @MappableField(key: 'animate_emoji')
   final bool animateEmoji;
-
-  /// Sticker animation preference setting
-  @JsonKey(name: 'animate_stickers')
+  @MappableField(key: 'animate_stickers')
   final StickerAnimationOptions animateStickers;
-
-  /// Spoiler rendering preference setting
-  @JsonKey(name: 'render_spoilers')
+  @MappableField(key: 'render_spoilers')
   final RenderSpoilers renderSpoilers;
-
-  /// Whether to use compact message display mode
-  @JsonKey(name: 'message_display_compact')
+  @MappableField(key: 'message_display_compact')
   final bool messageDisplayCompact;
-  @JsonKey(name: 'friend_source_flags')
+  @MappableField(key: 'friend_source_flags')
   final FriendSourceFlags friendSourceFlags;
-  @JsonKey(name: 'incoming_call_flags')
+  @MappableField(key: 'incoming_call_flags')
   final IncomingCallFlags incomingCallFlags;
-  @JsonKey(name: 'group_dm_add_permission_flags')
+  @MappableField(key: 'group_dm_add_permission_flags')
   final GroupDmAddPermissionFlags groupDmAddPermissionFlags;
-
-  /// The folder structure for organizing guilds in the sidebar
-  @JsonKey(name: 'guild_folders')
+  @MappableField(key: 'guild_folders')
   final List<UserSettingsResponseGuildFolders> guildFolders;
-
-  /// The custom status set by the user
-  @JsonKey(includeIfNull: true, name: 'custom_status')
+  @MappableField(key: 'custom_status')
   final CustomStatusResponse? customStatus;
-
-  /// The idle timeout in seconds before going AFK
-  @JsonKey(name: 'afk_timeout')
+  @MappableField(key: 'afk_timeout')
   final int afkTimeout;
-
-  /// The preferred time format setting
-  @JsonKey(name: 'time_format')
+  @MappableField(key: 'time_format')
   final TimeFormatTypes timeFormat;
-
-  /// Whether developer mode is enabled
-  @JsonKey(name: 'developer_mode')
+  @MappableField(key: 'developer_mode')
   final bool developerMode;
-
-  /// List of trusted external link domains
-  @JsonKey(name: 'trusted_domains')
+  @MappableField(key: 'trusted_domains')
   final List<String> trustedDomains;
-
-  /// Whether muted channels are hidden by default in new guilds
-  @JsonKey(name: 'default_hide_muted_channels')
+  @MappableField(key: 'default_hide_muted_channels')
   final bool defaultHideMutedChannels;
-
-  /// Sensitive content filter level for friend DMs
-  @JsonKey(includeIfNull: false, name: 'sensitive_content_friend_dm_filter')
+  @MappableField(key: 'status_resets_at')
+  final DateTime? statusResetsAt;
+  @MappableField(key: 'status_resets_to')
+  final String? statusResetsTo;
+  @MappableField(key: 'sensitive_content_friend_dm_filter')
   final int? sensitiveContentFriendDmFilter;
-
-  /// Sensitive content filter level for non-friend DMs
-  @JsonKey(includeIfNull: false, name: 'sensitive_content_non_friend_dm_filter')
+  @MappableField(key: 'sensitive_content_non_friend_dm_filter')
   final int? sensitiveContentNonFriendDmFilter;
-
-  /// Sensitive content filter level for guild messages
-  @JsonKey(includeIfNull: false, name: 'sensitive_content_guild_filter')
+  @MappableField(key: 'sensitive_content_guild_filter')
   final int? sensitiveContentGuildFilter;
 
-  Map<String, Object?> toJson() => _$UserSettingsResponseToJson(this);
+  static UserSettingsResponse fromJson(Map<String, dynamic> json) =>
+      UserSettingsResponseMapper.fromJson(json);
 }

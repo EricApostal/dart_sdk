@@ -2,24 +2,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'limit_filter_response.g.dart';
+part 'limit_filter_response.mapper.dart';
 
-@JsonSerializable()
-class LimitFilterResponse {
+@MappableClass()
+class LimitFilterResponse with LimitFilterResponseMappable {
   const LimitFilterResponse({this.traits, this.guildFeatures});
 
-  factory LimitFilterResponse.fromJson(Map<String, Object?> json) =>
-      _$LimitFilterResponseFromJson(json);
-
-  /// Trait filters for this limit rule
-  @JsonKey(includeIfNull: false)
   final List<String>? traits;
-
-  /// Guild feature filters for this limit rule
-  @JsonKey(includeIfNull: false)
   final List<String>? guildFeatures;
 
-  Map<String, Object?> toJson() => _$LimitFilterResponseToJson(this);
+  static LimitFilterResponse fromJson(Map<String, dynamic> json) =>
+      LimitFilterResponseMapper.fromJson(json);
 }

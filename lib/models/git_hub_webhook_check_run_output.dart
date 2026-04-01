@@ -2,21 +2,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'git_hub_webhook_check_run_output.g.dart';
+part 'git_hub_webhook_check_run_output.mapper.dart';
 
-@JsonSerializable()
-class GitHubWebhookCheckRunOutput {
+@MappableClass()
+class GitHubWebhookCheckRunOutput with GitHubWebhookCheckRunOutputMappable {
   const GitHubWebhookCheckRunOutput({this.title, this.summary});
 
-  factory GitHubWebhookCheckRunOutput.fromJson(Map<String, Object?> json) =>
-      _$GitHubWebhookCheckRunOutputFromJson(json);
-
-  @JsonKey(includeIfNull: false)
   final String? title;
-  @JsonKey(includeIfNull: false)
   final String? summary;
 
-  Map<String, Object?> toJson() => _$GitHubWebhookCheckRunOutputToJson(this);
+  static GitHubWebhookCheckRunOutput fromJson(Map<String, dynamic> json) =>
+      GitHubWebhookCheckRunOutputMapper.fromJson(json);
 }

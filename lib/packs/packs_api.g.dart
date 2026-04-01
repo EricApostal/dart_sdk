@@ -35,7 +35,7 @@ class _PacksApi implements PacksApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late PackDashboardResponse _value;
     try {
       _value = PackDashboardResponse.fromJson(_result.data!);
@@ -66,7 +66,7 @@ class _PacksApi implements PacksApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildEmojiResponse _value;
     try {
       _value = GuildEmojiResponse.fromJson(_result.data!);
@@ -131,7 +131,7 @@ class _PacksApi implements PacksApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildEmojiBulkCreateResponse _value;
     try {
       _value = GuildEmojiBulkCreateResponse.fromJson(_result.data!);
@@ -163,7 +163,7 @@ class _PacksApi implements PacksApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildEmojiResponse _value;
     try {
       _value = GuildEmojiResponse.fromJson(_result.data!);
@@ -218,7 +218,7 @@ class _PacksApi implements PacksApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildStickerResponse _value;
     try {
       _value = GuildStickerResponse.fromJson(_result.data!);
@@ -284,7 +284,7 @@ class _PacksApi implements PacksApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildStickerBulkCreateResponse _value;
     try {
       _value = GuildStickerBulkCreateResponse.fromJson(_result.data!);
@@ -316,7 +316,7 @@ class _PacksApi implements PacksApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildStickerResponse _value;
     try {
       _value = GuildStickerResponse.fromJson(_result.data!);
@@ -371,7 +371,7 @@ class _PacksApi implements PacksApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late PackSummaryResponse _value;
     try {
       _value = PackSummaryResponse.fromJson(_result.data!);
@@ -459,7 +459,7 @@ class _PacksApi implements PacksApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late PackSummaryResponse _value;
     try {
       _value = PackSummaryResponse.fromJson(_result.data!);

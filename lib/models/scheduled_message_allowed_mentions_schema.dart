@@ -2,15 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'scheduled_message_allowed_mentions_schema_parse_parse.dart';
 import 'snowflake_type.dart';
 
-part 'scheduled_message_allowed_mentions_schema.g.dart';
+part 'scheduled_message_allowed_mentions_schema.mapper.dart';
 
-@JsonSerializable()
-class ScheduledMessageAllowedMentionsSchema {
+@MappableClass()
+class ScheduledMessageAllowedMentionsSchema
+    with ScheduledMessageAllowedMentionsSchemaMappable {
   const ScheduledMessageAllowedMentionsSchema({
     this.parse,
     this.users,
@@ -18,26 +19,13 @@ class ScheduledMessageAllowedMentionsSchema {
     this.repliedUser,
   });
 
-  factory ScheduledMessageAllowedMentionsSchema.fromJson(
-    Map<String, Object?> json,
-  ) => _$ScheduledMessageAllowedMentionsSchemaFromJson(json);
-
-  /// Types of mentions to parse from content
-  @JsonKey(includeIfNull: false)
   final List<ScheduledMessageAllowedMentionsSchemaParseParse>? parse;
-
-  /// Array of user IDs to mention
-  @JsonKey(includeIfNull: false)
   final List<SnowflakeType>? users;
-
-  /// Array of role IDs to mention
-  @JsonKey(includeIfNull: false)
   final List<SnowflakeType>? roles;
-
-  /// Whether to mention the author of the replied message
-  @JsonKey(includeIfNull: false, name: 'replied_user')
+  @MappableField(key: 'replied_user')
   final bool? repliedUser;
 
-  Map<String, Object?> toJson() =>
-      _$ScheduledMessageAllowedMentionsSchemaToJson(this);
+  static ScheduledMessageAllowedMentionsSchema fromJson(
+    Map<String, dynamic> json,
+  ) => ScheduledMessageAllowedMentionsSchemaMapper.fromJson(json);
 }

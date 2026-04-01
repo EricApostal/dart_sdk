@@ -2,7 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'message_attachment_response.dart';
 import 'message_embed_response.dart';
@@ -10,10 +10,10 @@ import 'message_flags.dart';
 import 'message_snapshot_response_type_type.dart';
 import 'message_sticker_response.dart';
 
-part 'message_snapshot_response.g.dart';
+part 'message_snapshot_response.mapper.dart';
 
-@JsonSerializable()
-class MessageSnapshotResponse {
+@MappableClass()
+class MessageSnapshotResponse with MessageSnapshotResponseMappable {
   const MessageSnapshotResponse({
     required this.timestamp,
     required this.type,
@@ -27,43 +27,19 @@ class MessageSnapshotResponse {
     this.stickers,
   });
 
-  factory MessageSnapshotResponse.fromJson(Map<String, Object?> json) =>
-      _$MessageSnapshotResponseFromJson(json);
-
-  /// The text content of the snapshot
-  @JsonKey(includeIfNull: false)
-  final String? content;
-
-  /// The ISO 8601 timestamp of when the original message was created
   final DateTime timestamp;
-
-  /// The ISO 8601 timestamp of when the original message was last edited
-  @JsonKey(includeIfNull: false, name: 'edited_timestamp')
-  final DateTime? editedTimestamp;
-
-  /// The user IDs mentioned in the snapshot
-  @JsonKey(includeIfNull: false)
-  final List<String>? mentions;
-
-  /// The role IDs mentioned in the snapshot
-  @JsonKey(includeIfNull: false, name: 'mention_roles')
-  final List<String>? mentionRoles;
-
-  /// The embeds included in the snapshot
-  @JsonKey(includeIfNull: false)
-  final List<MessageEmbedResponse>? embeds;
-
-  /// The attachments included in the snapshot
-  @JsonKey(includeIfNull: false)
-  final List<MessageAttachmentResponse>? attachments;
-
-  /// The stickers included in the snapshot
-  @JsonKey(includeIfNull: false)
-  final List<MessageStickerResponse>? stickers;
-
-  /// The type of message
   final MessageSnapshotResponseTypeType type;
   final MessageFlags flags;
+  final String? content;
+  @MappableField(key: 'edited_timestamp')
+  final DateTime? editedTimestamp;
+  final List<String>? mentions;
+  @MappableField(key: 'mention_roles')
+  final List<String>? mentionRoles;
+  final List<MessageEmbedResponse>? embeds;
+  final List<MessageAttachmentResponse>? attachments;
+  final List<MessageStickerResponse>? stickers;
 
-  Map<String, Object?> toJson() => _$MessageSnapshotResponseToJson(this);
+  static MessageSnapshotResponse fromJson(Map<String, dynamic> json) =>
+      MessageSnapshotResponseMapper.fromJson(json);
 }

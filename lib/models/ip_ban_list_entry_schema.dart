@@ -2,23 +2,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'ip_ban_list_entry_schema.g.dart';
+part 'ip_ban_list_entry_schema.mapper.dart';
 
-@JsonSerializable()
-class IpBanListEntrySchema {
+@MappableClass()
+class IpBanListEntrySchema with IpBanListEntrySchemaMappable {
   const IpBanListEntrySchema({required this.ip, required this.reverseDns});
 
-  factory IpBanListEntrySchema.fromJson(Map<String, Object?> json) =>
-      _$IpBanListEntrySchemaFromJson(json);
-
-  /// Banned IPv4/IPv6 address or CIDR range
   final String ip;
-
-  /// Reverse DNS hostname for the IP, if available
-  @JsonKey(includeIfNull: true, name: 'reverse_dns')
+  @MappableField(key: 'reverse_dns')
   final String? reverseDns;
 
-  Map<String, Object?> toJson() => _$IpBanListEntrySchemaToJson(this);
+  static IpBanListEntrySchema fromJson(Map<String, dynamic> json) =>
+      IpBanListEntrySchemaMapper.fromJson(json);
 }

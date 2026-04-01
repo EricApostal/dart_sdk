@@ -2,20 +2,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'get_index_refresh_status_request.g.dart';
+part 'get_index_refresh_status_request.mapper.dart';
 
-@JsonSerializable()
-class GetIndexRefreshStatusRequest {
+@MappableClass()
+class GetIndexRefreshStatusRequest with GetIndexRefreshStatusRequestMappable {
   const GetIndexRefreshStatusRequest({required this.jobId});
 
-  factory GetIndexRefreshStatusRequest.fromJson(Map<String, Object?> json) =>
-      _$GetIndexRefreshStatusRequestFromJson(json);
-
-  /// ID of the index refresh job to check
-  @JsonKey(name: 'job_id')
+  @MappableField(key: 'job_id')
   final String jobId;
 
-  Map<String, Object?> toJson() => _$GetIndexRefreshStatusRequestToJson(this);
+  static GetIndexRefreshStatusRequest fromJson(Map<String, dynamic> json) =>
+      GetIndexRefreshStatusRequestMapper.fromJson(json);
 }

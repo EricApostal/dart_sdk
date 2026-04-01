@@ -2,19 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'donation_request_link_request.g.dart';
+part 'donation_request_link_request.mapper.dart';
 
-@JsonSerializable()
-class DonationRequestLinkRequest {
+@MappableClass()
+class DonationRequestLinkRequest with DonationRequestLinkRequestMappable {
   const DonationRequestLinkRequest({required this.email});
 
-  factory DonationRequestLinkRequest.fromJson(Map<String, Object?> json) =>
-      _$DonationRequestLinkRequestFromJson(json);
-
-  /// Email address to send the magic link to
   final String email;
 
-  Map<String, Object?> toJson() => _$DonationRequestLinkRequestToJson(this);
+  static DonationRequestLinkRequest fromJson(Map<String, dynamic> json) =>
+      DonationRequestLinkRequestMapper.fromJson(json);
 }

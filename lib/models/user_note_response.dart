@@ -2,19 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'user_note_response.g.dart';
+part 'user_note_response.mapper.dart';
 
-@JsonSerializable()
-class UserNoteResponse {
+@MappableClass()
+class UserNoteResponse with UserNoteResponseMappable {
   const UserNoteResponse({required this.note});
 
-  factory UserNoteResponse.fromJson(Map<String, Object?> json) =>
-      _$UserNoteResponseFromJson(json);
-
-  /// The note text for this user
   final String note;
 
-  Map<String, Object?> toJson() => _$UserNoteResponseToJson(this);
+  static UserNoteResponse fromJson(Map<String, dynamic> json) =>
+      UserNoteResponseMapper.fromJson(json);
 }

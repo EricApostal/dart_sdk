@@ -2,12 +2,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'create_favorite_meme_from_url_body_schema.g.dart';
+part 'create_favorite_meme_from_url_body_schema.mapper.dart';
 
-@JsonSerializable()
-class CreateFavoriteMemeFromUrlBodySchema {
+@MappableClass()
+class CreateFavoriteMemeFromUrlBodySchema
+    with CreateFavoriteMemeFromUrlBodySchemaMappable {
   const CreateFavoriteMemeFromUrlBodySchema({
     required this.url,
     this.altText,
@@ -17,33 +18,17 @@ class CreateFavoriteMemeFromUrlBodySchema {
     this.name,
   });
 
-  factory CreateFavoriteMemeFromUrlBodySchema.fromJson(
-    Map<String, Object?> json,
-  ) => _$CreateFavoriteMemeFromUrlBodySchemaFromJson(json);
-
-  /// Alternative text description for accessibility
-  @JsonKey(includeIfNull: false, name: 'alt_text')
-  final String? altText;
-
-  /// Tags for categorizing and searching the meme
-  @JsonKey(includeIfNull: false)
-  final List<String>? tags;
-
-  /// URL of the image or video to save as a favorite meme
   final String url;
-
-  /// Klipy clip slug if the URL is from Klipy
-  @JsonKey(includeIfNull: false, name: 'klipy_slug')
+  @MappableField(key: 'alt_text')
+  final String? altText;
+  final List<String>? tags;
+  @MappableField(key: 'klipy_slug')
   final String? klipySlug;
-
-  /// Tenor view/<slug>-<id> identifier if the URL is from Tenor
-  @JsonKey(includeIfNull: false, name: 'tenor_slug_id')
+  @MappableField(key: 'tenor_slug_id')
   final String? tenorSlugId;
-
-  /// Display name for the meme
-  @JsonKey(includeIfNull: false)
   final String? name;
 
-  Map<String, Object?> toJson() =>
-      _$CreateFavoriteMemeFromUrlBodySchemaToJson(this);
+  static CreateFavoriteMemeFromUrlBodySchema fromJson(
+    Map<String, dynamic> json,
+  ) => CreateFavoriteMemeFromUrlBodySchemaMapper.fromJson(json);
 }

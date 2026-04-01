@@ -2,16 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'pack_invite_response_pack.dart';
 import 'pack_invite_response_type_type.dart';
 import 'user_partial_response.dart';
 
-part 'pack_invite_response.g.dart';
+part 'pack_invite_response.mapper.dart';
 
-@JsonSerializable()
-class PackInviteResponse {
+@MappableClass()
+class PackInviteResponse with PackInviteResponseMappable {
   const PackInviteResponse({
     required this.code,
     required this.type,
@@ -21,28 +21,14 @@ class PackInviteResponse {
     this.expiresAt,
   });
 
-  factory PackInviteResponse.fromJson(Map<String, Object?> json) =>
-      _$PackInviteResponseFromJson(json);
-
-  /// The unique invite code
   final String code;
-
-  /// The type of pack invite (emoji or sticker pack)
   final PackInviteResponseTypeType type;
-
-  /// The pack this invite is for
   final PackInviteResponsePack pack;
-
-  /// The user who created the invite
-  @JsonKey(includeIfNull: false)
+  final bool temporary;
   final UserPartialResponse? inviter;
-
-  /// ISO8601 timestamp of when the invite expires
-  @JsonKey(includeIfNull: false, name: 'expires_at')
+  @MappableField(key: 'expires_at')
   final DateTime? expiresAt;
 
-  /// Whether the invite grants temporary access
-  final bool temporary;
-
-  Map<String, Object?> toJson() => _$PackInviteResponseToJson(this);
+  static PackInviteResponse fromJson(Map<String, dynamic> json) =>
+      PackInviteResponseMapper.fromJson(json);
 }

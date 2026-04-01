@@ -2,41 +2,37 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'guild_verification_level.mapper.dart';
 
 /// Required verification level for members
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum GuildVerificationLevel {
-  @JsonValue(0)
-  none(0),
-  @JsonValue(1)
-  low(1),
-  @JsonValue(2)
-  medium(2),
-  @JsonValue(3)
-  high(3),
-  @JsonValue(4)
-  veryHigh(4),
+  @MappableValue(0)
+  none,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue(1)
+  low,
 
-  const GuildVerificationLevel(this.json);
+  @MappableValue(2)
+  medium,
 
-  factory GuildVerificationLevel.fromJson(int json) => values.firstWhere(
-    (e) => e.json == json,
-    orElse: () => $unknown,
-  );
+  @MappableValue(3)
+  high,
 
-  final int? json;
+  @MappableValue(4)
+  veryHigh,
 
-  int? toJson() => json;
+  @MappableValue('unknown')
+  unknown;
+
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json?.toString() ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
+  /// Returns all defined enum values excluding the unknown value.
   static List<GuildVerificationLevel> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+      values.where((value) => value != GuildVerificationLevel.unknown).toList();
 }

@@ -2,28 +2,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'pack_invite_create_request.g.dart';
+part 'pack_invite_create_request.mapper.dart';
 
-@JsonSerializable()
-class PackInviteCreateRequest {
+@MappableClass()
+class PackInviteCreateRequest with PackInviteCreateRequestMappable {
   const PackInviteCreateRequest({this.maxUses, this.maxAge, this.unique});
 
-  factory PackInviteCreateRequest.fromJson(Map<String, Object?> json) =>
-      _$PackInviteCreateRequestFromJson(json);
-
-  /// Maximum number of times this invite can be used (0 for unlimited)
-  @JsonKey(includeIfNull: false, name: 'max_uses')
+  @MappableField(key: 'max_uses')
   final int? maxUses;
-
-  /// Duration in seconds before the invite expires (0 for never)
-  @JsonKey(includeIfNull: false, name: 'max_age')
+  @MappableField(key: 'max_age')
   final int? maxAge;
-
-  /// Whether to create a new unique invite or reuse an existing one
-  @JsonKey(includeIfNull: false)
   final bool? unique;
 
-  Map<String, Object?> toJson() => _$PackInviteCreateRequestToJson(this);
+  static PackInviteCreateRequest fromJson(Map<String, dynamic> json) =>
+      PackInviteCreateRequestMapper.fromJson(json);
 }

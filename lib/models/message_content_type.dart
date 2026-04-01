@@ -2,49 +2,49 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'message_content_type.mapper.dart';
 
 /// The type of content contained in a message
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum MessageContentType {
-  @JsonValue('image')
-  image('image'),
-  @JsonValue('sound')
-  sound('sound'),
-  @JsonValue('video')
-  video('video'),
-  @JsonValue('file')
-  file('file'),
-  @JsonValue('sticker')
-  sticker('sticker'),
-  @JsonValue('embed')
-  embed('embed'),
-  @JsonValue('link')
-  link('link'),
-  @JsonValue('poll')
-  poll('poll'),
-  @JsonValue('snapshot')
-  snapshot('snapshot'),
+  @MappableValue('image')
+  image,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue('sound')
+  sound,
 
-  const MessageContentType(this.json);
+  @MappableValue('video')
+  video,
 
-  factory MessageContentType.fromJson(String json) => values.firstWhere(
-    (e) => e.json == json,
-    orElse: () => $unknown,
-  );
+  @MappableValue('file')
+  file,
 
-  final String? json;
+  @MappableValue('sticker')
+  sticker,
 
-  String toJson() => json ?? 'null';
+  @MappableValue('embed')
+  embed,
+
+  @MappableValue('link')
+  link,
+
+  @MappableValue('poll')
+  poll,
+
+  @MappableValue('snapshot')
+  snapshot,
+
+  @MappableValue('unknown')
+  unknown;
+
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
+  /// Returns all defined enum values excluding the unknown value.
   static List<MessageContentType> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+      values.where((value) => value != MessageContentType.unknown).toList();
 }

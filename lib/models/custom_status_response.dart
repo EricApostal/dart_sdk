@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'custom_status_response.g.dart';
+part 'custom_status_response.mapper.dart';
 
-@JsonSerializable()
-class CustomStatusResponse {
+@MappableClass()
+class CustomStatusResponse with CustomStatusResponseMappable {
   const CustomStatusResponse({
     required this.emojiAnimated,
     this.text,
@@ -18,28 +18,16 @@ class CustomStatusResponse {
     this.emojiName,
   });
 
-  factory CustomStatusResponse.fromJson(Map<String, Object?> json) =>
-      _$CustomStatusResponseFromJson(json);
-
-  /// The custom status message text
-  @JsonKey(includeIfNull: false)
+  @MappableField(key: 'emoji_animated')
+  final bool emojiAnimated;
   final String? text;
-
-  /// ISO8601 timestamp of when the custom status expires
-  @JsonKey(includeIfNull: false, name: 'expires_at')
+  @MappableField(key: 'expires_at')
   final DateTime? expiresAt;
-
-  /// The ID of the custom emoji used in the status
-  @JsonKey(includeIfNull: false, name: 'emoji_id')
+  @MappableField(key: 'emoji_id')
   final SnowflakeType? emojiId;
-
-  /// The name of the emoji used in the status
-  @JsonKey(includeIfNull: false, name: 'emoji_name')
+  @MappableField(key: 'emoji_name')
   final String? emojiName;
 
-  /// Whether the status emoji is animated
-  @JsonKey(name: 'emoji_animated')
-  final bool emojiAnimated;
-
-  Map<String, Object?> toJson() => _$CustomStatusResponseToJson(this);
+  static CustomStatusResponse fromJson(Map<String, dynamic> json) =>
+      CustomStatusResponseMapper.fromJson(json);
 }

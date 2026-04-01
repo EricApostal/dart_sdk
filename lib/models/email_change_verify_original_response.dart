@@ -2,22 +2,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'email_change_verify_original_response.g.dart';
+part 'email_change_verify_original_response.mapper.dart';
 
-@JsonSerializable()
-class EmailChangeVerifyOriginalResponse {
+@MappableClass()
+class EmailChangeVerifyOriginalResponse
+    with EmailChangeVerifyOriginalResponseMappable {
   const EmailChangeVerifyOriginalResponse({required this.originalProof});
 
-  factory EmailChangeVerifyOriginalResponse.fromJson(
-    Map<String, Object?> json,
-  ) => _$EmailChangeVerifyOriginalResponseFromJson(json);
-
-  /// Proof token issued after verifying the original email
-  @JsonKey(name: 'original_proof')
+  @MappableField(key: 'original_proof')
   final String originalProof;
 
-  Map<String, Object?> toJson() =>
-      _$EmailChangeVerifyOriginalResponseToJson(this);
+  static EmailChangeVerifyOriginalResponse fromJson(
+    Map<String, dynamic> json,
+  ) => EmailChangeVerifyOriginalResponseMapper.fromJson(json);
 }

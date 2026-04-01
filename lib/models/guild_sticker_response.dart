@@ -2,12 +2,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'guild_sticker_response.g.dart';
+part 'guild_sticker_response.mapper.dart';
 
-@JsonSerializable()
-class GuildStickerResponse {
+@MappableClass()
+class GuildStickerResponse with GuildStickerResponseMappable {
   const GuildStickerResponse({
     required this.id,
     required this.name,
@@ -16,23 +16,12 @@ class GuildStickerResponse {
     required this.animated,
   });
 
-  factory GuildStickerResponse.fromJson(Map<String, Object?> json) =>
-      _$GuildStickerResponseFromJson(json);
-
-  /// The unique identifier for this sticker
   final String id;
-
-  /// The name of the sticker
   final String name;
-
-  /// The description of the sticker
   final String description;
-
-  /// Autocomplete/suggestion tags for the sticker
   final List<String> tags;
-
-  /// Whether this sticker is animated
   final bool animated;
 
-  Map<String, Object?> toJson() => _$GuildStickerResponseToJson(this);
+  static GuildStickerResponse fromJson(Map<String, dynamic> json) =>
+      GuildStickerResponseMapper.fromJson(json);
 }

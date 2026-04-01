@@ -2,29 +2,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'sentry_webhook_actor.dart';
 import 'sentry_webhook_data.dart';
 import 'sentry_webhook_installation.dart';
 
-part 'sentry_webhook.g.dart';
+part 'sentry_webhook.mapper.dart';
 
-@JsonSerializable()
-class SentryWebhook {
+@MappableClass()
+class SentryWebhook with SentryWebhookMappable {
   const SentryWebhook({this.action, this.installation, this.data, this.actor});
 
-  factory SentryWebhook.fromJson(Map<String, Object?> json) =>
-      _$SentryWebhookFromJson(json);
-
-  @JsonKey(includeIfNull: false)
   final String? action;
-  @JsonKey(includeIfNull: false)
   final SentryWebhookInstallation? installation;
-  @JsonKey(includeIfNull: false)
   final SentryWebhookData? data;
-  @JsonKey(includeIfNull: false)
   final SentryWebhookActor? actor;
 
-  Map<String, Object?> toJson() => _$SentryWebhookToJson(this);
+  static SentryWebhook fromJson(Map<String, dynamic> json) =>
+      SentryWebhookMapper.fromJson(json);
 }

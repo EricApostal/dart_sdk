@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'ban_guild_member_request.g.dart';
+part 'ban_guild_member_request.mapper.dart';
 
-@JsonSerializable()
-class BanGuildMemberRequest {
+@MappableClass()
+class BanGuildMemberRequest with BanGuildMemberRequestMappable {
   const BanGuildMemberRequest({
     required this.guildId,
     required this.userId,
@@ -18,24 +18,16 @@ class BanGuildMemberRequest {
     this.banDurationSeconds,
   });
 
-  factory BanGuildMemberRequest.fromJson(Map<String, Object?> json) =>
-      _$BanGuildMemberRequestFromJson(json);
-
-  /// Number of days of messages to delete from the banned user (0-7)
-  @JsonKey(includeIfNull: false, name: 'delete_message_days')
-  final int? deleteMessageDays;
-
-  /// The reason for the ban (max 512 characters)
-  @JsonKey(includeIfNull: false)
-  final String? reason;
-
-  /// Duration of the ban in seconds (0 for permanent, or a valid temporary duration)
-  @JsonKey(includeIfNull: false, name: 'ban_duration_seconds')
-  final int? banDurationSeconds;
-  @JsonKey(name: 'guild_id')
+  @MappableField(key: 'guild_id')
   final SnowflakeType guildId;
-  @JsonKey(name: 'user_id')
+  @MappableField(key: 'user_id')
   final SnowflakeType userId;
+  @MappableField(key: 'delete_message_days')
+  final int? deleteMessageDays;
+  final String? reason;
+  @MappableField(key: 'ban_duration_seconds')
+  final int? banDurationSeconds;
 
-  Map<String, Object?> toJson() => _$BanGuildMemberRequestToJson(this);
+  static BanGuildMemberRequest fromJson(Map<String, dynamic> json) =>
+      BanGuildMemberRequestMapper.fromJson(json);
 }

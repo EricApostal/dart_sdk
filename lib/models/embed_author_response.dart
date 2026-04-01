@@ -2,12 +2,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'embed_author_response.g.dart';
+part 'embed_author_response.mapper.dart';
 
-@JsonSerializable()
-class EmbedAuthorResponse {
+@MappableClass()
+class EmbedAuthorResponse with EmbedAuthorResponseMappable {
   const EmbedAuthorResponse({
     required this.name,
     this.url,
@@ -15,23 +15,13 @@ class EmbedAuthorResponse {
     this.proxyIconUrl,
   });
 
-  factory EmbedAuthorResponse.fromJson(Map<String, Object?> json) =>
-      _$EmbedAuthorResponseFromJson(json);
-
-  /// The name of the author
   final String name;
-
-  /// The URL of the author
-  @JsonKey(includeIfNull: false)
   final String? url;
-
-  /// The URL of the author icon
-  @JsonKey(includeIfNull: false, name: 'icon_url')
+  @MappableField(key: 'icon_url')
   final String? iconUrl;
-
-  /// The proxied URL of the author icon
-  @JsonKey(includeIfNull: false, name: 'proxy_icon_url')
+  @MappableField(key: 'proxy_icon_url')
   final String? proxyIconUrl;
 
-  Map<String, Object?> toJson() => _$EmbedAuthorResponseToJson(this);
+  static EmbedAuthorResponse fromJson(Map<String, dynamic> json) =>
+      EmbedAuthorResponseMapper.fromJson(json);
 }

@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'user_partial_response.dart';
 
-part 'gift_code_metadata_response.g.dart';
+part 'gift_code_metadata_response.mapper.dart';
 
-@JsonSerializable()
-class GiftCodeMetadataResponse {
+@MappableClass()
+class GiftCodeMetadataResponse with GiftCodeMetadataResponseMappable {
   const GiftCodeMetadataResponse({
     required this.code,
     required this.durationMonths,
@@ -19,29 +19,18 @@ class GiftCodeMetadataResponse {
     this.redeemedBy,
   });
 
-  factory GiftCodeMetadataResponse.fromJson(Map<String, Object?> json) =>
-      _$GiftCodeMetadataResponseFromJson(json);
-
-  /// The unique gift code string
   final String code;
-
-  /// Duration of the subscription gift in months
-  @JsonKey(name: 'duration_months')
+  @MappableField(key: 'duration_months')
   final int durationMonths;
-
-  /// Timestamp when the gift code was created
-  @JsonKey(name: 'created_at')
+  @MappableField(key: 'created_at')
   final DateTime createdAt;
-  @JsonKey(name: 'created_by')
+  @MappableField(key: 'created_by')
   final UserPartialResponse createdBy;
-
-  /// Timestamp when the gift code was redeemed
-  @JsonKey(includeIfNull: false, name: 'redeemed_at')
+  @MappableField(key: 'redeemed_at')
   final DateTime? redeemedAt;
-
-  /// The user who redeemed the gift code
-  @JsonKey(includeIfNull: false, name: 'redeemed_by')
+  @MappableField(key: 'redeemed_by')
   final UserPartialResponse? redeemedBy;
 
-  Map<String, Object?> toJson() => _$GiftCodeMetadataResponseToJson(this);
+  static GiftCodeMetadataResponse fromJson(Map<String, dynamic> json) =>
+      GiftCodeMetadataResponseMapper.fromJson(json);
 }

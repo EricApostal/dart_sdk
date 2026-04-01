@@ -2,27 +2,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'channel_overrides_mute_config.g.dart';
+part 'channel_overrides_mute_config.mapper.dart';
 
-@JsonSerializable()
-class ChannelOverridesMuteConfig {
+@MappableClass()
+class ChannelOverridesMuteConfig with ChannelOverridesMuteConfigMappable {
   const ChannelOverridesMuteConfig({
     required this.endTime,
     required this.selectedTimeWindow,
   });
 
-  factory ChannelOverridesMuteConfig.fromJson(Map<String, Object?> json) =>
-      _$ChannelOverridesMuteConfigFromJson(json);
-
-  /// ISO8601 timestamp of when the mute expires
-  @JsonKey(includeIfNull: true, name: 'end_time')
+  @MappableField(key: 'end_time')
   final String? endTime;
-
-  /// The selected mute duration in seconds
-  @JsonKey(name: 'selected_time_window')
+  @MappableField(key: 'selected_time_window')
   final int selectedTimeWindow;
 
-  Map<String, Object?> toJson() => _$ChannelOverridesMuteConfigToJson(this);
+  static ChannelOverridesMuteConfig fromJson(Map<String, dynamic> json) =>
+      ChannelOverridesMuteConfigMapper.fromJson(json);
 }

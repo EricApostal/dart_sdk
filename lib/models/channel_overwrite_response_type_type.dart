@@ -2,33 +2,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'channel_overwrite_response_type_type.mapper.dart';
 
 /// The type of entity the overwrite applies to
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum ChannelOverwriteResponseTypeType {
-  @JsonValue(0)
-  value0(0),
-  @JsonValue(1)
-  value1(1),
+  @MappableValue(0)
+  value0,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue(1)
+  value1,
 
-  const ChannelOverwriteResponseTypeType(this.json);
+  @MappableValue('unknown')
+  unknown;
 
-  factory ChannelOverwriteResponseTypeType.fromJson(int json) =>
-      values.firstWhere((e) => e.json == json, orElse: () => $unknown);
-
-  final int? json;
-
-  int? toJson() => json;
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json?.toString() ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
-  static List<ChannelOverwriteResponseTypeType> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+  /// Returns all defined enum values excluding the unknown value.
+  static List<ChannelOverwriteResponseTypeType> get $valuesDefined => values
+      .where((value) => value != ChannelOverwriteResponseTypeType.unknown)
+      .toList();
 }

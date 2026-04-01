@@ -2,26 +2,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'force_add_user_to_guild_request.g.dart';
+part 'force_add_user_to_guild_request.mapper.dart';
 
-@JsonSerializable()
-class ForceAddUserToGuildRequest {
+@MappableClass()
+class ForceAddUserToGuildRequest with ForceAddUserToGuildRequestMappable {
   const ForceAddUserToGuildRequest({
     required this.userId,
     required this.guildId,
   });
 
-  factory ForceAddUserToGuildRequest.fromJson(Map<String, Object?> json) =>
-      _$ForceAddUserToGuildRequestFromJson(json);
-
-  @JsonKey(name: 'user_id')
+  @MappableField(key: 'user_id')
   final SnowflakeType userId;
-  @JsonKey(name: 'guild_id')
+  @MappableField(key: 'guild_id')
   final SnowflakeType guildId;
 
-  Map<String, Object?> toJson() => _$ForceAddUserToGuildRequestToJson(this);
+  static ForceAddUserToGuildRequest fromJson(Map<String, dynamic> json) =>
+      ForceAddUserToGuildRequestMapper.fromJson(json);
 }

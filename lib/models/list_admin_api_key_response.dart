@@ -2,12 +2,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'list_admin_api_key_response.g.dart';
+part 'list_admin_api_key_response.mapper.dart';
 
-@JsonSerializable()
-class ListAdminApiKeyResponse {
+@MappableClass()
+class ListAdminApiKeyResponse with ListAdminApiKeyResponseMappable {
   const ListAdminApiKeyResponse({
     required this.keyId,
     required this.name,
@@ -18,34 +18,19 @@ class ListAdminApiKeyResponse {
     required this.acls,
   });
 
-  factory ListAdminApiKeyResponse.fromJson(Map<String, Object?> json) =>
-      _$ListAdminApiKeyResponseFromJson(json);
-
-  /// Unique identifier for the API key
-  @JsonKey(name: 'key_id')
+  @MappableField(key: 'key_id')
   final String keyId;
-
-  /// Display name for the API key
   final String name;
-
-  /// ISO 8601 timestamp when the key was created
-  @JsonKey(name: 'created_at')
+  @MappableField(key: 'created_at')
   final String createdAt;
-
-  /// ISO 8601 timestamp when the key was last used, or null if never used
-  @JsonKey(includeIfNull: true, name: 'last_used_at')
+  @MappableField(key: 'last_used_at')
   final String? lastUsedAt;
-
-  /// ISO 8601 timestamp when the key expires, or null if no expiration
-  @JsonKey(includeIfNull: true, name: 'expires_at')
+  @MappableField(key: 'expires_at')
   final String? expiresAt;
-
-  /// User ID of the admin who created this key
-  @JsonKey(name: 'created_by_user_id')
+  @MappableField(key: 'created_by_user_id')
   final String createdByUserId;
-
-  /// List of access control permissions for the key
   final List<String> acls;
 
-  Map<String, Object?> toJson() => _$ListAdminApiKeyResponseToJson(this);
+  static ListAdminApiKeyResponse fromJson(Map<String, dynamic> json) =>
+      ListAdminApiKeyResponseMapper.fromJson(json);
 }

@@ -2,31 +2,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'embed_footer_response.g.dart';
+part 'embed_footer_response.mapper.dart';
 
-@JsonSerializable()
-class EmbedFooterResponse {
+@MappableClass()
+class EmbedFooterResponse with EmbedFooterResponseMappable {
   const EmbedFooterResponse({
     required this.text,
     this.iconUrl,
     this.proxyIconUrl,
   });
 
-  factory EmbedFooterResponse.fromJson(Map<String, Object?> json) =>
-      _$EmbedFooterResponseFromJson(json);
-
-  /// The footer text
   final String text;
-
-  /// The URL of the footer icon
-  @JsonKey(includeIfNull: false, name: 'icon_url')
+  @MappableField(key: 'icon_url')
   final String? iconUrl;
-
-  /// The proxied URL of the footer icon
-  @JsonKey(includeIfNull: false, name: 'proxy_icon_url')
+  @MappableField(key: 'proxy_icon_url')
   final String? proxyIconUrl;
 
-  Map<String, Object?> toJson() => _$EmbedFooterResponseToJson(this);
+  static EmbedFooterResponse fromJson(Map<String, dynamic> json) =>
+      EmbedFooterResponseMapper.fromJson(json);
 }

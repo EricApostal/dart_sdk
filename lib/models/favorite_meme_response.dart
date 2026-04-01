@@ -2,12 +2,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'favorite_meme_response.g.dart';
+part 'favorite_meme_response.mapper.dart';
 
-@JsonSerializable()
-class FavoriteMemeResponse {
+@MappableClass()
+class FavoriteMemeResponse with FavoriteMemeResponseMappable {
   const FavoriteMemeResponse({
     required this.id,
     required this.userId,
@@ -28,70 +28,32 @@ class FavoriteMemeResponse {
     this.tenorSlugId,
   });
 
-  factory FavoriteMemeResponse.fromJson(Map<String, Object?> json) =>
-      _$FavoriteMemeResponseFromJson(json);
-
-  /// Unique identifier for the favorite meme
   final String id;
-
-  /// ID of the user who owns this favorite meme
-  @JsonKey(name: 'user_id')
+  @MappableField(key: 'user_id')
   final String userId;
-
-  /// Display name of the meme
   final String name;
-
-  /// Alternative text description for accessibility
-  @JsonKey(includeIfNull: false, name: 'alt_text')
-  final String? altText;
-
-  /// Tags for categorizing and searching the meme
   final List<String> tags;
-
-  /// ID of the attachment storing the meme
-  @JsonKey(name: 'attachment_id')
+  @MappableField(key: 'attachment_id')
   final String attachmentId;
-
-  /// Original filename of the meme
   final String filename;
-
-  /// MIME type of the meme file
-  @JsonKey(name: 'content_type')
+  @MappableField(key: 'content_type')
   final String contentType;
-
-  /// Hash of the file content for deduplication
-  @JsonKey(includeIfNull: false, name: 'content_hash')
-  final String? contentHash;
-
-  /// File size in bytes
   final num size;
-
-  /// Width of the image or video in pixels
-  @JsonKey(includeIfNull: false)
-  final int? width;
-
-  /// Height of the image or video in pixels
-  @JsonKey(includeIfNull: false)
-  final int? height;
-
-  /// Duration of the video in seconds
-  @JsonKey(includeIfNull: false)
-  final num? duration;
-
-  /// CDN URL to access the meme
   final String url;
-
-  /// Whether the meme is a video converted from GIF
-  @JsonKey(includeIfNull: false, name: 'is_gifv')
+  @MappableField(key: 'alt_text')
+  final String? altText;
+  @MappableField(key: 'content_hash')
+  final String? contentHash;
+  final int? width;
+  final int? height;
+  final num? duration;
+  @MappableField(key: 'is_gifv')
   final bool? isGifv;
-
-  /// Klipy clip slug if the meme was sourced from Klipy
-  @JsonKey(includeIfNull: false, name: 'klipy_slug')
+  @MappableField(key: 'klipy_slug')
   final String? klipySlug;
-
-  /// Tenor view/<slug>-<id> identifier if the meme was sourced from Tenor
-  @JsonKey(includeIfNull: false, name: 'tenor_slug_id')
+  @MappableField(key: 'tenor_slug_id')
   final String? tenorSlugId;
 
-  Map<String, Object?> toJson() => _$FavoriteMemeResponseToJson(this);
+  static FavoriteMemeResponse fromJson(Map<String, dynamic> json) =>
+      FavoriteMemeResponseMapper.fromJson(json);
 }

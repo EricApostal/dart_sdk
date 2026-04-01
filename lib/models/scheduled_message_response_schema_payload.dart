@@ -2,7 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'message_embed_response.dart';
 import 'message_attachment_response.dart';
@@ -12,10 +12,11 @@ import 'scheduled_message_allowed_mentions_schema.dart';
 import 'scheduled_message_reference_schema.dart';
 import 'message_flags.dart';
 
-part 'scheduled_message_response_schema_payload.g.dart';
+part 'scheduled_message_response_schema_payload.mapper.dart';
 
-@JsonSerializable()
-class ScheduledMessageResponseSchemaPayload {
+@MappableClass()
+class ScheduledMessageResponseSchemaPayload
+    with ScheduledMessageResponseSchemaPayloadMappable {
   const ScheduledMessageResponseSchemaPayload({
     this.content,
     this.tts,
@@ -30,46 +31,23 @@ class ScheduledMessageResponseSchemaPayload {
     this.favoriteMemeId,
   });
 
-  factory ScheduledMessageResponseSchemaPayload.fromJson(
-    Map<String, Object?> json,
-  ) => _$ScheduledMessageResponseSchemaPayloadFromJson(json);
-
-  /// The text content of the scheduled message
-  @JsonKey(includeIfNull: false)
   final String? content;
-
-  /// Whether this is a text-to-speech message
-  @JsonKey(includeIfNull: false)
   final bool? tts;
-
-  /// Array of embed objects attached to the message
-  @JsonKey(includeIfNull: false)
   final List<MessageEmbedResponse>? embeds;
-
-  /// Array of attachment objects for the message
-  @JsonKey(includeIfNull: false)
   final List<MessageAttachmentResponse>? attachments;
-
-  /// Array of sticker objects attached to the message
-  @JsonKey(includeIfNull: false)
   final List<MessageStickerResponse>? stickers;
-
-  /// Array of sticker IDs to include in the message
-  @JsonKey(includeIfNull: false, name: 'sticker_ids')
+  @MappableField(key: 'sticker_ids')
   final List<SnowflakeType>? stickerIds;
-  @JsonKey(includeIfNull: false, name: 'allowed_mentions')
+  @MappableField(key: 'allowed_mentions')
   final ScheduledMessageAllowedMentionsSchema? allowedMentions;
-  @JsonKey(includeIfNull: false, name: 'message_reference')
+  @MappableField(key: 'message_reference')
   final ScheduledMessageReferenceSchema? messageReference;
-  @JsonKey(includeIfNull: false)
   final MessageFlags? flags;
-
-  /// Client-generated identifier for the message
-  @JsonKey(includeIfNull: false)
   final String? nonce;
-  @JsonKey(includeIfNull: false, name: 'favorite_meme_id')
+  @MappableField(key: 'favorite_meme_id')
   final SnowflakeType? favoriteMemeId;
 
-  Map<String, Object?> toJson() =>
-      _$ScheduledMessageResponseSchemaPayloadToJson(this);
+  static ScheduledMessageResponseSchemaPayload fromJson(
+    Map<String, dynamic> json,
+  ) => ScheduledMessageResponseSchemaPayloadMapper.fromJson(json);
 }

@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'application_bot_response.dart';
 
-part 'application_response.g.dart';
+part 'application_response.mapper.dart';
 
-@JsonSerializable()
-class ApplicationResponse {
+@MappableClass()
+class ApplicationResponse with ApplicationResponseMappable {
   const ApplicationResponse({
     required this.id,
     required this.name,
@@ -20,32 +20,18 @@ class ApplicationResponse {
     this.bot,
   });
 
-  factory ApplicationResponse.fromJson(Map<String, Object?> json) =>
-      _$ApplicationResponseFromJson(json);
-
-  /// The unique identifier of the application
   final String id;
-
-  /// The name of the application
   final String name;
-
-  /// The registered redirect URIs for OAuth2
-  @JsonKey(name: 'redirect_uris')
+  @MappableField(key: 'redirect_uris')
   final List<String> redirectUris;
-
-  /// Whether the bot can be invited by anyone
-  @JsonKey(name: 'bot_public')
+  @MappableField(key: 'bot_public')
   final bool botPublic;
-
-  /// Whether the bot requires OAuth2 code grant
-  @JsonKey(name: 'bot_require_code_grant')
+  @MappableField(key: 'bot_require_code_grant')
   final bool botRequireCodeGrant;
-
-  /// The client secret for OAuth2 authentication
-  @JsonKey(includeIfNull: false, name: 'client_secret')
+  @MappableField(key: 'client_secret')
   final String? clientSecret;
-  @JsonKey(includeIfNull: false)
   final ApplicationBotResponse? bot;
 
-  Map<String, Object?> toJson() => _$ApplicationResponseToJson(this);
+  static ApplicationResponse fromJson(Map<String, dynamic> json) =>
+      ApplicationResponseMapper.fromJson(json);
 }

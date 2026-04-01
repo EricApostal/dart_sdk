@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'int32_type.dart';
 
-part 'git_hub_webhook_pull_request_user.g.dart';
+part 'git_hub_webhook_pull_request_user.mapper.dart';
 
-@JsonSerializable()
-class GitHubWebhookPullRequestUser {
+@MappableClass()
+class GitHubWebhookPullRequestUser with GitHubWebhookPullRequestUserMappable {
   const GitHubWebhookPullRequestUser({
     required this.id,
     required this.login,
@@ -17,15 +17,13 @@ class GitHubWebhookPullRequestUser {
     required this.avatarUrl,
   });
 
-  factory GitHubWebhookPullRequestUser.fromJson(Map<String, Object?> json) =>
-      _$GitHubWebhookPullRequestUserFromJson(json);
-
   final Int32Type id;
   final String login;
-  @JsonKey(name: 'html_url')
+  @MappableField(key: 'html_url')
   final String htmlUrl;
-  @JsonKey(name: 'avatar_url')
+  @MappableField(key: 'avatar_url')
   final String avatarUrl;
 
-  Map<String, Object?> toJson() => _$GitHubWebhookPullRequestUserToJson(this);
+  static GitHubWebhookPullRequestUser fromJson(Map<String, dynamic> json) =>
+      GitHubWebhookPullRequestUserMapper.fromJson(json);
 }

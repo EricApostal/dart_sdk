@@ -2,13 +2,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
+import 'int32_type.dart';
 import 'message_shred_status_not_found_response_status_status.dart';
 import 'message_shred_status_progress_response_status_status.dart';
-import 'int32_type.dart';
+import 'message_shred_status_not_found_response.dart';
+import 'message_shred_status_progress_response.dart';
 
-part 'message_shred_status_response.g.dart';
+part 'message_shred_status_response.mapper.dart';
 
 class MessageShredStatusResponse {
   final Map<String, dynamic> _json;
@@ -22,48 +24,39 @@ class MessageShredStatusResponse {
 
   MessageShredStatusResponseMessageShredStatusNotFoundResponse
   toMessageShredStatusNotFoundResponse() =>
-      MessageShredStatusResponseMessageShredStatusNotFoundResponse.fromJson(
+      MessageShredStatusResponseMessageShredStatusNotFoundResponseMapper.fromJson(
         _json,
       );
   MessageShredStatusResponseMessageShredStatusProgressResponse
   toMessageShredStatusProgressResponse() =>
-      MessageShredStatusResponseMessageShredStatusProgressResponse.fromJson(
+      MessageShredStatusResponseMessageShredStatusProgressResponseMapper.fromJson(
         _json,
       );
 }
 
-@JsonSerializable()
-class MessageShredStatusResponseMessageShredStatusNotFoundResponse {
+@MappableClass()
+class MessageShredStatusResponseMessageShredStatusNotFoundResponse
+    with MessageShredStatusResponseMessageShredStatusNotFoundResponseMappable {
   final MessageShredStatusNotFoundResponseStatusStatus status;
 
   const MessageShredStatusResponseMessageShredStatusNotFoundResponse({
     required this.status,
   });
-
-  factory MessageShredStatusResponseMessageShredStatusNotFoundResponse.fromJson(
-    Map<String, dynamic> json,
-  ) => _$MessageShredStatusResponseMessageShredStatusNotFoundResponseFromJson(
-    json,
-  );
-
-  Map<String, dynamic> toJson() =>
-      _$MessageShredStatusResponseMessageShredStatusNotFoundResponseToJson(
-        this,
-      );
 }
 
-@JsonSerializable()
-class MessageShredStatusResponseMessageShredStatusProgressResponse {
+@MappableClass()
+class MessageShredStatusResponseMessageShredStatusProgressResponse
+    with MessageShredStatusResponseMessageShredStatusProgressResponseMappable {
   final MessageShredStatusProgressResponseStatusStatus status;
   final Int32Type requested;
   final Int32Type total;
   final Int32Type processed;
   final Int32Type skipped;
-  @JsonKey(name: 'started_at')
+  @MappableField(key: 'started_at')
   final String? startedAt;
-  @JsonKey(name: 'completed_at')
+  @MappableField(key: 'completed_at')
   final String? completedAt;
-  @JsonKey(name: 'failed_at')
+  @MappableField(key: 'failed_at')
   final String? failedAt;
   final String? error;
 
@@ -78,15 +71,4 @@ class MessageShredStatusResponseMessageShredStatusProgressResponse {
     required this.failedAt,
     required this.error,
   });
-
-  factory MessageShredStatusResponseMessageShredStatusProgressResponse.fromJson(
-    Map<String, dynamic> json,
-  ) => _$MessageShredStatusResponseMessageShredStatusProgressResponseFromJson(
-    json,
-  );
-
-  Map<String, dynamic> toJson() =>
-      _$MessageShredStatusResponseMessageShredStatusProgressResponseToJson(
-        this,
-      );
 }

@@ -2,12 +2,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'user_contact_change_log_entry_schema.g.dart';
+part 'user_contact_change_log_entry_schema.mapper.dart';
 
-@JsonSerializable()
-class UserContactChangeLogEntrySchema {
+@MappableClass()
+class UserContactChangeLogEntrySchema
+    with UserContactChangeLogEntrySchemaMappable {
   const UserContactChangeLogEntrySchema({
     required this.eventId,
     required this.field,
@@ -18,23 +19,19 @@ class UserContactChangeLogEntrySchema {
     required this.eventAt,
   });
 
-  factory UserContactChangeLogEntrySchema.fromJson(Map<String, Object?> json) =>
-      _$UserContactChangeLogEntrySchemaFromJson(json);
-
-  @JsonKey(name: 'event_id')
+  @MappableField(key: 'event_id')
   final String eventId;
   final String field;
-  @JsonKey(includeIfNull: true, name: 'old_value')
+  @MappableField(key: 'old_value')
   final String? oldValue;
-  @JsonKey(includeIfNull: true, name: 'new_value')
+  @MappableField(key: 'new_value')
   final String? newValue;
-  @JsonKey(includeIfNull: true)
   final String? reason;
-  @JsonKey(includeIfNull: true, name: 'actor_user_id')
+  @MappableField(key: 'actor_user_id')
   final String? actorUserId;
-  @JsonKey(name: 'event_at')
+  @MappableField(key: 'event_at')
   final String eventAt;
 
-  Map<String, Object?> toJson() =>
-      _$UserContactChangeLogEntrySchemaToJson(this);
+  static UserContactChangeLogEntrySchema fromJson(Map<String, dynamic> json) =>
+      UserContactChangeLogEntrySchemaMapper.fromJson(json);
 }

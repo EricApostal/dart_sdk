@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'auth_session_location.dart';
 
-part 'auth_session_client_info.g.dart';
+part 'auth_session_client_info.mapper.dart';
 
-@JsonSerializable()
-class AuthSessionClientInfo {
+@MappableClass()
+class AuthSessionClientInfo with AuthSessionClientInfoMappable {
   const AuthSessionClientInfo({
     this.platform,
     this.os,
@@ -17,24 +17,11 @@ class AuthSessionClientInfo {
     this.location,
   });
 
-  factory AuthSessionClientInfo.fromJson(Map<String, Object?> json) =>
-      _$AuthSessionClientInfoFromJson(json);
-
-  /// The platform reported by the client
-  @JsonKey(includeIfNull: false)
   final String? platform;
-
-  /// The operating system reported by the client
-  @JsonKey(includeIfNull: false)
   final String? os;
-
-  /// The browser reported by the client
-  @JsonKey(includeIfNull: false)
   final String? browser;
-
-  /// The geolocation data sent by the client
-  @JsonKey(includeIfNull: false)
   final AuthSessionLocation? location;
 
-  Map<String, Object?> toJson() => _$AuthSessionClientInfoToJson(this);
+  static AuthSessionClientInfo fromJson(Map<String, dynamic> json) =>
+      AuthSessionClientInfoMapper.fromJson(json);
 }

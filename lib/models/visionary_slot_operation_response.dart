@@ -2,20 +2,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'visionary_slot_operation_response_success_success.dart';
 
-part 'visionary_slot_operation_response.g.dart';
+part 'visionary_slot_operation_response.mapper.dart';
 
-@JsonSerializable()
-class VisionarySlotOperationResponse {
+@MappableClass()
+class VisionarySlotOperationResponse
+    with VisionarySlotOperationResponseMappable {
   const VisionarySlotOperationResponse({required this.success});
-
-  factory VisionarySlotOperationResponse.fromJson(Map<String, Object?> json) =>
-      _$VisionarySlotOperationResponseFromJson(json);
 
   final VisionarySlotOperationResponseSuccessSuccess success;
 
-  Map<String, Object?> toJson() => _$VisionarySlotOperationResponseToJson(this);
+  static VisionarySlotOperationResponse fromJson(Map<String, dynamic> json) =>
+      VisionarySlotOperationResponseMapper.fromJson(json);
 }

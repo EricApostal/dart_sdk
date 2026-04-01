@@ -2,20 +2,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'email_token_response.g.dart';
+part 'email_token_response.mapper.dart';
 
-@JsonSerializable()
-class EmailTokenResponse {
+@MappableClass()
+class EmailTokenResponse with EmailTokenResponseMappable {
   const EmailTokenResponse({required this.emailToken});
 
-  factory EmailTokenResponse.fromJson(Map<String, Object?> json) =>
-      _$EmailTokenResponseFromJson(json);
-
-  /// The email change token to use for updating email
-  @JsonKey(name: 'email_token')
+  @MappableField(key: 'email_token')
   final String emailToken;
 
-  Map<String, Object?> toJson() => _$EmailTokenResponseToJson(this);
+  static EmailTokenResponse fromJson(Map<String, dynamic> json) =>
+      EmailTokenResponseMapper.fromJson(json);
 }

@@ -36,7 +36,7 @@ class _GuildsApi implements GuildsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildResponse _value;
     try {
       _value = GuildResponse.fromJson(_result.data!);
@@ -63,7 +63,7 @@ class _GuildsApi implements GuildsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildResponse _value;
     try {
       _value = GuildResponse.fromJson(_result.data!);
@@ -94,7 +94,7 @@ class _GuildsApi implements GuildsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildResponse _value;
     try {
       _value = GuildResponse.fromJson(_result.data!);
@@ -135,7 +135,7 @@ class _GuildsApi implements GuildsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildAuditLogListResponse _value;
     try {
       _value = GuildAuditLogListResponse.fromJson(_result.data!);
@@ -278,7 +278,7 @@ class _GuildsApi implements GuildsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ChannelResponse _value;
     try {
       _value = ChannelResponse.fromJson(_result.data!);
@@ -355,7 +355,7 @@ class _GuildsApi implements GuildsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildResponse _value;
     try {
       _value = GuildResponse.fromJson(_result.data!);
@@ -386,7 +386,7 @@ class _GuildsApi implements GuildsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildEmojiResponse _value;
     try {
       _value = GuildEmojiResponse.fromJson(_result.data!);
@@ -451,7 +451,7 @@ class _GuildsApi implements GuildsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildEmojiBulkCreateResponse _value;
     try {
       _value = GuildEmojiBulkCreateResponse.fromJson(_result.data!);
@@ -483,7 +483,7 @@ class _GuildsApi implements GuildsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildEmojiResponse _value;
     try {
       _value = GuildEmojiResponse.fromJson(_result.data!);
@@ -575,7 +575,7 @@ class _GuildsApi implements GuildsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildMemberSearchResponse _value;
     try {
       _value = GuildMemberSearchResponse.fromJson(_result.data!);
@@ -604,7 +604,7 @@ class _GuildsApi implements GuildsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildMemberResponse _value;
     try {
       _value = GuildMemberResponse.fromJson(_result.data!);
@@ -635,7 +635,7 @@ class _GuildsApi implements GuildsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildMemberResponse _value;
     try {
       _value = GuildMemberResponse.fromJson(_result.data!);
@@ -665,7 +665,7 @@ class _GuildsApi implements GuildsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildMemberResponse _value;
     try {
       _value = GuildMemberResponse.fromJson(_result.data!);
@@ -697,7 +697,7 @@ class _GuildsApi implements GuildsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildMemberResponse _value;
     try {
       _value = GuildMemberResponse.fromJson(_result.data!);
@@ -830,7 +830,7 @@ class _GuildsApi implements GuildsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildRoleResponse _value;
     try {
       _value = GuildRoleResponse.fromJson(_result.data!);
@@ -925,7 +925,7 @@ class _GuildsApi implements GuildsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildRoleResponse _value;
     try {
       _value = GuildRoleResponse.fromJson(_result.data!);
@@ -978,7 +978,7 @@ class _GuildsApi implements GuildsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildStickerResponse _value;
     try {
       _value = GuildStickerResponse.fromJson(_result.data!);
@@ -1044,7 +1044,7 @@ class _GuildsApi implements GuildsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildStickerBulkCreateResponse _value;
     try {
       _value = GuildStickerBulkCreateResponse.fromJson(_result.data!);
@@ -1076,7 +1076,7 @@ class _GuildsApi implements GuildsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildStickerResponse _value;
     try {
       _value = GuildStickerResponse.fromJson(_result.data!);
@@ -1131,7 +1131,7 @@ class _GuildsApi implements GuildsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildResponse _value;
     try {
       _value = GuildResponse.fromJson(_result.data!);
@@ -1162,7 +1162,7 @@ class _GuildsApi implements GuildsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildResponse _value;
     try {
       _value = GuildResponse.fromJson(_result.data!);
@@ -1191,7 +1191,7 @@ class _GuildsApi implements GuildsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildVanityUrlResponse _value;
     try {
       _value = GuildVanityUrlResponse.fromJson(_result.data!);
@@ -1222,7 +1222,7 @@ class _GuildsApi implements GuildsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildVanityUrlUpdateResponse _value;
     try {
       _value = GuildVanityUrlUpdateResponse.fromJson(_result.data!);

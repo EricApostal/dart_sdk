@@ -2,12 +2,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'sso_config_response.g.dart';
+part 'sso_config_response.mapper.dart';
 
-@JsonSerializable()
-class SsoConfigResponse {
+@MappableClass()
+class SsoConfigResponse with SsoConfigResponseMappable {
   const SsoConfigResponse({
     required this.enabled,
     required this.displayName,
@@ -24,34 +24,30 @@ class SsoConfigResponse {
     required this.redirectUri,
   });
 
-  factory SsoConfigResponse.fromJson(Map<String, Object?> json) =>
-      _$SsoConfigResponseFromJson(json);
-
   final bool enabled;
-  @JsonKey(includeIfNull: true, name: 'display_name')
+  @MappableField(key: 'display_name')
   final String? displayName;
-  @JsonKey(includeIfNull: true)
   final String? issuer;
-  @JsonKey(includeIfNull: true, name: 'authorization_url')
+  @MappableField(key: 'authorization_url')
   final String? authorizationUrl;
-  @JsonKey(includeIfNull: true, name: 'token_url')
+  @MappableField(key: 'token_url')
   final String? tokenUrl;
-  @JsonKey(includeIfNull: true, name: 'userinfo_url')
+  @MappableField(key: 'userinfo_url')
   final String? userinfoUrl;
-  @JsonKey(includeIfNull: true, name: 'jwks_url')
+  @MappableField(key: 'jwks_url')
   final String? jwksUrl;
-  @JsonKey(includeIfNull: true, name: 'client_id')
+  @MappableField(key: 'client_id')
   final String? clientId;
-  @JsonKey(name: 'client_secret_set')
+  @MappableField(key: 'client_secret_set')
   final bool clientSecretSet;
-  @JsonKey(includeIfNull: true)
   final String? scope;
-  @JsonKey(name: 'allowed_domains')
+  @MappableField(key: 'allowed_domains')
   final List<String> allowedDomains;
-  @JsonKey(name: 'auto_provision')
+  @MappableField(key: 'auto_provision')
   final bool autoProvision;
-  @JsonKey(includeIfNull: true, name: 'redirect_uri')
+  @MappableField(key: 'redirect_uri')
   final String? redirectUri;
 
-  Map<String, Object?> toJson() => _$SsoConfigResponseToJson(this);
+  static SsoConfigResponse fromJson(Map<String, dynamic> json) =>
+      SsoConfigResponseMapper.fromJson(json);
 }

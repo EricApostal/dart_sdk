@@ -36,7 +36,7 @@ class _KlipyApi implements KlipyApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late KlipyFeaturedResponse _value;
     try {
       _value = KlipyFeaturedResponse.fromJson(_result.data!);

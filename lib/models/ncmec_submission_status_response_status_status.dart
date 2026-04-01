@@ -2,35 +2,36 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'ncmec_submission_status_response_status_status.mapper.dart';
 
 /// NCMEC submission status
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum NcmecSubmissionStatusResponseStatusStatus {
-  @JsonValue('not_submitted')
-  notSubmitted('not_submitted'),
-  @JsonValue('submitted')
-  submitted('submitted'),
-  @JsonValue('failed')
-  failed('failed'),
+  @MappableValue('not_submitted')
+  notSubmitted,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue('submitted')
+  submitted,
 
-  const NcmecSubmissionStatusResponseStatusStatus(this.json);
+  @MappableValue('failed')
+  failed,
 
-  factory NcmecSubmissionStatusResponseStatusStatus.fromJson(String json) =>
-      values.firstWhere((e) => e.json == json, orElse: () => $unknown);
+  @MappableValue('unknown')
+  unknown;
 
-  final String? json;
-
-  String toJson() => json ?? 'null';
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
+  /// Returns all defined enum values excluding the unknown value.
   static List<NcmecSubmissionStatusResponseStatusStatus> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+      values
+          .where(
+            (value) =>
+                value != NcmecSubmissionStatusResponseStatusStatus.unknown,
+          )
+          .toList();
 }

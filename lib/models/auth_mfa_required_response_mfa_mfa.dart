@@ -2,32 +2,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'auth_mfa_required_response_mfa_mfa.mapper.dart';
 
 /// Indicates MFA is required to complete authentication
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum AuthMfaRequiredResponseMfaMfa {
   /// The name has been replaced because it contains a keyword. Original name: `true`.
-  @JsonValue(true)
-  valueTrue(true),
+  @MappableValue(true)
+  valueTrue,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue('unknown')
+  unknown;
 
-  const AuthMfaRequiredResponseMfaMfa(this.json);
-
-  factory AuthMfaRequiredResponseMfaMfa.fromJson(bool json) =>
-      values.firstWhere((e) => e.json == json, orElse: () => $unknown);
-
-  final bool? json;
-
-  bool? toJson() => json;
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json?.toString() ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
-  static List<AuthMfaRequiredResponseMfaMfa> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+  /// Returns all defined enum values excluding the unknown value.
+  static List<AuthMfaRequiredResponseMfaMfa> get $valuesDefined => values
+      .where((value) => value != AuthMfaRequiredResponseMfaMfa.unknown)
+      .toList();
 }

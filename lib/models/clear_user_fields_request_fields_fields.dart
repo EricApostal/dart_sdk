@@ -2,39 +2,38 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'clear_user_fields_request_fields_fields.mapper.dart';
 
 /// User profile field that can be cleared
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum ClearUserFieldsRequestFieldsFields {
-  @JsonValue('avatar')
-  avatar('avatar'),
-  @JsonValue('banner')
-  banner('banner'),
-  @JsonValue('bio')
-  bio('bio'),
-  @JsonValue('pronouns')
-  pronouns('pronouns'),
-  @JsonValue('global_name')
-  globalName('global_name'),
+  @MappableValue('avatar')
+  avatar,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue('banner')
+  banner,
 
-  const ClearUserFieldsRequestFieldsFields(this.json);
+  @MappableValue('bio')
+  bio,
 
-  factory ClearUserFieldsRequestFieldsFields.fromJson(String json) =>
-      values.firstWhere((e) => e.json == json, orElse: () => $unknown);
+  @MappableValue('pronouns')
+  pronouns,
 
-  final String? json;
+  @MappableValue('global_name')
+  globalName,
 
-  String toJson() => json ?? 'null';
+  @MappableValue('unknown')
+  unknown;
+
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
-  static List<ClearUserFieldsRequestFieldsFields> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+  /// Returns all defined enum values excluding the unknown value.
+  static List<ClearUserFieldsRequestFieldsFields> get $valuesDefined => values
+      .where((value) => value != ClearUserFieldsRequestFieldsFields.unknown)
+      .toList();
 }

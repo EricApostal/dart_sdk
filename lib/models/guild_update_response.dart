@@ -2,20 +2,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'guild_update_response_guild.dart';
 
-part 'guild_update_response.g.dart';
+part 'guild_update_response.mapper.dart';
 
-@JsonSerializable()
-class GuildUpdateResponse {
+@MappableClass()
+class GuildUpdateResponse with GuildUpdateResponseMappable {
   const GuildUpdateResponse({required this.guild});
-
-  factory GuildUpdateResponse.fromJson(Map<String, Object?> json) =>
-      _$GuildUpdateResponseFromJson(json);
 
   final GuildUpdateResponseGuild guild;
 
-  Map<String, Object?> toJson() => _$GuildUpdateResponseToJson(this);
+  static GuildUpdateResponse fromJson(Map<String, dynamic> json) =>
+      GuildUpdateResponseMapper.fromJson(json);
 }

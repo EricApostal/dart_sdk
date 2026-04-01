@@ -1,7 +1,7 @@
 openapi_generator:
   schema_path: openapi.json
   output_directory: lib
-  json_serializer: json_serializable
+  json_serializer: dart_mappable
   root_client: true
   root_client_name: FluxerClient
   client_postfix: Api

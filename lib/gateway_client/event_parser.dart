@@ -113,7 +113,7 @@ class EventParser {
         ),
         'RELATIONSHIP_REMOVE' => RelationshipRemoveEvent(
           userId: data['id'] as String,
-          type: RelationshipTypes.fromJson(data['type'] as int),
+          type: RelationshipTypesMapper.fromValue(data['type'] as int),
         ),
 
         // User

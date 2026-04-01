@@ -2,7 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'base64_image_type.dart';
 import 'channel_nickname_overrides.dart';
@@ -11,10 +11,10 @@ import 'channel_update_request.dart';
 import 'channel_update_text_request_type_type.dart';
 import 'snowflake_type.dart';
 
-part 'channel_update_text_request.g.dart';
+part 'channel_update_text_request.mapper.dart';
 
-@JsonSerializable()
-class ChannelUpdateTextRequest {
+@MappableClass()
+class ChannelUpdateTextRequest with ChannelUpdateTextRequestMappable {
   const ChannelUpdateTextRequest({
     required this.type,
     this.topic,
@@ -32,59 +32,27 @@ class ChannelUpdateTextRequest {
     this.name,
   });
 
-  factory ChannelUpdateTextRequest.fromJson(Map<String, Object?> json) =>
-      _$ChannelUpdateTextRequestFromJson(json);
-
-  /// The channel topic (1-1024 characters)
-  @JsonKey(includeIfNull: false)
-  final String? topic;
-
-  /// External URL for link channels
-  @JsonKey(includeIfNull: false)
-  final String? url;
-
-  /// ID of the parent category for this channel
-  @JsonKey(includeIfNull: false, name: 'parent_id')
-  final SnowflakeType? parentId;
-
-  /// Voice channel bitrate in bits per second (8000-320000)
-  @JsonKey(includeIfNull: false)
-  final int? bitrate;
-
-  /// Maximum users allowed in voice channel (0-99, 0 means unlimited)
-  @JsonKey(includeIfNull: false, name: 'user_limit')
-  final int? userLimit;
-
-  /// Permission overwrites for roles and members
-  @JsonKey(includeIfNull: false, name: 'permission_overwrites')
-  final List<ChannelOverwriteRequest>? permissionOverwrites;
-
-  /// Whether the channel is marked as NSFW
-  @JsonKey(includeIfNull: false)
-  final bool? nsfw;
-
-  /// Slowmode delay in seconds (0-21600)
-  @JsonKey(includeIfNull: false, name: 'rate_limit_per_user')
-  final int? rateLimitPerUser;
-
-  /// Base64-encoded icon image for group DM channels
-  @JsonKey(includeIfNull: false)
-  final Base64ImageType? icon;
-
-  /// ID of the new owner for group DM channels
-  @JsonKey(includeIfNull: false, name: 'owner_id')
-  final SnowflakeType? ownerId;
-  @JsonKey(includeIfNull: false)
-  final ChannelNicknameOverrides? nicks;
-
-  /// Voice region ID for the voice channel (1-64 characters)
-  @JsonKey(includeIfNull: false, name: 'rtc_region')
-  final String? rtcRegion;
   final ChannelUpdateTextRequestTypeType type;
-
-  /// The name of the channel
-  @JsonKey(includeIfNull: false)
+  final String? topic;
+  final String? url;
+  @MappableField(key: 'parent_id')
+  final SnowflakeType? parentId;
+  final int? bitrate;
+  @MappableField(key: 'user_limit')
+  final int? userLimit;
+  @MappableField(key: 'permission_overwrites')
+  final List<ChannelOverwriteRequest>? permissionOverwrites;
+  final bool? nsfw;
+  @MappableField(key: 'rate_limit_per_user')
+  final int? rateLimitPerUser;
+  final Base64ImageType? icon;
+  @MappableField(key: 'owner_id')
+  final SnowflakeType? ownerId;
+  final ChannelNicknameOverrides? nicks;
+  @MappableField(key: 'rtc_region')
+  final String? rtcRegion;
   final String? name;
 
-  Map<String, Object?> toJson() => _$ChannelUpdateTextRequestToJson(this);
+  static ChannelUpdateTextRequest fromJson(Map<String, dynamic> json) =>
+      ChannelUpdateTextRequestMapper.fromJson(json);
 }

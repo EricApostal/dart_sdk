@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'harvest_status_enum.dart';
 
-part 'harvest_status_response_schema.g.dart';
+part 'harvest_status_response_schema.mapper.dart';
 
-@JsonSerializable()
-class HarvestStatusResponseSchema {
+@MappableClass()
+class HarvestStatusResponseSchema with HarvestStatusResponseSchemaMappable {
   const HarvestStatusResponseSchema({
     required this.harvestId,
     required this.status,
@@ -25,53 +25,30 @@ class HarvestStatusResponseSchema {
     required this.expiresAt,
   });
 
-  factory HarvestStatusResponseSchema.fromJson(Map<String, Object?> json) =>
-      _$HarvestStatusResponseSchemaFromJson(json);
-
-  /// Unique identifier for the harvest request
-  @JsonKey(name: 'harvest_id')
+  @MappableField(key: 'harvest_id')
   final String harvestId;
   final HarvestStatusEnum status;
-
-  /// ISO 8601 timestamp when the harvest request was created
-  @JsonKey(name: 'created_at')
+  @MappableField(key: 'created_at')
   final String createdAt;
-
-  /// ISO 8601 timestamp when the harvest started, or null if pending
-  @JsonKey(includeIfNull: true, name: 'started_at')
+  @MappableField(key: 'started_at')
   final String? startedAt;
-
-  /// ISO 8601 timestamp when the harvest completed, or null otherwise
-  @JsonKey(includeIfNull: true, name: 'completed_at')
+  @MappableField(key: 'completed_at')
   final String? completedAt;
-
-  /// ISO 8601 timestamp when the harvest failed, or null otherwise
-  @JsonKey(includeIfNull: true, name: 'failed_at')
+  @MappableField(key: 'failed_at')
   final String? failedAt;
-
-  /// Final file size of the downloaded data, expressed as a string, or null if not available
-  @JsonKey(includeIfNull: true, name: 'file_size')
+  @MappableField(key: 'file_size')
   final String? fileSize;
-
-  /// Harvest progress as a percentage value between 0 and 100
-  @JsonKey(name: 'progress_percent')
+  @MappableField(key: 'progress_percent')
   final num progressPercent;
-
-  /// Textual description of the current harvest step, if available
-  @JsonKey(includeIfNull: true, name: 'progress_step')
+  @MappableField(key: 'progress_step')
   final String? progressStep;
-
-  /// Error message when the harvest fails, or null otherwise
-  @JsonKey(includeIfNull: true, name: 'error_message')
+  @MappableField(key: 'error_message')
   final String? errorMessage;
-
-  /// ISO 8601 timestamp when the download URL expires, or null if unavailable
-  @JsonKey(includeIfNull: true, name: 'download_url_expires_at')
+  @MappableField(key: 'download_url_expires_at')
   final String? downloadUrlExpiresAt;
-
-  /// ISO 8601 timestamp when the harvest download expires, or null if unavailable
-  @JsonKey(includeIfNull: true, name: 'expires_at')
+  @MappableField(key: 'expires_at')
   final String? expiresAt;
 
-  Map<String, Object?> toJson() => _$HarvestStatusResponseSchemaToJson(this);
+  static HarvestStatusResponseSchema fromJson(Map<String, dynamic> json) =>
+      HarvestStatusResponseSchemaMapper.fromJson(json);
 }

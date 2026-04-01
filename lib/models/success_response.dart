@@ -2,21 +2,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'success_response_success_success.dart';
 
-part 'success_response.g.dart';
+part 'success_response.mapper.dart';
 
-@JsonSerializable()
-class SuccessResponse {
+@MappableClass()
+class SuccessResponse with SuccessResponseMappable {
   const SuccessResponse({required this.success});
 
-  factory SuccessResponse.fromJson(Map<String, Object?> json) =>
-      _$SuccessResponseFromJson(json);
-
-  /// Whether the operation succeeded
   final SuccessResponseSuccessSuccess success;
 
-  Map<String, Object?> toJson() => _$SuccessResponseToJson(this);
+  static SuccessResponse fromJson(Map<String, dynamic> json) =>
+      SuccessResponseMapper.fromJson(json);
 }

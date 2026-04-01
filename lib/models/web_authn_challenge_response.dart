@@ -2,19 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'web_authn_challenge_response.g.dart';
+part 'web_authn_challenge_response.mapper.dart';
 
-@JsonSerializable()
-class WebAuthnChallengeResponse {
+@MappableClass()
+class WebAuthnChallengeResponse with WebAuthnChallengeResponseMappable {
   const WebAuthnChallengeResponse({required this.challenge});
 
-  factory WebAuthnChallengeResponse.fromJson(Map<String, Object?> json) =>
-      _$WebAuthnChallengeResponseFromJson(json);
-
-  /// The WebAuthn challenge
   final String challenge;
 
-  Map<String, Object?> toJson() => _$WebAuthnChallengeResponseToJson(this);
+  static WebAuthnChallengeResponse fromJson(Map<String, dynamic> json) =>
+      WebAuthnChallengeResponseMapper.fromJson(json);
 }

@@ -2,33 +2,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'price_ids_response_currency_currency.mapper.dart';
 
 /// Currency for the prices
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum PriceIdsResponseCurrencyCurrency {
-  @JsonValue('USD')
-  usd('USD'),
-  @JsonValue('EUR')
-  eur('EUR'),
+  @MappableValue('USD')
+  usd,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue('EUR')
+  eur,
 
-  const PriceIdsResponseCurrencyCurrency(this.json);
+  @MappableValue('unknown')
+  unknown;
 
-  factory PriceIdsResponseCurrencyCurrency.fromJson(String json) =>
-      values.firstWhere((e) => e.json == json, orElse: () => $unknown);
-
-  final String? json;
-
-  String toJson() => json ?? 'null';
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
-  static List<PriceIdsResponseCurrencyCurrency> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+  /// Returns all defined enum values excluding the unknown value.
+  static List<PriceIdsResponseCurrencyCurrency> get $valuesDefined => values
+      .where((value) => value != PriceIdsResponseCurrencyCurrency.unknown)
+      .toList();
 }

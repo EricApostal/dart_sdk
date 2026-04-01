@@ -2,30 +2,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'snowflake_reservation_entry.g.dart';
+part 'snowflake_reservation_entry.mapper.dart';
 
-@JsonSerializable()
-class SnowflakeReservationEntry {
+@MappableClass()
+class SnowflakeReservationEntry with SnowflakeReservationEntryMappable {
   const SnowflakeReservationEntry({
     required this.email,
     required this.snowflake,
     required this.updatedAt,
   });
 
-  factory SnowflakeReservationEntry.fromJson(Map<String, Object?> json) =>
-      _$SnowflakeReservationEntryFromJson(json);
-
-  /// Email address the snowflake is reserved for
   final String email;
-
-  /// Reserved snowflake ID
   final String snowflake;
-
-  /// ISO 8601 timestamp when the reservation was last updated
-  @JsonKey(includeIfNull: true, name: 'updated_at')
+  @MappableField(key: 'updated_at')
   final String? updatedAt;
 
-  Map<String, Object?> toJson() => _$SnowflakeReservationEntryToJson(this);
+  static SnowflakeReservationEntry fromJson(Map<String, dynamic> json) =>
+      SnowflakeReservationEntryMapper.fromJson(json);
 }

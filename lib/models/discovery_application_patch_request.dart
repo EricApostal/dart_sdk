@@ -2,26 +2,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'discovery_application_patch_request.g.dart';
+part 'discovery_application_patch_request.mapper.dart';
 
-@JsonSerializable()
-class DiscoveryApplicationPatchRequest {
+@MappableClass()
+class DiscoveryApplicationPatchRequest
+    with DiscoveryApplicationPatchRequestMappable {
   const DiscoveryApplicationPatchRequest({this.description, this.categoryType});
 
-  factory DiscoveryApplicationPatchRequest.fromJson(
-    Map<String, Object?> json,
-  ) => _$DiscoveryApplicationPatchRequestFromJson(json);
-
-  /// Updated description for discovery listing
-  @JsonKey(includeIfNull: false)
   final String? description;
-
-  /// Updated discovery category type
-  @JsonKey(includeIfNull: false, name: 'category_type')
+  @MappableField(key: 'category_type')
   final int? categoryType;
 
-  Map<String, Object?> toJson() =>
-      _$DiscoveryApplicationPatchRequestToJson(this);
+  static DiscoveryApplicationPatchRequest fromJson(Map<String, dynamic> json) =>
+      DiscoveryApplicationPatchRequestMapper.fromJson(json);
 }

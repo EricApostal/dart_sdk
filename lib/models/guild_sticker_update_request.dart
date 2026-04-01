@@ -2,31 +2,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'guild_sticker_update_request.g.dart';
+part 'guild_sticker_update_request.mapper.dart';
 
-@JsonSerializable()
-class GuildStickerUpdateRequest {
+@MappableClass()
+class GuildStickerUpdateRequest with GuildStickerUpdateRequestMappable {
   const GuildStickerUpdateRequest({
     required this.name,
     this.description,
     this.tags,
   });
 
-  factory GuildStickerUpdateRequest.fromJson(Map<String, Object?> json) =>
-      _$GuildStickerUpdateRequestFromJson(json);
-
-  /// The name of the sticker (2-30 characters)
   final String name;
-
-  /// Description of the sticker (1-500 characters)
-  @JsonKey(includeIfNull: false)
   final String? description;
-
-  /// Array of autocomplete/suggestion tags (max 10 tags, each 1-30 characters)
-  @JsonKey(includeIfNull: false)
   final List<String>? tags;
 
-  Map<String, Object?> toJson() => _$GuildStickerUpdateRequestToJson(this);
+  static GuildStickerUpdateRequest fromJson(Map<String, dynamic> json) =>
+      GuildStickerUpdateRequestMapper.fromJson(json);
 }

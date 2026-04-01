@@ -2,22 +2,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'password_type.dart';
 
-part 'email_revert_request.g.dart';
+part 'email_revert_request.mapper.dart';
 
-@JsonSerializable()
-class EmailRevertRequest {
+@MappableClass()
+class EmailRevertRequest with EmailRevertRequestMappable {
   const EmailRevertRequest({required this.token, required this.password});
 
-  factory EmailRevertRequest.fromJson(Map<String, Object?> json) =>
-      _$EmailRevertRequestFromJson(json);
-
-  /// Email revert token from email
   final String token;
   final PasswordType password;
 
-  Map<String, Object?> toJson() => _$EmailRevertRequestToJson(this);
+  static EmailRevertRequest fromJson(Map<String, dynamic> json) =>
+      EmailRevertRequestMapper.fromJson(json);
 }

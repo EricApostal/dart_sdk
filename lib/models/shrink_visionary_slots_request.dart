@@ -2,20 +2,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'shrink_visionary_slots_request.g.dart';
+part 'shrink_visionary_slots_request.mapper.dart';
 
-@JsonSerializable()
-class ShrinkVisionarySlotsRequest {
+@MappableClass()
+class ShrinkVisionarySlotsRequest with ShrinkVisionarySlotsRequestMappable {
   const ShrinkVisionarySlotsRequest({required this.targetCount});
 
-  factory ShrinkVisionarySlotsRequest.fromJson(Map<String, Object?> json) =>
-      _$ShrinkVisionarySlotsRequestFromJson(json);
-
-  /// Target total number of slots (removes from highest indices, minimum 0 slots)
-  @JsonKey(name: 'target_count')
+  @MappableField(key: 'target_count')
   final int targetCount;
 
-  Map<String, Object?> toJson() => _$ShrinkVisionarySlotsRequestToJson(this);
+  static ShrinkVisionarySlotsRequest fromJson(Map<String, dynamic> json) =>
+      ShrinkVisionarySlotsRequestMapper.fromJson(json);
 }

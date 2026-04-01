@@ -38,7 +38,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late CreateAdminApiKeyResponse _value;
     try {
       _value = CreateAdminApiKeyResponse.fromJson(_result.data!);
@@ -99,7 +99,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late DeleteApiKeyResponse _value;
     try {
       _value = DeleteApiKeyResponse.fromJson(_result.data!);
@@ -129,7 +129,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late AdminArchiveResponseSchema _value;
     try {
       _value = AdminArchiveResponseSchema.fromJson(_result.data!);
@@ -159,7 +159,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ListArchivesResponseSchema _value;
     try {
       _value = ListArchivesResponseSchema.fromJson(_result.data!);
@@ -189,7 +189,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late AdminArchiveResponseSchema _value;
     try {
       _value = AdminArchiveResponseSchema.fromJson(_result.data!);
@@ -220,7 +220,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GetArchiveResponseSchema _value;
     try {
       _value = GetArchiveResponseSchema.fromJson(_result.data!);
@@ -251,7 +251,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late DownloadUrlResponseSchema _value;
     try {
       _value = DownloadUrlResponseSchema.fromJson(_result.data!);
@@ -281,7 +281,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late PurgeGuildAssetsResponseSchema _value;
     try {
       _value = PurgeGuildAssetsResponseSchema.fromJson(_result.data!);
@@ -311,7 +311,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late AuditLogsListResponseSchema _value;
     try {
       _value = AuditLogsListResponseSchema.fromJson(_result.data!);
@@ -341,7 +341,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late AuditLogsListResponseSchema _value;
     try {
       _value = AuditLogsListResponseSchema.fromJson(_result.data!);
@@ -391,7 +391,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late BanCheckResponseSchema _value;
     try {
       _value = BanCheckResponseSchema.fromJson(_result.data!);
@@ -421,7 +421,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ListEmailBansResponseSchema _value;
     try {
       _value = ListEmailBansResponseSchema.fromJson(_result.data!);
@@ -491,7 +491,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late BanCheckResponseSchema _value;
     try {
       _value = BanCheckResponseSchema.fromJson(_result.data!);
@@ -521,7 +521,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ListIpBansResponseSchema _value;
     try {
       _value = ListIpBansResponseSchema.fromJson(_result.data!);
@@ -591,7 +591,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late BanCheckResponseSchema _value;
     try {
       _value = BanCheckResponseSchema.fromJson(_result.data!);
@@ -621,7 +621,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ListPhoneBansResponseSchema _value;
     try {
       _value = ListPhoneBansResponseSchema.fromJson(_result.data!);
@@ -671,7 +671,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late BulkOperationResponse _value;
     try {
       _value = BulkOperationResponse.fromJson(_result.data!);
@@ -701,7 +701,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late BulkOperationResponse _value;
     try {
       _value = BulkOperationResponse.fromJson(_result.data!);
@@ -731,7 +731,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late BulkOperationResponse _value;
     try {
       _value = BulkOperationResponse.fromJson(_result.data!);
@@ -761,7 +761,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late BulkOperationResponse _value;
     try {
       _value = BulkOperationResponse.fromJson(_result.data!);
@@ -791,7 +791,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late CodesResponse _value;
     try {
       _value = CodesResponse.fromJson(_result.data!);
@@ -864,7 +864,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late DiscoveryApplicationResponse _value;
     try {
       _value = DiscoveryApplicationResponse.fromJson(_result.data!);
@@ -895,7 +895,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late DiscoveryApplicationResponse _value;
     try {
       _value = DiscoveryApplicationResponse.fromJson(_result.data!);
@@ -926,7 +926,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late DiscoveryApplicationResponse _value;
     try {
       _value = DiscoveryApplicationResponse.fromJson(_result.data!);
@@ -956,7 +956,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildMemoryStatsResponse _value;
     try {
       _value = GuildMemoryStatsResponse.fromJson(_result.data!);
@@ -986,7 +986,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ReloadAllGuildsResponse _value;
     try {
       _value = ReloadAllGuildsResponse.fromJson(_result.data!);
@@ -1013,7 +1013,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late NodeStatsResponse _value;
     try {
       _value = NodeStatsResponse.fromJson(_result.data!);
@@ -1083,7 +1083,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late SuccessResponse _value;
     try {
       _value = SuccessResponse.fromJson(_result.data!);
@@ -1113,7 +1113,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late SuccessResponse _value;
     try {
       _value = SuccessResponse.fromJson(_result.data!);
@@ -1163,7 +1163,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ListGuildMembersResponse _value;
     try {
       _value = ListGuildMembersResponse.fromJson(_result.data!);
@@ -1193,7 +1193,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late LookupGuildResponse _value;
     try {
       _value = LookupGuildResponse.fromJson(_result.data!);
@@ -1223,7 +1223,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late SuccessResponse _value;
     try {
       _value = SuccessResponse.fromJson(_result.data!);
@@ -1253,7 +1253,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late SearchGuildsResponse _value;
     try {
       _value = SearchGuildsResponse.fromJson(_result.data!);
@@ -1283,7 +1283,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late SuccessResponse _value;
     try {
       _value = SuccessResponse.fromJson(_result.data!);
@@ -1313,7 +1313,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildUpdateResponse _value;
     try {
       _value = GuildUpdateResponse.fromJson(_result.data!);
@@ -1343,7 +1343,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildUpdateResponse _value;
     try {
       _value = GuildUpdateResponse.fromJson(_result.data!);
@@ -1373,7 +1373,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildUpdateResponse _value;
     try {
       _value = GuildUpdateResponse.fromJson(_result.data!);
@@ -1403,7 +1403,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildUpdateResponse _value;
     try {
       _value = GuildUpdateResponse.fromJson(_result.data!);
@@ -1433,7 +1433,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GuildUpdateResponse _value;
     try {
       _value = GuildUpdateResponse.fromJson(_result.data!);
@@ -1462,7 +1462,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ListGuildEmojisResponse _value;
     try {
       _value = ListGuildEmojisResponse.fromJson(_result.data!);
@@ -1491,7 +1491,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ListGuildStickersResponse _value;
     try {
       _value = ListGuildStickersResponse.fromJson(_result.data!);
@@ -1518,7 +1518,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late InstanceConfigResponse _value;
     try {
       _value = InstanceConfigResponse.fromJson(_result.data!);
@@ -1548,7 +1548,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late InstanceConfigResponse _value;
     try {
       _value = InstanceConfigResponse.fromJson(_result.data!);
@@ -1575,7 +1575,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late LimitConfigGetResponse _value;
     try {
       _value = LimitConfigGetResponse.fromJson(_result.data!);
@@ -1605,7 +1605,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late LimitConfigGetResponse _value;
     try {
       _value = LimitConfigGetResponse.fromJson(_result.data!);
@@ -1635,7 +1635,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late DeleteMessageResponse _value;
     try {
       _value = DeleteMessageResponse.fromJson(_result.data!);
@@ -1665,7 +1665,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late DeleteAllUserMessagesResponse _value;
     try {
       _value = DeleteAllUserMessagesResponse.fromJson(_result.data!);
@@ -1695,7 +1695,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late LookupMessageResponse _value;
     try {
       _value = LookupMessageResponse.fromJson(_result.data!);
@@ -1725,7 +1725,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late LookupMessageResponse _value;
     try {
       _value = LookupMessageResponse.fromJson(_result.data!);
@@ -1755,7 +1755,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late MessageShredResponse _value;
     try {
       _value = MessageShredResponse.fromJson(_result.data!);
@@ -1815,7 +1815,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ListReportsResponse _value;
     try {
       _value = ListReportsResponse.fromJson(_result.data!);
@@ -1845,7 +1845,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ResolveReportResponse _value;
     try {
       _value = ResolveReportResponse.fromJson(_result.data!);
@@ -1875,7 +1875,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late SearchReportsResponse _value;
     try {
       _value = SearchReportsResponse.fromJson(_result.data!);
@@ -1904,7 +1904,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ReportAdminResponseSchema _value;
     try {
       _value = ReportAdminResponseSchema.fromJson(_result.data!);
@@ -1933,7 +1933,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late LegalHoldResponse _value;
     try {
       _value = LegalHoldResponse.fromJson(_result.data!);
@@ -1964,7 +1964,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late LegalHoldResponse _value;
     try {
       _value = LegalHoldResponse.fromJson(_result.data!);
@@ -1993,7 +1993,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late LegalHoldResponse _value;
     try {
       _value = LegalHoldResponse.fromJson(_result.data!);
@@ -2022,7 +2022,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late NcmecSubmissionStatusResponse _value;
     try {
       _value = NcmecSubmissionStatusResponse.fromJson(_result.data!);
@@ -2051,7 +2051,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late NcmecSubmitResultResponse _value;
     try {
       _value = NcmecSubmitResultResponse.fromJson(_result.data!);
@@ -2081,7 +2081,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late RefreshSearchIndexResponse _value;
     try {
       _value = RefreshSearchIndexResponse.fromJson(_result.data!);
@@ -2141,7 +2141,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late SuccessResponse _value;
     try {
       _value = SuccessResponse.fromJson(_result.data!);
@@ -2171,7 +2171,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late SuccessResponse _value;
     try {
       _value = SuccessResponse.fromJson(_result.data!);
@@ -2198,7 +2198,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ListSnowflakeReservationsResponse _value;
     try {
       _value = ListSnowflakeReservationsResponse.fromJson(_result.data!);
@@ -2228,7 +2228,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late SystemDmJobResponse _value;
     try {
       _value = SystemDmJobResponse.fromJson(_result.data!);
@@ -2262,7 +2262,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ListSystemDmJobsResponse _value;
     try {
       _value = ListSystemDmJobsResponse.fromJson(_result.data!);
@@ -2291,7 +2291,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late SystemDmJobResponse _value;
     try {
       _value = SystemDmJobResponse.fromJson(_result.data!);
@@ -2321,7 +2321,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UserMutationResponse _value;
     try {
       _value = UserMutationResponse.fromJson(_result.data!);
@@ -2351,7 +2351,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UserMutationResponse _value;
     try {
       _value = UserMutationResponse.fromJson(_result.data!);
@@ -2381,7 +2381,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UserMutationResponse _value;
     try {
       _value = UserMutationResponse.fromJson(_result.data!);
@@ -2411,7 +2411,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UserMutationResponse _value;
     try {
       _value = UserMutationResponse.fromJson(_result.data!);
@@ -2441,7 +2441,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ListUserChangeLogResponseSchema _value;
     try {
       _value = ListUserChangeLogResponseSchema.fromJson(_result.data!);
@@ -2471,7 +2471,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UserMutationResponse _value;
     try {
       _value = UserMutationResponse.fromJson(_result.data!);
@@ -2501,7 +2501,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UserMutationResponse _value;
     try {
       _value = UserMutationResponse.fromJson(_result.data!);
@@ -2573,7 +2573,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UserMutationResponse _value;
     try {
       _value = UserMutationResponse.fromJson(_result.data!);
@@ -2603,7 +2603,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ListUserDmChannelsResponse _value;
     try {
       _value = ListUserDmChannelsResponse.fromJson(_result.data!);
@@ -2633,7 +2633,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ListUserGuildsResponse _value;
     try {
       _value = ListUserGuildsResponse.fromJson(_result.data!);
@@ -2663,7 +2663,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ListUserSessionsResponse _value;
     try {
       _value = ListUserSessionsResponse.fromJson(_result.data!);
@@ -2728,7 +2728,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late LookupUserResponse _value;
     try {
       _value = LookupUserResponse.fromJson(_result.data!);
@@ -2755,7 +2755,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late AdminUsersMeResponse _value;
     try {
       _value = AdminUsersMeResponse.fromJson(_result.data!);
@@ -2807,7 +2807,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UserMutationResponse _value;
     try {
       _value = UserMutationResponse.fromJson(_result.data!);
@@ -2837,7 +2837,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late SearchUsersResponse _value;
     try {
       _value = SearchUsersResponse.fromJson(_result.data!);
@@ -2889,7 +2889,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UserMutationResponse _value;
     try {
       _value = UserMutationResponse.fromJson(_result.data!);
@@ -2919,7 +2919,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UserMutationResponse _value;
     try {
       _value = UserMutationResponse.fromJson(_result.data!);
@@ -2949,7 +2949,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UserMutationResponse _value;
     try {
       _value = UserMutationResponse.fromJson(_result.data!);
@@ -2979,7 +2979,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UserMutationResponse _value;
     try {
       _value = UserMutationResponse.fromJson(_result.data!);
@@ -3009,7 +3009,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UserMutationResponse _value;
     try {
       _value = UserMutationResponse.fromJson(_result.data!);
@@ -3039,7 +3039,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late TerminateSessionsResponse _value;
     try {
       _value = TerminateSessionsResponse.fromJson(_result.data!);
@@ -3069,7 +3069,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UserMutationResponse _value;
     try {
       _value = UserMutationResponse.fromJson(_result.data!);
@@ -3099,7 +3099,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UserMutationResponse _value;
     try {
       _value = UserMutationResponse.fromJson(_result.data!);
@@ -3129,7 +3129,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UserMutationResponse _value;
     try {
       _value = UserMutationResponse.fromJson(_result.data!);
@@ -3159,7 +3159,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UserMutationResponse _value;
     try {
       _value = UserMutationResponse.fromJson(_result.data!);
@@ -3189,7 +3189,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UserMutationResponse _value;
     try {
       _value = UserMutationResponse.fromJson(_result.data!);
@@ -3216,7 +3216,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ListVisionarySlotsResponse _value;
     try {
       _value = ListVisionarySlotsResponse.fromJson(_result.data!);
@@ -3246,7 +3246,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late VisionarySlotOperationResponse _value;
     try {
       _value = VisionarySlotOperationResponse.fromJson(_result.data!);
@@ -3276,7 +3276,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late VisionarySlotOperationResponse _value;
     try {
       _value = VisionarySlotOperationResponse.fromJson(_result.data!);
@@ -3306,7 +3306,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late VisionarySlotOperationResponse _value;
     try {
       _value = VisionarySlotOperationResponse.fromJson(_result.data!);
@@ -3336,7 +3336,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late VisionarySlotOperationResponse _value;
     try {
       _value = VisionarySlotOperationResponse.fromJson(_result.data!);
@@ -3366,7 +3366,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late CreateVoiceRegionResponse _value;
     try {
       _value = CreateVoiceRegionResponse.fromJson(_result.data!);
@@ -3396,7 +3396,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late DeleteVoiceResponse _value;
     try {
       _value = DeleteVoiceResponse.fromJson(_result.data!);
@@ -3426,7 +3426,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GetVoiceRegionResponse _value;
     try {
       _value = GetVoiceRegionResponse.fromJson(_result.data!);
@@ -3456,7 +3456,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ListVoiceRegionsResponse _value;
     try {
       _value = ListVoiceRegionsResponse.fromJson(_result.data!);
@@ -3486,7 +3486,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UpdateVoiceRegionResponse _value;
     try {
       _value = UpdateVoiceRegionResponse.fromJson(_result.data!);
@@ -3516,7 +3516,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late CreateVoiceServerResponse _value;
     try {
       _value = CreateVoiceServerResponse.fromJson(_result.data!);
@@ -3546,7 +3546,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late DeleteVoiceResponse _value;
     try {
       _value = DeleteVoiceResponse.fromJson(_result.data!);
@@ -3576,7 +3576,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GetVoiceServerResponse _value;
     try {
       _value = GetVoiceServerResponse.fromJson(_result.data!);
@@ -3606,7 +3606,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ListVoiceServersResponse _value;
     try {
       _value = ListVoiceServersResponse.fromJson(_result.data!);
@@ -3636,7 +3636,7 @@ class _AdminApi implements AdminApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UpdateVoiceServerResponse _value;
     try {
       _value = UpdateVoiceServerResponse.fromJson(_result.data!);

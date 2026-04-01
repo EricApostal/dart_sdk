@@ -2,15 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'git_hub_webhook_check_run_check_suite_pull_requests.dart';
 import 'git_hub_webhook_check_run_check_suite_app.dart';
 
-part 'git_hub_webhook_check_run_check_suite.g.dart';
+part 'git_hub_webhook_check_run_check_suite.mapper.dart';
 
-@JsonSerializable()
-class GitHubWebhookCheckRunCheckSuite {
+@MappableClass()
+class GitHubWebhookCheckRunCheckSuite
+    with GitHubWebhookCheckRunCheckSuiteMappable {
   const GitHubWebhookCheckRunCheckSuite({
     required this.headSha,
     required this.app,
@@ -19,19 +20,15 @@ class GitHubWebhookCheckRunCheckSuite {
     this.pullRequests,
   });
 
-  factory GitHubWebhookCheckRunCheckSuite.fromJson(Map<String, Object?> json) =>
-      _$GitHubWebhookCheckRunCheckSuiteFromJson(json);
-
-  @JsonKey(includeIfNull: false)
-  final String? conclusion;
-  @JsonKey(includeIfNull: false, name: 'head_branch')
-  final String? headBranch;
-  @JsonKey(name: 'head_sha')
+  @MappableField(key: 'head_sha')
   final String headSha;
-  @JsonKey(includeIfNull: false, name: 'pull_requests')
-  final List<GitHubWebhookCheckRunCheckSuitePullRequests>? pullRequests;
   final GitHubWebhookCheckRunCheckSuiteApp app;
+  final String? conclusion;
+  @MappableField(key: 'head_branch')
+  final String? headBranch;
+  @MappableField(key: 'pull_requests')
+  final List<GitHubWebhookCheckRunCheckSuitePullRequests>? pullRequests;
 
-  Map<String, Object?> toJson() =>
-      _$GitHubWebhookCheckRunCheckSuiteToJson(this);
+  static GitHubWebhookCheckRunCheckSuite fromJson(Map<String, dynamic> json) =>
+      GitHubWebhookCheckRunCheckSuiteMapper.fromJson(json);
 }

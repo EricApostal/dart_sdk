@@ -2,16 +2,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 import 'int64_string_type.dart';
 import 'int32_type.dart';
 
-part 'guild_memory_stats_response_guilds.g.dart';
+part 'guild_memory_stats_response_guilds.mapper.dart';
 
-@JsonSerializable()
-class GuildMemoryStatsResponseGuilds {
+@MappableClass()
+class GuildMemoryStatsResponseGuilds
+    with GuildMemoryStatsResponseGuildsMappable {
   const GuildMemoryStatsResponseGuilds({
     required this.guildId,
     required this.guildName,
@@ -22,22 +23,20 @@ class GuildMemoryStatsResponseGuilds {
     required this.presenceCount,
   });
 
-  factory GuildMemoryStatsResponseGuilds.fromJson(Map<String, Object?> json) =>
-      _$GuildMemoryStatsResponseGuildsFromJson(json);
-
-  @JsonKey(includeIfNull: true, name: 'guild_id')
+  @MappableField(key: 'guild_id')
   final SnowflakeType? guildId;
-  @JsonKey(name: 'guild_name')
+  @MappableField(key: 'guild_name')
   final String guildName;
-  @JsonKey(includeIfNull: true, name: 'guild_icon')
+  @MappableField(key: 'guild_icon')
   final String? guildIcon;
   final Int64StringType memory;
-  @JsonKey(name: 'member_count')
+  @MappableField(key: 'member_count')
   final Int32Type memberCount;
-  @JsonKey(name: 'session_count')
+  @MappableField(key: 'session_count')
   final Int32Type sessionCount;
-  @JsonKey(name: 'presence_count')
+  @MappableField(key: 'presence_count')
   final Int32Type presenceCount;
 
-  Map<String, Object?> toJson() => _$GuildMemoryStatsResponseGuildsToJson(this);
+  static GuildMemoryStatsResponseGuilds fromJson(Map<String, dynamic> json) =>
+      GuildMemoryStatsResponseGuildsMapper.fromJson(json);
 }

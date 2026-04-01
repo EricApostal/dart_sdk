@@ -2,15 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'password_type.dart';
 import 'web_authn_credential_update_request_mfa_method_mfa_method.dart';
 
-part 'web_authn_credential_update_request.g.dart';
+part 'web_authn_credential_update_request.mapper.dart';
 
-@JsonSerializable()
-class WebAuthnCredentialUpdateRequest {
+@MappableClass()
+class WebAuthnCredentialUpdateRequest
+    with WebAuthnCredentialUpdateRequestMappable {
   const WebAuthnCredentialUpdateRequest({
     required this.name,
     this.password,
@@ -20,30 +21,17 @@ class WebAuthnCredentialUpdateRequest {
     this.webauthnChallenge,
   });
 
-  factory WebAuthnCredentialUpdateRequest.fromJson(Map<String, Object?> json) =>
-      _$WebAuthnCredentialUpdateRequestFromJson(json);
-
-  /// New name for the credential
   final String name;
-  @JsonKey(includeIfNull: false)
   final PasswordType? password;
-
-  /// MFA method to use for verification
-  @JsonKey(includeIfNull: false, name: 'mfa_method')
+  @MappableField(key: 'mfa_method')
   final WebAuthnCredentialUpdateRequestMfaMethodMfaMethod? mfaMethod;
-
-  /// MFA verification code from authenticator app or SMS
-  @JsonKey(includeIfNull: false, name: 'mfa_code')
+  @MappableField(key: 'mfa_code')
   final String? mfaCode;
-
-  /// WebAuthn authentication response
-  @JsonKey(includeIfNull: false, name: 'webauthn_response')
+  @MappableField(key: 'webauthn_response')
   final dynamic webauthnResponse;
-
-  /// WebAuthn challenge string
-  @JsonKey(includeIfNull: false, name: 'webauthn_challenge')
+  @MappableField(key: 'webauthn_challenge')
   final String? webauthnChallenge;
 
-  Map<String, Object?> toJson() =>
-      _$WebAuthnCredentialUpdateRequestToJson(this);
+  static WebAuthnCredentialUpdateRequest fromJson(Map<String, dynamic> json) =>
+      WebAuthnCredentialUpdateRequestMapper.fromJson(json);
 }

@@ -2,29 +2,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'base64_image_type.dart';
 import 'snowflake_type.dart';
 
-part 'webhook_update_request.g.dart';
+part 'webhook_update_request.mapper.dart';
 
-@JsonSerializable()
-class WebhookUpdateRequest {
+@MappableClass()
+class WebhookUpdateRequest with WebhookUpdateRequestMappable {
   const WebhookUpdateRequest({this.name, this.avatar, this.channelId});
 
-  factory WebhookUpdateRequest.fromJson(Map<String, Object?> json) =>
-      _$WebhookUpdateRequestFromJson(json);
-
-  /// The new name of the webhook
-  @JsonKey(includeIfNull: false)
   final String? name;
-
-  /// The new avatar image as a base64-encoded data URI
-  @JsonKey(includeIfNull: false)
   final Base64ImageType? avatar;
-  @JsonKey(includeIfNull: false, name: 'channel_id')
+  @MappableField(key: 'channel_id')
   final SnowflakeType? channelId;
 
-  Map<String, Object?> toJson() => _$WebhookUpdateRequestToJson(this);
+  static WebhookUpdateRequest fromJson(Map<String, dynamic> json) =>
+      WebhookUpdateRequestMapper.fromJson(json);
 }

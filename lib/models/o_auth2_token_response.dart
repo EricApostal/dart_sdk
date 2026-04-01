@@ -2,12 +2,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'o_auth2_token_response.g.dart';
+part 'o_auth2_token_response.mapper.dart';
 
-@JsonSerializable()
-class OAuth2TokenResponse {
+@MappableClass()
+class OAuth2TokenResponse with OAuth2TokenResponseMappable {
   const OAuth2TokenResponse({
     required this.accessToken,
     required this.tokenType,
@@ -16,27 +16,16 @@ class OAuth2TokenResponse {
     required this.scope,
   });
 
-  factory OAuth2TokenResponse.fromJson(Map<String, Object?> json) =>
-      _$OAuth2TokenResponseFromJson(json);
-
-  /// The access token for API authorization
-  @JsonKey(name: 'access_token')
+  @MappableField(key: 'access_token')
   final String accessToken;
-
-  /// The type of token, typically "Bearer"
-  @JsonKey(name: 'token_type')
+  @MappableField(key: 'token_type')
   final String tokenType;
-
-  /// The number of seconds until the access token expires
-  @JsonKey(name: 'expires_in')
+  @MappableField(key: 'expires_in')
   final int expiresIn;
-
-  /// The refresh token for obtaining new access tokens
-  @JsonKey(name: 'refresh_token')
+  @MappableField(key: 'refresh_token')
   final String refreshToken;
-
-  /// The space-separated list of granted scopes
   final String scope;
 
-  Map<String, Object?> toJson() => _$OAuth2TokenResponseToJson(this);
+  static OAuth2TokenResponse fromJson(Map<String, dynamic> json) =>
+      OAuth2TokenResponseMapper.fromJson(json);
 }

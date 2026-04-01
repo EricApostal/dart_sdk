@@ -2,11 +2,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'harvest_status_enum.dart';
+import 'harvest_status_response_schema.dart';
 
-part 'harvest_status_response_schema_nullable.g.dart';
+part 'harvest_status_response_schema_nullable.mapper.dart';
 
 class HarvestStatusResponseSchemaNullable {
   final Map<String, dynamic> _json;
@@ -21,35 +22,37 @@ class HarvestStatusResponseSchemaNullable {
 
   HarvestStatusResponseSchemaNullableHarvestStatusResponseSchema
   toHarvestStatusResponseSchema() =>
-      HarvestStatusResponseSchemaNullableHarvestStatusResponseSchema.fromJson(
+      HarvestStatusResponseSchemaNullableHarvestStatusResponseSchemaMapper.fromJson(
         _json,
       );
 }
 
-@JsonSerializable()
-class HarvestStatusResponseSchemaNullableHarvestStatusResponseSchema {
-  @JsonKey(name: 'harvest_id')
+@MappableClass()
+class HarvestStatusResponseSchemaNullableHarvestStatusResponseSchema
+    with
+        HarvestStatusResponseSchemaNullableHarvestStatusResponseSchemaMappable {
+  @MappableField(key: 'harvest_id')
   final String harvestId;
   final HarvestStatusEnum status;
-  @JsonKey(name: 'created_at')
+  @MappableField(key: 'created_at')
   final String createdAt;
-  @JsonKey(name: 'started_at')
+  @MappableField(key: 'started_at')
   final String? startedAt;
-  @JsonKey(name: 'completed_at')
+  @MappableField(key: 'completed_at')
   final String? completedAt;
-  @JsonKey(name: 'failed_at')
+  @MappableField(key: 'failed_at')
   final String? failedAt;
-  @JsonKey(name: 'file_size')
+  @MappableField(key: 'file_size')
   final String? fileSize;
-  @JsonKey(name: 'progress_percent')
+  @MappableField(key: 'progress_percent')
   final num progressPercent;
-  @JsonKey(name: 'progress_step')
+  @MappableField(key: 'progress_step')
   final String? progressStep;
-  @JsonKey(name: 'error_message')
+  @MappableField(key: 'error_message')
   final String? errorMessage;
-  @JsonKey(name: 'download_url_expires_at')
+  @MappableField(key: 'download_url_expires_at')
   final String? downloadUrlExpiresAt;
-  @JsonKey(name: 'expires_at')
+  @MappableField(key: 'expires_at')
   final String? expiresAt;
 
   const HarvestStatusResponseSchemaNullableHarvestStatusResponseSchema({
@@ -66,15 +69,4 @@ class HarvestStatusResponseSchemaNullableHarvestStatusResponseSchema {
     required this.downloadUrlExpiresAt,
     required this.expiresAt,
   });
-
-  factory HarvestStatusResponseSchemaNullableHarvestStatusResponseSchema.fromJson(
-    Map<String, dynamic> json,
-  ) => _$HarvestStatusResponseSchemaNullableHarvestStatusResponseSchemaFromJson(
-    json,
-  );
-
-  Map<String, dynamic> toJson() =>
-      _$HarvestStatusResponseSchemaNullableHarvestStatusResponseSchemaToJson(
-        this,
-      );
 }

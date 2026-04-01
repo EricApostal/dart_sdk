@@ -2,16 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'empty_body_request.g.dart';
+part 'empty_body_request.mapper.dart';
 
-@JsonSerializable()
-class EmptyBodyRequest {
+@MappableClass()
+class EmptyBodyRequest with EmptyBodyRequestMappable {
   const EmptyBodyRequest();
 
-  factory EmptyBodyRequest.fromJson(Map<String, Object?> json) =>
-      _$EmptyBodyRequestFromJson(json);
-
-  Map<String, Object?> toJson() => _$EmptyBodyRequestToJson(this);
+  static EmptyBodyRequest fromJson(Map<String, dynamic> json) =>
+      EmptyBodyRequestMapper.fromJson(json);
 }

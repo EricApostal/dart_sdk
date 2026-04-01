@@ -2,29 +2,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'list_guild_members_request.g.dart';
+part 'list_guild_members_request.mapper.dart';
 
-@JsonSerializable()
-class ListGuildMembersRequest {
+@MappableClass()
+class ListGuildMembersRequest with ListGuildMembersRequestMappable {
   const ListGuildMembersRequest({
     required this.guildId,
     this.limit,
     this.offset,
   });
 
-  factory ListGuildMembersRequest.fromJson(Map<String, Object?> json) =>
-      _$ListGuildMembersRequestFromJson(json);
-
-  @JsonKey(name: 'guild_id')
+  @MappableField(key: 'guild_id')
   final SnowflakeType guildId;
-  @JsonKey(includeIfNull: false)
   final int? limit;
-  @JsonKey(includeIfNull: false)
   final int? offset;
 
-  Map<String, Object?> toJson() => _$ListGuildMembersRequestToJson(this);
+  static ListGuildMembersRequest fromJson(Map<String, dynamic> json) =>
+      ListGuildMembersRequestMapper.fromJson(json);
 }

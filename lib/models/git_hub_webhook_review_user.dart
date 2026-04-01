@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'int32_type.dart';
 
-part 'git_hub_webhook_review_user.g.dart';
+part 'git_hub_webhook_review_user.mapper.dart';
 
-@JsonSerializable()
-class GitHubWebhookReviewUser {
+@MappableClass()
+class GitHubWebhookReviewUser with GitHubWebhookReviewUserMappable {
   const GitHubWebhookReviewUser({
     required this.id,
     required this.login,
@@ -17,15 +17,13 @@ class GitHubWebhookReviewUser {
     required this.avatarUrl,
   });
 
-  factory GitHubWebhookReviewUser.fromJson(Map<String, Object?> json) =>
-      _$GitHubWebhookReviewUserFromJson(json);
-
   final Int32Type id;
   final String login;
-  @JsonKey(name: 'html_url')
+  @MappableField(key: 'html_url')
   final String htmlUrl;
-  @JsonKey(name: 'avatar_url')
+  @MappableField(key: 'avatar_url')
   final String avatarUrl;
 
-  Map<String, Object?> toJson() => _$GitHubWebhookReviewUserToJson(this);
+  static GitHubWebhookReviewUser fromJson(Map<String, dynamic> json) =>
+      GitHubWebhookReviewUserMapper.fromJson(json);
 }

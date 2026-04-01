@@ -36,7 +36,7 @@ class _TenorApi implements TenorApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late TenorFeaturedResponse _value;
     try {
       _value = TenorFeaturedResponse.fromJson(_result.data!);

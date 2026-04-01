@@ -2,43 +2,48 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'lookup_guild_response_guild_channels_type_type.mapper.dart';
 
 /// The type of the channel
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum LookupGuildResponseGuildChannelsTypeType {
-  @JsonValue(0)
-  guildText(0),
-  @JsonValue(1)
-  dm(1),
-  @JsonValue(2)
-  guildVoice(2),
-  @JsonValue(3)
-  groupDm(3),
-  @JsonValue(4)
-  guildCategory(4),
-  @JsonValue(998)
-  guildLink(998),
-  @JsonValue(999)
-  dmPersonalNotes(999),
+  @MappableValue(0)
+  guildText,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue(1)
+  dm,
 
-  const LookupGuildResponseGuildChannelsTypeType(this.json);
+  @MappableValue(2)
+  guildVoice,
 
-  factory LookupGuildResponseGuildChannelsTypeType.fromJson(int json) =>
-      values.firstWhere((e) => e.json == json, orElse: () => $unknown);
+  @MappableValue(3)
+  groupDm,
 
-  final int? json;
+  @MappableValue(4)
+  guildCategory,
 
-  int? toJson() => json;
+  @MappableValue(998)
+  guildLink,
+
+  @MappableValue(999)
+  dmPersonalNotes,
+
+  @MappableValue('unknown')
+  unknown;
+
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json?.toString() ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
+  /// Returns all defined enum values excluding the unknown value.
   static List<LookupGuildResponseGuildChannelsTypeType> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+      values
+          .where(
+            (value) =>
+                value != LookupGuildResponseGuildChannelsTypeType.unknown,
+          )
+          .toList();
 }

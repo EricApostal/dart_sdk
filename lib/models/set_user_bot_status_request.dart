@@ -2,24 +2,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'set_user_bot_status_request.g.dart';
+part 'set_user_bot_status_request.mapper.dart';
 
-@JsonSerializable()
-class SetUserBotStatusRequest {
+@MappableClass()
+class SetUserBotStatusRequest with SetUserBotStatusRequestMappable {
   const SetUserBotStatusRequest({required this.userId, required this.bot});
 
-  factory SetUserBotStatusRequest.fromJson(Map<String, Object?> json) =>
-      _$SetUserBotStatusRequestFromJson(json);
-
-  @JsonKey(name: 'user_id')
+  @MappableField(key: 'user_id')
   final SnowflakeType userId;
-
-  /// Whether the user should be marked as a bot
   final bool bot;
 
-  Map<String, Object?> toJson() => _$SetUserBotStatusRequestToJson(this);
+  static SetUserBotStatusRequest fromJson(Map<String, dynamic> json) =>
+      SetUserBotStatusRequestMapper.fromJson(json);
 }

@@ -35,7 +35,7 @@ class _GiftsApi implements GiftsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GiftCodeResponse _value;
     try {
       _value = GiftCodeResponse.fromJson(_result.data!);

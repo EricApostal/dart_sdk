@@ -2,16 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'base64_image_type.dart';
 import 'guild_member_profile_flags.dart';
 import 'snowflake_type.dart';
 
-part 'my_guild_member_update_request.g.dart';
+part 'my_guild_member_update_request.mapper.dart';
 
-@JsonSerializable()
-class MyGuildMemberUpdateRequest {
+@MappableClass()
+class MyGuildMemberUpdateRequest with MyGuildMemberUpdateRequestMappable {
   const MyGuildMemberUpdateRequest({
     this.nick,
     this.avatar,
@@ -28,58 +28,26 @@ class MyGuildMemberUpdateRequest {
     this.connectionId,
   });
 
-  factory MyGuildMemberUpdateRequest.fromJson(Map<String, Object?> json) =>
-      _$MyGuildMemberUpdateRequestFromJson(json);
-
-  /// The nickname to set for the member (1-32 characters)
-  @JsonKey(includeIfNull: false)
   final String? nick;
-
-  /// Base64-encoded image data for the member guild avatar
-  @JsonKey(includeIfNull: false)
   final Base64ImageType? avatar;
-
-  /// Base64-encoded image data for the member guild banner
-  @JsonKey(includeIfNull: false)
   final Base64ImageType? banner;
-
-  /// The member guild profile bio (1-320 characters)
-  @JsonKey(includeIfNull: false)
   final String? bio;
-
-  /// The member guild profile pronouns (1-40 characters)
-  @JsonKey(includeIfNull: false)
   final String? pronouns;
-
-  /// The accent color for the member guild profile as an integer
-  @JsonKey(includeIfNull: false, name: 'accent_color')
+  @MappableField(key: 'accent_color')
   final int? accentColor;
-  @JsonKey(includeIfNull: false, name: 'profile_flags')
+  @MappableField(key: 'profile_flags')
   final GuildMemberProfileFlags? profileFlags;
-
-  /// Whether the member is muted in voice channels
-  @JsonKey(includeIfNull: false)
   final bool? mute;
-
-  /// Whether the member is deafened in voice channels
-  @JsonKey(includeIfNull: false)
   final bool? deaf;
-
-  /// ISO8601 timestamp until which the member is timed out
-  @JsonKey(includeIfNull: false, name: 'communication_disabled_until')
+  @MappableField(key: 'communication_disabled_until')
   final DateTime? communicationDisabledUntil;
-
-  /// The reason for timing out the member (1-512 characters)
-  @JsonKey(includeIfNull: false, name: 'timeout_reason')
+  @MappableField(key: 'timeout_reason')
   final String? timeoutReason;
-
-  /// The voice channel ID to move the member to
-  @JsonKey(includeIfNull: false, name: 'channel_id')
+  @MappableField(key: 'channel_id')
   final SnowflakeType? channelId;
-
-  /// The voice connection ID for the member
-  @JsonKey(includeIfNull: false, name: 'connection_id')
+  @MappableField(key: 'connection_id')
   final String? connectionId;
 
-  Map<String, Object?> toJson() => _$MyGuildMemberUpdateRequestToJson(this);
+  static MyGuildMemberUpdateRequest fromJson(Map<String, dynamic> json) =>
+      MyGuildMemberUpdateRequestMapper.fromJson(json);
 }

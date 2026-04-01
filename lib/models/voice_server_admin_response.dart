@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'voice_server_admin_response.g.dart';
+part 'voice_server_admin_response.mapper.dart';
 
-@JsonSerializable()
-class VoiceServerAdminResponse {
+@MappableClass()
+class VoiceServerAdminResponse with VoiceServerAdminResponseMappable {
   const VoiceServerAdminResponse({
     required this.regionId,
     required this.serverId,
@@ -23,47 +23,26 @@ class VoiceServerAdminResponse {
     required this.updatedAt,
   });
 
-  factory VoiceServerAdminResponse.fromJson(Map<String, Object?> json) =>
-      _$VoiceServerAdminResponseFromJson(json);
-
-  /// ID of the region this server belongs to
-  @JsonKey(name: 'region_id')
+  @MappableField(key: 'region_id')
   final String regionId;
-
-  /// Unique identifier for the voice server
-  @JsonKey(name: 'server_id')
+  @MappableField(key: 'server_id')
   final String serverId;
-
-  /// Client signal WebSocket endpoint URL for the voice server
   final String endpoint;
-
-  /// Whether the server is currently active
-  @JsonKey(name: 'is_active')
+  @MappableField(key: 'is_active')
   final bool isActive;
-
-  /// Whether this server is restricted to VIP users
-  @JsonKey(name: 'vip_only')
+  @MappableField(key: 'vip_only')
   final bool vipOnly;
-
-  /// Guild features required to use this server
-  @JsonKey(name: 'required_guild_features')
+  @MappableField(key: 'required_guild_features')
   final List<String> requiredGuildFeatures;
-
-  /// Guild IDs explicitly allowed to use this server
-  @JsonKey(name: 'allowed_guild_ids')
+  @MappableField(key: 'allowed_guild_ids')
   final List<SnowflakeType> allowedGuildIds;
-
-  /// User IDs explicitly allowed to use this server
-  @JsonKey(name: 'allowed_user_ids')
+  @MappableField(key: 'allowed_user_ids')
   final List<SnowflakeType> allowedUserIds;
-
-  /// ISO 8601 timestamp when the server was created
-  @JsonKey(includeIfNull: true, name: 'created_at')
+  @MappableField(key: 'created_at')
   final String? createdAt;
-
-  /// ISO 8601 timestamp when the server was last updated
-  @JsonKey(includeIfNull: true, name: 'updated_at')
+  @MappableField(key: 'updated_at')
   final String? updatedAt;
 
-  Map<String, Object?> toJson() => _$VoiceServerAdminResponseToJson(this);
+  static VoiceServerAdminResponse fromJson(Map<String, dynamic> json) =>
+      VoiceServerAdminResponseMapper.fromJson(json);
 }

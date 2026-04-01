@@ -2,17 +2,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'int32_type.dart';
 import 'snowflake_type.dart';
 import 'suspicious_activity_flags.dart';
 import 'user_flags.dart';
 
-part 'user_admin_response_schema.g.dart';
+part 'user_admin_response_schema.mapper.dart';
 
-@JsonSerializable()
-class UserAdminResponseSchema {
+@MappableClass()
+class UserAdminResponseSchema with UserAdminResponseSchemaMappable {
   const UserAdminResponseSchema({
     required this.email,
     required this.username,
@@ -51,71 +51,62 @@ class UserAdminResponseSchema {
     required this.tempBannedUntil,
   });
 
-  factory UserAdminResponseSchema.fromJson(Map<String, Object?> json) =>
-      _$UserAdminResponseSchemaFromJson(json);
-
-  final SnowflakeType id;
+  final String? email;
   final String username;
   final Int32Type discriminator;
-  @JsonKey(includeIfNull: true, name: 'global_name')
+  @MappableField(key: 'global_name')
   final String? globalName;
   final bool bot;
   final bool system;
   final UserFlags flags;
-  @JsonKey(includeIfNull: true)
   final String? avatar;
-  @JsonKey(includeIfNull: true)
   final String? banner;
-  @JsonKey(includeIfNull: true)
   final String? bio;
-  @JsonKey(includeIfNull: true)
   final String? pronouns;
-  @JsonKey(includeIfNull: true, name: 'accent_color')
+  @MappableField(key: 'accent_color')
   final Int32Type? accentColor;
-  @JsonKey(includeIfNull: true)
-  final String? email;
-  @JsonKey(name: 'email_verified')
+  final SnowflakeType id;
+  @MappableField(key: 'email_verified')
   final bool emailVerified;
-  @JsonKey(name: 'email_bounced')
+  @MappableField(key: 'email_bounced')
   final bool emailBounced;
-  @JsonKey(includeIfNull: true)
   final String? phone;
-  @JsonKey(includeIfNull: true, name: 'date_of_birth')
+  @MappableField(key: 'date_of_birth')
   final String? dateOfBirth;
-  @JsonKey(includeIfNull: true)
   final String? locale;
-  @JsonKey(includeIfNull: true, name: 'premium_type')
+  @MappableField(key: 'premium_type')
   final Int32Type? premiumType;
-  @JsonKey(includeIfNull: true, name: 'premium_since')
+  @MappableField(key: 'premium_since')
   final String? premiumSince;
-  @JsonKey(includeIfNull: true, name: 'premium_until')
+  @MappableField(key: 'premium_until')
   final String? premiumUntil;
-  @JsonKey(name: 'suspicious_activity_flags')
+  @MappableField(key: 'suspicious_activity_flags')
   final SuspiciousActivityFlags suspiciousActivityFlags;
-  @JsonKey(includeIfNull: true, name: 'temp_banned_until')
-  final String? tempBannedUntil;
-  @JsonKey(includeIfNull: true, name: 'pending_deletion_at')
+  @MappableField(key: 'last_active_location')
+  final String? lastActiveLocation;
+  @MappableField(key: 'pending_deletion_at')
   final String? pendingDeletionAt;
-  @JsonKey(includeIfNull: true, name: 'pending_bulk_message_deletion_at')
+  @MappableField(key: 'pending_bulk_message_deletion_at')
   final String? pendingBulkMessageDeletionAt;
-  @JsonKey(includeIfNull: true, name: 'deletion_reason_code')
+  @MappableField(key: 'deletion_reason_code')
   final Int32Type? deletionReasonCode;
-  @JsonKey(includeIfNull: true, name: 'deletion_public_reason')
+  @MappableField(key: 'deletion_public_reason')
   final String? deletionPublicReason;
   final List<String> acls;
   final List<String> traits;
-  @JsonKey(name: 'has_totp')
+  @MappableField(key: 'has_totp')
   final bool hasTotp;
-  @JsonKey(name: 'authenticator_types')
+  @MappableField(key: 'authenticator_types')
   final List<Int32Type> authenticatorTypes;
-  @JsonKey(includeIfNull: true, name: 'last_active_at')
+  @MappableField(key: 'last_active_at')
   final String? lastActiveAt;
-  @JsonKey(includeIfNull: true, name: 'last_active_ip')
+  @MappableField(key: 'last_active_ip')
   final String? lastActiveIp;
-  @JsonKey(includeIfNull: true, name: 'last_active_ip_reverse')
+  @MappableField(key: 'last_active_ip_reverse')
   final String? lastActiveIpReverse;
-  @JsonKey(includeIfNull: true, name: 'last_active_location')
-  final String? lastActiveLocation;
+  @MappableField(key: 'temp_banned_until')
+  final String? tempBannedUntil;
 
-  Map<String, Object?> toJson() => _$UserAdminResponseSchemaToJson(this);
+  static UserAdminResponseSchema fromJson(Map<String, dynamic> json) =>
+      UserAdminResponseSchemaMapper.fromJson(json);
 }

@@ -2,25 +2,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'resolve_report_request.g.dart';
+part 'resolve_report_request.mapper.dart';
 
-@JsonSerializable()
-class ResolveReportRequest {
+@MappableClass()
+class ResolveReportRequest with ResolveReportRequestMappable {
   const ResolveReportRequest({required this.reportId, this.publicComment});
 
-  factory ResolveReportRequest.fromJson(Map<String, Object?> json) =>
-      _$ResolveReportRequestFromJson(json);
-
-  @JsonKey(name: 'report_id')
+  @MappableField(key: 'report_id')
   final SnowflakeType reportId;
-
-  /// Public comment to include with the resolution
-  @JsonKey(includeIfNull: false, name: 'public_comment')
+  @MappableField(key: 'public_comment')
   final String? publicComment;
 
-  Map<String, Object?> toJson() => _$ResolveReportRequestToJson(this);
+  static ResolveReportRequest fromJson(Map<String, dynamic> json) =>
+      ResolveReportRequestMapper.fromJson(json);
 }

@@ -2,39 +2,36 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'index_refresh_status_response_variant2_status_status.mapper.dart';
 
 /// Current status of the index refresh job
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum IndexRefreshStatusResponseVariant2StatusStatus {
-  @JsonValue('in_progress')
-  inProgress('in_progress'),
-  @JsonValue('completed')
-  completed('completed'),
-  @JsonValue('failed')
-  failed('failed'),
+  @MappableValue('in_progress')
+  inProgress,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue('completed')
+  completed,
 
-  const IndexRefreshStatusResponseVariant2StatusStatus(this.json);
+  @MappableValue('failed')
+  failed,
 
-  factory IndexRefreshStatusResponseVariant2StatusStatus.fromJson(
-    String json,
-  ) => values.firstWhere(
-    (e) => e.json == json,
-    orElse: () => $unknown,
-  );
+  @MappableValue('unknown')
+  unknown;
 
-  final String? json;
-
-  String toJson() => json ?? 'null';
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
+  /// Returns all defined enum values excluding the unknown value.
   static List<IndexRefreshStatusResponseVariant2StatusStatus>
-  get $valuesDefined => values.where((value) => value != $unknown).toList();
+  get $valuesDefined => values
+      .where(
+        (value) =>
+            value != IndexRefreshStatusResponseVariant2StatusStatus.unknown,
+      )
+      .toList();
 }

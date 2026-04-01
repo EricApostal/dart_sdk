@@ -2,35 +2,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'guild_feature_schema.dart';
 import 'snowflake_type.dart';
 
-part 'bulk_update_guild_features_request.g.dart';
+part 'bulk_update_guild_features_request.mapper.dart';
 
-@JsonSerializable()
-class BulkUpdateGuildFeaturesRequest {
+@MappableClass()
+class BulkUpdateGuildFeaturesRequest
+    with BulkUpdateGuildFeaturesRequestMappable {
   const BulkUpdateGuildFeaturesRequest({
     required this.guildIds,
     this.addFeatures,
     this.removeFeatures,
   });
 
-  factory BulkUpdateGuildFeaturesRequest.fromJson(Map<String, Object?> json) =>
-      _$BulkUpdateGuildFeaturesRequestFromJson(json);
-
-  /// List of guild IDs to update
-  @JsonKey(name: 'guild_ids')
+  @MappableField(key: 'guild_ids')
   final List<SnowflakeType> guildIds;
-
-  /// Guild features to add to all specified guilds
-  @JsonKey(includeIfNull: false, name: 'add_features')
+  @MappableField(key: 'add_features')
   final List<GuildFeatureSchema>? addFeatures;
-
-  /// Guild features to remove from all specified guilds
-  @JsonKey(includeIfNull: false, name: 'remove_features')
+  @MappableField(key: 'remove_features')
   final List<GuildFeatureSchema>? removeFeatures;
 
-  Map<String, Object?> toJson() => _$BulkUpdateGuildFeaturesRequestToJson(this);
+  static BulkUpdateGuildFeaturesRequest fromJson(Map<String, dynamic> json) =>
+      BulkUpdateGuildFeaturesRequestMapper.fromJson(json);
 }

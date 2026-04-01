@@ -35,7 +35,7 @@ class _GatewayApi implements GatewayApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GatewayBotResponse _value;
     try {
       _value = GatewayBotResponse.fromJson(_result.data!);

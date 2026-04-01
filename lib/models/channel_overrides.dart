@@ -2,15 +2,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'user_notification_settings.dart';
 import 'channel_overrides_mute_config.dart';
 
-part 'channel_overrides.g.dart';
+part 'channel_overrides.mapper.dart';
 
-@JsonSerializable()
-class ChannelOverrides {
+@MappableClass()
+class ChannelOverrides with ChannelOverridesMappable {
   const ChannelOverrides({
     required this.collapsed,
     required this.messageNotifications,
@@ -18,22 +18,13 @@ class ChannelOverrides {
     required this.muteConfig,
   });
 
-  factory ChannelOverrides.fromJson(Map<String, Object?> json) =>
-      _$ChannelOverridesFromJson(json);
-
-  /// Whether the channel category is collapsed in the sidebar
   final bool collapsed;
-
-  /// The notification level override for this channel
-  @JsonKey(name: 'message_notifications')
+  @MappableField(key: 'message_notifications')
   final UserNotificationSettings messageNotifications;
-
-  /// Whether notifications are muted for this channel
   final bool muted;
-
-  /// The mute configuration for this channel
-  @JsonKey(includeIfNull: true, name: 'mute_config')
+  @MappableField(key: 'mute_config')
   final ChannelOverridesMuteConfig? muteConfig;
 
-  Map<String, Object?> toJson() => _$ChannelOverridesToJson(this);
+  static ChannelOverrides fromJson(Map<String, dynamic> json) =>
+      ChannelOverridesMapper.fromJson(json);
 }

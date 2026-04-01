@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'base64_image_type.dart';
 
-part 'guild_sticker_create_request.g.dart';
+part 'guild_sticker_create_request.mapper.dart';
 
-@JsonSerializable()
-class GuildStickerCreateRequest {
+@MappableClass()
+class GuildStickerCreateRequest with GuildStickerCreateRequestMappable {
   const GuildStickerCreateRequest({
     required this.name,
     required this.image,
@@ -17,20 +17,11 @@ class GuildStickerCreateRequest {
     this.tags,
   });
 
-  factory GuildStickerCreateRequest.fromJson(Map<String, Object?> json) =>
-      _$GuildStickerCreateRequestFromJson(json);
-
-  /// The name of the sticker (2-30 characters)
   final String name;
-
-  /// Description of the sticker (1-500 characters)
-  @JsonKey(includeIfNull: false)
-  final String? description;
-
-  /// Array of autocomplete/suggestion tags (max 10 tags, each 1-30 characters)
-  @JsonKey(includeIfNull: false)
-  final List<String>? tags;
   final Base64ImageType image;
+  final String? description;
+  final List<String>? tags;
 
-  Map<String, Object?> toJson() => _$GuildStickerCreateRequestToJson(this);
+  static GuildStickerCreateRequest fromJson(Map<String, dynamic> json) =>
+      GuildStickerCreateRequestMapper.fromJson(json);
 }

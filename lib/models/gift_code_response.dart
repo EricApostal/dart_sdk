@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'user_partial_response.dart';
 
-part 'gift_code_response.g.dart';
+part 'gift_code_response.mapper.dart';
 
-@JsonSerializable()
-class GiftCodeResponse {
+@MappableClass()
+class GiftCodeResponse with GiftCodeResponseMappable {
   const GiftCodeResponse({
     required this.code,
     required this.durationMonths,
@@ -17,22 +17,13 @@ class GiftCodeResponse {
     this.createdBy,
   });
 
-  factory GiftCodeResponse.fromJson(Map<String, Object?> json) =>
-      _$GiftCodeResponseFromJson(json);
-
-  /// The unique gift code string
   final String code;
-
-  /// Duration of the subscription gift in months
-  @JsonKey(name: 'duration_months')
+  @MappableField(key: 'duration_months')
   final int durationMonths;
-
-  /// Whether the gift code has been redeemed
   final bool redeemed;
-
-  /// The user who created the gift code
-  @JsonKey(includeIfNull: false, name: 'created_by')
+  @MappableField(key: 'created_by')
   final UserPartialResponse? createdBy;
 
-  Map<String, Object?> toJson() => _$GiftCodeResponseToJson(this);
+  static GiftCodeResponse fromJson(Map<String, dynamic> json) =>
+      GiftCodeResponseMapper.fromJson(json);
 }

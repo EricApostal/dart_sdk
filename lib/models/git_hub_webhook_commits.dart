@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'git_hub_webhook_commits_author.dart';
 
-part 'git_hub_webhook_commits.g.dart';
+part 'git_hub_webhook_commits.mapper.dart';
 
-@JsonSerializable()
-class GitHubWebhookCommits {
+@MappableClass()
+class GitHubWebhookCommits with GitHubWebhookCommitsMappable {
   const GitHubWebhookCommits({
     required this.id,
     required this.url,
@@ -17,13 +17,11 @@ class GitHubWebhookCommits {
     required this.author,
   });
 
-  factory GitHubWebhookCommits.fromJson(Map<String, Object?> json) =>
-      _$GitHubWebhookCommitsFromJson(json);
-
   final String id;
   final String url;
   final String message;
   final GitHubWebhookCommitsAuthor author;
 
-  Map<String, Object?> toJson() => _$GitHubWebhookCommitsToJson(this);
+  static GitHubWebhookCommits fromJson(Map<String, dynamic> json) =>
+      GitHubWebhookCommitsMapper.fromJson(json);
 }

@@ -2,20 +2,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'username_suggestions_request.g.dart';
+part 'username_suggestions_request.mapper.dart';
 
-@JsonSerializable()
-class UsernameSuggestionsRequest {
+@MappableClass()
+class UsernameSuggestionsRequest with UsernameSuggestionsRequestMappable {
   const UsernameSuggestionsRequest({required this.globalName});
 
-  factory UsernameSuggestionsRequest.fromJson(Map<String, Object?> json) =>
-      _$UsernameSuggestionsRequestFromJson(json);
-
-  /// Display name to generate username suggestions from
-  @JsonKey(name: 'global_name')
+  @MappableField(key: 'global_name')
   final String globalName;
 
-  Map<String, Object?> toJson() => _$UsernameSuggestionsRequestToJson(this);
+  static UsernameSuggestionsRequest fromJson(Map<String, dynamic> json) =>
+      UsernameSuggestionsRequestMapper.fromJson(json);
 }

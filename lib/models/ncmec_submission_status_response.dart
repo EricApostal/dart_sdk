@@ -2,15 +2,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'ncmec_submission_status_response_status_status.dart';
 import 'snowflake_type.dart';
 
-part 'ncmec_submission_status_response.g.dart';
+part 'ncmec_submission_status_response.mapper.dart';
 
-@JsonSerializable()
-class NcmecSubmissionStatusResponse {
+@MappableClass()
+class NcmecSubmissionStatusResponse with NcmecSubmissionStatusResponseMappable {
   const NcmecSubmissionStatusResponse({
     required this.status,
     required this.ncmecReportId,
@@ -19,27 +19,16 @@ class NcmecSubmissionStatusResponse {
     required this.failureReason,
   });
 
-  factory NcmecSubmissionStatusResponse.fromJson(Map<String, Object?> json) =>
-      _$NcmecSubmissionStatusResponseFromJson(json);
-
-  /// NCMEC submission status
   final NcmecSubmissionStatusResponseStatusStatus status;
-
-  /// NCMEC report ID if submitted
-  @JsonKey(includeIfNull: true, name: 'ncmec_report_id')
+  @MappableField(key: 'ncmec_report_id')
   final String? ncmecReportId;
-
-  /// ISO 8601 timestamp when the report was submitted
-  @JsonKey(includeIfNull: true, name: 'submitted_at')
+  @MappableField(key: 'submitted_at')
   final String? submittedAt;
-
-  /// ID of the admin who submitted the report
-  @JsonKey(includeIfNull: true, name: 'submitted_by_admin_id')
+  @MappableField(key: 'submitted_by_admin_id')
   final SnowflakeType? submittedByAdminId;
-
-  /// Reason for submission failure if failed
-  @JsonKey(includeIfNull: true, name: 'failure_reason')
+  @MappableField(key: 'failure_reason')
   final String? failureReason;
 
-  Map<String, Object?> toJson() => _$NcmecSubmissionStatusResponseToJson(this);
+  static NcmecSubmissionStatusResponse fromJson(Map<String, dynamic> json) =>
+      NcmecSubmissionStatusResponseMapper.fromJson(json);
 }

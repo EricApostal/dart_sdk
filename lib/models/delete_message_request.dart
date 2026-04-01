@@ -2,26 +2,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'delete_message_request.g.dart';
+part 'delete_message_request.mapper.dart';
 
-@JsonSerializable()
-class DeleteMessageRequest {
+@MappableClass()
+class DeleteMessageRequest with DeleteMessageRequestMappable {
   const DeleteMessageRequest({
     required this.channelId,
     required this.messageId,
   });
 
-  factory DeleteMessageRequest.fromJson(Map<String, Object?> json) =>
-      _$DeleteMessageRequestFromJson(json);
-
-  @JsonKey(name: 'channel_id')
+  @MappableField(key: 'channel_id')
   final SnowflakeType channelId;
-  @JsonKey(name: 'message_id')
+  @MappableField(key: 'message_id')
   final SnowflakeType messageId;
 
-  Map<String, Object?> toJson() => _$DeleteMessageRequestToJson(this);
+  static DeleteMessageRequest fromJson(Map<String, dynamic> json) =>
+      DeleteMessageRequestMapper.fromJson(json);
 }

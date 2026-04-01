@@ -2,20 +2,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'reorder_connections_request.g.dart';
+part 'reorder_connections_request.mapper.dart';
 
-@JsonSerializable()
-class ReorderConnectionsRequest {
+@MappableClass()
+class ReorderConnectionsRequest with ReorderConnectionsRequestMappable {
   const ReorderConnectionsRequest({required this.connectionIds});
 
-  factory ReorderConnectionsRequest.fromJson(Map<String, Object?> json) =>
-      _$ReorderConnectionsRequestFromJson(json);
-
-  /// Ordered list of connection IDs defining the new display order
-  @JsonKey(name: 'connection_ids')
+  @MappableField(key: 'connection_ids')
   final List<String> connectionIds;
 
-  Map<String, Object?> toJson() => _$ReorderConnectionsRequestToJson(this);
+  static ReorderConnectionsRequest fromJson(Map<String, dynamic> json) =>
+      ReorderConnectionsRequestMapper.fromJson(json);
 }

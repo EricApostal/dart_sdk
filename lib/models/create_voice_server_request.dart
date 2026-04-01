@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'create_voice_server_request.g.dart';
+part 'create_voice_server_request.mapper.dart';
 
-@JsonSerializable()
-class CreateVoiceServerRequest {
+@MappableClass()
+class CreateVoiceServerRequest with CreateVoiceServerRequestMappable {
   const CreateVoiceServerRequest({
     required this.regionId,
     required this.serverId,
@@ -23,47 +23,26 @@ class CreateVoiceServerRequest {
     this.allowedUserIds,
   });
 
-  factory CreateVoiceServerRequest.fromJson(Map<String, Object?> json) =>
-      _$CreateVoiceServerRequestFromJson(json);
-
-  /// ID of the region this server belongs to
-  @JsonKey(name: 'region_id')
+  @MappableField(key: 'region_id')
   final String regionId;
-
-  /// Unique identifier for the voice server
-  @JsonKey(name: 'server_id')
+  @MappableField(key: 'server_id')
   final String serverId;
-
-  /// Client signal WebSocket endpoint URL for the voice server
   final String endpoint;
-
-  /// API key for authenticating with the voice server
-  @JsonKey(name: 'api_key')
+  @MappableField(key: 'api_key')
   final String apiKey;
-
-  /// API secret for authenticating with the voice server
-  @JsonKey(name: 'api_secret')
+  @MappableField(key: 'api_secret')
   final String apiSecret;
-
-  /// Whether the server is currently active
-  @JsonKey(includeIfNull: false, name: 'is_active')
+  @MappableField(key: 'is_active')
   final bool? isActive;
-
-  /// Whether this server is restricted to VIP users
-  @JsonKey(includeIfNull: false, name: 'vip_only')
+  @MappableField(key: 'vip_only')
   final bool? vipOnly;
-
-  /// Guild features required to use this server
-  @JsonKey(includeIfNull: false, name: 'required_guild_features')
+  @MappableField(key: 'required_guild_features')
   final List<String>? requiredGuildFeatures;
-
-  /// Guild IDs explicitly allowed to use this server
-  @JsonKey(includeIfNull: false, name: 'allowed_guild_ids')
+  @MappableField(key: 'allowed_guild_ids')
   final List<SnowflakeType>? allowedGuildIds;
-
-  /// User IDs explicitly allowed to use this server
-  @JsonKey(includeIfNull: false, name: 'allowed_user_ids')
+  @MappableField(key: 'allowed_user_ids')
   final List<SnowflakeType>? allowedUserIds;
 
-  Map<String, Object?> toJson() => _$CreateVoiceServerRequestToJson(this);
+  static CreateVoiceServerRequest fromJson(Map<String, dynamic> json) =>
+      CreateVoiceServerRequestMapper.fromJson(json);
 }

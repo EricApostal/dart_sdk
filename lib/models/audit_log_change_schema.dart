@@ -2,27 +2,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'audit_log_change_schema.g.dart';
+part 'audit_log_change_schema.mapper.dart';
 
-@JsonSerializable()
-class AuditLogChangeSchema {
+@MappableClass()
+class AuditLogChangeSchema with AuditLogChangeSchemaMappable {
   const AuditLogChangeSchema({required this.key, this.oldValue, this.newValue});
 
-  factory AuditLogChangeSchema.fromJson(Map<String, Object?> json) =>
-      _$AuditLogChangeSchemaFromJson(json);
-
-  /// The field that changed
   final String key;
-
-  /// Value before the change
-  @JsonKey(includeIfNull: false, name: 'old_value')
+  @MappableField(key: 'old_value')
   final dynamic oldValue;
-
-  /// Value after the change
-  @JsonKey(includeIfNull: false, name: 'new_value')
+  @MappableField(key: 'new_value')
   final dynamic newValue;
 
-  Map<String, Object?> toJson() => _$AuditLogChangeSchemaToJson(this);
+  static AuditLogChangeSchema fromJson(Map<String, dynamic> json) =>
+      AuditLogChangeSchemaMapper.fromJson(json);
 }

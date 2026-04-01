@@ -2,40 +2,35 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'nsfw_level.mapper.dart';
 
 /// The NSFW level of the guild
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum NsfwLevel {
   /// The name has been replaced because it contains a keyword. Original name: `DEFAULT`.
-  @JsonValue(0)
-  valueDefault(0),
-  @JsonValue(1)
-  explicit(1),
-  @JsonValue(2)
-  safe(2),
-  @JsonValue(3)
-  ageRestricted(3),
+  @MappableValue(0)
+  valueDefault,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue(1)
+  explicit,
 
-  const NsfwLevel(this.json);
+  @MappableValue(2)
+  safe,
 
-  factory NsfwLevel.fromJson(int json) => values.firstWhere(
-    (e) => e.json == json,
-    orElse: () => $unknown,
-  );
+  @MappableValue(3)
+  ageRestricted,
 
-  final int? json;
+  @MappableValue('unknown')
+  unknown;
 
-  int? toJson() => json;
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json?.toString() ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
+  /// Returns all defined enum values excluding the unknown value.
   static List<NsfwLevel> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+      values.where((value) => value != NsfwLevel.unknown).toList();
 }

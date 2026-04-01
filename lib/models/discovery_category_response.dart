@@ -2,22 +2,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'discovery_category_response.g.dart';
+part 'discovery_category_response.mapper.dart';
 
-@JsonSerializable()
-class DiscoveryCategoryResponse {
+@MappableClass()
+class DiscoveryCategoryResponse with DiscoveryCategoryResponseMappable {
   const DiscoveryCategoryResponse({required this.id, required this.name});
 
-  factory DiscoveryCategoryResponse.fromJson(Map<String, Object?> json) =>
-      _$DiscoveryCategoryResponseFromJson(json);
-
-  /// Category ID
   final num id;
-
-  /// Category display name
   final String name;
 
-  Map<String, Object?> toJson() => _$DiscoveryCategoryResponseToJson(this);
+  static DiscoveryCategoryResponse fromJson(Map<String, dynamic> json) =>
+      DiscoveryCategoryResponseMapper.fromJson(json);
 }

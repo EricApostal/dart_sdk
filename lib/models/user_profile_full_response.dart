@@ -2,7 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'connection_response.dart';
 import 'guild_member_response.dart';
@@ -14,10 +14,10 @@ import 'user_profile_full_response_guild_member_profile.dart';
 import 'user_profile_full_response_user.dart';
 import 'user_profile_full_response_user_profile.dart';
 
-part 'user_profile_full_response.g.dart';
+part 'user_profile_full_response.mapper.dart';
 
-@JsonSerializable()
-class UserProfileFullResponse {
+@MappableClass()
+class UserProfileFullResponse with UserProfileFullResponseMappable {
   const UserProfileFullResponse({
     required this.user,
     required this.userProfile,
@@ -31,43 +31,26 @@ class UserProfileFullResponse {
     this.connectedAccounts,
   });
 
-  factory UserProfileFullResponse.fromJson(Map<String, Object?> json) =>
-      _$UserProfileFullResponseFromJson(json);
-
-  /// The user object
   final UserProfileFullResponseUser user;
-
-  /// The user profile data
-  @JsonKey(name: 'user_profile')
+  @MappableField(key: 'user_profile')
   final UserProfileFullResponseUserProfile userProfile;
-  @JsonKey(includeIfNull: false, name: 'guild_member')
+  @MappableField(key: 'guild_member')
   final GuildMemberResponse? guildMember;
-
-  /// Guild-specific profile data
-  @JsonKey(includeIfNull: false, name: 'guild_member_profile')
+  @MappableField(key: 'guild_member_profile')
   final UserProfileFullResponseGuildMemberProfile? guildMemberProfile;
-
-  /// The type of premium subscription
-  @JsonKey(includeIfNull: false, name: 'premium_type')
+  @MappableField(key: 'premium_type')
   final UserPremiumTypes? premiumType;
-
-  /// ISO8601 timestamp of when premium was activated
-  @JsonKey(includeIfNull: false, name: 'premium_since')
+  @MappableField(key: 'premium_since')
   final String? premiumSince;
-  @JsonKey(includeIfNull: false, name: 'premium_lifetime_sequence')
+  @MappableField(key: 'premium_lifetime_sequence')
   final Int32Type? premiumLifetimeSequence;
-
-  /// Array of mutual friends
-  @JsonKey(includeIfNull: false, name: 'mutual_friends')
+  @MappableField(key: 'mutual_friends')
   final List<UserPartialResponse>? mutualFriends;
-
-  /// Array of mutual guilds
-  @JsonKey(includeIfNull: false, name: 'mutual_guilds')
+  @MappableField(key: 'mutual_guilds')
   final List<MutualGuildResponse>? mutualGuilds;
-
-  /// Array of verified external connections
-  @JsonKey(includeIfNull: false, name: 'connected_accounts')
+  @MappableField(key: 'connected_accounts')
   final List<ConnectionResponse>? connectedAccounts;
 
-  Map<String, Object?> toJson() => _$UserProfileFullResponseToJson(this);
+  static UserProfileFullResponse fromJson(Map<String, dynamic> json) =>
+      UserProfileFullResponseMapper.fromJson(json);
 }

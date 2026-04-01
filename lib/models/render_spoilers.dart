@@ -2,37 +2,31 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'render_spoilers.mapper.dart';
 
 /// Spoiler rendering preference
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum RenderSpoilers {
-  @JsonValue(0)
-  always(0),
-  @JsonValue(1)
-  onClick(1),
-  @JsonValue(2)
-  ifModerator(2),
+  @MappableValue(0)
+  always,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue(1)
+  onClick,
 
-  const RenderSpoilers(this.json);
+  @MappableValue(2)
+  ifModerator,
 
-  factory RenderSpoilers.fromJson(int json) => values.firstWhere(
-    (e) => e.json == json,
-    orElse: () => $unknown,
-  );
+  @MappableValue('unknown')
+  unknown;
 
-  final int? json;
-
-  int? toJson() => json;
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json?.toString() ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
+  /// Returns all defined enum values excluding the unknown value.
   static List<RenderSpoilers> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+      values.where((value) => value != RenderSpoilers.unknown).toList();
 }

@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'price_ids_response_currency_currency.dart';
 
-part 'price_ids_response.g.dart';
+part 'price_ids_response.mapper.dart';
 
-@JsonSerializable()
-class PriceIdsResponse {
+@MappableClass()
+class PriceIdsResponse with PriceIdsResponseMappable {
   const PriceIdsResponse({
     required this.currency,
     this.monthly,
@@ -18,27 +18,14 @@ class PriceIdsResponse {
     this.gift1Year,
   });
 
-  factory PriceIdsResponse.fromJson(Map<String, Object?> json) =>
-      _$PriceIdsResponseFromJson(json);
-
-  /// Stripe price ID for the monthly subscription
-  @JsonKey(includeIfNull: false)
+  final PriceIdsResponseCurrencyCurrency currency;
   final String? monthly;
-
-  /// Stripe price ID for the yearly subscription
-  @JsonKey(includeIfNull: false)
   final String? yearly;
-
-  /// Stripe price ID for the 1 month gift
-  @JsonKey(includeIfNull: false, name: 'gift_1_month')
+  @MappableField(key: 'gift_1_month')
   final String? gift1Month;
-
-  /// Stripe price ID for the 1 year gift
-  @JsonKey(includeIfNull: false, name: 'gift_1_year')
+  @MappableField(key: 'gift_1_year')
   final String? gift1Year;
 
-  /// Currency for the prices
-  final PriceIdsResponseCurrencyCurrency currency;
-
-  Map<String, Object?> toJson() => _$PriceIdsResponseToJson(this);
+  static PriceIdsResponse fromJson(Map<String, dynamic> json) =>
+      PriceIdsResponseMapper.fromJson(json);
 }

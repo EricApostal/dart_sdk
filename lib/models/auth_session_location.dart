@@ -2,28 +2,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'auth_session_location.g.dart';
+part 'auth_session_location.mapper.dart';
 
-@JsonSerializable()
-class AuthSessionLocation {
+@MappableClass()
+class AuthSessionLocation with AuthSessionLocationMappable {
   const AuthSessionLocation({this.city, this.region, this.country});
 
-  factory AuthSessionLocation.fromJson(Map<String, Object?> json) =>
-      _$AuthSessionLocationFromJson(json);
-
-  /// The city name reported by the client
-  @JsonKey(includeIfNull: false)
   final String? city;
-
-  /// The region reported by the client
-  @JsonKey(includeIfNull: false)
   final String? region;
-
-  /// The country reported by the client
-  @JsonKey(includeIfNull: false)
   final String? country;
 
-  Map<String, Object?> toJson() => _$AuthSessionLocationToJson(this);
+  static AuthSessionLocation fromJson(Map<String, dynamic> json) =>
+      AuthSessionLocationMapper.fromJson(json);
 }

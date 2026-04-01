@@ -2,19 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'donation_checkout_response.g.dart';
+part 'donation_checkout_response.mapper.dart';
 
-@JsonSerializable()
-class DonationCheckoutResponse {
+@MappableClass()
+class DonationCheckoutResponse with DonationCheckoutResponseMappable {
   const DonationCheckoutResponse({required this.url});
 
-  factory DonationCheckoutResponse.fromJson(Map<String, Object?> json) =>
-      _$DonationCheckoutResponseFromJson(json);
-
-  /// Stripe checkout URL to redirect the user to
   final String url;
 
-  Map<String, Object?> toJson() => _$DonationCheckoutResponseToJson(this);
+  static DonationCheckoutResponse fromJson(Map<String, dynamic> json) =>
+      DonationCheckoutResponseMapper.fromJson(json);
 }

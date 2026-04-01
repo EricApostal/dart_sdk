@@ -2,12 +2,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'sudo_mfa_methods_response.g.dart';
+part 'sudo_mfa_methods_response.mapper.dart';
 
-@JsonSerializable()
-class SudoMfaMethodsResponse {
+@MappableClass()
+class SudoMfaMethodsResponse with SudoMfaMethodsResponseMappable {
   const SudoMfaMethodsResponse({
     required this.totp,
     required this.sms,
@@ -15,21 +15,12 @@ class SudoMfaMethodsResponse {
     required this.hasMfa,
   });
 
-  factory SudoMfaMethodsResponse.fromJson(Map<String, Object?> json) =>
-      _$SudoMfaMethodsResponseFromJson(json);
-
-  /// Whether TOTP is enabled
   final bool totp;
-
-  /// Whether SMS MFA is enabled
   final bool sms;
-
-  /// Whether WebAuthn is enabled
   final bool webauthn;
-
-  /// Whether any MFA method is enabled
-  @JsonKey(name: 'has_mfa')
+  @MappableField(key: 'has_mfa')
   final bool hasMfa;
 
-  Map<String, Object?> toJson() => _$SudoMfaMethodsResponseToJson(this);
+  static SudoMfaMethodsResponse fromJson(Map<String, dynamic> json) =>
+      SudoMfaMethodsResponseMapper.fromJson(json);
 }

@@ -2,22 +2,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'relationship_nickname_update_request.g.dart';
+part 'relationship_nickname_update_request.mapper.dart';
 
-@JsonSerializable()
-class RelationshipNicknameUpdateRequest {
+@MappableClass()
+class RelationshipNicknameUpdateRequest
+    with RelationshipNicknameUpdateRequestMappable {
   const RelationshipNicknameUpdateRequest({required this.nickname});
 
-  factory RelationshipNicknameUpdateRequest.fromJson(
-    Map<String, Object?> json,
-  ) => _$RelationshipNicknameUpdateRequestFromJson(json);
-
-  /// Custom nickname for this friend (max 256 characters)
-  @JsonKey(includeIfNull: true)
   final String? nickname;
 
-  Map<String, Object?> toJson() =>
-      _$RelationshipNicknameUpdateRequestToJson(this);
+  static RelationshipNicknameUpdateRequest fromJson(
+    Map<String, dynamic> json,
+  ) => RelationshipNicknameUpdateRequestMapper.fromJson(json);
 }

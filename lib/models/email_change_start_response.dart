@@ -2,12 +2,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'email_change_start_response.g.dart';
+part 'email_change_start_response.mapper.dart';
 
-@JsonSerializable()
-class EmailChangeStartResponse {
+@MappableClass()
+class EmailChangeStartResponse with EmailChangeStartResponseMappable {
   const EmailChangeStartResponse({
     required this.ticket,
     required this.requireOriginal,
@@ -17,31 +17,18 @@ class EmailChangeStartResponse {
     required this.resendAvailableAt,
   });
 
-  factory EmailChangeStartResponse.fromJson(Map<String, Object?> json) =>
-      _$EmailChangeStartResponseFromJson(json);
-
-  /// Ticket returned for email change actions
   final String ticket;
-
-  /// Whether verification of the original email is required
-  @JsonKey(name: 'require_original')
+  @MappableField(key: 'require_original')
   final bool requireOriginal;
-
-  /// The original email address on record
-  @JsonKey(includeIfNull: true, name: 'original_email')
+  @MappableField(key: 'original_email')
   final String? originalEmail;
-
-  /// Proof token generated when original email verification is not required
-  @JsonKey(includeIfNull: true, name: 'original_proof')
+  @MappableField(key: 'original_proof')
   final String? originalProof;
-
-  /// ISO8601 timestamp when the original verification code expires
-  @JsonKey(includeIfNull: true, name: 'original_code_expires_at')
+  @MappableField(key: 'original_code_expires_at')
   final String? originalCodeExpiresAt;
-
-  /// ISO8601 timestamp when the original verification code can be resent
-  @JsonKey(includeIfNull: true, name: 'resend_available_at')
+  @MappableField(key: 'resend_available_at')
   final String? resendAvailableAt;
 
-  Map<String, Object?> toJson() => _$EmailChangeStartResponseToJson(this);
+  static EmailChangeStartResponse fromJson(Map<String, dynamic> json) =>
+      EmailChangeStartResponseMapper.fromJson(json);
 }

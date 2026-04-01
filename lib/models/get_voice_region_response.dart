@@ -2,22 +2,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'voice_region_with_servers_response.dart';
 
-part 'get_voice_region_response.g.dart';
+part 'get_voice_region_response.mapper.dart';
 
-@JsonSerializable()
-class GetVoiceRegionResponse {
+@MappableClass()
+class GetVoiceRegionResponse with GetVoiceRegionResponseMappable {
   const GetVoiceRegionResponse({required this.region});
 
-  factory GetVoiceRegionResponse.fromJson(Map<String, Object?> json) =>
-      _$GetVoiceRegionResponseFromJson(json);
-
-  /// Voice region details or null if not found
-  @JsonKey(includeIfNull: true)
   final VoiceRegionWithServersResponse? region;
 
-  Map<String, Object?> toJson() => _$GetVoiceRegionResponseToJson(this);
+  static GetVoiceRegionResponse fromJson(Map<String, dynamic> json) =>
+      GetVoiceRegionResponseMapper.fromJson(json);
 }

@@ -2,19 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'password_change_ticket_request.g.dart';
+part 'password_change_ticket_request.mapper.dart';
 
-@JsonSerializable()
-class PasswordChangeTicketRequest {
+@MappableClass()
+class PasswordChangeTicketRequest with PasswordChangeTicketRequestMappable {
   const PasswordChangeTicketRequest({required this.ticket});
 
-  factory PasswordChangeTicketRequest.fromJson(Map<String, Object?> json) =>
-      _$PasswordChangeTicketRequestFromJson(json);
-
-  /// Password change ticket identifier
   final String ticket;
 
-  Map<String, Object?> toJson() => _$PasswordChangeTicketRequestToJson(this);
+  static PasswordChangeTicketRequest fromJson(Map<String, dynamic> json) =>
+      PasswordChangeTicketRequestMapper.fromJson(json);
 }

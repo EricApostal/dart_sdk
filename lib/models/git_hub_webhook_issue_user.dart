@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'int32_type.dart';
 
-part 'git_hub_webhook_issue_user.g.dart';
+part 'git_hub_webhook_issue_user.mapper.dart';
 
-@JsonSerializable()
-class GitHubWebhookIssueUser {
+@MappableClass()
+class GitHubWebhookIssueUser with GitHubWebhookIssueUserMappable {
   const GitHubWebhookIssueUser({
     required this.id,
     required this.login,
@@ -17,15 +17,13 @@ class GitHubWebhookIssueUser {
     required this.avatarUrl,
   });
 
-  factory GitHubWebhookIssueUser.fromJson(Map<String, Object?> json) =>
-      _$GitHubWebhookIssueUserFromJson(json);
-
   final Int32Type id;
   final String login;
-  @JsonKey(name: 'html_url')
+  @MappableField(key: 'html_url')
   final String htmlUrl;
-  @JsonKey(name: 'avatar_url')
+  @MappableField(key: 'avatar_url')
   final String avatarUrl;
 
-  Map<String, Object?> toJson() => _$GitHubWebhookIssueUserToJson(this);
+  static GitHubWebhookIssueUser fromJson(Map<String, dynamic> json) =>
+      GitHubWebhookIssueUserMapper.fromJson(json);
 }

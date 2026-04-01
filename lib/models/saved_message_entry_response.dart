@@ -2,15 +2,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'message_response_schema.dart';
 import 'saved_message_entry_response_status_status.dart';
 
-part 'saved_message_entry_response.g.dart';
+part 'saved_message_entry_response.mapper.dart';
 
-@JsonSerializable()
-class SavedMessageEntryResponse {
+@MappableClass()
+class SavedMessageEntryResponse with SavedMessageEntryResponseMappable {
   const SavedMessageEntryResponse({
     required this.id,
     required this.channelId,
@@ -19,26 +19,14 @@ class SavedMessageEntryResponse {
     required this.message,
   });
 
-  factory SavedMessageEntryResponse.fromJson(Map<String, Object?> json) =>
-      _$SavedMessageEntryResponseFromJson(json);
-
-  /// Unique identifier for the saved message entry
   final String id;
-
-  /// ID of the channel containing the message
-  @JsonKey(name: 'channel_id')
+  @MappableField(key: 'channel_id')
   final String channelId;
-
-  /// ID of the saved message
-  @JsonKey(name: 'message_id')
+  @MappableField(key: 'message_id')
   final String messageId;
-
-  /// Availability status of the saved message
   final SavedMessageEntryResponseStatusStatus status;
-
-  /// The message content if available
-  @JsonKey(includeIfNull: true)
   final MessageResponseSchema? message;
 
-  Map<String, Object?> toJson() => _$SavedMessageEntryResponseToJson(this);
+  static SavedMessageEntryResponse fromJson(Map<String, dynamic> json) =>
+      SavedMessageEntryResponseMapper.fromJson(json);
 }

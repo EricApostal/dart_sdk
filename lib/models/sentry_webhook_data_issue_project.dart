@@ -2,12 +2,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'sentry_webhook_data_issue_project.g.dart';
+part 'sentry_webhook_data_issue_project.mapper.dart';
 
-@JsonSerializable()
-class SentryWebhookDataIssueProject {
+@MappableClass()
+class SentryWebhookDataIssueProject with SentryWebhookDataIssueProjectMappable {
   const SentryWebhookDataIssueProject({
     required this.id,
     required this.name,
@@ -15,13 +15,11 @@ class SentryWebhookDataIssueProject {
     required this.platform,
   });
 
-  factory SentryWebhookDataIssueProject.fromJson(Map<String, Object?> json) =>
-      _$SentryWebhookDataIssueProjectFromJson(json);
-
   final String id;
   final String name;
   final String slug;
   final String platform;
 
-  Map<String, Object?> toJson() => _$SentryWebhookDataIssueProjectToJson(this);
+  static SentryWebhookDataIssueProject fromJson(Map<String, dynamic> json) =>
+      SentryWebhookDataIssueProjectMapper.fromJson(json);
 }

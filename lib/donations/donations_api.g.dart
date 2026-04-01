@@ -38,7 +38,7 @@ class _DonationsApi implements DonationsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late DonationCheckoutResponse _value;
     try {
       _value = DonationCheckoutResponse.fromJson(_result.data!);

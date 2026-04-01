@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'list_user_guilds_request.g.dart';
+part 'list_user_guilds_request.mapper.dart';
 
-@JsonSerializable()
-class ListUserGuildsRequest {
+@MappableClass()
+class ListUserGuildsRequest with ListUserGuildsRequestMappable {
   const ListUserGuildsRequest({
     required this.userId,
     this.before,
@@ -18,19 +18,14 @@ class ListUserGuildsRequest {
     this.withCounts,
   });
 
-  factory ListUserGuildsRequest.fromJson(Map<String, Object?> json) =>
-      _$ListUserGuildsRequestFromJson(json);
-
-  @JsonKey(name: 'user_id')
+  @MappableField(key: 'user_id')
   final SnowflakeType userId;
-  @JsonKey(includeIfNull: false)
   final SnowflakeType? before;
-  @JsonKey(includeIfNull: false)
   final SnowflakeType? after;
-  @JsonKey(includeIfNull: false)
   final int? limit;
-  @JsonKey(includeIfNull: false, name: 'with_counts')
+  @MappableField(key: 'with_counts')
   final bool? withCounts;
 
-  Map<String, Object?> toJson() => _$ListUserGuildsRequestToJson(this);
+  static ListUserGuildsRequest fromJson(Map<String, dynamic> json) =>
+      ListUserGuildsRequestMapper.fromJson(json);
 }

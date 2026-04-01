@@ -2,27 +2,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'locale.dart';
 
-part 'tenor_register_share_request.g.dart';
+part 'tenor_register_share_request.mapper.dart';
 
-@JsonSerializable()
-class TenorRegisterShareRequest {
+@MappableClass()
+class TenorRegisterShareRequest with TenorRegisterShareRequestMappable {
   const TenorRegisterShareRequest({required this.id, this.q, this.locale});
 
-  factory TenorRegisterShareRequest.fromJson(Map<String, Object?> json) =>
-      _$TenorRegisterShareRequestFromJson(json);
-
-  /// The Tenor result id
   final String id;
-
-  /// The search query used to find the GIF
-  @JsonKey(includeIfNull: false)
   final String? q;
-  @JsonKey(includeIfNull: false)
   final Locale? locale;
 
-  Map<String, Object?> toJson() => _$TenorRegisterShareRequestToJson(this);
+  static TenorRegisterShareRequest fromJson(Map<String, dynamic> json) =>
+      TenorRegisterShareRequestMapper.fromJson(json);
 }

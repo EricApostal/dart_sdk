@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'create_system_dm_job_request.g.dart';
+part 'create_system_dm_job_request.mapper.dart';
 
-@JsonSerializable()
-class CreateSystemDmJobRequest {
+@MappableClass()
+class CreateSystemDmJobRequest with CreateSystemDmJobRequestMappable {
   const CreateSystemDmJobRequest({
     required this.content,
     this.registrationStart,
@@ -17,23 +17,14 @@ class CreateSystemDmJobRequest {
     this.excludedGuildIds,
   });
 
-  factory CreateSystemDmJobRequest.fromJson(Map<String, Object?> json) =>
-      _$CreateSystemDmJobRequestFromJson(json);
-
-  /// Message content to send to users
   final String content;
-
-  /// Only target users registered after this date
-  @JsonKey(includeIfNull: false, name: 'registration_start')
+  @MappableField(key: 'registration_start')
   final String? registrationStart;
-
-  /// Only target users registered before this date
-  @JsonKey(includeIfNull: false, name: 'registration_end')
+  @MappableField(key: 'registration_end')
   final String? registrationEnd;
-
-  /// Guild IDs whose members should be excluded
-  @JsonKey(includeIfNull: false, name: 'excluded_guild_ids')
+  @MappableField(key: 'excluded_guild_ids')
   final List<SnowflakeType>? excludedGuildIds;
 
-  Map<String, Object?> toJson() => _$CreateSystemDmJobRequestToJson(this);
+  static CreateSystemDmJobRequest fromJson(Map<String, dynamic> json) =>
+      CreateSystemDmJobRequestMapper.fromJson(json);
 }

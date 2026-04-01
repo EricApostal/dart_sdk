@@ -2,23 +2,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'get_voice_region_request.g.dart';
+part 'get_voice_region_request.mapper.dart';
 
-@JsonSerializable()
-class GetVoiceRegionRequest {
+@MappableClass()
+class GetVoiceRegionRequest with GetVoiceRegionRequestMappable {
   const GetVoiceRegionRequest({required this.id, this.includeServers});
 
-  factory GetVoiceRegionRequest.fromJson(Map<String, Object?> json) =>
-      _$GetVoiceRegionRequestFromJson(json);
-
-  /// ID of the voice region to retrieve
   final String id;
-
-  /// Whether to include voice servers in the response
-  @JsonKey(includeIfNull: false, name: 'include_servers')
+  @MappableField(key: 'include_servers')
   final bool? includeServers;
 
-  Map<String, Object?> toJson() => _$GetVoiceRegionRequestToJson(this);
+  static GetVoiceRegionRequest fromJson(Map<String, dynamic> json) =>
+      GetVoiceRegionRequestMapper.fromJson(json);
 }

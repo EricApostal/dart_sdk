@@ -2,17 +2,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-import 'guild_invite_response_type_type.dart';
-import 'guild_invite_response_guild.dart';
 import 'channel_partial_response.dart';
-import 'user_partial_response.dart';
 import 'group_dm_invite_response_type_type.dart';
-import 'pack_invite_response_type_type.dart';
+import 'guild_invite_response_guild.dart';
+import 'guild_invite_response_type_type.dart';
 import 'pack_invite_response_pack.dart';
+import 'pack_invite_response_type_type.dart';
+import 'user_partial_response.dart';
+import 'guild_invite_response.dart';
+import 'group_dm_invite_response.dart';
+import 'pack_invite_response.dart';
 
-part 'invite_response_schema.g.dart';
+part 'invite_response_schema.mapper.dart';
 
 class InviteResponseSchema {
   final Map<String, dynamic> _json;
@@ -25,25 +28,26 @@ class InviteResponseSchema {
   Map<String, dynamic> toJson() => _json;
 
   InviteResponseSchemaGuildInviteResponse toGuildInviteResponse() =>
-      InviteResponseSchemaGuildInviteResponse.fromJson(_json);
+      InviteResponseSchemaGuildInviteResponseMapper.fromJson(_json);
   InviteResponseSchemaGroupDmInviteResponse toGroupDmInviteResponse() =>
-      InviteResponseSchemaGroupDmInviteResponse.fromJson(_json);
+      InviteResponseSchemaGroupDmInviteResponseMapper.fromJson(_json);
   InviteResponseSchemaPackInviteResponse toPackInviteResponse() =>
-      InviteResponseSchemaPackInviteResponse.fromJson(_json);
+      InviteResponseSchemaPackInviteResponseMapper.fromJson(_json);
 }
 
-@JsonSerializable()
-class InviteResponseSchemaGuildInviteResponse {
+@MappableClass()
+class InviteResponseSchemaGuildInviteResponse
+    with InviteResponseSchemaGuildInviteResponseMappable {
   final String code;
   final GuildInviteResponseTypeType type;
   final GuildInviteResponseGuild guild;
   final ChannelPartialResponse channel;
   final UserPartialResponse? inviter;
-  @JsonKey(name: 'member_count')
+  @MappableField(key: 'member_count')
   final int memberCount;
-  @JsonKey(name: 'presence_count')
+  @MappableField(key: 'presence_count')
   final int presenceCount;
-  @JsonKey(name: 'expires_at')
+  @MappableField(key: 'expires_at')
   final DateTime? expiresAt;
   final bool temporary;
 
@@ -58,24 +62,18 @@ class InviteResponseSchemaGuildInviteResponse {
     required this.expiresAt,
     required this.temporary,
   });
-
-  factory InviteResponseSchemaGuildInviteResponse.fromJson(
-    Map<String, dynamic> json,
-  ) => _$InviteResponseSchemaGuildInviteResponseFromJson(json);
-
-  Map<String, dynamic> toJson() =>
-      _$InviteResponseSchemaGuildInviteResponseToJson(this);
 }
 
-@JsonSerializable()
-class InviteResponseSchemaGroupDmInviteResponse {
+@MappableClass()
+class InviteResponseSchemaGroupDmInviteResponse
+    with InviteResponseSchemaGroupDmInviteResponseMappable {
   final String code;
   final GroupDmInviteResponseTypeType type;
   final ChannelPartialResponse channel;
   final UserPartialResponse? inviter;
-  @JsonKey(name: 'member_count')
+  @MappableField(key: 'member_count')
   final int memberCount;
-  @JsonKey(name: 'expires_at')
+  @MappableField(key: 'expires_at')
   final DateTime? expiresAt;
   final bool temporary;
 
@@ -88,22 +86,16 @@ class InviteResponseSchemaGroupDmInviteResponse {
     required this.expiresAt,
     required this.temporary,
   });
-
-  factory InviteResponseSchemaGroupDmInviteResponse.fromJson(
-    Map<String, dynamic> json,
-  ) => _$InviteResponseSchemaGroupDmInviteResponseFromJson(json);
-
-  Map<String, dynamic> toJson() =>
-      _$InviteResponseSchemaGroupDmInviteResponseToJson(this);
 }
 
-@JsonSerializable()
-class InviteResponseSchemaPackInviteResponse {
+@MappableClass()
+class InviteResponseSchemaPackInviteResponse
+    with InviteResponseSchemaPackInviteResponseMappable {
   final String code;
   final PackInviteResponseTypeType type;
   final PackInviteResponsePack pack;
   final UserPartialResponse? inviter;
-  @JsonKey(name: 'expires_at')
+  @MappableField(key: 'expires_at')
   final DateTime? expiresAt;
   final bool temporary;
 
@@ -115,11 +107,4 @@ class InviteResponseSchemaPackInviteResponse {
     required this.expiresAt,
     required this.temporary,
   });
-
-  factory InviteResponseSchemaPackInviteResponse.fromJson(
-    Map<String, dynamic> json,
-  ) => _$InviteResponseSchemaPackInviteResponseFromJson(json);
-
-  Map<String, dynamic> toJson() =>
-      _$InviteResponseSchemaPackInviteResponseToJson(this);
 }

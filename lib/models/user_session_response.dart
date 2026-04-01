@@ -2,12 +2,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'user_session_response.g.dart';
+part 'user_session_response.mapper.dart';
 
-@JsonSerializable()
-class UserSessionResponse {
+@MappableClass()
+class UserSessionResponse with UserSessionResponseMappable {
   const UserSessionResponse({
     required this.sessionIdHash,
     required this.createdAt,
@@ -19,40 +19,23 @@ class UserSessionResponse {
     required this.clientLocation,
   });
 
-  factory UserSessionResponse.fromJson(Map<String, Object?> json) =>
-      _$UserSessionResponseFromJson(json);
-
-  /// Hashed session identifier (base64url)
-  @JsonKey(name: 'session_id_hash')
+  @MappableField(key: 'session_id_hash')
   final String sessionIdHash;
-
-  /// ISO timestamp when the session was created
-  @JsonKey(name: 'created_at')
+  @MappableField(key: 'created_at')
   final String createdAt;
-
-  /// ISO timestamp of the session last usage (approximate)
-  @JsonKey(name: 'approx_last_used_at')
+  @MappableField(key: 'approx_last_used_at')
   final String approxLastUsedAt;
-
-  /// Client IP address
-  @JsonKey(name: 'client_ip')
+  @MappableField(key: 'client_ip')
   final String clientIp;
-
-  /// Reverse DNS hostname for the client IP (PTR), if available
-  @JsonKey(includeIfNull: true, name: 'client_ip_reverse')
+  @MappableField(key: 'client_ip_reverse')
   final String? clientIpReverse;
-
-  /// Client operating system, if detected
-  @JsonKey(includeIfNull: true, name: 'client_os')
+  @MappableField(key: 'client_os')
   final String? clientOs;
-
-  /// Client platform, if detected
-  @JsonKey(includeIfNull: true, name: 'client_platform')
+  @MappableField(key: 'client_platform')
   final String? clientPlatform;
-
-  /// Approximate geo location label for the client IP, if available
-  @JsonKey(includeIfNull: true, name: 'client_location')
+  @MappableField(key: 'client_location')
   final String? clientLocation;
 
-  Map<String, Object?> toJson() => _$UserSessionResponseToJson(this);
+  static UserSessionResponse fromJson(Map<String, dynamic> json) =>
+      UserSessionResponseMapper.fromJson(json);
 }

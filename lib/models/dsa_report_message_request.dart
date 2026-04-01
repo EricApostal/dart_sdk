@@ -2,17 +2,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'dsa_report_message_request_report_type_report_type.dart';
 import 'dsa_report_message_request_reporter_country_of_residence_reporter_country_of_residence.dart';
 import 'dsa_report_request.dart';
 import 'message_report_category_enum.dart';
 
-part 'dsa_report_message_request.g.dart';
+part 'dsa_report_message_request.mapper.dart';
 
-@JsonSerializable()
-class DsaReportMessageRequest {
+@MappableClass()
+class DsaReportMessageRequest with DsaReportMessageRequestMappable {
   const DsaReportMessageRequest({
     required this.ticket,
     required this.reporterFullLegalName,
@@ -25,41 +25,24 @@ class DsaReportMessageRequest {
     this.reportedUserTag,
   });
 
-  factory DsaReportMessageRequest.fromJson(Map<String, Object?> json) =>
-      _$DsaReportMessageRequestFromJson(json);
-
-  /// Verification ticket obtained from email verification
   final String ticket;
-
-  /// Additional context or details about the report
-  @JsonKey(includeIfNull: false, name: 'additional_info')
-  final String? additionalInfo;
-
-  /// Full legal name of the person filing the report
-  @JsonKey(name: 'reporter_full_legal_name')
+  @MappableField(key: 'reporter_full_legal_name')
   final String reporterFullLegalName;
-
-  /// EU country code of the reporter residence
-  @JsonKey(name: 'reporter_country_of_residence')
+  @MappableField(key: 'reporter_country_of_residence')
   final DsaReportMessageRequestReporterCountryOfResidenceReporterCountryOfResidence
   reporterCountryOfResidence;
-
-  /// Fluxer tag of the reporter if they have an account
-  @JsonKey(includeIfNull: false, name: 'reporter_fluxer_tag')
-  final String? reporterFluxerTag;
-
-  /// Type of report
-  @JsonKey(name: 'report_type')
+  @MappableField(key: 'report_type')
   final DsaReportMessageRequestReportTypeReportType reportType;
   final MessageReportCategoryEnum category;
-
-  /// Link to the message being reported
-  @JsonKey(name: 'message_link')
+  @MappableField(key: 'message_link')
   final String messageLink;
-
-  /// Fluxer tag of the user who sent the message
-  @JsonKey(includeIfNull: false, name: 'reported_user_tag')
+  @MappableField(key: 'additional_info')
+  final String? additionalInfo;
+  @MappableField(key: 'reporter_fluxer_tag')
+  final String? reporterFluxerTag;
+  @MappableField(key: 'reported_user_tag')
   final String? reportedUserTag;
 
-  Map<String, Object?> toJson() => _$DsaReportMessageRequestToJson(this);
+  static DsaReportMessageRequest fromJson(Map<String, dynamic> json) =>
+      DsaReportMessageRequestMapper.fromJson(json);
 }

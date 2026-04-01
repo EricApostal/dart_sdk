@@ -2,12 +2,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'gateway_bot_response_session_start_limit.g.dart';
+part 'gateway_bot_response_session_start_limit.mapper.dart';
 
-@JsonSerializable()
-class GatewayBotResponseSessionStartLimit {
+@MappableClass()
+class GatewayBotResponseSessionStartLimit
+    with GatewayBotResponseSessionStartLimitMappable {
   const GatewayBotResponseSessionStartLimit({
     required this.total,
     required this.remaining,
@@ -15,24 +16,14 @@ class GatewayBotResponseSessionStartLimit {
     required this.maxConcurrency,
   });
 
-  factory GatewayBotResponseSessionStartLimit.fromJson(
-    Map<String, Object?> json,
-  ) => _$GatewayBotResponseSessionStartLimitFromJson(json);
-
-  /// Total number of session starts allowed
   final int total;
-
-  /// Remaining number of session starts
   final int remaining;
-
-  /// Milliseconds until the limit resets
-  @JsonKey(name: 'reset_after')
+  @MappableField(key: 'reset_after')
   final int resetAfter;
-
-  /// Maximum number of concurrent IDENTIFY requests
-  @JsonKey(name: 'max_concurrency')
+  @MappableField(key: 'max_concurrency')
   final int maxConcurrency;
 
-  Map<String, Object?> toJson() =>
-      _$GatewayBotResponseSessionStartLimitToJson(this);
+  static GatewayBotResponseSessionStartLimit fromJson(
+    Map<String, dynamic> json,
+  ) => GatewayBotResponseSessionStartLimitMapper.fromJson(json);
 }

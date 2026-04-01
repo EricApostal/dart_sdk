@@ -2,31 +2,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'sso_start_response.g.dart';
+part 'sso_start_response.mapper.dart';
 
-@JsonSerializable()
-class SsoStartResponse {
+@MappableClass()
+class SsoStartResponse with SsoStartResponseMappable {
   const SsoStartResponse({
     required this.authorizationUrl,
     required this.state,
     required this.redirectUri,
   });
 
-  factory SsoStartResponse.fromJson(Map<String, Object?> json) =>
-      _$SsoStartResponseFromJson(json);
-
-  /// URL to redirect user to for SSO authentication
-  @JsonKey(name: 'authorization_url')
+  @MappableField(key: 'authorization_url')
   final String authorizationUrl;
-
-  /// State parameter for CSRF protection
   final String state;
-
-  /// Redirect URI after SSO completion
-  @JsonKey(name: 'redirect_uri')
+  @MappableField(key: 'redirect_uri')
   final String redirectUri;
 
-  Map<String, Object?> toJson() => _$SsoStartResponseToJson(this);
+  static SsoStartResponse fromJson(Map<String, dynamic> json) =>
+      SsoStartResponseMapper.fromJson(json);
 }

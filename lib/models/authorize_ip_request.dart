@@ -2,19 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'authorize_ip_request.g.dart';
+part 'authorize_ip_request.mapper.dart';
 
-@JsonSerializable()
-class AuthorizeIpRequest {
+@MappableClass()
+class AuthorizeIpRequest with AuthorizeIpRequestMappable {
   const AuthorizeIpRequest({required this.token});
 
-  factory AuthorizeIpRequest.fromJson(Map<String, Object?> json) =>
-      _$AuthorizeIpRequestFromJson(json);
-
-  /// The IP authorization token from email
   final String token;
 
-  Map<String, Object?> toJson() => _$AuthorizeIpRequestToJson(this);
+  static AuthorizeIpRequest fromJson(Map<String, dynamic> json) =>
+      AuthorizeIpRequestMapper.fromJson(json);
 }

@@ -2,19 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'username_suggestions_response.g.dart';
+part 'username_suggestions_response.mapper.dart';
 
-@JsonSerializable()
-class UsernameSuggestionsResponse {
+@MappableClass()
+class UsernameSuggestionsResponse with UsernameSuggestionsResponseMappable {
   const UsernameSuggestionsResponse({required this.suggestions});
 
-  factory UsernameSuggestionsResponse.fromJson(Map<String, Object?> json) =>
-      _$UsernameSuggestionsResponseFromJson(json);
-
-  /// List of suggested usernames
   final List<String> suggestions;
 
-  Map<String, Object?> toJson() => _$UsernameSuggestionsResponseToJson(this);
+  static UsernameSuggestionsResponse fromJson(Map<String, dynamic> json) =>
+      UsernameSuggestionsResponseMapper.fromJson(json);
 }

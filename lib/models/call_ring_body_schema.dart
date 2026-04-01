@@ -2,22 +2,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'call_ring_body_schema.g.dart';
+part 'call_ring_body_schema.mapper.dart';
 
-@JsonSerializable()
-class CallRingBodySchema {
+@MappableClass()
+class CallRingBodySchema with CallRingBodySchemaMappable {
   const CallRingBodySchema({this.recipients});
 
-  factory CallRingBodySchema.fromJson(Map<String, Object?> json) =>
-      _$CallRingBodySchemaFromJson(json);
-
-  /// User IDs to ring for the call
-  @JsonKey(includeIfNull: false)
   final List<SnowflakeType>? recipients;
 
-  Map<String, Object?> toJson() => _$CallRingBodySchemaToJson(this);
+  static CallRingBodySchema fromJson(Map<String, dynamic> json) =>
+      CallRingBodySchemaMapper.fromJson(json);
 }

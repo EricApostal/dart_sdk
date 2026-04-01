@@ -2,99 +2,124 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'locale.mapper.dart';
 
 /// The locale code for the user interface language
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum Locale {
-  @JsonValue('ar')
-  ar('ar'),
-  @JsonValue('bg')
-  bg('bg'),
-  @JsonValue('cs')
-  cs('cs'),
-  @JsonValue('da')
-  da('da'),
-  @JsonValue('de')
-  de('de'),
-  @JsonValue('el')
-  el('el'),
-  @JsonValue('en-GB')
-  enGb('en-GB'),
-  @JsonValue('en-US')
-  enUs('en-US'),
-  @JsonValue('es-ES')
-  esEs('es-ES'),
-  @JsonValue('es-419')
-  es419('es-419'),
-  @JsonValue('fi')
-  fi('fi'),
-  @JsonValue('fr')
-  fr('fr'),
-  @JsonValue('he')
-  he('he'),
-  @JsonValue('hi')
-  hi('hi'),
-  @JsonValue('hr')
-  hr('hr'),
-  @JsonValue('hu')
-  hu('hu'),
-  @JsonValue('id')
-  id('id'),
-  @JsonValue('it')
-  it('it'),
-  @JsonValue('ja')
-  ja('ja'),
-  @JsonValue('ko')
-  ko('ko'),
-  @JsonValue('lt')
-  lt('lt'),
-  @JsonValue('nl')
-  nl('nl'),
-  @JsonValue('no')
-  no('no'),
-  @JsonValue('pl')
-  pl('pl'),
-  @JsonValue('pt-BR')
-  ptBr('pt-BR'),
-  @JsonValue('ro')
-  ro('ro'),
-  @JsonValue('ru')
-  ru('ru'),
-  @JsonValue('sv-SE')
-  svSe('sv-SE'),
-  @JsonValue('th')
-  th('th'),
-  @JsonValue('tr')
-  tr('tr'),
-  @JsonValue('uk')
-  uk('uk'),
-  @JsonValue('vi')
-  vi('vi'),
-  @JsonValue('zh-CN')
-  zhCn('zh-CN'),
-  @JsonValue('zh-TW')
-  zhTw('zh-TW'),
+  @MappableValue('ar')
+  ar,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue('bg')
+  bg,
 
-  const Locale(this.json);
+  @MappableValue('cs')
+  cs,
 
-  factory Locale.fromJson(String json) => values.firstWhere(
-    (e) => e.json == json,
-    orElse: () => $unknown,
-  );
+  @MappableValue('da')
+  da,
 
-  final String? json;
+  @MappableValue('de')
+  de,
 
-  String toJson() => json ?? 'null';
+  @MappableValue('el')
+  el,
+
+  @MappableValue('en-GB')
+  enGb,
+
+  @MappableValue('en-US')
+  enUs,
+
+  @MappableValue('es-ES')
+  esEs,
+
+  @MappableValue('es-419')
+  es419,
+
+  @MappableValue('fi')
+  fi,
+
+  @MappableValue('fr')
+  fr,
+
+  @MappableValue('he')
+  he,
+
+  @MappableValue('hi')
+  hi,
+
+  @MappableValue('hr')
+  hr,
+
+  @MappableValue('hu')
+  hu,
+
+  @MappableValue('id')
+  id,
+
+  @MappableValue('it')
+  it,
+
+  @MappableValue('ja')
+  ja,
+
+  @MappableValue('ko')
+  ko,
+
+  @MappableValue('lt')
+  lt,
+
+  @MappableValue('nl')
+  nl,
+
+  @MappableValue('no')
+  no,
+
+  @MappableValue('pl')
+  pl,
+
+  @MappableValue('pt-BR')
+  ptBr,
+
+  @MappableValue('ro')
+  ro,
+
+  @MappableValue('ru')
+  ru,
+
+  @MappableValue('sv-SE')
+  svSe,
+
+  @MappableValue('th')
+  th,
+
+  @MappableValue('tr')
+  tr,
+
+  @MappableValue('uk')
+  uk,
+
+  @MappableValue('vi')
+  vi,
+
+  @MappableValue('zh-CN')
+  zhCn,
+
+  @MappableValue('zh-TW')
+  zhTw,
+
+  @MappableValue('unknown')
+  unknown;
+
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
+  /// Returns all defined enum values excluding the unknown value.
   static List<Locale> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+      values.where((value) => value != Locale.unknown).toList();
 }

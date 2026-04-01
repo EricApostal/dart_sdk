@@ -2,18 +2,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'bounds.g.dart';
+part 'bounds.mapper.dart';
 
-@JsonSerializable()
-class Bounds {
+@MappableClass()
+class Bounds with BoundsMappable {
   const Bounds({required this.min, required this.max});
-
-  factory Bounds.fromJson(Map<String, Object?> json) => _$BoundsFromJson(json);
 
   final num min;
   final num max;
 
-  Map<String, Object?> toJson() => _$BoundsToJson(this);
+  static Bounds fromJson(Map<String, dynamic> json) =>
+      BoundsMapper.fromJson(json);
 }

@@ -2,16 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'bounds.dart';
 import 'limit_config_get_response_limit_config.dart';
 import 'metadata.dart';
 
-part 'limit_config_get_response.g.dart';
+part 'limit_config_get_response.mapper.dart';
 
-@JsonSerializable()
-class LimitConfigGetResponse {
+@MappableClass()
+class LimitConfigGetResponse with LimitConfigGetResponseMappable {
   const LimitConfigGetResponse({
     required this.limitConfig,
     required this.limitConfigJson,
@@ -23,22 +23,19 @@ class LimitConfigGetResponse {
     this.bounds,
   });
 
-  factory LimitConfigGetResponse.fromJson(Map<String, Object?> json) =>
-      _$LimitConfigGetResponseFromJson(json);
-
-  @JsonKey(name: 'limit_config')
+  @MappableField(key: 'limit_config')
   final LimitConfigGetResponseLimitConfig limitConfig;
-  @JsonKey(name: 'limit_config_json')
+  @MappableField(key: 'limit_config_json')
   final String limitConfigJson;
-  @JsonKey(name: 'self_hosted')
+  @MappableField(key: 'self_hosted')
   final bool selfHosted;
   final Map<String, Map<String, num>> defaults;
   final Map<String, Metadata> metadata;
   final Map<String, String> categories;
-  @JsonKey(name: 'limit_keys')
+  @MappableField(key: 'limit_keys')
   final List<String> limitKeys;
-  @JsonKey(includeIfNull: false)
   final Map<String, Bounds>? bounds;
 
-  Map<String, Object?> toJson() => _$LimitConfigGetResponseToJson(this);
+  static LimitConfigGetResponse fromJson(Map<String, dynamic> json) =>
+      LimitConfigGetResponseMapper.fromJson(json);
 }

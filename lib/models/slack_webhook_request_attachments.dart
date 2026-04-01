@@ -2,14 +2,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'slack_webhook_request_attachments_fields.dart';
 
-part 'slack_webhook_request_attachments.g.dart';
+part 'slack_webhook_request_attachments.mapper.dart';
 
-@JsonSerializable()
-class SlackWebhookRequestAttachments {
+@MappableClass()
+class SlackWebhookRequestAttachments
+    with SlackWebhookRequestAttachmentsMappable {
   const SlackWebhookRequestAttachments({
     this.fallback,
     this.pretext,
@@ -27,64 +28,27 @@ class SlackWebhookRequestAttachments {
     this.thumbUrl,
   });
 
-  factory SlackWebhookRequestAttachments.fromJson(Map<String, Object?> json) =>
-      _$SlackWebhookRequestAttachmentsFromJson(json);
-
-  /// Fallback text for notifications
-  @JsonKey(includeIfNull: false)
   final String? fallback;
-
-  /// Text that appears above the attachment block
-  @JsonKey(includeIfNull: false)
   final String? pretext;
-
-  /// Main text content of the attachment
-  @JsonKey(includeIfNull: false)
   final String? text;
-
-  /// Colour of the attachment sidebar (hex code or preset)
-  @JsonKey(includeIfNull: false)
   final String? color;
-
-  /// Title of the attachment
-  @JsonKey(includeIfNull: false)
   final String? title;
-
-  /// URL to link from the title
-  @JsonKey(includeIfNull: false, name: 'title_link')
+  @MappableField(key: 'title_link')
   final String? titleLink;
-
-  /// Array of field objects
-  @JsonKey(includeIfNull: false)
   final List<SlackWebhookRequestAttachmentsFields>? fields;
-
-  /// Footer text displayed at the bottom
-  @JsonKey(includeIfNull: false)
   final String? footer;
-
-  /// Unix timestamp for the attachment footer
-  @JsonKey(includeIfNull: false)
   final int? ts;
-
-  /// Name of the author
-  @JsonKey(includeIfNull: false, name: 'author_name')
+  @MappableField(key: 'author_name')
   final String? authorName;
-
-  /// URL to link from the author name
-  @JsonKey(includeIfNull: false, name: 'author_link')
+  @MappableField(key: 'author_link')
   final String? authorLink;
-
-  /// URL for the author icon image
-  @JsonKey(includeIfNull: false, name: 'author_icon')
+  @MappableField(key: 'author_icon')
   final String? authorIcon;
-
-  /// URL of the main image to display
-  @JsonKey(includeIfNull: false, name: 'image_url')
+  @MappableField(key: 'image_url')
   final String? imageUrl;
-
-  /// URL of a thumbnail image
-  @JsonKey(includeIfNull: false, name: 'thumb_url')
+  @MappableField(key: 'thumb_url')
   final String? thumbUrl;
 
-  Map<String, Object?> toJson() => _$SlackWebhookRequestAttachmentsToJson(this);
+  static SlackWebhookRequestAttachments fromJson(Map<String, dynamic> json) =>
+      SlackWebhookRequestAttachmentsMapper.fromJson(json);
 }

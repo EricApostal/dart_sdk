@@ -2,22 +2,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'sso_complete_request.g.dart';
+part 'sso_complete_request.mapper.dart';
 
-@JsonSerializable()
-class SsoCompleteRequest {
+@MappableClass()
+class SsoCompleteRequest with SsoCompleteRequestMappable {
   const SsoCompleteRequest({required this.code, required this.state});
 
-  factory SsoCompleteRequest.fromJson(Map<String, Object?> json) =>
-      _$SsoCompleteRequestFromJson(json);
-
-  /// Authorization code from the SSO provider
   final String code;
-
-  /// State parameter for CSRF protection
   final String state;
 
-  Map<String, Object?> toJson() => _$SsoCompleteRequestToJson(this);
+  static SsoCompleteRequest fromJson(Map<String, dynamic> json) =>
+      SsoCompleteRequestMapper.fromJson(json);
 }

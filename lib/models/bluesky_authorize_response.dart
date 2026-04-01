@@ -2,20 +2,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'bluesky_authorize_response.g.dart';
+part 'bluesky_authorize_response.mapper.dart';
 
-@JsonSerializable()
-class BlueskyAuthorizeResponse {
+@MappableClass()
+class BlueskyAuthorizeResponse with BlueskyAuthorizeResponseMappable {
   const BlueskyAuthorizeResponse({required this.authorizeUrl});
 
-  factory BlueskyAuthorizeResponse.fromJson(Map<String, Object?> json) =>
-      _$BlueskyAuthorizeResponseFromJson(json);
-
-  /// The URL to redirect the user to for Bluesky authorisation
-  @JsonKey(name: 'authorize_url')
+  @MappableField(key: 'authorize_url')
   final String authorizeUrl;
 
-  Map<String, Object?> toJson() => _$BlueskyAuthorizeResponseToJson(this);
+  static BlueskyAuthorizeResponse fromJson(Map<String, dynamic> json) =>
+      BlueskyAuthorizeResponseMapper.fromJson(json);
 }

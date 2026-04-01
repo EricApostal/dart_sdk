@@ -80,7 +80,7 @@ class _DiscoveryApi implements DiscoveryApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late DiscoveryGuildListResponse _value;
     try {
       _value = DiscoveryGuildListResponse.fromJson(_result.data!);
@@ -130,7 +130,7 @@ class _DiscoveryApi implements DiscoveryApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late DiscoveryApplicationResponse _value;
     try {
       _value = DiscoveryApplicationResponse.fromJson(_result.data!);
@@ -161,7 +161,7 @@ class _DiscoveryApi implements DiscoveryApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late DiscoveryApplicationResponse _value;
     try {
       _value = DiscoveryApplicationResponse.fromJson(_result.data!);
@@ -209,7 +209,7 @@ class _DiscoveryApi implements DiscoveryApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late DiscoveryStatusResponse _value;
     try {
       _value = DiscoveryStatusResponse.fromJson(_result.data!);

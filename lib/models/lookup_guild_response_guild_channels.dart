@@ -2,16 +2,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 import 'lookup_guild_response_guild_channels_type_type.dart';
 import 'int32_type.dart';
 
-part 'lookup_guild_response_guild_channels.g.dart';
+part 'lookup_guild_response_guild_channels.mapper.dart';
 
-@JsonSerializable()
-class LookupGuildResponseGuildChannels {
+@MappableClass()
+class LookupGuildResponseGuildChannels
+    with LookupGuildResponseGuildChannelsMappable {
   const LookupGuildResponseGuildChannels({
     required this.id,
     required this.name,
@@ -20,20 +21,13 @@ class LookupGuildResponseGuildChannels {
     required this.parentId,
   });
 
-  factory LookupGuildResponseGuildChannels.fromJson(
-    Map<String, Object?> json,
-  ) => _$LookupGuildResponseGuildChannelsFromJson(json);
-
   final SnowflakeType id;
-  @JsonKey(includeIfNull: true)
   final String? name;
-
-  /// The type of the channel
   final LookupGuildResponseGuildChannelsTypeType type;
   final Int32Type position;
-  @JsonKey(includeIfNull: true, name: 'parent_id')
+  @MappableField(key: 'parent_id')
   final SnowflakeType? parentId;
 
-  Map<String, Object?> toJson() =>
-      _$LookupGuildResponseGuildChannelsToJson(this);
+  static LookupGuildResponseGuildChannels fromJson(Map<String, dynamic> json) =>
+      LookupGuildResponseGuildChannelsMapper.fromJson(json);
 }

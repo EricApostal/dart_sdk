@@ -2,20 +2,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'delete_message_response_success_success.dart';
 
-part 'delete_message_response.g.dart';
+part 'delete_message_response.mapper.dart';
 
-@JsonSerializable()
-class DeleteMessageResponse {
+@MappableClass()
+class DeleteMessageResponse with DeleteMessageResponseMappable {
   const DeleteMessageResponse({required this.success});
-
-  factory DeleteMessageResponse.fromJson(Map<String, Object?> json) =>
-      _$DeleteMessageResponseFromJson(json);
 
   final DeleteMessageResponseSuccessSuccess success;
 
-  Map<String, Object?> toJson() => _$DeleteMessageResponseToJson(this);
+  static DeleteMessageResponse fromJson(Map<String, dynamic> json) =>
+      DeleteMessageResponseMapper.fromJson(json);
 }

@@ -2,23 +2,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'search_users_request.g.dart';
+part 'search_users_request.mapper.dart';
 
-@JsonSerializable()
-class SearchUsersRequest {
+@MappableClass()
+class SearchUsersRequest with SearchUsersRequestMappable {
   const SearchUsersRequest({this.query, this.limit, this.offset});
 
-  factory SearchUsersRequest.fromJson(Map<String, Object?> json) =>
-      _$SearchUsersRequestFromJson(json);
-
-  @JsonKey(includeIfNull: false)
   final String? query;
-  @JsonKey(includeIfNull: false)
   final int? limit;
-  @JsonKey(includeIfNull: false)
   final int? offset;
 
-  Map<String, Object?> toJson() => _$SearchUsersRequestToJson(this);
+  static SearchUsersRequest fromJson(Map<String, dynamic> json) =>
+      SearchUsersRequestMapper.fromJson(json);
 }

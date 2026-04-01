@@ -2,29 +2,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'handoff_status_response.g.dart';
+part 'handoff_status_response.mapper.dart';
 
-@JsonSerializable()
-class HandoffStatusResponse {
+@MappableClass()
+class HandoffStatusResponse with HandoffStatusResponseMappable {
   const HandoffStatusResponse({required this.status, this.token, this.userId});
 
-  factory HandoffStatusResponse.fromJson(Map<String, Object?> json) =>
-      _$HandoffStatusResponseFromJson(json);
-
-  /// Current status of the handoff (pending, completed, expired)
   final String status;
-
-  /// Authentication token if handoff is complete
-  @JsonKey(includeIfNull: false)
   final String? token;
-
-  /// User ID if handoff is complete
-  @JsonKey(includeIfNull: false, name: 'user_id')
+  @MappableField(key: 'user_id')
   final SnowflakeType? userId;
 
-  Map<String, Object?> toJson() => _$HandoffStatusResponseToJson(this);
+  static HandoffStatusResponse fromJson(Map<String, dynamic> json) =>
+      HandoffStatusResponseMapper.fromJson(json);
 }

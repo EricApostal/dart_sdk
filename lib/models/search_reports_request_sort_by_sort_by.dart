@@ -2,35 +2,32 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'search_reports_request_sort_by_sort_by.mapper.dart';
 
 /// Field to sort reports by
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum SearchReportsRequestSortBySortBy {
-  @JsonValue('createdAt')
-  createdAt('createdAt'),
-  @JsonValue('reportedAt')
-  reportedAt('reportedAt'),
-  @JsonValue('resolvedAt')
-  resolvedAt('resolvedAt'),
+  @MappableValue('createdAt')
+  createdAt,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue('reportedAt')
+  reportedAt,
 
-  const SearchReportsRequestSortBySortBy(this.json);
+  @MappableValue('resolvedAt')
+  resolvedAt,
 
-  factory SearchReportsRequestSortBySortBy.fromJson(String json) =>
-      values.firstWhere((e) => e.json == json, orElse: () => $unknown);
+  @MappableValue('unknown')
+  unknown;
 
-  final String? json;
-
-  String toJson() => json ?? 'null';
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
-  static List<SearchReportsRequestSortBySortBy> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+  /// Returns all defined enum values excluding the unknown value.
+  static List<SearchReportsRequestSortBySortBy> get $valuesDefined => values
+      .where((value) => value != SearchReportsRequestSortBySortBy.unknown)
+      .toList();
 }

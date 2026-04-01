@@ -2,31 +2,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'group_dm_invite_metadata_response_type_type.mapper.dart';
 
 /// The type of invite (group DM)
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum GroupDmInviteMetadataResponseTypeType {
-  @JsonValue(1)
-  value1(1),
+  @MappableValue(1)
+  value1,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue('unknown')
+  unknown;
 
-  const GroupDmInviteMetadataResponseTypeType(this.json);
-
-  factory GroupDmInviteMetadataResponseTypeType.fromJson(int json) =>
-      values.firstWhere((e) => e.json == json, orElse: () => $unknown);
-
-  final int? json;
-
-  int? toJson() => json;
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json?.toString() ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
+  /// Returns all defined enum values excluding the unknown value.
   static List<GroupDmInviteMetadataResponseTypeType> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+      values
+          .where(
+            (value) => value != GroupDmInviteMetadataResponseTypeType.unknown,
+          )
+          .toList();
 }

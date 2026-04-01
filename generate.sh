@@ -129,6 +129,8 @@ dart run openapi_retrofit_generator --file openapi_generator.yaml
 
 echo "=== Step 5/6: Running build_runner ==="
 dart pub get
+dart run build_runner clean
+find lib -name '*.mapper.dart' -delete
 dart run build_runner build --delete-conflicting-outputs
 
 echo "=== Step 6/6: Formatting ==="

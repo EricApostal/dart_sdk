@@ -2,29 +2,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'base64_image_type.dart';
 
-part 'guild_create_request.g.dart';
+part 'guild_create_request.mapper.dart';
 
-@JsonSerializable()
-class GuildCreateRequest {
+@MappableClass()
+class GuildCreateRequest with GuildCreateRequestMappable {
   const GuildCreateRequest({required this.name, this.icon, this.emptyFeatures});
 
-  factory GuildCreateRequest.fromJson(Map<String, Object?> json) =>
-      _$GuildCreateRequestFromJson(json);
-
-  /// The name of the guild (1-100 characters)
   final String name;
-
-  /// Base64-encoded image data for the guild icon
-  @JsonKey(includeIfNull: false)
   final Base64ImageType? icon;
-
-  /// Whether to create the guild without default features
-  @JsonKey(includeIfNull: false, name: 'empty_features')
+  @MappableField(key: 'empty_features')
   final bool? emptyFeatures;
 
-  Map<String, Object?> toJson() => _$GuildCreateRequestToJson(this);
+  static GuildCreateRequest fromJson(Map<String, dynamic> json) =>
+      GuildCreateRequestMapper.fromJson(json);
 }

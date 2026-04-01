@@ -2,20 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'list_bans_request.g.dart';
+part 'list_bans_request.mapper.dart';
 
-@JsonSerializable()
-class ListBansRequest {
+@MappableClass()
+class ListBansRequest with ListBansRequestMappable {
   const ListBansRequest({this.limit});
 
-  factory ListBansRequest.fromJson(Map<String, Object?> json) =>
-      _$ListBansRequestFromJson(json);
-
-  /// Maximum number of bans to return
-  @JsonKey(includeIfNull: false)
   final int? limit;
 
-  Map<String, Object?> toJson() => _$ListBansRequestToJson(this);
+  static ListBansRequest fromJson(Map<String, dynamic> json) =>
+      ListBansRequestMapper.fromJson(json);
 }

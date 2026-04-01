@@ -2,15 +2,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'enable_mfa_totp_request_mfa_method_mfa_method.dart';
 import 'password_type.dart';
 
-part 'enable_mfa_totp_request.g.dart';
+part 'enable_mfa_totp_request.mapper.dart';
 
-@JsonSerializable()
-class EnableMfaTotpRequest {
+@MappableClass()
+class EnableMfaTotpRequest with EnableMfaTotpRequestMappable {
   const EnableMfaTotpRequest({
     required this.secret,
     required this.code,
@@ -21,32 +21,18 @@ class EnableMfaTotpRequest {
     this.webauthnChallenge,
   });
 
-  factory EnableMfaTotpRequest.fromJson(Map<String, Object?> json) =>
-      _$EnableMfaTotpRequestFromJson(json);
-
-  /// The TOTP secret key
   final String secret;
-
-  /// The TOTP verification code
   final String code;
-  @JsonKey(includeIfNull: false)
   final PasswordType? password;
-
-  /// MFA method to use for verification
-  @JsonKey(includeIfNull: false, name: 'mfa_method')
+  @MappableField(key: 'mfa_method')
   final EnableMfaTotpRequestMfaMethodMfaMethod? mfaMethod;
-
-  /// MFA verification code from authenticator app or SMS
-  @JsonKey(includeIfNull: false, name: 'mfa_code')
+  @MappableField(key: 'mfa_code')
   final String? mfaCode;
-
-  /// WebAuthn authentication response
-  @JsonKey(includeIfNull: false, name: 'webauthn_response')
+  @MappableField(key: 'webauthn_response')
   final dynamic webauthnResponse;
-
-  /// WebAuthn challenge string
-  @JsonKey(includeIfNull: false, name: 'webauthn_challenge')
+  @MappableField(key: 'webauthn_challenge')
   final String? webauthnChallenge;
 
-  Map<String, Object?> toJson() => _$EnableMfaTotpRequestToJson(this);
+  static EnableMfaTotpRequest fromJson(Map<String, dynamic> json) =>
+      EnableMfaTotpRequestMapper.fromJson(json);
 }

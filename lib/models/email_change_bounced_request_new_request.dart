@@ -2,23 +2,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'email_type.dart';
 
-part 'email_change_bounced_request_new_request.g.dart';
+part 'email_change_bounced_request_new_request.mapper.dart';
 
-@JsonSerializable()
-class EmailChangeBouncedRequestNewRequest {
+@MappableClass()
+class EmailChangeBouncedRequestNewRequest
+    with EmailChangeBouncedRequestNewRequestMappable {
   const EmailChangeBouncedRequestNewRequest({required this.newEmail});
 
-  factory EmailChangeBouncedRequestNewRequest.fromJson(
-    Map<String, Object?> json,
-  ) => _$EmailChangeBouncedRequestNewRequestFromJson(json);
-
-  @JsonKey(name: 'new_email')
+  @MappableField(key: 'new_email')
   final EmailType newEmail;
 
-  Map<String, Object?> toJson() =>
-      _$EmailChangeBouncedRequestNewRequestToJson(this);
+  static EmailChangeBouncedRequestNewRequest fromJson(
+    Map<String, dynamic> json,
+  ) => EmailChangeBouncedRequestNewRequestMapper.fromJson(json);
 }

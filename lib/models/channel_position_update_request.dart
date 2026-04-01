@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'channel_position_update_request.g.dart';
+part 'channel_position_update_request.mapper.dart';
 
-@JsonSerializable()
-class ChannelPositionUpdateRequest {
+@MappableClass()
+class ChannelPositionUpdateRequest with ChannelPositionUpdateRequestMappable {
   const ChannelPositionUpdateRequest({
     required this.id,
     this.position,
@@ -18,26 +18,15 @@ class ChannelPositionUpdateRequest {
     this.lockPermissions,
   });
 
-  factory ChannelPositionUpdateRequest.fromJson(Map<String, Object?> json) =>
-      _$ChannelPositionUpdateRequestFromJson(json);
-
   final SnowflakeType id;
-
-  /// New position for the channel
-  @JsonKey(includeIfNull: false)
   final int? position;
-
-  /// New parent category ID
-  @JsonKey(includeIfNull: false, name: 'parent_id')
+  @MappableField(key: 'parent_id')
   final SnowflakeType? parentId;
-
-  /// ID of the sibling channel that should directly precede this channel after reordering
-  @JsonKey(includeIfNull: false, name: 'preceding_sibling_id')
+  @MappableField(key: 'preceding_sibling_id')
   final SnowflakeType? precedingSiblingId;
-
-  /// Whether to sync permissions with the new parent
-  @JsonKey(includeIfNull: false, name: 'lock_permissions')
+  @MappableField(key: 'lock_permissions')
   final bool? lockPermissions;
 
-  Map<String, Object?> toJson() => _$ChannelPositionUpdateRequestToJson(this);
+  static ChannelPositionUpdateRequest fromJson(Map<String, dynamic> json) =>
+      ChannelPositionUpdateRequestMapper.fromJson(json);
 }

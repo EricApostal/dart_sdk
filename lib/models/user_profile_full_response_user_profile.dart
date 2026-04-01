@@ -2,14 +2,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'int32_type.dart';
 
-part 'user_profile_full_response_user_profile.g.dart';
+part 'user_profile_full_response_user_profile.mapper.dart';
 
-@JsonSerializable()
-class UserProfileFullResponseUserProfile {
+@MappableClass()
+class UserProfileFullResponseUserProfile
+    with UserProfileFullResponseUserProfileMappable {
   const UserProfileFullResponseUserProfile({
     required this.bio,
     required this.pronouns,
@@ -18,30 +19,15 @@ class UserProfileFullResponseUserProfile {
     this.bannerColor,
   });
 
-  factory UserProfileFullResponseUserProfile.fromJson(
-    Map<String, Object?> json,
-  ) => _$UserProfileFullResponseUserProfileFromJson(json);
-
-  /// User biography text
-  @JsonKey(includeIfNull: true)
   final String? bio;
-
-  /// User pronouns
-  @JsonKey(includeIfNull: true)
   final String? pronouns;
-
-  /// Hash of the profile banner image
-  @JsonKey(includeIfNull: true)
   final String? banner;
-
-  /// Default banner color if no custom banner
-  @JsonKey(includeIfNull: false, name: 'banner_color')
+  @MappableField(key: 'accent_color')
+  final Int32Type? accentColor;
+  @MappableField(key: 'banner_color')
   final Int32Type? bannerColor;
 
-  /// User-selected accent color
-  @JsonKey(includeIfNull: true, name: 'accent_color')
-  final Int32Type? accentColor;
-
-  Map<String, Object?> toJson() =>
-      _$UserProfileFullResponseUserProfileToJson(this);
+  static UserProfileFullResponseUserProfile fromJson(
+    Map<String, dynamic> json,
+  ) => UserProfileFullResponseUserProfileMapper.fromJson(json);
 }

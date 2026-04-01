@@ -2,37 +2,31 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'sort_by.mapper.dart';
 
 /// Sort order
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum SortBy {
-  @JsonValue('member_count')
-  memberCount('member_count'),
-  @JsonValue('online_count')
-  onlineCount('online_count'),
-  @JsonValue('relevance')
-  relevance('relevance'),
+  @MappableValue('member_count')
+  memberCount,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue('online_count')
+  onlineCount,
 
-  const SortBy(this.json);
+  @MappableValue('relevance')
+  relevance,
 
-  factory SortBy.fromJson(String json) => values.firstWhere(
-    (e) => e.json == json,
-    orElse: () => $unknown,
-  );
+  @MappableValue('unknown')
+  unknown;
 
-  final String? json;
-
-  String toJson() => json ?? 'null';
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
+  /// Returns all defined enum values excluding the unknown value.
   static List<SortBy> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+      values.where((value) => value != SortBy.unknown).toList();
 }

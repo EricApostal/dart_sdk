@@ -2,20 +2,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'git_hub_webhook_commits_author.g.dart';
+part 'git_hub_webhook_commits_author.mapper.dart';
 
-@JsonSerializable()
-class GitHubWebhookCommitsAuthor {
+@MappableClass()
+class GitHubWebhookCommitsAuthor with GitHubWebhookCommitsAuthorMappable {
   const GitHubWebhookCommitsAuthor({required this.name, this.username});
 
-  factory GitHubWebhookCommitsAuthor.fromJson(Map<String, Object?> json) =>
-      _$GitHubWebhookCommitsAuthorFromJson(json);
-
-  @JsonKey(includeIfNull: false)
-  final String? username;
   final String name;
+  final String? username;
 
-  Map<String, Object?> toJson() => _$GitHubWebhookCommitsAuthorToJson(this);
+  static GitHubWebhookCommitsAuthor fromJson(Map<String, dynamic> json) =>
+      GitHubWebhookCommitsAuthorMapper.fromJson(json);
 }

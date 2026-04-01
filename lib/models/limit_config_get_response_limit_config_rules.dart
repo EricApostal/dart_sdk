@@ -2,14 +2,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'limit_config_get_response_limit_config_rules_filters.dart';
 
-part 'limit_config_get_response_limit_config_rules.g.dart';
+part 'limit_config_get_response_limit_config_rules.mapper.dart';
 
-@JsonSerializable()
-class LimitConfigGetResponseLimitConfigRules {
+@MappableClass()
+class LimitConfigGetResponseLimitConfigRules
+    with LimitConfigGetResponseLimitConfigRulesMappable {
   const LimitConfigGetResponseLimitConfigRules({
     required this.id,
     required this.limits,
@@ -17,22 +18,12 @@ class LimitConfigGetResponseLimitConfigRules {
     this.modifiedFields,
   });
 
-  factory LimitConfigGetResponseLimitConfigRules.fromJson(
-    Map<String, Object?> json,
-  ) => _$LimitConfigGetResponseLimitConfigRulesFromJson(json);
-
-  /// Unique rule identifier
   final String id;
-
-  /// Optional filters that scope the rule
-  @JsonKey(includeIfNull: false)
-  final LimitConfigGetResponseLimitConfigRulesFilters? filters;
-
-  /// Per-limit key values
   final Map<String, num> limits;
-  @JsonKey(includeIfNull: false)
+  final LimitConfigGetResponseLimitConfigRulesFilters? filters;
   final List<String>? modifiedFields;
 
-  Map<String, Object?> toJson() =>
-      _$LimitConfigGetResponseLimitConfigRulesToJson(this);
+  static LimitConfigGetResponseLimitConfigRules fromJson(
+    Map<String, dynamic> json,
+  ) => LimitConfigGetResponseLimitConfigRulesMapper.fromJson(json);
 }

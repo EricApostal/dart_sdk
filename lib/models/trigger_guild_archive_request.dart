@@ -2,21 +2,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'trigger_guild_archive_request.g.dart';
+part 'trigger_guild_archive_request.mapper.dart';
 
-@JsonSerializable()
-class TriggerGuildArchiveRequest {
+@MappableClass()
+class TriggerGuildArchiveRequest with TriggerGuildArchiveRequestMappable {
   const TriggerGuildArchiveRequest({required this.guildId});
 
-  factory TriggerGuildArchiveRequest.fromJson(Map<String, Object?> json) =>
-      _$TriggerGuildArchiveRequestFromJson(json);
-
-  @JsonKey(name: 'guild_id')
+  @MappableField(key: 'guild_id')
   final SnowflakeType guildId;
 
-  Map<String, Object?> toJson() => _$TriggerGuildArchiveRequestToJson(this);
+  static TriggerGuildArchiveRequest fromJson(Map<String, dynamic> json) =>
+      TriggerGuildArchiveRequestMapper.fromJson(json);
 }

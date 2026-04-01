@@ -2,21 +2,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'terminate_sessions_request.g.dart';
+part 'terminate_sessions_request.mapper.dart';
 
-@JsonSerializable()
-class TerminateSessionsRequest {
+@MappableClass()
+class TerminateSessionsRequest with TerminateSessionsRequestMappable {
   const TerminateSessionsRequest({required this.userId});
 
-  factory TerminateSessionsRequest.fromJson(Map<String, Object?> json) =>
-      _$TerminateSessionsRequestFromJson(json);
-
-  @JsonKey(name: 'user_id')
+  @MappableField(key: 'user_id')
   final SnowflakeType userId;
 
-  Map<String, Object?> toJson() => _$TerminateSessionsRequestToJson(this);
+  static TerminateSessionsRequest fromJson(Map<String, dynamic> json) =>
+      TerminateSessionsRequestMapper.fromJson(json);
 }

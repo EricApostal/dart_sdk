@@ -2,22 +2,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'reload_guilds_request.g.dart';
+part 'reload_guilds_request.mapper.dart';
 
-@JsonSerializable()
-class ReloadGuildsRequest {
+@MappableClass()
+class ReloadGuildsRequest with ReloadGuildsRequestMappable {
   const ReloadGuildsRequest({required this.guildIds});
 
-  factory ReloadGuildsRequest.fromJson(Map<String, Object?> json) =>
-      _$ReloadGuildsRequestFromJson(json);
-
-  /// List of guild IDs to reload
-  @JsonKey(name: 'guild_ids')
+  @MappableField(key: 'guild_ids')
   final List<SnowflakeType> guildIds;
 
-  Map<String, Object?> toJson() => _$ReloadGuildsRequestToJson(this);
+  static ReloadGuildsRequest fromJson(Map<String, dynamic> json) =>
+      ReloadGuildsRequestMapper.fromJson(json);
 }

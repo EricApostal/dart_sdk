@@ -2,41 +2,37 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'join_source_type.mapper.dart';
 
 /// How the member joined the guild
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum JoinSourceType {
-  @JsonValue(0)
-  creator(0),
-  @JsonValue(1)
-  instantInvite(1),
-  @JsonValue(2)
-  vanityUrl(2),
-  @JsonValue(3)
-  botInvite(3),
-  @JsonValue(4)
-  adminForceAdd(4),
+  @MappableValue(0)
+  creator,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue(1)
+  instantInvite,
 
-  const JoinSourceType(this.json);
+  @MappableValue(2)
+  vanityUrl,
 
-  factory JoinSourceType.fromJson(int json) => values.firstWhere(
-    (e) => e.json == json,
-    orElse: () => $unknown,
-  );
+  @MappableValue(3)
+  botInvite,
 
-  final int? json;
+  @MappableValue(4)
+  adminForceAdd,
 
-  int? toJson() => json;
+  @MappableValue('unknown')
+  unknown;
+
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json?.toString() ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
+  /// Returns all defined enum values excluding the unknown value.
   static List<JoinSourceType> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+      values.where((value) => value != JoinSourceType.unknown).toList();
 }

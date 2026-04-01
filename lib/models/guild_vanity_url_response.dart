@@ -2,23 +2,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'guild_vanity_url_response.g.dart';
+part 'guild_vanity_url_response.mapper.dart';
 
-@JsonSerializable()
-class GuildVanityUrlResponse {
+@MappableClass()
+class GuildVanityUrlResponse with GuildVanityUrlResponseMappable {
   const GuildVanityUrlResponse({required this.uses, this.code});
 
-  factory GuildVanityUrlResponse.fromJson(Map<String, Object?> json) =>
-      _$GuildVanityUrlResponseFromJson(json);
-
-  /// The vanity URL code for the guild
-  @JsonKey(includeIfNull: false)
+  final int uses;
   final String? code;
 
-  /// The number of times this vanity URL has been used
-  final int uses;
-
-  Map<String, Object?> toJson() => _$GuildVanityUrlResponseToJson(this);
+  static GuildVanityUrlResponse fromJson(Map<String, dynamic> json) =>
+      GuildVanityUrlResponseMapper.fromJson(json);
 }

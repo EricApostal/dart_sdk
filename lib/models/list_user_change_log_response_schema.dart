@@ -2,26 +2,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'user_contact_change_log_entry_schema.dart';
 
-part 'list_user_change_log_response_schema.g.dart';
+part 'list_user_change_log_response_schema.mapper.dart';
 
-@JsonSerializable()
-class ListUserChangeLogResponseSchema {
+@MappableClass()
+class ListUserChangeLogResponseSchema
+    with ListUserChangeLogResponseSchemaMappable {
   const ListUserChangeLogResponseSchema({
     required this.entries,
     required this.nextPageToken,
   });
 
-  factory ListUserChangeLogResponseSchema.fromJson(Map<String, Object?> json) =>
-      _$ListUserChangeLogResponseSchemaFromJson(json);
-
   final List<UserContactChangeLogEntrySchema> entries;
-  @JsonKey(includeIfNull: true, name: 'next_page_token')
+  @MappableField(key: 'next_page_token')
   final String? nextPageToken;
 
-  Map<String, Object?> toJson() =>
-      _$ListUserChangeLogResponseSchemaToJson(this);
+  static ListUserChangeLogResponseSchema fromJson(Map<String, dynamic> json) =>
+      ListUserChangeLogResponseSchemaMapper.fromJson(json);
 }

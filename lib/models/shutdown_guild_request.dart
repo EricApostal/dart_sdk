@@ -2,21 +2,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'shutdown_guild_request.g.dart';
+part 'shutdown_guild_request.mapper.dart';
 
-@JsonSerializable()
-class ShutdownGuildRequest {
+@MappableClass()
+class ShutdownGuildRequest with ShutdownGuildRequestMappable {
   const ShutdownGuildRequest({required this.guildId});
 
-  factory ShutdownGuildRequest.fromJson(Map<String, Object?> json) =>
-      _$ShutdownGuildRequestFromJson(json);
-
-  @JsonKey(name: 'guild_id')
+  @MappableField(key: 'guild_id')
   final SnowflakeType guildId;
 
-  Map<String, Object?> toJson() => _$ShutdownGuildRequestToJson(this);
+  static ShutdownGuildRequest fromJson(Map<String, dynamic> json) =>
+      ShutdownGuildRequestMapper.fromJson(json);
 }

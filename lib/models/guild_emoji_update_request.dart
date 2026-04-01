@@ -2,19 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'guild_emoji_update_request.g.dart';
+part 'guild_emoji_update_request.mapper.dart';
 
-@JsonSerializable()
-class GuildEmojiUpdateRequest {
+@MappableClass()
+class GuildEmojiUpdateRequest with GuildEmojiUpdateRequestMappable {
   const GuildEmojiUpdateRequest({required this.name});
 
-  factory GuildEmojiUpdateRequest.fromJson(Map<String, Object?> json) =>
-      _$GuildEmojiUpdateRequestFromJson(json);
-
-  /// The name of the emoji (2-32 characters, alphanumeric and underscores only)
   final String name;
 
-  Map<String, Object?> toJson() => _$GuildEmojiUpdateRequestToJson(this);
+  static GuildEmojiUpdateRequest fromJson(Map<String, dynamic> json) =>
+      GuildEmojiUpdateRequestMapper.fromJson(json);
 }

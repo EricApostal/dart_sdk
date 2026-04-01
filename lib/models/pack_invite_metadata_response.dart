@@ -2,16 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'pack_invite_metadata_response_pack.dart';
 import 'pack_invite_metadata_response_type_type.dart';
 import 'user_partial_response.dart';
 
-part 'pack_invite_metadata_response.g.dart';
+part 'pack_invite_metadata_response.mapper.dart';
 
-@JsonSerializable()
-class PackInviteMetadataResponse {
+@MappableClass()
+class PackInviteMetadataResponse with PackInviteMetadataResponseMappable {
   const PackInviteMetadataResponse({
     required this.code,
     required this.type,
@@ -24,39 +24,19 @@ class PackInviteMetadataResponse {
     this.expiresAt,
   });
 
-  factory PackInviteMetadataResponse.fromJson(Map<String, Object?> json) =>
-      _$PackInviteMetadataResponseFromJson(json);
-
-  /// The unique invite code
   final String code;
-
-  /// The type of pack invite (emoji or sticker pack)
   final PackInviteMetadataResponseTypeType type;
-
-  /// The pack this invite is for
   final PackInviteMetadataResponsePack pack;
-
-  /// The user who created the invite
-  @JsonKey(includeIfNull: false)
+  final bool temporary;
+  @MappableField(key: 'created_at')
+  final DateTime createdAt;
+  final int uses;
+  @MappableField(key: 'max_uses')
+  final int maxUses;
   final UserPartialResponse? inviter;
-
-  /// ISO8601 timestamp of when the invite expires
-  @JsonKey(includeIfNull: false, name: 'expires_at')
+  @MappableField(key: 'expires_at')
   final DateTime? expiresAt;
 
-  /// Whether the invite grants temporary access
-  final bool temporary;
-
-  /// ISO8601 timestamp of when the invite was created
-  @JsonKey(name: 'created_at')
-  final DateTime createdAt;
-
-  /// The number of times this invite has been used
-  final int uses;
-
-  /// The maximum number of times this invite can be used
-  @JsonKey(name: 'max_uses')
-  final int maxUses;
-
-  Map<String, Object?> toJson() => _$PackInviteMetadataResponseToJson(this);
+  static PackInviteMetadataResponse fromJson(Map<String, dynamic> json) =>
+      PackInviteMetadataResponseMapper.fromJson(json);
 }

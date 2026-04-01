@@ -2,19 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'discovery_admin_remove_request.g.dart';
+part 'discovery_admin_remove_request.mapper.dart';
 
-@JsonSerializable()
-class DiscoveryAdminRemoveRequest {
+@MappableClass()
+class DiscoveryAdminRemoveRequest with DiscoveryAdminRemoveRequestMappable {
   const DiscoveryAdminRemoveRequest({required this.reason});
 
-  factory DiscoveryAdminRemoveRequest.fromJson(Map<String, Object?> json) =>
-      _$DiscoveryAdminRemoveRequestFromJson(json);
-
-  /// Removal reason
   final String reason;
 
-  Map<String, Object?> toJson() => _$DiscoveryAdminRemoveRequestToJson(this);
+  static DiscoveryAdminRemoveRequest fromJson(Map<String, dynamic> json) =>
+      DiscoveryAdminRemoveRequestMapper.fromJson(json);
 }

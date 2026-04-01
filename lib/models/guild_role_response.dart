@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'int32_type.dart';
 
-part 'guild_role_response.g.dart';
+part 'guild_role_response.mapper.dart';
 
-@JsonSerializable()
-class GuildRoleResponse {
+@MappableClass()
+class GuildRoleResponse with GuildRoleResponseMappable {
   const GuildRoleResponse({
     required this.id,
     required this.name,
@@ -22,37 +22,18 @@ class GuildRoleResponse {
     this.unicodeEmoji,
   });
 
-  factory GuildRoleResponse.fromJson(Map<String, Object?> json) =>
-      _$GuildRoleResponseFromJson(json);
-
-  /// The unique identifier for this role
   final String id;
-
-  /// The name of the role
   final String name;
-
-  /// The colour of the role as an integer
   final int color;
-
-  /// The position of the role in the role hierarchy
   final int position;
-
-  /// The position of the role in the hoisted member list
-  @JsonKey(includeIfNull: false, name: 'hoist_position')
-  final Int32Type? hoistPosition;
-
-  /// The permissions bitfield for the role
   final String permissions;
-
-  /// Whether this role is displayed separately in the member list
   final bool hoist;
-
-  /// Whether this role can be mentioned by anyone
   final bool mentionable;
-
-  /// The unicode emoji for this role
-  @JsonKey(includeIfNull: false, name: 'unicode_emoji')
+  @MappableField(key: 'hoist_position')
+  final Int32Type? hoistPosition;
+  @MappableField(key: 'unicode_emoji')
   final String? unicodeEmoji;
 
-  Map<String, Object?> toJson() => _$GuildRoleResponseToJson(this);
+  static GuildRoleResponse fromJson(Map<String, dynamic> json) =>
+      GuildRoleResponseMapper.fromJson(json);
 }

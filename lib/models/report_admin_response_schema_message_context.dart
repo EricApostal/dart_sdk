@@ -2,15 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 import 'report_admin_response_schema_message_context_attachments.dart';
 
-part 'report_admin_response_schema_message_context.g.dart';
+part 'report_admin_response_schema_message_context.mapper.dart';
 
-@JsonSerializable()
-class ReportAdminResponseSchemaMessageContext {
+@MappableClass()
+class ReportAdminResponseSchemaMessageContext
+    with ReportAdminResponseSchemaMessageContextMappable {
   const ReportAdminResponseSchemaMessageContext({
     required this.id,
     required this.channelId,
@@ -23,25 +24,22 @@ class ReportAdminResponseSchemaMessageContext {
     required this.authorDiscriminator,
   });
 
-  factory ReportAdminResponseSchemaMessageContext.fromJson(
-    Map<String, Object?> json,
-  ) => _$ReportAdminResponseSchemaMessageContextFromJson(json);
-
   final SnowflakeType id;
-  @JsonKey(name: 'channel_id')
+  @MappableField(key: 'channel_id')
   final SnowflakeType channelId;
-  @JsonKey(includeIfNull: true, name: 'guild_id')
+  @MappableField(key: 'guild_id')
   final SnowflakeType? guildId;
   final String content;
   final String timestamp;
   final List<ReportAdminResponseSchemaMessageContextAttachments> attachments;
-  @JsonKey(name: 'author_id')
+  @MappableField(key: 'author_id')
   final SnowflakeType authorId;
-  @JsonKey(name: 'author_username')
+  @MappableField(key: 'author_username')
   final String authorUsername;
-  @JsonKey(name: 'author_discriminator')
+  @MappableField(key: 'author_discriminator')
   final String authorDiscriminator;
 
-  Map<String, Object?> toJson() =>
-      _$ReportAdminResponseSchemaMessageContextToJson(this);
+  static ReportAdminResponseSchemaMessageContext fromJson(
+    Map<String, dynamic> json,
+  ) => ReportAdminResponseSchemaMessageContextMapper.fromJson(json);
 }

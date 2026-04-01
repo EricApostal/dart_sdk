@@ -2,15 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'pack_invite_metadata_response_pack_type_type.dart';
 import 'user_partial_response.dart';
 
-part 'pack_invite_metadata_response_pack.g.dart';
+part 'pack_invite_metadata_response_pack.mapper.dart';
 
-@JsonSerializable()
-class PackInviteMetadataResponsePack {
+@MappableClass()
+class PackInviteMetadataResponsePack
+    with PackInviteMetadataResponsePackMappable {
   const PackInviteMetadataResponsePack({
     required this.id,
     required this.name,
@@ -22,34 +23,18 @@ class PackInviteMetadataResponsePack {
     this.description,
   });
 
-  factory PackInviteMetadataResponsePack.fromJson(Map<String, Object?> json) =>
-      _$PackInviteMetadataResponsePackFromJson(json);
-
-  /// The unique identifier for the pack
   final String id;
-
-  /// The display name of the pack
   final String name;
-
-  /// The description of the pack
-  @JsonKey(includeIfNull: false)
-  final String? description;
-
-  /// The type of pack (emoji or sticker)
   final PackInviteMetadataResponsePackTypeType type;
-
-  /// The ID of the user who created the pack
-  @JsonKey(name: 'creator_id')
+  @MappableField(key: 'creator_id')
   final String creatorId;
-
-  /// ISO8601 timestamp of when the pack was created
-  @JsonKey(name: 'created_at')
+  @MappableField(key: 'created_at')
   final DateTime createdAt;
-
-  /// ISO8601 timestamp of when the pack was last updated
-  @JsonKey(name: 'updated_at')
+  @MappableField(key: 'updated_at')
   final DateTime updatedAt;
   final UserPartialResponse creator;
+  final String? description;
 
-  Map<String, Object?> toJson() => _$PackInviteMetadataResponsePackToJson(this);
+  static PackInviteMetadataResponsePack fromJson(Map<String, dynamic> json) =>
+      PackInviteMetadataResponsePackMapper.fromJson(json);
 }

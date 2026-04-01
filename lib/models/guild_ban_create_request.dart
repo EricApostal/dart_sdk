@@ -2,32 +2,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'guild_ban_create_request.g.dart';
+part 'guild_ban_create_request.mapper.dart';
 
-@JsonSerializable()
-class GuildBanCreateRequest {
+@MappableClass()
+class GuildBanCreateRequest with GuildBanCreateRequestMappable {
   const GuildBanCreateRequest({
     this.deleteMessageDays,
     this.reason,
     this.banDurationSeconds,
   });
 
-  factory GuildBanCreateRequest.fromJson(Map<String, Object?> json) =>
-      _$GuildBanCreateRequestFromJson(json);
-
-  /// Number of days of messages to delete from the banned user (0-7)
-  @JsonKey(includeIfNull: false, name: 'delete_message_days')
+  @MappableField(key: 'delete_message_days')
   final int? deleteMessageDays;
-
-  /// The reason for the ban (max 512 characters)
-  @JsonKey(includeIfNull: false)
   final String? reason;
-
-  /// Duration of the ban in seconds (0 for permanent, or a valid temporary duration)
-  @JsonKey(includeIfNull: false, name: 'ban_duration_seconds')
+  @MappableField(key: 'ban_duration_seconds')
   final int? banDurationSeconds;
 
-  Map<String, Object?> toJson() => _$GuildBanCreateRequestToJson(this);
+  static GuildBanCreateRequest fromJson(Map<String, dynamic> json) =>
+      GuildBanCreateRequestMapper.fromJson(json);
 }

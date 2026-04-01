@@ -2,31 +2,30 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-@JsonEnum()
+part 'delete_all_user_messages_response_success_success.mapper.dart';
+
+@MappableEnum(defaultValue: 'unknown')
 enum DeleteAllUserMessagesResponseSuccessSuccess {
   /// The name has been replaced because it contains a keyword. Original name: `true`.
-  @JsonValue(true)
-  valueTrue(true),
+  @MappableValue(true)
+  valueTrue,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue('unknown')
+  unknown;
 
-  const DeleteAllUserMessagesResponseSuccessSuccess(this.json);
-
-  factory DeleteAllUserMessagesResponseSuccessSuccess.fromJson(bool json) =>
-      values.firstWhere((e) => e.json == json, orElse: () => $unknown);
-
-  final bool? json;
-
-  bool? toJson() => json;
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json?.toString() ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
+  /// Returns all defined enum values excluding the unknown value.
   static List<DeleteAllUserMessagesResponseSuccessSuccess> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+      values
+          .where(
+            (value) =>
+                value != DeleteAllUserMessagesResponseSuccessSuccess.unknown,
+          )
+          .toList();
 }

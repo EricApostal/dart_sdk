@@ -2,20 +2,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'o_auth2_consent_response.g.dart';
+part 'o_auth2_consent_response.mapper.dart';
 
-@JsonSerializable()
-class OAuth2ConsentResponse {
+@MappableClass()
+class OAuth2ConsentResponse with OAuth2ConsentResponseMappable {
   const OAuth2ConsentResponse({required this.redirectTo});
 
-  factory OAuth2ConsentResponse.fromJson(Map<String, Object?> json) =>
-      _$OAuth2ConsentResponseFromJson(json);
-
-  /// The URL to redirect the user to after consent
-  @JsonKey(name: 'redirect_to')
+  @MappableField(key: 'redirect_to')
   final String redirectTo;
 
-  Map<String, Object?> toJson() => _$OAuth2ConsentResponseToJson(this);
+  static OAuth2ConsentResponse fromJson(Map<String, dynamic> json) =>
+      OAuth2ConsentResponseMapper.fromJson(json);
 }

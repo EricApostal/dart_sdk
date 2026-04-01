@@ -2,15 +2,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'password_type.dart';
 import 'phone_add_request_mfa_method_mfa_method.dart';
 
-part 'phone_add_request.g.dart';
+part 'phone_add_request.mapper.dart';
 
-@JsonSerializable()
-class PhoneAddRequest {
+@MappableClass()
+class PhoneAddRequest with PhoneAddRequestMappable {
   const PhoneAddRequest({
     required this.phoneToken,
     this.password,
@@ -20,30 +20,18 @@ class PhoneAddRequest {
     this.webauthnChallenge,
   });
 
-  factory PhoneAddRequest.fromJson(Map<String, Object?> json) =>
-      _$PhoneAddRequestFromJson(json);
-
-  /// Token from phone verification
-  @JsonKey(name: 'phone_token')
+  @MappableField(key: 'phone_token')
   final String phoneToken;
-  @JsonKey(includeIfNull: false)
   final PasswordType? password;
-
-  /// MFA method to use for verification
-  @JsonKey(includeIfNull: false, name: 'mfa_method')
+  @MappableField(key: 'mfa_method')
   final PhoneAddRequestMfaMethodMfaMethod? mfaMethod;
-
-  /// MFA verification code from authenticator app or SMS
-  @JsonKey(includeIfNull: false, name: 'mfa_code')
+  @MappableField(key: 'mfa_code')
   final String? mfaCode;
-
-  /// WebAuthn authentication response
-  @JsonKey(includeIfNull: false, name: 'webauthn_response')
+  @MappableField(key: 'webauthn_response')
   final dynamic webauthnResponse;
-
-  /// WebAuthn challenge string
-  @JsonKey(includeIfNull: false, name: 'webauthn_challenge')
+  @MappableField(key: 'webauthn_challenge')
   final String? webauthnChallenge;
 
-  Map<String, Object?> toJson() => _$PhoneAddRequestToJson(this);
+  static PhoneAddRequest fromJson(Map<String, dynamic> json) =>
+      PhoneAddRequestMapper.fromJson(json);
 }

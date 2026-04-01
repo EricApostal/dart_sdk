@@ -125,7 +125,7 @@ class _AuthApi implements AuthApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late HandoffInitiateResponse _value;
     try {
       _value = HandoffInitiateResponse.fromJson(_result.data!);
@@ -171,7 +171,7 @@ class _AuthApi implements AuthApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late HandoffStatusResponse _value;
     try {
       _value = HandoffStatusResponse.fromJson(_result.data!);
@@ -200,7 +200,7 @@ class _AuthApi implements AuthApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late IpAuthorizationPollResponse _value;
     try {
       _value = IpAuthorizationPollResponse.fromJson(_result.data!);
@@ -278,7 +278,7 @@ class _AuthApi implements AuthApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late AuthTokenWithUserIdResponse _value;
     try {
       _value = AuthTokenWithUserIdResponse.fromJson(_result.data!);
@@ -328,7 +328,7 @@ class _AuthApi implements AuthApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late AuthTokenWithUserIdResponse _value;
     try {
       _value = AuthTokenWithUserIdResponse.fromJson(_result.data!);
@@ -358,7 +358,7 @@ class _AuthApi implements AuthApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late AuthTokenWithUserIdResponse _value;
     try {
       _value = AuthTokenWithUserIdResponse.fromJson(_result.data!);
@@ -545,7 +545,7 @@ class _AuthApi implements AuthApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late SsoCompleteResponse _value;
     try {
       _value = SsoCompleteResponse.fromJson(_result.data!);
@@ -573,7 +573,7 @@ class _AuthApi implements AuthApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late SsoStartResponse _value;
     try {
       _value = SsoStartResponse.fromJson(_result.data!);
@@ -600,7 +600,7 @@ class _AuthApi implements AuthApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late SsoStatusResponse _value;
     try {
       _value = SsoStatusResponse.fromJson(_result.data!);
@@ -630,7 +630,7 @@ class _AuthApi implements AuthApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UsernameSuggestionsResponse _value;
     try {
       _value = UsernameSuggestionsResponse.fromJson(_result.data!);
@@ -699,7 +699,7 @@ class _AuthApi implements AuthApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late AuthTokenWithUserIdResponse _value;
     try {
       _value = AuthTokenWithUserIdResponse.fromJson(_result.data!);

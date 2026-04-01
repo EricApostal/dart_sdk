@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'authorize_consent_request.g.dart';
+part 'authorize_consent_request.mapper.dart';
 
-@JsonSerializable()
-class AuthorizeConsentRequest {
+@MappableClass()
+class AuthorizeConsentRequest with AuthorizeConsentRequestMappable {
   const AuthorizeConsentRequest({
     required this.clientId,
     required this.scope,
@@ -20,31 +20,18 @@ class AuthorizeConsentRequest {
     this.guildId,
   });
 
-  factory AuthorizeConsentRequest.fromJson(Map<String, Object?> json) =>
-      _$AuthorizeConsentRequestFromJson(json);
-
-  /// The OAuth2 response type
-  @JsonKey(includeIfNull: false, name: 'response_type')
-  final String? responseType;
-  @JsonKey(name: 'client_id')
+  @MappableField(key: 'client_id')
   final SnowflakeType clientId;
-
-  /// The URI to redirect to after authorization
-  @JsonKey(includeIfNull: false, name: 'redirect_uri')
-  final String? redirectUri;
-
-  /// The space-separated list of requested scopes
   final String scope;
-
-  /// A random string for CSRF protection
-  @JsonKey(includeIfNull: false)
+  @MappableField(key: 'response_type')
+  final String? responseType;
+  @MappableField(key: 'redirect_uri')
+  final String? redirectUri;
   final String? state;
-
-  /// The bot permissions to request
-  @JsonKey(includeIfNull: false)
   final String? permissions;
-  @JsonKey(includeIfNull: false, name: 'guild_id')
+  @MappableField(key: 'guild_id')
   final SnowflakeType? guildId;
 
-  Map<String, Object?> toJson() => _$AuthorizeConsentRequestToJson(this);
+  static AuthorizeConsentRequest fromJson(Map<String, dynamic> json) =>
+      AuthorizeConsentRequestMapper.fromJson(json);
 }

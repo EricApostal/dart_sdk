@@ -2,30 +2,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'limit_filter_response.dart';
 
-part 'limit_rule_response.g.dart';
+part 'limit_rule_response.mapper.dart';
 
-@JsonSerializable()
-class LimitRuleResponse {
+@MappableClass()
+class LimitRuleResponse with LimitRuleResponseMappable {
   const LimitRuleResponse({
     required this.id,
     required this.overrides,
     this.filters,
   });
 
-  factory LimitRuleResponse.fromJson(Map<String, Object?> json) =>
-      _$LimitRuleResponseFromJson(json);
-
-  /// Unique identifier for this limit rule
   final String id;
-  @JsonKey(includeIfNull: false)
+  final Map<String, num> overrides;
   final LimitFilterResponse? filters;
 
-  /// Map of limit keys to their override values (differences from defaults)
-  final Map<String, num> overrides;
-
-  Map<String, Object?> toJson() => _$LimitRuleResponseToJson(this);
+  static LimitRuleResponse fromJson(Map<String, dynamic> json) =>
+      LimitRuleResponseMapper.fromJson(json);
 }

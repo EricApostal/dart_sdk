@@ -2,35 +2,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'pack_invite_response_type_type.mapper.dart';
 
 /// The type of pack invite (emoji or sticker pack)
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum PackInviteResponseTypeType {
-  @JsonValue(2)
-  value2(2),
-  @JsonValue(3)
-  value3(3),
+  @MappableValue(2)
+  value2,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue(3)
+  value3,
 
-  const PackInviteResponseTypeType(this.json);
+  @MappableValue('unknown')
+  unknown;
 
-  factory PackInviteResponseTypeType.fromJson(int json) => values.firstWhere(
-    (e) => e.json == json,
-    orElse: () => $unknown,
-  );
-
-  final int? json;
-
-  int? toJson() => json;
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json?.toString() ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
-  static List<PackInviteResponseTypeType> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+  /// Returns all defined enum values excluding the unknown value.
+  static List<PackInviteResponseTypeType> get $valuesDefined => values
+      .where((value) => value != PackInviteResponseTypeType.unknown)
+      .toList();
 }

@@ -70,7 +70,7 @@ class _ConnectionsApi implements ConnectionsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ConnectionVerificationResponse _value;
     try {
       _value = ConnectionVerificationResponse.fromJson(_result.data!);
@@ -100,7 +100,7 @@ class _ConnectionsApi implements ConnectionsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late BlueskyAuthorizeResponse _value;
     try {
       _value = BlueskyAuthorizeResponse.fromJson(_result.data!);
@@ -152,7 +152,7 @@ class _ConnectionsApi implements ConnectionsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ConnectionResponse _value;
     try {
       _value = ConnectionResponse.fromJson(_result.data!);
@@ -228,7 +228,7 @@ class _ConnectionsApi implements ConnectionsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ConnectionResponse _value;
     try {
       _value = ConnectionResponse.fromJson(_result.data!);

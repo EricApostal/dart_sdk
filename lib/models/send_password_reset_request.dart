@@ -2,21 +2,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'send_password_reset_request.g.dart';
+part 'send_password_reset_request.mapper.dart';
 
-@JsonSerializable()
-class SendPasswordResetRequest {
+@MappableClass()
+class SendPasswordResetRequest with SendPasswordResetRequestMappable {
   const SendPasswordResetRequest({required this.userId});
 
-  factory SendPasswordResetRequest.fromJson(Map<String, Object?> json) =>
-      _$SendPasswordResetRequestFromJson(json);
-
-  @JsonKey(name: 'user_id')
+  @MappableField(key: 'user_id')
   final SnowflakeType userId;
 
-  Map<String, Object?> toJson() => _$SendPasswordResetRequestToJson(this);
+  static SendPasswordResetRequest fromJson(Map<String, dynamic> json) =>
+      SendPasswordResetRequestMapper.fromJson(json);
 }

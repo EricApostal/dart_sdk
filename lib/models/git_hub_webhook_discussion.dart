@@ -2,15 +2,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'int32_type.dart';
 import 'git_hub_webhook_discussion_user.dart';
 
-part 'git_hub_webhook_discussion.g.dart';
+part 'git_hub_webhook_discussion.mapper.dart';
 
-@JsonSerializable()
-class GitHubWebhookDiscussion {
+@MappableClass()
+class GitHubWebhookDiscussion with GitHubWebhookDiscussionMappable {
   const GitHubWebhookDiscussion({
     required this.title,
     required this.number,
@@ -20,18 +20,15 @@ class GitHubWebhookDiscussion {
     this.body,
   });
 
-  factory GitHubWebhookDiscussion.fromJson(Map<String, Object?> json) =>
-      _$GitHubWebhookDiscussionFromJson(json);
-
   final String title;
   final Int32Type number;
-  @JsonKey(name: 'html_url')
+  @MappableField(key: 'html_url')
   final String htmlUrl;
-  @JsonKey(includeIfNull: false, name: 'answer_html_url')
-  final String? answerHtmlUrl;
-  @JsonKey(includeIfNull: false)
-  final String? body;
   final GitHubWebhookDiscussionUser user;
+  @MappableField(key: 'answer_html_url')
+  final String? answerHtmlUrl;
+  final String? body;
 
-  Map<String, Object?> toJson() => _$GitHubWebhookDiscussionToJson(this);
+  static GitHubWebhookDiscussion fromJson(Map<String, dynamic> json) =>
+      GitHubWebhookDiscussionMapper.fromJson(json);
 }

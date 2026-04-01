@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'user_partial_response.dart';
 
-part 'webhook_response.g.dart';
+part 'webhook_response.mapper.dart';
 
-@JsonSerializable()
-class WebhookResponse {
+@MappableClass()
+class WebhookResponse with WebhookResponseMappable {
   const WebhookResponse({
     required this.id,
     required this.guildId,
@@ -20,30 +20,16 @@ class WebhookResponse {
     this.avatar,
   });
 
-  factory WebhookResponse.fromJson(Map<String, Object?> json) =>
-      _$WebhookResponseFromJson(json);
-
-  /// The unique identifier (snowflake) for the webhook
   final String id;
-
-  /// The ID of the guild this webhook belongs to
-  @JsonKey(name: 'guild_id')
+  @MappableField(key: 'guild_id')
   final String guildId;
-
-  /// The ID of the channel this webhook posts to
-  @JsonKey(name: 'channel_id')
+  @MappableField(key: 'channel_id')
   final String channelId;
-
-  /// The display name of the webhook
   final String name;
-
-  /// The hash of the webhook avatar image
-  @JsonKey(includeIfNull: false)
-  final String? avatar;
-
-  /// The secure token used to execute the webhook
   final String token;
   final UserPartialResponse user;
+  final String? avatar;
 
-  Map<String, Object?> toJson() => _$WebhookResponseToJson(this);
+  static WebhookResponse fromJson(Map<String, dynamic> json) =>
+      WebhookResponseMapper.fromJson(json);
 }

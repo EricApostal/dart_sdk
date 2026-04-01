@@ -2,18 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'ban_check_response_schema.g.dart';
+part 'ban_check_response_schema.mapper.dart';
 
-@JsonSerializable()
-class BanCheckResponseSchema {
+@MappableClass()
+class BanCheckResponseSchema with BanCheckResponseSchemaMappable {
   const BanCheckResponseSchema({required this.banned});
-
-  factory BanCheckResponseSchema.fromJson(Map<String, Object?> json) =>
-      _$BanCheckResponseSchemaFromJson(json);
 
   final bool banned;
 
-  Map<String, Object?> toJson() => _$BanCheckResponseSchemaToJson(this);
+  static BanCheckResponseSchema fromJson(Map<String, dynamic> json) =>
+      BanCheckResponseSchemaMapper.fromJson(json);
 }

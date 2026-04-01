@@ -2,21 +2,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'user_admin_response_schema.dart';
 
-part 'search_users_response.g.dart';
+part 'search_users_response.mapper.dart';
 
-@JsonSerializable()
-class SearchUsersResponse {
+@MappableClass()
+class SearchUsersResponse with SearchUsersResponseMappable {
   const SearchUsersResponse({required this.users, required this.total});
-
-  factory SearchUsersResponse.fromJson(Map<String, Object?> json) =>
-      _$SearchUsersResponseFromJson(json);
 
   final List<UserAdminResponseSchema> users;
   final num total;
 
-  Map<String, Object?> toJson() => _$SearchUsersResponseToJson(this);
+  static SearchUsersResponse fromJson(Map<String, dynamic> json) =>
+      SearchUsersResponseMapper.fromJson(json);
 }

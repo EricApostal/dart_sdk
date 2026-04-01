@@ -2,20 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'discovery_admin_review_request.g.dart';
+part 'discovery_admin_review_request.mapper.dart';
 
-@JsonSerializable()
-class DiscoveryAdminReviewRequest {
+@MappableClass()
+class DiscoveryAdminReviewRequest with DiscoveryAdminReviewRequestMappable {
   const DiscoveryAdminReviewRequest({this.reason});
 
-  factory DiscoveryAdminReviewRequest.fromJson(Map<String, Object?> json) =>
-      _$DiscoveryAdminReviewRequestFromJson(json);
-
-  /// Review reason
-  @JsonKey(includeIfNull: false)
   final String? reason;
 
-  Map<String, Object?> toJson() => _$DiscoveryAdminReviewRequestToJson(this);
+  static DiscoveryAdminReviewRequest fromJson(Map<String, dynamic> json) =>
+      DiscoveryAdminReviewRequestMapper.fromJson(json);
 }

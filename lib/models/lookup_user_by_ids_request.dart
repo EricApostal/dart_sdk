@@ -2,21 +2,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'lookup_user_by_ids_request.g.dart';
+part 'lookup_user_by_ids_request.mapper.dart';
 
-@JsonSerializable()
-class LookupUserByIdsRequest {
+@MappableClass()
+class LookupUserByIdsRequest with LookupUserByIdsRequestMappable {
   const LookupUserByIdsRequest({required this.userIds});
 
-  factory LookupUserByIdsRequest.fromJson(Map<String, Object?> json) =>
-      _$LookupUserByIdsRequestFromJson(json);
-
-  @JsonKey(name: 'user_ids')
+  @MappableField(key: 'user_ids')
   final List<SnowflakeType> userIds;
 
-  Map<String, Object?> toJson() => _$LookupUserByIdsRequestToJson(this);
+  static LookupUserByIdsRequest fromJson(Map<String, dynamic> json) =>
+      LookupUserByIdsRequestMapper.fromJson(json);
 }

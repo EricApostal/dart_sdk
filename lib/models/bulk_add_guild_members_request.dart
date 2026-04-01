@@ -2,28 +2,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'bulk_add_guild_members_request.g.dart';
+part 'bulk_add_guild_members_request.mapper.dart';
 
-@JsonSerializable()
-class BulkAddGuildMembersRequest {
+@MappableClass()
+class BulkAddGuildMembersRequest with BulkAddGuildMembersRequestMappable {
   const BulkAddGuildMembersRequest({
     required this.guildId,
     required this.userIds,
   });
 
-  factory BulkAddGuildMembersRequest.fromJson(Map<String, Object?> json) =>
-      _$BulkAddGuildMembersRequestFromJson(json);
-
-  @JsonKey(name: 'guild_id')
+  @MappableField(key: 'guild_id')
   final SnowflakeType guildId;
-
-  /// List of user IDs to add as members
-  @JsonKey(name: 'user_ids')
+  @MappableField(key: 'user_ids')
   final List<SnowflakeType> userIds;
 
-  Map<String, Object?> toJson() => _$BulkAddGuildMembersRequestToJson(this);
+  static BulkAddGuildMembersRequest fromJson(Map<String, dynamic> json) =>
+      BulkAddGuildMembersRequestMapper.fromJson(json);
 }

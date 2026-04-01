@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'guild_feature_schema.dart';
 
-part 'guild_admin_response.g.dart';
+part 'guild_admin_response.mapper.dart';
 
-@JsonSerializable()
-class GuildAdminResponse {
+@MappableClass()
+class GuildAdminResponse with GuildAdminResponseMappable {
   const GuildAdminResponse({
     required this.id,
     required this.name,
@@ -20,33 +20,16 @@ class GuildAdminResponse {
     required this.memberCount,
   });
 
-  factory GuildAdminResponse.fromJson(Map<String, Object?> json) =>
-      _$GuildAdminResponseFromJson(json);
-
-  /// The unique identifier for this guild
   final String id;
-
-  /// The name of the guild
   final String name;
-
-  /// Array of guild feature flags
   final List<GuildFeatureSchema> features;
-
-  /// The ID of the guild owner
-  @JsonKey(name: 'owner_id')
+  @MappableField(key: 'owner_id')
   final String ownerId;
-
-  /// The hash of the guild icon
-  @JsonKey(includeIfNull: true)
   final String? icon;
-
-  /// The hash of the guild banner
-  @JsonKey(includeIfNull: true)
   final String? banner;
-
-  /// The number of members in the guild
-  @JsonKey(name: 'member_count')
+  @MappableField(key: 'member_count')
   final int memberCount;
 
-  Map<String, Object?> toJson() => _$GuildAdminResponseToJson(this);
+  static GuildAdminResponse fromJson(Map<String, dynamic> json) =>
+      GuildAdminResponseMapper.fromJson(json);
 }

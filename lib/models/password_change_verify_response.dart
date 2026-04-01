@@ -2,20 +2,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'password_change_verify_response.g.dart';
+part 'password_change_verify_response.mapper.dart';
 
-@JsonSerializable()
-class PasswordChangeVerifyResponse {
+@MappableClass()
+class PasswordChangeVerifyResponse with PasswordChangeVerifyResponseMappable {
   const PasswordChangeVerifyResponse({required this.verificationProof});
 
-  factory PasswordChangeVerifyResponse.fromJson(Map<String, Object?> json) =>
-      _$PasswordChangeVerifyResponseFromJson(json);
-
-  /// Proof token issued after verifying the email code
-  @JsonKey(name: 'verification_proof')
+  @MappableField(key: 'verification_proof')
   final String verificationProof;
 
-  Map<String, Object?> toJson() => _$PasswordChangeVerifyResponseToJson(this);
+  static PasswordChangeVerifyResponse fromJson(Map<String, dynamic> json) =>
+      PasswordChangeVerifyResponseMapper.fromJson(json);
 }

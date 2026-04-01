@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'create_favorite_meme_body_schema.g.dart';
+part 'create_favorite_meme_body_schema.mapper.dart';
 
-@JsonSerializable()
-class CreateFavoriteMemeBodySchema {
+@MappableClass()
+class CreateFavoriteMemeBodySchema with CreateFavoriteMemeBodySchemaMappable {
   const CreateFavoriteMemeBodySchema({
     required this.name,
     this.altText,
@@ -18,27 +18,15 @@ class CreateFavoriteMemeBodySchema {
     this.embedIndex,
   });
 
-  factory CreateFavoriteMemeBodySchema.fromJson(Map<String, Object?> json) =>
-      _$CreateFavoriteMemeBodySchemaFromJson(json);
-
-  /// Display name for the meme
   final String name;
-
-  /// Alternative text description for accessibility
-  @JsonKey(includeIfNull: false, name: 'alt_text')
+  @MappableField(key: 'alt_text')
   final String? altText;
-
-  /// Tags for categorizing and searching the meme
-  @JsonKey(includeIfNull: false)
   final List<String>? tags;
-
-  /// ID of the message attachment to save as a meme
-  @JsonKey(includeIfNull: false, name: 'attachment_id')
+  @MappableField(key: 'attachment_id')
   final SnowflakeType? attachmentId;
-
-  /// Index of the message embed to save as a meme
-  @JsonKey(includeIfNull: false, name: 'embed_index')
+  @MappableField(key: 'embed_index')
   final int? embedIndex;
 
-  Map<String, Object?> toJson() => _$CreateFavoriteMemeBodySchemaToJson(this);
+  static CreateFavoriteMemeBodySchema fromJson(Map<String, dynamic> json) =>
+      CreateFavoriteMemeBodySchemaMapper.fromJson(json);
 }

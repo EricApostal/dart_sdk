@@ -35,7 +35,7 @@ class _ChannelsApi implements ChannelsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ChannelResponse _value;
     try {
       _value = ChannelResponse.fromJson(_result.data!);
@@ -66,7 +66,7 @@ class _ChannelsApi implements ChannelsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ChannelResponse _value;
     try {
       _value = ChannelResponse.fromJson(_result.data!);
@@ -118,7 +118,7 @@ class _ChannelsApi implements ChannelsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late CallEligibilityResponse _value;
     try {
       _value = CallEligibilityResponse.fromJson(_result.data!);
@@ -277,7 +277,7 @@ class _ChannelsApi implements ChannelsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late MessageResponseSchema _value;
     try {
       _value = MessageResponseSchema.fromJson(_result.data!);
@@ -354,7 +354,7 @@ class _ChannelsApi implements ChannelsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ChannelPinsResponse _value;
     try {
       _value = ChannelPinsResponse.fromJson(_result.data!);
@@ -383,7 +383,7 @@ class _ChannelsApi implements ChannelsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ScheduledMessageResponseSchema _value;
     try {
       _value = ScheduledMessageResponseSchema.fromJson(_result.data!);
@@ -413,7 +413,7 @@ class _ChannelsApi implements ChannelsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late MessageResponseSchema _value;
     try {
       _value = MessageResponseSchema.fromJson(_result.data!);
@@ -443,7 +443,7 @@ class _ChannelsApi implements ChannelsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late MessageResponseSchema _value;
     try {
       _value = MessageResponseSchema.fromJson(_result.data!);

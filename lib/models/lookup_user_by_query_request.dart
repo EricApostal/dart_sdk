@@ -2,18 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'lookup_user_by_query_request.g.dart';
+part 'lookup_user_by_query_request.mapper.dart';
 
-@JsonSerializable()
-class LookupUserByQueryRequest {
+@MappableClass()
+class LookupUserByQueryRequest with LookupUserByQueryRequestMappable {
   const LookupUserByQueryRequest({required this.query});
-
-  factory LookupUserByQueryRequest.fromJson(Map<String, Object?> json) =>
-      _$LookupUserByQueryRequestFromJson(json);
 
   final String query;
 
-  Map<String, Object?> toJson() => _$LookupUserByQueryRequestToJson(this);
+  static LookupUserByQueryRequest fromJson(Map<String, dynamic> json) =>
+      LookupUserByQueryRequestMapper.fromJson(json);
 }

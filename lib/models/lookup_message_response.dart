@@ -2,26 +2,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'lookup_message_response_messages.dart';
 import 'snowflake_type.dart';
 
-part 'lookup_message_response.g.dart';
+part 'lookup_message_response.mapper.dart';
 
-@JsonSerializable()
-class LookupMessageResponse {
+@MappableClass()
+class LookupMessageResponse with LookupMessageResponseMappable {
   const LookupMessageResponse({
     required this.messages,
     required this.messageId,
   });
 
-  factory LookupMessageResponse.fromJson(Map<String, Object?> json) =>
-      _$LookupMessageResponseFromJson(json);
-
   final List<LookupMessageResponseMessages> messages;
-  @JsonKey(includeIfNull: true, name: 'message_id')
+  @MappableField(key: 'message_id')
   final SnowflakeType? messageId;
 
-  Map<String, Object?> toJson() => _$LookupMessageResponseToJson(this);
+  static LookupMessageResponse fromJson(Map<String, dynamic> json) =>
+      LookupMessageResponseMapper.fromJson(json);
 }

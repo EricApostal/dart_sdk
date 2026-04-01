@@ -2,21 +2,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'disable_mfa_request.g.dart';
+part 'disable_mfa_request.mapper.dart';
 
-@JsonSerializable()
-class DisableMfaRequest {
+@MappableClass()
+class DisableMfaRequest with DisableMfaRequestMappable {
   const DisableMfaRequest({required this.userId});
 
-  factory DisableMfaRequest.fromJson(Map<String, Object?> json) =>
-      _$DisableMfaRequestFromJson(json);
-
-  @JsonKey(name: 'user_id')
+  @MappableField(key: 'user_id')
   final SnowflakeType userId;
 
-  Map<String, Object?> toJson() => _$DisableMfaRequestToJson(this);
+  static DisableMfaRequest fromJson(Map<String, dynamic> json) =>
+      DisableMfaRequestMapper.fromJson(json);
 }

@@ -2,33 +2,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'guild_member_search_request_sort_by_sort_by.mapper.dart';
 
 /// Sort results by field
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum GuildMemberSearchRequestSortBySortBy {
-  @JsonValue('joinedAt')
-  joinedAt('joinedAt'),
-  @JsonValue('relevance')
-  relevance('relevance'),
+  @MappableValue('joinedAt')
+  joinedAt,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue('relevance')
+  relevance,
 
-  const GuildMemberSearchRequestSortBySortBy(this.json);
+  @MappableValue('unknown')
+  unknown;
 
-  factory GuildMemberSearchRequestSortBySortBy.fromJson(String json) =>
-      values.firstWhere((e) => e.json == json, orElse: () => $unknown);
-
-  final String? json;
-
-  String toJson() => json ?? 'null';
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
-  static List<GuildMemberSearchRequestSortBySortBy> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+  /// Returns all defined enum values excluding the unknown value.
+  static List<GuildMemberSearchRequestSortBySortBy> get $valuesDefined => values
+      .where((value) => value != GuildMemberSearchRequestSortBySortBy.unknown)
+      .toList();
 }

@@ -2,20 +2,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'user_session_response.dart';
 
-part 'list_user_sessions_response.g.dart';
+part 'list_user_sessions_response.mapper.dart';
 
-@JsonSerializable()
-class ListUserSessionsResponse {
+@MappableClass()
+class ListUserSessionsResponse with ListUserSessionsResponseMappable {
   const ListUserSessionsResponse({required this.sessions});
-
-  factory ListUserSessionsResponse.fromJson(Map<String, Object?> json) =>
-      _$ListUserSessionsResponseFromJson(json);
 
   final List<UserSessionResponse> sessions;
 
-  Map<String, Object?> toJson() => _$ListUserSessionsResponseToJson(this);
+  static ListUserSessionsResponse fromJson(Map<String, dynamic> json) =>
+      ListUserSessionsResponseMapper.fromJson(json);
 }

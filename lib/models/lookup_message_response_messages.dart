@@ -2,15 +2,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 import 'lookup_message_response_messages_attachments.dart';
 
-part 'lookup_message_response_messages.g.dart';
+part 'lookup_message_response_messages.mapper.dart';
 
-@JsonSerializable()
-class LookupMessageResponseMessages {
+@MappableClass()
+class LookupMessageResponseMessages with LookupMessageResponseMessagesMappable {
   const LookupMessageResponseMessages({
     required this.id,
     required this.channelId,
@@ -22,21 +22,19 @@ class LookupMessageResponseMessages {
     required this.attachments,
   });
 
-  factory LookupMessageResponseMessages.fromJson(Map<String, Object?> json) =>
-      _$LookupMessageResponseMessagesFromJson(json);
-
   final SnowflakeType id;
-  @JsonKey(name: 'channel_id')
+  @MappableField(key: 'channel_id')
   final SnowflakeType channelId;
-  @JsonKey(name: 'author_id')
+  @MappableField(key: 'author_id')
   final SnowflakeType authorId;
-  @JsonKey(name: 'author_username')
+  @MappableField(key: 'author_username')
   final String authorUsername;
-  @JsonKey(name: 'author_discriminator')
+  @MappableField(key: 'author_discriminator')
   final String authorDiscriminator;
   final String content;
   final String timestamp;
   final List<LookupMessageResponseMessagesAttachments> attachments;
 
-  Map<String, Object?> toJson() => _$LookupMessageResponseMessagesToJson(this);
+  static LookupMessageResponseMessages fromJson(Map<String, dynamic> json) =>
+      LookupMessageResponseMessagesMapper.fromJson(json);
 }

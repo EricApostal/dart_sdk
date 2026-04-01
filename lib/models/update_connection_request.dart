@@ -2,23 +2,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'int32_type.dart';
 
-part 'update_connection_request.g.dart';
+part 'update_connection_request.mapper.dart';
 
-@JsonSerializable()
-class UpdateConnectionRequest {
+@MappableClass()
+class UpdateConnectionRequest with UpdateConnectionRequestMappable {
   const UpdateConnectionRequest({this.visibilityFlags, this.sortOrder});
 
-  factory UpdateConnectionRequest.fromJson(Map<String, Object?> json) =>
-      _$UpdateConnectionRequestFromJson(json);
-
-  @JsonKey(includeIfNull: false, name: 'visibility_flags')
+  @MappableField(key: 'visibility_flags')
   final Int32Type? visibilityFlags;
-  @JsonKey(includeIfNull: false, name: 'sort_order')
+  @MappableField(key: 'sort_order')
   final Int32Type? sortOrder;
 
-  Map<String, Object?> toJson() => _$UpdateConnectionRequestToJson(this);
+  static UpdateConnectionRequest fromJson(Map<String, dynamic> json) =>
+      UpdateConnectionRequestMapper.fromJson(json);
 }

@@ -2,33 +2,33 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'permission_overwrite_create_request_type_type.mapper.dart';
 
 /// The type of overwrite (0 = role, 1 = member)
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum PermissionOverwriteCreateRequestTypeType {
-  @JsonValue(0)
-  value0(0),
-  @JsonValue(1)
-  value1(1),
+  @MappableValue(0)
+  value0,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue(1)
+  value1,
 
-  const PermissionOverwriteCreateRequestTypeType(this.json);
+  @MappableValue('unknown')
+  unknown;
 
-  factory PermissionOverwriteCreateRequestTypeType.fromJson(int json) =>
-      values.firstWhere((e) => e.json == json, orElse: () => $unknown);
-
-  final int? json;
-
-  int? toJson() => json;
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json?.toString() ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
+  /// Returns all defined enum values excluding the unknown value.
   static List<PermissionOverwriteCreateRequestTypeType> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+      values
+          .where(
+            (value) =>
+                value != PermissionOverwriteCreateRequestTypeType.unknown,
+          )
+          .toList();
 }

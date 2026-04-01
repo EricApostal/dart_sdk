@@ -2,20 +2,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'guild_admin_response.dart';
 
-part 'list_user_guilds_response.g.dart';
+part 'list_user_guilds_response.mapper.dart';
 
-@JsonSerializable()
-class ListUserGuildsResponse {
+@MappableClass()
+class ListUserGuildsResponse with ListUserGuildsResponseMappable {
   const ListUserGuildsResponse({required this.guilds});
-
-  factory ListUserGuildsResponse.fromJson(Map<String, Object?> json) =>
-      _$ListUserGuildsResponseFromJson(json);
 
   final List<GuildAdminResponse> guilds;
 
-  Map<String, Object?> toJson() => _$ListUserGuildsResponseToJson(this);
+  static ListUserGuildsResponse fromJson(Map<String, dynamic> json) =>
+      ListUserGuildsResponseMapper.fromJson(json);
 }

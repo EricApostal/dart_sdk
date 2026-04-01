@@ -2,43 +2,40 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'message_search_scope.mapper.dart';
 
 /// Search scope for message searches
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum MessageSearchScope {
-  @JsonValue('current')
-  current('current'),
-  @JsonValue('open_dms')
-  openDms('open_dms'),
-  @JsonValue('all_dms')
-  allDms('all_dms'),
-  @JsonValue('all_guilds')
-  allGuilds('all_guilds'),
-  @JsonValue('all')
-  all('all'),
-  @JsonValue('open_dms_and_all_guilds')
-  openDmsAndAllGuilds('open_dms_and_all_guilds'),
+  @MappableValue('current')
+  current,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue('open_dms')
+  openDms,
 
-  const MessageSearchScope(this.json);
+  @MappableValue('all_dms')
+  allDms,
 
-  factory MessageSearchScope.fromJson(String json) => values.firstWhere(
-    (e) => e.json == json,
-    orElse: () => $unknown,
-  );
+  @MappableValue('all_guilds')
+  allGuilds,
 
-  final String? json;
+  @MappableValue('all')
+  all,
 
-  String toJson() => json ?? 'null';
+  @MappableValue('open_dms_and_all_guilds')
+  openDmsAndAllGuilds,
+
+  @MappableValue('unknown')
+  unknown;
+
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
+  /// Returns all defined enum values excluding the unknown value.
   static List<MessageSearchScope> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+      values.where((value) => value != MessageSearchScope.unknown).toList();
 }

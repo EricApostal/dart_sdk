@@ -2,20 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'user_note_update_request.g.dart';
+part 'user_note_update_request.mapper.dart';
 
-@JsonSerializable()
-class UserNoteUpdateRequest {
+@MappableClass()
+class UserNoteUpdateRequest with UserNoteUpdateRequestMappable {
   const UserNoteUpdateRequest({this.note});
 
-  factory UserNoteUpdateRequest.fromJson(Map<String, Object?> json) =>
-      _$UserNoteUpdateRequestFromJson(json);
-
-  /// The note text (max 256 characters)
-  @JsonKey(includeIfNull: false)
   final String? note;
 
-  Map<String, Object?> toJson() => _$UserNoteUpdateRequestToJson(this);
+  static UserNoteUpdateRequest fromJson(Map<String, dynamic> json) =>
+      UserNoteUpdateRequestMapper.fromJson(json);
 }

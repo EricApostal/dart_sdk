@@ -2,22 +2,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'password_type.dart';
 
-part 'reset_password_request.g.dart';
+part 'reset_password_request.mapper.dart';
 
-@JsonSerializable()
-class ResetPasswordRequest {
+@MappableClass()
+class ResetPasswordRequest with ResetPasswordRequestMappable {
   const ResetPasswordRequest({required this.token, required this.password});
 
-  factory ResetPasswordRequest.fromJson(Map<String, Object?> json) =>
-      _$ResetPasswordRequestFromJson(json);
-
-  /// Password reset token from email
   final String token;
   final PasswordType password;
 
-  Map<String, Object?> toJson() => _$ResetPasswordRequestToJson(this);
+  static ResetPasswordRequest fromJson(Map<String, dynamic> json) =>
+      ResetPasswordRequestMapper.fromJson(json);
 }

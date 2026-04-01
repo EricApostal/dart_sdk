@@ -2,12 +2,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'sso_status_response.g.dart';
+part 'sso_status_response.mapper.dart';
 
-@JsonSerializable()
-class SsoStatusResponse {
+@MappableClass()
+class SsoStatusResponse with SsoStatusResponseMappable {
   const SsoStatusResponse({
     required this.enabled,
     required this.enforced,
@@ -15,22 +15,13 @@ class SsoStatusResponse {
     required this.redirectUri,
   });
 
-  factory SsoStatusResponse.fromJson(Map<String, Object?> json) =>
-      _$SsoStatusResponseFromJson(json);
-
-  /// Whether SSO is enabled for this instance
   final bool enabled;
-
-  /// Whether SSO is required for all users
   final bool enforced;
-
-  /// Display name of the SSO provider
-  @JsonKey(includeIfNull: true, name: 'display_name')
+  @MappableField(key: 'display_name')
   final String? displayName;
-
-  /// OAuth redirect URI for SSO
-  @JsonKey(name: 'redirect_uri')
+  @MappableField(key: 'redirect_uri')
   final String redirectUri;
 
-  Map<String, Object?> toJson() => _$SsoStatusResponseToJson(this);
+  static SsoStatusResponse fromJson(Map<String, dynamic> json) =>
+      SsoStatusResponseMapper.fromJson(json);
 }

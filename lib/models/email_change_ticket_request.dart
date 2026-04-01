@@ -2,19 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'email_change_ticket_request.g.dart';
+part 'email_change_ticket_request.mapper.dart';
 
-@JsonSerializable()
-class EmailChangeTicketRequest {
+@MappableClass()
+class EmailChangeTicketRequest with EmailChangeTicketRequestMappable {
   const EmailChangeTicketRequest({required this.ticket});
 
-  factory EmailChangeTicketRequest.fromJson(Map<String, Object?> json) =>
-      _$EmailChangeTicketRequestFromJson(json);
-
-  /// Email change ticket identifier
   final String ticket;
 
-  Map<String, Object?> toJson() => _$EmailChangeTicketRequestToJson(this);
+  static EmailChangeTicketRequest fromJson(Map<String, dynamic> json) =>
+      EmailChangeTicketRequestMapper.fromJson(json);
 }

@@ -2,25 +2,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'refresh_search_index_response_success_success.dart';
 
-part 'refresh_search_index_response.g.dart';
+part 'refresh_search_index_response.mapper.dart';
 
-@JsonSerializable()
-class RefreshSearchIndexResponse {
+@MappableClass()
+class RefreshSearchIndexResponse with RefreshSearchIndexResponseMappable {
   const RefreshSearchIndexResponse({
     required this.success,
     required this.jobId,
   });
 
-  factory RefreshSearchIndexResponse.fromJson(Map<String, Object?> json) =>
-      _$RefreshSearchIndexResponseFromJson(json);
-
   final RefreshSearchIndexResponseSuccessSuccess success;
-  @JsonKey(name: 'job_id')
+  @MappableField(key: 'job_id')
   final String jobId;
 
-  Map<String, Object?> toJson() => _$RefreshSearchIndexResponseToJson(this);
+  static RefreshSearchIndexResponse fromJson(Map<String, dynamic> json) =>
+      RefreshSearchIndexResponseMapper.fromJson(json);
 }

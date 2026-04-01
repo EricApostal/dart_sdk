@@ -38,7 +38,7 @@ class _BillingApi implements BillingApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UrlResponse _value;
     try {
       _value = UrlResponse.fromJson(_result.data!);
@@ -68,7 +68,7 @@ class _BillingApi implements BillingApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UrlResponse _value;
     try {
       _value = UrlResponse.fromJson(_result.data!);
@@ -95,7 +95,7 @@ class _BillingApi implements BillingApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late WebhookReceivedResponse _value;
     try {
       _value = WebhookReceivedResponse.fromJson(_result.data!);

@@ -2,16 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'base64_image_type.dart';
 import 'bot_flags.dart';
 import 'username_type.dart';
 
-part 'bot_profile_update_request.g.dart';
+part 'bot_profile_update_request.mapper.dart';
 
-@JsonSerializable()
-class BotProfileUpdateRequest {
+@MappableClass()
+class BotProfileUpdateRequest with BotProfileUpdateRequestMappable {
   const BotProfileUpdateRequest({
     this.username,
     this.discriminator,
@@ -21,29 +21,14 @@ class BotProfileUpdateRequest {
     this.botFlags,
   });
 
-  factory BotProfileUpdateRequest.fromJson(Map<String, Object?> json) =>
-      _$BotProfileUpdateRequestFromJson(json);
-
-  @JsonKey(includeIfNull: false)
   final UsernameType? username;
-
-  /// The discriminator of the bot
-  @JsonKey(includeIfNull: false)
   final String? discriminator;
-
-  /// The avatar image as base64
-  @JsonKey(includeIfNull: false)
   final Base64ImageType? avatar;
-
-  /// The banner image as base64
-  @JsonKey(includeIfNull: false)
   final Base64ImageType? banner;
-
-  /// The bio or description of the bot
-  @JsonKey(includeIfNull: false)
   final String? bio;
-  @JsonKey(includeIfNull: false, name: 'bot_flags')
+  @MappableField(key: 'bot_flags')
   final BotFlags? botFlags;
 
-  Map<String, Object?> toJson() => _$BotProfileUpdateRequestToJson(this);
+  static BotProfileUpdateRequest fromJson(Map<String, dynamic> json) =>
+      BotProfileUpdateRequestMapper.fromJson(json);
 }

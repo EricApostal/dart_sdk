@@ -2,29 +2,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'embed_field_response.g.dart';
+part 'embed_field_response.mapper.dart';
 
-@JsonSerializable()
-class EmbedFieldResponse {
+@MappableClass()
+class EmbedFieldResponse with EmbedFieldResponseMappable {
   const EmbedFieldResponse({
     required this.name,
     required this.value,
     required this.inline,
   });
 
-  factory EmbedFieldResponse.fromJson(Map<String, Object?> json) =>
-      _$EmbedFieldResponseFromJson(json);
-
-  /// The name of the field
   final String name;
-
-  /// The value of the field
   final String value;
-
-  /// Whether the field should be displayed inline
   final bool inline;
 
-  Map<String, Object?> toJson() => _$EmbedFieldResponseToJson(this);
+  static EmbedFieldResponse fromJson(Map<String, dynamic> json) =>
+      EmbedFieldResponseMapper.fromJson(json);
 }

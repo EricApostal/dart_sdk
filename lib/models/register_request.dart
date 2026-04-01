@@ -2,16 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'email_type.dart';
 import 'password_type.dart';
 import 'username_type.dart';
 
-part 'register_request.g.dart';
+part 'register_request.mapper.dart';
 
-@JsonSerializable()
-class RegisterRequest {
+@MappableClass()
+class RegisterRequest with RegisterRequestMappable {
   const RegisterRequest({
     required this.dateOfBirth,
     required this.consent,
@@ -22,30 +22,17 @@ class RegisterRequest {
     this.inviteCode,
   });
 
-  factory RegisterRequest.fromJson(Map<String, Object?> json) =>
-      _$RegisterRequestFromJson(json);
-
-  @JsonKey(includeIfNull: false)
-  final EmailType? email;
-  @JsonKey(includeIfNull: false)
-  final UsernameType? username;
-
-  /// Display name shown to other users
-  @JsonKey(includeIfNull: false, name: 'global_name')
-  final String? globalName;
-  @JsonKey(includeIfNull: false)
-  final PasswordType? password;
-
-  /// Date of birth in YYYY-MM-DD format
-  @JsonKey(name: 'date_of_birth')
+  @MappableField(key: 'date_of_birth')
   final String dateOfBirth;
-
-  /// Whether user consents to terms of service
   final bool consent;
-
-  /// Guild invite code to join after registration
-  @JsonKey(includeIfNull: false, name: 'invite_code')
+  final EmailType? email;
+  final UsernameType? username;
+  @MappableField(key: 'global_name')
+  final String? globalName;
+  final PasswordType? password;
+  @MappableField(key: 'invite_code')
   final String? inviteCode;
 
-  Map<String, Object?> toJson() => _$RegisterRequestToJson(this);
+  static RegisterRequest fromJson(Map<String, dynamic> json) =>
+      RegisterRequestMapper.fromJson(json);
 }

@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'o_auth2_redirect_uri_update_type.dart';
 
-part 'application_update_request.g.dart';
+part 'application_update_request.mapper.dart';
 
-@JsonSerializable()
-class ApplicationUpdateRequest {
+@MappableClass()
+class ApplicationUpdateRequest with ApplicationUpdateRequestMappable {
   const ApplicationUpdateRequest({
     this.name,
     this.redirectUris,
@@ -17,24 +17,14 @@ class ApplicationUpdateRequest {
     this.botRequireCodeGrant,
   });
 
-  factory ApplicationUpdateRequest.fromJson(Map<String, Object?> json) =>
-      _$ApplicationUpdateRequestFromJson(json);
-
-  /// The name of the application
-  @JsonKey(includeIfNull: false)
   final String? name;
-
-  /// The redirect URIs for OAuth2 flows
-  @JsonKey(includeIfNull: false, name: 'redirect_uris')
+  @MappableField(key: 'redirect_uris')
   final List<OAuth2RedirectUriUpdateType>? redirectUris;
-
-  /// Whether the bot can be invited by anyone
-  @JsonKey(includeIfNull: false, name: 'bot_public')
+  @MappableField(key: 'bot_public')
   final bool? botPublic;
-
-  /// Whether the bot requires OAuth2 code grant
-  @JsonKey(includeIfNull: false, name: 'bot_require_code_grant')
+  @MappableField(key: 'bot_require_code_grant')
   final bool? botRequireCodeGrant;
 
-  Map<String, Object?> toJson() => _$ApplicationUpdateRequestToJson(this);
+  static ApplicationUpdateRequest fromJson(Map<String, dynamic> json) =>
+      ApplicationUpdateRequestMapper.fromJson(json);
 }

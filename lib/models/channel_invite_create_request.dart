@@ -2,12 +2,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'channel_invite_create_request.g.dart';
+part 'channel_invite_create_request.mapper.dart';
 
-@JsonSerializable()
-class ChannelInviteCreateRequest {
+@MappableClass()
+class ChannelInviteCreateRequest with ChannelInviteCreateRequestMappable {
   const ChannelInviteCreateRequest({
     this.maxUses,
     this.maxAge,
@@ -15,24 +15,13 @@ class ChannelInviteCreateRequest {
     this.temporary,
   });
 
-  factory ChannelInviteCreateRequest.fromJson(Map<String, Object?> json) =>
-      _$ChannelInviteCreateRequestFromJson(json);
-
-  /// Maximum number of times this invite can be used (0 for unlimited)
-  @JsonKey(includeIfNull: false, name: 'max_uses')
+  @MappableField(key: 'max_uses')
   final int? maxUses;
-
-  /// Duration in seconds before the invite expires (0 for never)
-  @JsonKey(includeIfNull: false, name: 'max_age')
+  @MappableField(key: 'max_age')
   final int? maxAge;
-
-  /// Whether to create a new unique invite or reuse an existing one
-  @JsonKey(includeIfNull: false)
   final bool? unique;
-
-  /// Whether members that joined via this invite should be kicked after disconnecting
-  @JsonKey(includeIfNull: false)
   final bool? temporary;
 
-  Map<String, Object?> toJson() => _$ChannelInviteCreateRequestToJson(this);
+  static ChannelInviteCreateRequest fromJson(Map<String, dynamic> json) =>
+      ChannelInviteCreateRequestMapper.fromJson(json);
 }

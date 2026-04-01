@@ -2,41 +2,45 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'scheduled_message_response_schema_status_status.mapper.dart';
 
 /// The current status of the scheduled message
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum ScheduledMessageResponseSchemaStatusStatus {
-  @JsonValue('pending')
-  pending('pending'),
-  @JsonValue('invalid')
-  invalid('invalid'),
-  @JsonValue('scheduled')
-  scheduled('scheduled'),
-  @JsonValue('sent')
-  sent('sent'),
-  @JsonValue('failed')
-  failed('failed'),
-  @JsonValue('cancelled')
-  cancelled('cancelled'),
+  @MappableValue('pending')
+  pending,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue('invalid')
+  invalid,
 
-  const ScheduledMessageResponseSchemaStatusStatus(this.json);
+  @MappableValue('scheduled')
+  scheduled,
 
-  factory ScheduledMessageResponseSchemaStatusStatus.fromJson(String json) =>
-      values.firstWhere((e) => e.json == json, orElse: () => $unknown);
+  @MappableValue('sent')
+  sent,
 
-  final String? json;
+  @MappableValue('failed')
+  failed,
 
-  String toJson() => json ?? 'null';
+  @MappableValue('cancelled')
+  cancelled,
+
+  @MappableValue('unknown')
+  unknown;
+
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
+  /// Returns all defined enum values excluding the unknown value.
   static List<ScheduledMessageResponseSchemaStatusStatus> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+      values
+          .where(
+            (value) =>
+                value != ScheduledMessageResponseSchemaStatusStatus.unknown,
+          )
+          .toList();
 }

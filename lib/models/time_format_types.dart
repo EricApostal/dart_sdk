@@ -2,37 +2,31 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'time_format_types.mapper.dart';
 
 /// Time format preference
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum TimeFormatTypes {
-  @JsonValue(0)
-  auto(0),
-  @JsonValue(1)
-  twelveHour(1),
-  @JsonValue(2)
-  twentyFourHour(2),
+  @MappableValue(0)
+  auto,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue(1)
+  twelveHour,
 
-  const TimeFormatTypes(this.json);
+  @MappableValue(2)
+  twentyFourHour,
 
-  factory TimeFormatTypes.fromJson(int json) => values.firstWhere(
-    (e) => e.json == json,
-    orElse: () => $unknown,
-  );
+  @MappableValue('unknown')
+  unknown;
 
-  final int? json;
-
-  int? toJson() => json;
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json?.toString() ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
+  /// Returns all defined enum values excluding the unknown value.
   static List<TimeFormatTypes> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+      values.where((value) => value != TimeFormatTypes.unknown).toList();
 }

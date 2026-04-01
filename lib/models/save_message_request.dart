@@ -2,23 +2,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'save_message_request.g.dart';
+part 'save_message_request.mapper.dart';
 
-@JsonSerializable()
-class SaveMessageRequest {
+@MappableClass()
+class SaveMessageRequest with SaveMessageRequestMappable {
   const SaveMessageRequest({required this.channelId, required this.messageId});
 
-  factory SaveMessageRequest.fromJson(Map<String, Object?> json) =>
-      _$SaveMessageRequestFromJson(json);
-
-  @JsonKey(name: 'channel_id')
+  @MappableField(key: 'channel_id')
   final SnowflakeType channelId;
-  @JsonKey(name: 'message_id')
+  @MappableField(key: 'message_id')
   final SnowflakeType messageId;
 
-  Map<String, Object?> toJson() => _$SaveMessageRequestToJson(this);
+  static SaveMessageRequest fromJson(Map<String, dynamic> json) =>
+      SaveMessageRequestMapper.fromJson(json);
 }

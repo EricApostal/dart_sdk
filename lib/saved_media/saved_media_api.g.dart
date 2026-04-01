@@ -40,7 +40,7 @@ class _SavedMediaApi implements SavedMediaApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late FavoriteMemeResponse _value;
     try {
       _value = FavoriteMemeResponse.fromJson(_result.data!);
@@ -102,7 +102,7 @@ class _SavedMediaApi implements SavedMediaApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late FavoriteMemeResponse _value;
     try {
       _value = FavoriteMemeResponse.fromJson(_result.data!);
@@ -129,7 +129,7 @@ class _SavedMediaApi implements SavedMediaApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late FavoriteMemeResponse _value;
     try {
       _value = FavoriteMemeResponse.fromJson(_result.data!);
@@ -160,7 +160,7 @@ class _SavedMediaApi implements SavedMediaApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late FavoriteMemeResponse _value;
     try {
       _value = FavoriteMemeResponse.fromJson(_result.data!);

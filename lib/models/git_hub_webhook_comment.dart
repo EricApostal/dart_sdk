@@ -2,15 +2,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'int64_type.dart';
 import 'git_hub_webhook_comment_user.dart';
 
-part 'git_hub_webhook_comment.g.dart';
+part 'git_hub_webhook_comment.mapper.dart';
 
-@JsonSerializable()
-class GitHubWebhookComment {
+@MappableClass()
+class GitHubWebhookComment with GitHubWebhookCommentMappable {
   const GitHubWebhookComment({
     required this.id,
     required this.htmlUrl,
@@ -19,16 +19,14 @@ class GitHubWebhookComment {
     this.commitId,
   });
 
-  factory GitHubWebhookComment.fromJson(Map<String, Object?> json) =>
-      _$GitHubWebhookCommentFromJson(json);
-
   final Int64Type id;
-  @JsonKey(name: 'html_url')
+  @MappableField(key: 'html_url')
   final String htmlUrl;
   final GitHubWebhookCommentUser user;
-  @JsonKey(includeIfNull: false, name: 'commit_id')
-  final String? commitId;
   final String body;
+  @MappableField(key: 'commit_id')
+  final String? commitId;
 
-  Map<String, Object?> toJson() => _$GitHubWebhookCommentToJson(this);
+  static GitHubWebhookComment fromJson(Map<String, dynamic> json) =>
+      GitHubWebhookCommentMapper.fromJson(json);
 }

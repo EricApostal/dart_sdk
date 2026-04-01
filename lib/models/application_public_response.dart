@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'application_bot_response.dart';
 
-part 'application_public_response.g.dart';
+part 'application_public_response.mapper.dart';
 
-@JsonSerializable()
-class ApplicationPublicResponse {
+@MappableClass()
+class ApplicationPublicResponse with ApplicationPublicResponseMappable {
   const ApplicationPublicResponse({
     required this.id,
     required this.name,
@@ -21,37 +21,17 @@ class ApplicationPublicResponse {
     required this.bot,
   });
 
-  factory ApplicationPublicResponse.fromJson(Map<String, Object?> json) =>
-      _$ApplicationPublicResponseFromJson(json);
-
-  /// The unique identifier of the application
   final String id;
-
-  /// The name of the application
   final String name;
-
-  /// The icon hash of the application
-  @JsonKey(includeIfNull: true)
   final String? icon;
-
-  /// The description of the application
-  @JsonKey(includeIfNull: true)
   final String? description;
-
-  /// The registered redirect URIs for OAuth2
-  @JsonKey(name: 'redirect_uris')
+  @MappableField(key: 'redirect_uris')
   final List<String> redirectUris;
-
-  /// The available OAuth2 scopes
   final List<String> scopes;
-
-  /// Whether the bot can be invited by anyone
-  @JsonKey(name: 'bot_public')
+  @MappableField(key: 'bot_public')
   final bool botPublic;
-
-  /// The bot user associated with the application
-  @JsonKey(includeIfNull: true)
   final ApplicationBotResponse? bot;
 
-  Map<String, Object?> toJson() => _$ApplicationPublicResponseToJson(this);
+  static ApplicationPublicResponse fromJson(Map<String, dynamic> json) =>
+      ApplicationPublicResponseMapper.fromJson(json);
 }

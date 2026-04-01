@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'instance_config_update_request_sso.dart';
 
-part 'instance_config_update_request.g.dart';
+part 'instance_config_update_request.mapper.dart';
 
-@JsonSerializable()
-class InstanceConfigUpdateRequest {
+@MappableClass()
+class InstanceConfigUpdateRequest with InstanceConfigUpdateRequestMappable {
   const InstanceConfigUpdateRequest({
     this.manualReviewEnabled,
     this.manualReviewScheduleEnabled,
@@ -20,23 +20,20 @@ class InstanceConfigUpdateRequest {
     this.sso,
   });
 
-  factory InstanceConfigUpdateRequest.fromJson(Map<String, Object?> json) =>
-      _$InstanceConfigUpdateRequestFromJson(json);
-
-  @JsonKey(includeIfNull: false, name: 'manual_review_enabled')
+  @MappableField(key: 'manual_review_enabled')
   final bool? manualReviewEnabled;
-  @JsonKey(includeIfNull: false, name: 'manual_review_schedule_enabled')
+  @MappableField(key: 'manual_review_schedule_enabled')
   final bool? manualReviewScheduleEnabled;
-  @JsonKey(includeIfNull: false, name: 'manual_review_schedule_start_hour_utc')
+  @MappableField(key: 'manual_review_schedule_start_hour_utc')
   final int? manualReviewScheduleStartHourUtc;
-  @JsonKey(includeIfNull: false, name: 'manual_review_schedule_end_hour_utc')
+  @MappableField(key: 'manual_review_schedule_end_hour_utc')
   final int? manualReviewScheduleEndHourUtc;
-  @JsonKey(includeIfNull: false, name: 'registration_alerts_webhook_url')
+  @MappableField(key: 'registration_alerts_webhook_url')
   final String? registrationAlertsWebhookUrl;
-  @JsonKey(includeIfNull: false, name: 'system_alerts_webhook_url')
+  @MappableField(key: 'system_alerts_webhook_url')
   final String? systemAlertsWebhookUrl;
-  @JsonKey(includeIfNull: false)
   final InstanceConfigUpdateRequestSso? sso;
 
-  Map<String, Object?> toJson() => _$InstanceConfigUpdateRequestToJson(this);
+  static InstanceConfigUpdateRequest fromJson(Map<String, dynamic> json) =>
+      InstanceConfigUpdateRequestMapper.fromJson(json);
 }

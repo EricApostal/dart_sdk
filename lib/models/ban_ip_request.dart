@@ -2,19 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'ban_ip_request.g.dart';
+part 'ban_ip_request.mapper.dart';
 
-@JsonSerializable()
-class BanIpRequest {
+@MappableClass()
+class BanIpRequest with BanIpRequestMappable {
   const BanIpRequest({required this.ip});
 
-  factory BanIpRequest.fromJson(Map<String, Object?> json) =>
-      _$BanIpRequestFromJson(json);
-
-  /// IPv4/IPv6 address or CIDR range to ban
   final String ip;
 
-  Map<String, Object?> toJson() => _$BanIpRequestToJson(this);
+  static BanIpRequest fromJson(Map<String, dynamic> json) =>
+      BanIpRequestMapper.fromJson(json);
 }

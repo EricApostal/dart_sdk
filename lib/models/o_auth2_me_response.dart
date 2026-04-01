@@ -2,15 +2,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'o_auth2_me_response_application.dart';
 import 'o_auth2_me_response_user.dart';
 
-part 'o_auth2_me_response.g.dart';
+part 'o_auth2_me_response.mapper.dart';
 
-@JsonSerializable()
-class OAuth2MeResponse {
+@MappableClass()
+class OAuth2MeResponse with OAuth2MeResponseMappable {
   const OAuth2MeResponse({
     required this.application,
     required this.scopes,
@@ -18,21 +18,11 @@ class OAuth2MeResponse {
     this.user,
   });
 
-  factory OAuth2MeResponse.fromJson(Map<String, Object?> json) =>
-      _$OAuth2MeResponseFromJson(json);
-
-  /// The application associated with the token
   final OAuth2MeResponseApplication application;
-
-  /// The list of granted OAuth2 scopes
   final List<String> scopes;
-
-  /// The expiration timestamp of the token
   final String expires;
-
-  /// The user associated with the token
-  @JsonKey(includeIfNull: false)
   final OAuth2MeResponseUser? user;
 
-  Map<String, Object?> toJson() => _$OAuth2MeResponseToJson(this);
+  static OAuth2MeResponse fromJson(Map<String, dynamic> json) =>
+      OAuth2MeResponseMapper.fromJson(json);
 }

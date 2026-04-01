@@ -2,15 +2,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'password_type.dart';
 import 'web_authn_register_request_mfa_method_mfa_method.dart';
 
-part 'web_authn_register_request.g.dart';
+part 'web_authn_register_request.mapper.dart';
 
-@JsonSerializable()
-class WebAuthnRegisterRequest {
+@MappableClass()
+class WebAuthnRegisterRequest with WebAuthnRegisterRequestMappable {
   const WebAuthnRegisterRequest({
     required this.response,
     required this.challenge,
@@ -22,35 +22,19 @@ class WebAuthnRegisterRequest {
     this.webauthnChallenge,
   });
 
-  factory WebAuthnRegisterRequest.fromJson(Map<String, Object?> json) =>
-      _$WebAuthnRegisterRequestFromJson(json);
-
-  /// WebAuthn registration response
   final dynamic response;
-
-  /// The challenge from registration options
   final String challenge;
-
-  /// User-assigned name for the credential
   final String name;
-  @JsonKey(includeIfNull: false)
   final PasswordType? password;
-
-  /// MFA method to use for verification
-  @JsonKey(includeIfNull: false, name: 'mfa_method')
+  @MappableField(key: 'mfa_method')
   final WebAuthnRegisterRequestMfaMethodMfaMethod? mfaMethod;
-
-  /// MFA verification code from authenticator app or SMS
-  @JsonKey(includeIfNull: false, name: 'mfa_code')
+  @MappableField(key: 'mfa_code')
   final String? mfaCode;
-
-  /// WebAuthn authentication response
-  @JsonKey(includeIfNull: false, name: 'webauthn_response')
+  @MappableField(key: 'webauthn_response')
   final dynamic webauthnResponse;
-
-  /// WebAuthn challenge string
-  @JsonKey(includeIfNull: false, name: 'webauthn_challenge')
+  @MappableField(key: 'webauthn_challenge')
   final String? webauthnChallenge;
 
-  Map<String, Object?> toJson() => _$WebAuthnRegisterRequestToJson(this);
+  static WebAuthnRegisterRequest fromJson(Map<String, dynamic> json) =>
+      WebAuthnRegisterRequestMapper.fromJson(json);
 }

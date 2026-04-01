@@ -2,31 +2,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'well_known_fluxer_response_captcha.g.dart';
+part 'well_known_fluxer_response_captcha.mapper.dart';
 
-@JsonSerializable()
-class WellKnownFluxerResponseCaptcha {
+@MappableClass()
+class WellKnownFluxerResponseCaptcha
+    with WellKnownFluxerResponseCaptchaMappable {
   const WellKnownFluxerResponseCaptcha({
     required this.provider,
     required this.hcaptchaSiteKey,
     required this.turnstileSiteKey,
   });
 
-  factory WellKnownFluxerResponseCaptcha.fromJson(Map<String, Object?> json) =>
-      _$WellKnownFluxerResponseCaptchaFromJson(json);
-
-  /// Captcha provider name (hcaptcha, turnstile, none)
   final String provider;
-
-  /// hCaptcha site key if using hCaptcha
-  @JsonKey(includeIfNull: true, name: 'hcaptcha_site_key')
+  @MappableField(key: 'hcaptcha_site_key')
   final String? hcaptchaSiteKey;
-
-  /// Cloudflare Turnstile site key if using Turnstile
-  @JsonKey(includeIfNull: true, name: 'turnstile_site_key')
+  @MappableField(key: 'turnstile_site_key')
   final String? turnstileSiteKey;
 
-  Map<String, Object?> toJson() => _$WellKnownFluxerResponseCaptchaToJson(this);
+  static WellKnownFluxerResponseCaptcha fromJson(Map<String, dynamic> json) =>
+      WellKnownFluxerResponseCaptchaMapper.fromJson(json);
 }

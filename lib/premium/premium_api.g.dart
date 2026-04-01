@@ -54,7 +54,7 @@ class _PremiumApi implements PremiumApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UrlResponse _value;
     try {
       _value = UrlResponse.fromJson(_result.data!);
@@ -101,7 +101,7 @@ class _PremiumApi implements PremiumApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late PriceIdsResponse _value;
     try {
       _value = PriceIdsResponse.fromJson(_result.data!);

@@ -2,7 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'message_attachment_response.dart';
 import 'message_base_response_schema_type_type.dart';
@@ -16,10 +16,10 @@ import 'message_sticker_response.dart';
 import 'snowflake_type.dart';
 import 'user_partial_response.dart';
 
-part 'message_base_response_schema.g.dart';
+part 'message_base_response_schema.mapper.dart';
 
-@JsonSerializable()
-class MessageBaseResponseSchema {
+@MappableClass()
+class MessageBaseResponseSchema with MessageBaseResponseSchemaMappable {
   const MessageBaseResponseSchema({
     required this.id,
     required this.channelId,
@@ -42,88 +42,40 @@ class MessageBaseResponseSchema {
     this.messageReference,
     this.messageSnapshots,
     this.nonce,
-    this.call,
+    this.callField,
   });
 
-  factory MessageBaseResponseSchema.fromJson(Map<String, Object?> json) =>
-      _$MessageBaseResponseSchemaFromJson(json);
-
-  /// The unique identifier (snowflake) for this message
   final String id;
-
-  /// The ID of the channel this message was sent in
-  @JsonKey(name: 'channel_id')
+  @MappableField(key: 'channel_id')
   final String channelId;
   final UserPartialResponse author;
-
-  /// The ID of the webhook that sent this message
-  @JsonKey(includeIfNull: false, name: 'webhook_id')
-  final SnowflakeType? webhookId;
-
-  /// The type of message
   final MessageBaseResponseSchemaTypeType type;
   final MessageFlags flags;
-
-  /// The text content of the message
   final String content;
-
-  /// The ISO 8601 timestamp of when the message was created
   final DateTime timestamp;
-
-  /// The ISO 8601 timestamp of when the message was last edited
-  @JsonKey(includeIfNull: false, name: 'edited_timestamp')
-  final DateTime? editedTimestamp;
-
-  /// Whether the message is pinned
   final bool pinned;
-
-  /// Whether the message mentions @everyone
-  @JsonKey(name: 'mention_everyone')
+  @MappableField(key: 'mention_everyone')
   final bool mentionEveryone;
-
-  /// Whether the message was sent as text-to-speech
-  @JsonKey(includeIfNull: false)
+  @MappableField(key: 'webhook_id')
+  final SnowflakeType? webhookId;
+  @MappableField(key: 'edited_timestamp')
+  final DateTime? editedTimestamp;
   final bool? tts;
-
-  /// The users mentioned in the message
-  @JsonKey(includeIfNull: false)
   final List<UserPartialResponse>? mentions;
-
-  /// The role IDs mentioned in the message
-  @JsonKey(includeIfNull: false, name: 'mention_roles')
+  @MappableField(key: 'mention_roles')
   final List<String>? mentionRoles;
-
-  /// The embeds attached to the message
-  @JsonKey(includeIfNull: false)
   final List<MessageEmbedResponse>? embeds;
-
-  /// The files attached to the message
-  @JsonKey(includeIfNull: false)
   final List<MessageAttachmentResponse>? attachments;
-
-  /// The stickers sent with the message
-  @JsonKey(includeIfNull: false)
   final List<MessageStickerResponse>? stickers;
-
-  /// The reactions on the message
-  @JsonKey(includeIfNull: false)
   final List<MessageReactionResponse>? reactions;
-
-  /// Reference data for replies or forwards
-  @JsonKey(includeIfNull: false, name: 'message_reference')
+  @MappableField(key: 'message_reference')
   final MessageReferenceResponse? messageReference;
-
-  /// Snapshots of forwarded messages
-  @JsonKey(includeIfNull: false, name: 'message_snapshots')
+  @MappableField(key: 'message_snapshots')
   final List<MessageSnapshotResponse>? messageSnapshots;
-
-  /// A client-provided value for message deduplication
-  @JsonKey(includeIfNull: false)
   final String? nonce;
+  @MappableField(key: 'call')
+  final MessageCallResponse? callField;
 
-  /// Call information if this message represents a call
-  @JsonKey(includeIfNull: false)
-  final MessageCallResponse? call;
-
-  Map<String, Object?> toJson() => _$MessageBaseResponseSchemaToJson(this);
+  static MessageBaseResponseSchema fromJson(Map<String, dynamic> json) =>
+      MessageBaseResponseSchemaMapper.fromJson(json);
 }

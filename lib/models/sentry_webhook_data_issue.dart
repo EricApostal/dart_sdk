@@ -2,15 +2,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'sentry_webhook_data_issue_project.dart';
 import 'sentry_webhook_data_issue_metadata.dart';
 
-part 'sentry_webhook_data_issue.g.dart';
+part 'sentry_webhook_data_issue.mapper.dart';
 
-@JsonSerializable()
-class SentryWebhookDataIssue {
+@MappableClass()
+class SentryWebhookDataIssue with SentryWebhookDataIssueMappable {
   const SentryWebhookDataIssue({
     required this.id,
     required this.shortId,
@@ -29,14 +29,9 @@ class SentryWebhookDataIssue {
     this.culprit,
   });
 
-  factory SentryWebhookDataIssue.fromJson(Map<String, Object?> json) =>
-      _$SentryWebhookDataIssueFromJson(json);
-
   final String id;
   final String shortId;
   final String title;
-  @JsonKey(includeIfNull: false)
-  final String? culprit;
   final String permalink;
   final String level;
   final String status;
@@ -48,6 +43,8 @@ class SentryWebhookDataIssue {
   final num userCount;
   final String firstSeen;
   final String lastSeen;
+  final String? culprit;
 
-  Map<String, Object?> toJson() => _$SentryWebhookDataIssueToJson(this);
+  static SentryWebhookDataIssue fromJson(Map<String, dynamic> json) =>
+      SentryWebhookDataIssueMapper.fromJson(json);
 }

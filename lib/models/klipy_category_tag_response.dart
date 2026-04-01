@@ -2,30 +2,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'klipy_category_tag_response.g.dart';
+part 'klipy_category_tag_response.mapper.dart';
 
-@JsonSerializable()
-class KlipyCategoryTagResponse {
+@MappableClass()
+class KlipyCategoryTagResponse with KlipyCategoryTagResponseMappable {
   const KlipyCategoryTagResponse({
     required this.name,
     required this.src,
     required this.proxySrc,
   });
 
-  factory KlipyCategoryTagResponse.fromJson(Map<String, Object?> json) =>
-      _$KlipyCategoryTagResponseFromJson(json);
-
-  /// The category/tag name
   final String name;
-
-  /// URL to the category preview image
   final String src;
-
-  /// Proxied URL to the category preview image
-  @JsonKey(name: 'proxy_src')
+  @MappableField(key: 'proxy_src')
   final String proxySrc;
 
-  Map<String, Object?> toJson() => _$KlipyCategoryTagResponseToJson(this);
+  static KlipyCategoryTagResponse fromJson(Map<String, dynamic> json) =>
+      KlipyCategoryTagResponseMapper.fromJson(json);
 }

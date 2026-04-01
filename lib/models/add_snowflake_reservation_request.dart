@@ -2,25 +2,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'email_type.dart';
 import 'snowflake_type.dart';
 
-part 'add_snowflake_reservation_request.g.dart';
+part 'add_snowflake_reservation_request.mapper.dart';
 
-@JsonSerializable()
-class AddSnowflakeReservationRequest {
+@MappableClass()
+class AddSnowflakeReservationRequest
+    with AddSnowflakeReservationRequestMappable {
   const AddSnowflakeReservationRequest({
     required this.email,
     required this.snowflake,
   });
 
-  factory AddSnowflakeReservationRequest.fromJson(Map<String, Object?> json) =>
-      _$AddSnowflakeReservationRequestFromJson(json);
-
   final EmailType email;
   final SnowflakeType snowflake;
 
-  Map<String, Object?> toJson() => _$AddSnowflakeReservationRequestToJson(this);
+  static AddSnowflakeReservationRequest fromJson(Map<String, dynamic> json) =>
+      AddSnowflakeReservationRequestMapper.fromJson(json);
 }

@@ -2,20 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'guild_vanity_url_update_request.g.dart';
+part 'guild_vanity_url_update_request.mapper.dart';
 
-@JsonSerializable()
-class GuildVanityUrlUpdateRequest {
+@MappableClass()
+class GuildVanityUrlUpdateRequest with GuildVanityUrlUpdateRequestMappable {
   const GuildVanityUrlUpdateRequest({this.code});
 
-  factory GuildVanityUrlUpdateRequest.fromJson(Map<String, Object?> json) =>
-      _$GuildVanityUrlUpdateRequestFromJson(json);
-
-  /// The new vanity URL code (2-32 characters, alphanumeric and hyphens)
-  @JsonKey(includeIfNull: false)
   final String? code;
 
-  Map<String, Object?> toJson() => _$GuildVanityUrlUpdateRequestToJson(this);
+  static GuildVanityUrlUpdateRequest fromJson(Map<String, dynamic> json) =>
+      GuildVanityUrlUpdateRequestMapper.fromJson(json);
 }

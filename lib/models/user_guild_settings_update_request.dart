@@ -2,16 +2,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'channel_overrides.dart';
 import 'user_guild_settings_update_request_mute_config.dart';
 import 'user_notification_settings.dart';
 
-part 'user_guild_settings_update_request.g.dart';
+part 'user_guild_settings_update_request.mapper.dart';
 
-@JsonSerializable()
-class UserGuildSettingsUpdateRequest {
+@MappableClass()
+class UserGuildSettingsUpdateRequest
+    with UserGuildSettingsUpdateRequestMappable {
   const UserGuildSettingsUpdateRequest({
     this.messageNotifications,
     this.muted,
@@ -23,40 +24,22 @@ class UserGuildSettingsUpdateRequest {
     this.channelOverrides,
   });
 
-  factory UserGuildSettingsUpdateRequest.fromJson(Map<String, Object?> json) =>
-      _$UserGuildSettingsUpdateRequestFromJson(json);
-
-  /// Default guild notification level
-  @JsonKey(includeIfNull: false, name: 'message_notifications')
+  @MappableField(key: 'message_notifications')
   final UserNotificationSettings? messageNotifications;
-
-  /// Guild muted
-  @JsonKey(includeIfNull: false)
   final bool? muted;
-
-  /// Guild mute configuration
-  @JsonKey(includeIfNull: false, name: 'mute_config')
+  @MappableField(key: 'mute_config')
   final UserGuildSettingsUpdateRequestMuteConfig? muteConfig;
-
-  /// Mobile push notifications enabled
-  @JsonKey(includeIfNull: false, name: 'mobile_push')
+  @MappableField(key: 'mobile_push')
   final bool? mobilePush;
-
-  /// Suppress @everyone mentions
-  @JsonKey(includeIfNull: false, name: 'suppress_everyone')
+  @MappableField(key: 'suppress_everyone')
   final bool? suppressEveryone;
-
-  /// Suppress role mentions
-  @JsonKey(includeIfNull: false, name: 'suppress_roles')
+  @MappableField(key: 'suppress_roles')
   final bool? suppressRoles;
-
-  /// Hide muted channels
-  @JsonKey(includeIfNull: false, name: 'hide_muted_channels')
+  @MappableField(key: 'hide_muted_channels')
   final bool? hideMutedChannels;
-
-  /// Per-channel overrides
-  @JsonKey(includeIfNull: false, name: 'channel_overrides')
+  @MappableField(key: 'channel_overrides')
   final Map<String, ChannelOverrides>? channelOverrides;
 
-  Map<String, Object?> toJson() => _$UserGuildSettingsUpdateRequestToJson(this);
+  static UserGuildSettingsUpdateRequest fromJson(Map<String, dynamic> json) =>
+      UserGuildSettingsUpdateRequestMapper.fromJson(json);
 }

@@ -2,16 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'git_hub_webhook_check_run_check_suite.dart';
 import 'git_hub_webhook_check_run_output.dart';
 import 'git_hub_webhook_check_run_pull_requests.dart';
 
-part 'git_hub_webhook_check_run.g.dart';
+part 'git_hub_webhook_check_run.mapper.dart';
 
-@JsonSerializable()
-class GitHubWebhookCheckRun {
+@MappableClass()
+class GitHubWebhookCheckRun with GitHubWebhookCheckRunMappable {
   const GitHubWebhookCheckRun({
     required this.name,
     required this.htmlUrl,
@@ -22,22 +22,18 @@ class GitHubWebhookCheckRun {
     this.pullRequests,
   });
 
-  factory GitHubWebhookCheckRun.fromJson(Map<String, Object?> json) =>
-      _$GitHubWebhookCheckRunFromJson(json);
-
-  @JsonKey(includeIfNull: false)
-  final String? conclusion;
   final String name;
-  @JsonKey(name: 'html_url')
+  @MappableField(key: 'html_url')
   final String htmlUrl;
-  @JsonKey(name: 'check_suite')
+  @MappableField(key: 'check_suite')
   final GitHubWebhookCheckRunCheckSuite checkSuite;
-  @JsonKey(includeIfNull: false, name: 'details_url')
+  final String? conclusion;
+  @MappableField(key: 'details_url')
   final String? detailsUrl;
-  @JsonKey(includeIfNull: false)
   final GitHubWebhookCheckRunOutput? output;
-  @JsonKey(includeIfNull: false, name: 'pull_requests')
+  @MappableField(key: 'pull_requests')
   final List<GitHubWebhookCheckRunPullRequests>? pullRequests;
 
-  Map<String, Object?> toJson() => _$GitHubWebhookCheckRunToJson(this);
+  static GitHubWebhookCheckRun fromJson(Map<String, dynamic> json) =>
+      GitHubWebhookCheckRunMapper.fromJson(json);
 }

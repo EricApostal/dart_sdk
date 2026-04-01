@@ -2,15 +2,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'int32_type.dart';
 import 'node_stats_response_memory.dart';
 
-part 'node_stats_response.g.dart';
+part 'node_stats_response.mapper.dart';
 
-@JsonSerializable()
-class NodeStatsResponse {
+@MappableClass()
+class NodeStatsResponse with NodeStatsResponseMappable {
   const NodeStatsResponse({
     required this.status,
     required this.sessions,
@@ -23,21 +23,19 @@ class NodeStatsResponse {
     required this.uptimeSeconds,
   });
 
-  factory NodeStatsResponse.fromJson(Map<String, Object?> json) =>
-      _$NodeStatsResponseFromJson(json);
-
   final String status;
   final Int32Type sessions;
   final Int32Type guilds;
   final Int32Type presences;
   final Int32Type calls;
   final NodeStatsResponseMemory memory;
-  @JsonKey(name: 'process_count')
+  @MappableField(key: 'process_count')
   final Int32Type processCount;
-  @JsonKey(name: 'process_limit')
+  @MappableField(key: 'process_limit')
   final Int32Type processLimit;
-  @JsonKey(name: 'uptime_seconds')
+  @MappableField(key: 'uptime_seconds')
   final Int32Type uptimeSeconds;
 
-  Map<String, Object?> toJson() => _$NodeStatsResponseToJson(this);
+  static NodeStatsResponse fromJson(Map<String, dynamic> json) =>
+      NodeStatsResponseMapper.fromJson(json);
 }

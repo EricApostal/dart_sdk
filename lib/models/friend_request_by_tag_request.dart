@@ -2,26 +2,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'username_type.dart';
 
-part 'friend_request_by_tag_request.g.dart';
+part 'friend_request_by_tag_request.mapper.dart';
 
-@JsonSerializable()
-class FriendRequestByTagRequest {
+@MappableClass()
+class FriendRequestByTagRequest with FriendRequestByTagRequestMappable {
   const FriendRequestByTagRequest({
     required this.username,
     required this.discriminator,
   });
 
-  factory FriendRequestByTagRequest.fromJson(Map<String, Object?> json) =>
-      _$FriendRequestByTagRequestFromJson(json);
-
   final UsernameType username;
-
-  /// Discriminator tag of the user
   final String discriminator;
 
-  Map<String, Object?> toJson() => _$FriendRequestByTagRequestToJson(this);
+  static FriendRequestByTagRequest fromJson(Map<String, dynamic> json) =>
+      FriendRequestByTagRequestMapper.fromJson(json);
 }

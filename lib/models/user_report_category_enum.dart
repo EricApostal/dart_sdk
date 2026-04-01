@@ -2,45 +2,43 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'user_report_category_enum.mapper.dart';
 
 /// Category of the user report
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum UserReportCategoryEnum {
-  @JsonValue('harassment')
-  harassment('harassment'),
-  @JsonValue('hate_speech')
-  hateSpeech('hate_speech'),
-  @JsonValue('spam_account')
-  spamAccount('spam_account'),
-  @JsonValue('impersonation')
-  impersonation('impersonation'),
-  @JsonValue('underage_user')
-  underageUser('underage_user'),
-  @JsonValue('inappropriate_profile')
-  inappropriateProfile('inappropriate_profile'),
-  @JsonValue('other')
-  other('other'),
+  @MappableValue('harassment')
+  harassment,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue('hate_speech')
+  hateSpeech,
 
-  const UserReportCategoryEnum(this.json);
+  @MappableValue('spam_account')
+  spamAccount,
 
-  factory UserReportCategoryEnum.fromJson(String json) => values.firstWhere(
-    (e) => e.json == json,
-    orElse: () => $unknown,
-  );
+  @MappableValue('impersonation')
+  impersonation,
 
-  final String? json;
+  @MappableValue('underage_user')
+  underageUser,
 
-  String toJson() => json ?? 'null';
+  @MappableValue('inappropriate_profile')
+  inappropriateProfile,
+
+  @MappableValue('other')
+  other,
+
+  @MappableValue('unknown')
+  unknown;
+
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
+  /// Returns all defined enum values excluding the unknown value.
   static List<UserReportCategoryEnum> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+      values.where((value) => value != UserReportCategoryEnum.unknown).toList();
 }

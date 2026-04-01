@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'list_audit_logs_request.g.dart';
+part 'list_audit_logs_request.mapper.dart';
 
-@JsonSerializable()
-class ListAuditLogsRequest {
+@MappableClass()
+class ListAuditLogsRequest with ListAuditLogsRequestMappable {
   const ListAuditLogsRequest({
     this.adminUserId,
     this.targetType,
@@ -18,27 +18,15 @@ class ListAuditLogsRequest {
     this.offset,
   });
 
-  factory ListAuditLogsRequest.fromJson(Map<String, Object?> json) =>
-      _$ListAuditLogsRequestFromJson(json);
-
-  @JsonKey(includeIfNull: false, name: 'admin_user_id')
+  @MappableField(key: 'admin_user_id')
   final SnowflakeType? adminUserId;
-
-  /// Filter by target entity type
-  @JsonKey(includeIfNull: false, name: 'target_type')
+  @MappableField(key: 'target_type')
   final String? targetType;
-
-  /// Filter by target entity ID (user, channel, role, invite code, etc.)
-  @JsonKey(includeIfNull: false, name: 'target_id')
+  @MappableField(key: 'target_id')
   final String? targetId;
-
-  /// Maximum number of entries to return
-  @JsonKey(includeIfNull: false)
   final int? limit;
-
-  /// Number of entries to skip
-  @JsonKey(includeIfNull: false)
   final int? offset;
 
-  Map<String, Object?> toJson() => _$ListAuditLogsRequestToJson(this);
+  static ListAuditLogsRequest fromJson(Map<String, dynamic> json) =>
+      ListAuditLogsRequestMapper.fromJson(json);
 }

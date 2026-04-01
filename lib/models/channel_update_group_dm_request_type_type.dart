@@ -2,30 +2,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-@JsonEnum()
+part 'channel_update_group_dm_request_type_type.mapper.dart';
+
+@MappableEnum(defaultValue: 'unknown')
 enum ChannelUpdateGroupDmRequestTypeType {
-  @JsonValue(3)
-  groupDm(3),
+  @MappableValue(3)
+  groupDm,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue('unknown')
+  unknown;
 
-  const ChannelUpdateGroupDmRequestTypeType(this.json);
-
-  factory ChannelUpdateGroupDmRequestTypeType.fromJson(int json) =>
-      values.firstWhere((e) => e.json == json, orElse: () => $unknown);
-
-  final int? json;
-
-  int? toJson() => json;
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json?.toString() ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
-  static List<ChannelUpdateGroupDmRequestTypeType> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+  /// Returns all defined enum values excluding the unknown value.
+  static List<ChannelUpdateGroupDmRequestTypeType> get $valuesDefined => values
+      .where((value) => value != ChannelUpdateGroupDmRequestTypeType.unknown)
+      .toList();
 }

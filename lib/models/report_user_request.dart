@@ -2,15 +2,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 import 'user_report_category_enum.dart';
 
-part 'report_user_request.g.dart';
+part 'report_user_request.mapper.dart';
 
-@JsonSerializable()
-class ReportUserRequest {
+@MappableClass()
+class ReportUserRequest with ReportUserRequestMappable {
   const ReportUserRequest({
     required this.userId,
     required this.category,
@@ -18,18 +18,14 @@ class ReportUserRequest {
     this.guildId,
   });
 
-  factory ReportUserRequest.fromJson(Map<String, Object?> json) =>
-      _$ReportUserRequestFromJson(json);
-
-  @JsonKey(name: 'user_id')
+  @MappableField(key: 'user_id')
   final SnowflakeType userId;
   final UserReportCategoryEnum category;
-
-  /// Additional context or details about the report
-  @JsonKey(includeIfNull: false, name: 'additional_info')
+  @MappableField(key: 'additional_info')
   final String? additionalInfo;
-  @JsonKey(includeIfNull: false, name: 'guild_id')
+  @MappableField(key: 'guild_id')
   final SnowflakeType? guildId;
 
-  Map<String, Object?> toJson() => _$ReportUserRequestToJson(this);
+  static ReportUserRequest fromJson(Map<String, dynamic> json) =>
+      ReportUserRequestMapper.fromJson(json);
 }

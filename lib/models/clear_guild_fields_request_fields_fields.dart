@@ -2,37 +2,35 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'clear_guild_fields_request_fields_fields.mapper.dart';
 
 /// Guild image field that can be cleared
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum ClearGuildFieldsRequestFieldsFields {
-  @JsonValue('icon')
-  icon('icon'),
-  @JsonValue('banner')
-  banner('banner'),
-  @JsonValue('splash')
-  splash('splash'),
-  @JsonValue('embed_splash')
-  embedSplash('embed_splash'),
+  @MappableValue('icon')
+  icon,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue('banner')
+  banner,
 
-  const ClearGuildFieldsRequestFieldsFields(this.json);
+  @MappableValue('splash')
+  splash,
 
-  factory ClearGuildFieldsRequestFieldsFields.fromJson(String json) =>
-      values.firstWhere((e) => e.json == json, orElse: () => $unknown);
+  @MappableValue('embed_splash')
+  embedSplash,
 
-  final String? json;
+  @MappableValue('unknown')
+  unknown;
 
-  String toJson() => json ?? 'null';
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
-  static List<ClearGuildFieldsRequestFieldsFields> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+  /// Returns all defined enum values excluding the unknown value.
+  static List<ClearGuildFieldsRequestFieldsFields> get $valuesDefined => values
+      .where((value) => value != ClearGuildFieldsRequestFieldsFields.unknown)
+      .toList();
 }

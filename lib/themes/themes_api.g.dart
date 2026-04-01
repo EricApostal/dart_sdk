@@ -38,7 +38,7 @@ class _ThemesApi implements ThemesApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ThemeCreateResponse _value;
     try {
       _value = ThemeCreateResponse.fromJson(_result.data!);

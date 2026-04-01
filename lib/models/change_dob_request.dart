@@ -2,25 +2,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'change_dob_request.g.dart';
+part 'change_dob_request.mapper.dart';
 
-@JsonSerializable()
-class ChangeDobRequest {
+@MappableClass()
+class ChangeDobRequest with ChangeDobRequestMappable {
   const ChangeDobRequest({required this.userId, required this.dateOfBirth});
 
-  factory ChangeDobRequest.fromJson(Map<String, Object?> json) =>
-      _$ChangeDobRequestFromJson(json);
-
-  @JsonKey(name: 'user_id')
+  @MappableField(key: 'user_id')
   final SnowflakeType userId;
-
-  /// New date of birth in YYYY-MM-DD format
-  @JsonKey(name: 'date_of_birth')
+  @MappableField(key: 'date_of_birth')
   final String dateOfBirth;
 
-  Map<String, Object?> toJson() => _$ChangeDobRequestToJson(this);
+  static ChangeDobRequest fromJson(Map<String, dynamic> json) =>
+      ChangeDobRequestMapper.fromJson(json);
 }

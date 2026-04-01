@@ -2,24 +2,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'pack_update_request.g.dart';
+part 'pack_update_request.mapper.dart';
 
-@JsonSerializable()
-class PackUpdateRequest {
+@MappableClass()
+class PackUpdateRequest with PackUpdateRequestMappable {
   const PackUpdateRequest({this.name, this.description});
 
-  factory PackUpdateRequest.fromJson(Map<String, Object?> json) =>
-      _$PackUpdateRequestFromJson(json);
-
-  /// The new name of the pack
-  @JsonKey(includeIfNull: false)
   final String? name;
-
-  /// The new description of the pack
-  @JsonKey(includeIfNull: false)
   final String? description;
 
-  Map<String, Object?> toJson() => _$PackUpdateRequestToJson(this);
+  static PackUpdateRequest fromJson(Map<String, dynamic> json) =>
+      PackUpdateRequestMapper.fromJson(json);
 }

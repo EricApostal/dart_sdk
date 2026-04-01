@@ -35,7 +35,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UserPrivateResponse _value;
     try {
       _value = UserPrivateResponse.fromJson(_result.data!);
@@ -65,7 +65,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UserPrivateResponse _value;
     try {
       _value = UserPrivateResponse.fromJson(_result.data!);
@@ -148,7 +148,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ChannelResponse _value;
     try {
       _value = ChannelResponse.fromJson(_result.data!);
@@ -295,7 +295,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late EmailChangeRequestNewResponse _value;
     try {
       _value = EmailChangeRequestNewResponse.fromJson(_result.data!);
@@ -347,7 +347,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UserPrivateResponse _value;
     try {
       _value = UserPrivateResponse.fromJson(_result.data!);
@@ -377,7 +377,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late EmailChangeRequestNewResponse _value;
     try {
       _value = EmailChangeRequestNewResponse.fromJson(_result.data!);
@@ -451,7 +451,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late EmailChangeStartResponse _value;
     try {
       _value = EmailChangeStartResponse.fromJson(_result.data!);
@@ -481,7 +481,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late EmailTokenResponse _value;
     try {
       _value = EmailTokenResponse.fromJson(_result.data!);
@@ -511,7 +511,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late EmailChangeVerifyOriginalResponse _value;
     try {
       _value = EmailChangeVerifyOriginalResponse.fromJson(_result.data!);
@@ -573,7 +573,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UserGuildSettingsResponse _value;
     try {
       _value = UserGuildSettingsResponse.fromJson(_result.data!);
@@ -604,7 +604,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UserGuildSettingsResponse _value;
     try {
       _value = UserGuildSettingsResponse.fromJson(_result.data!);
@@ -631,7 +631,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late HarvestCreationResponseSchema _value;
     try {
       _value = HarvestCreationResponseSchema.fromJson(_result.data!);
@@ -687,7 +687,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late HarvestStatusResponseSchema _value;
     try {
       _value = HarvestStatusResponseSchema.fromJson(_result.data!);
@@ -716,7 +716,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late HarvestDownloadUrlResponse _value;
     try {
       _value = HarvestDownloadUrlResponse.fromJson(_result.data!);
@@ -829,7 +829,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late SuccessResponse _value;
     try {
       _value = SuccessResponse.fromJson(_result.data!);
@@ -878,7 +878,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late MfaBackupCodesResponse _value;
     try {
       _value = MfaBackupCodesResponse.fromJson(_result.data!);
@@ -968,7 +968,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late MfaBackupCodesResponse _value;
     try {
       _value = MfaBackupCodesResponse.fromJson(_result.data!);
@@ -1052,7 +1052,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late WebAuthnChallengeResponse _value;
     try {
       _value = WebAuthnChallengeResponse.fromJson(_result.data!);
@@ -1152,7 +1152,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UserNoteResponse _value;
     try {
       _value = UserNoteResponse.fromJson(_result.data!);
@@ -1249,7 +1249,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late PasswordChangeStartResponse _value;
     try {
       _value = PasswordChangeStartResponse.fromJson(_result.data!);
@@ -1279,7 +1279,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late PasswordChangeVerifyResponse _value;
     try {
       _value = PasswordChangeVerifyResponse.fromJson(_result.data!);
@@ -1373,7 +1373,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late PhoneVerifyResponse _value;
     try {
       _value = PhoneVerifyResponse.fromJson(_result.data!);
@@ -1457,7 +1457,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late PushSubscribeResponse _value;
     try {
       _value = PushSubscribeResponse.fromJson(_result.data!);
@@ -1484,7 +1484,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late PushSubscriptionsListResponse _value;
     try {
       _value = PushSubscriptionsListResponse.fromJson(_result.data!);
@@ -1513,7 +1513,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late SuccessResponse _value;
     try {
       _value = SuccessResponse.fromJson(_result.data!);
@@ -1575,7 +1575,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late RelationshipResponse _value;
     try {
       _value = RelationshipResponse.fromJson(_result.data!);
@@ -1604,7 +1604,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late RelationshipResponse _value;
     try {
       _value = RelationshipResponse.fromJson(_result.data!);
@@ -1635,7 +1635,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late RelationshipResponse _value;
     try {
       _value = RelationshipResponse.fromJson(_result.data!);
@@ -1685,7 +1685,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late RelationshipResponse _value;
     try {
       _value = RelationshipResponse.fromJson(_result.data!);
@@ -1821,7 +1821,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ScheduledMessageResponseSchema _value;
     try {
       _value = ScheduledMessageResponseSchema.fromJson(_result.data!);
@@ -1871,7 +1871,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ScheduledMessageResponseSchema _value;
     try {
       _value = ScheduledMessageResponseSchema.fromJson(_result.data!);
@@ -1898,7 +1898,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UserSettingsResponse _value;
     try {
       _value = UserSettingsResponse.fromJson(_result.data!);
@@ -1928,7 +1928,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UserSettingsResponse _value;
     try {
       _value = UserSettingsResponse.fromJson(_result.data!);
@@ -1955,7 +1955,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late SudoMfaMethodsResponse _value;
     try {
       _value = SudoMfaMethodsResponse.fromJson(_result.data!);
@@ -2002,7 +2002,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late WebAuthnChallengeResponse _value;
     try {
       _value = WebAuthnChallengeResponse.fromJson(_result.data!);
@@ -2035,7 +2035,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UserTagCheckResponse _value;
     try {
       _value = UserTagCheckResponse.fromJson(_result.data!);
@@ -2072,7 +2072,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UserProfileFullResponse _value;
     try {
       _value = UserProfileFullResponse.fromJson(_result.data!);
@@ -2099,7 +2099,7 @@ class _UsersApi implements UsersApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late UserPartialResponse _value;
     try {
       _value = UserPartialResponse.fromJson(_result.data!);

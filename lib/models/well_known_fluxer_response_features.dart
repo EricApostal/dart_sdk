@@ -2,12 +2,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'well_known_fluxer_response_features.g.dart';
+part 'well_known_fluxer_response_features.mapper.dart';
 
-@JsonSerializable()
-class WellKnownFluxerResponseFeatures {
+@MappableClass()
+class WellKnownFluxerResponseFeatures
+    with WellKnownFluxerResponseFeaturesMappable {
   const WellKnownFluxerResponseFeatures({
     required this.smsMfaEnabled,
     required this.voiceEnabled,
@@ -17,33 +18,19 @@ class WellKnownFluxerResponseFeatures {
     this.presignedAttachmentUploads,
   });
 
-  factory WellKnownFluxerResponseFeatures.fromJson(Map<String, Object?> json) =>
-      _$WellKnownFluxerResponseFeaturesFromJson(json);
-
-  /// Whether SMS-based MFA is available
-  @JsonKey(name: 'sms_mfa_enabled')
+  @MappableField(key: 'sms_mfa_enabled')
   final bool smsMfaEnabled;
-
-  /// Whether voice/video calling is enabled
-  @JsonKey(name: 'voice_enabled')
+  @MappableField(key: 'voice_enabled')
   final bool voiceEnabled;
-
-  /// Whether Stripe payments are enabled
-  @JsonKey(name: 'stripe_enabled')
+  @MappableField(key: 'stripe_enabled')
   final bool stripeEnabled;
-
-  /// Whether this is a self-hosted instance
-  @JsonKey(name: 'self_hosted')
+  @MappableField(key: 'self_hosted')
   final bool selfHosted;
-
-  /// Whether manual review mode is enabled for registrations
-  @JsonKey(includeIfNull: false, name: 'manual_review_enabled')
+  @MappableField(key: 'manual_review_enabled')
   final bool? manualReviewEnabled;
-
-  /// Whether presigned attachment uploads are enabled
-  @JsonKey(includeIfNull: false, name: 'presigned_attachment_uploads')
+  @MappableField(key: 'presigned_attachment_uploads')
   final bool? presignedAttachmentUploads;
 
-  Map<String, Object?> toJson() =>
-      _$WellKnownFluxerResponseFeaturesToJson(this);
+  static WellKnownFluxerResponseFeatures fromJson(Map<String, dynamic> json) =>
+      WellKnownFluxerResponseFeaturesMapper.fromJson(json);
 }

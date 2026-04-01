@@ -35,7 +35,7 @@ class _OAuth2Api implements OAuth2Api {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ApplicationsMeResponse _value;
     try {
       _value = ApplicationsMeResponse.fromJson(_result.data!);
@@ -62,7 +62,7 @@ class _OAuth2Api implements OAuth2Api {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late OAuth2MeResponse _value;
     try {
       _value = OAuth2MeResponse.fromJson(_result.data!);
@@ -146,7 +146,7 @@ class _OAuth2Api implements OAuth2Api {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ApplicationResponse _value;
     try {
       _value = ApplicationResponse.fromJson(_result.data!);
@@ -205,7 +205,7 @@ class _OAuth2Api implements OAuth2Api {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ApplicationResponse _value;
     try {
       _value = ApplicationResponse.fromJson(_result.data!);
@@ -236,7 +236,7 @@ class _OAuth2Api implements OAuth2Api {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ApplicationResponse _value;
     try {
       _value = ApplicationResponse.fromJson(_result.data!);
@@ -290,7 +290,7 @@ class _OAuth2Api implements OAuth2Api {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late BotProfileResponse _value;
     try {
       _value = BotProfileResponse.fromJson(_result.data!);
@@ -321,7 +321,7 @@ class _OAuth2Api implements OAuth2Api {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late BotTokenResetResponse _value;
     try {
       _value = BotTokenResetResponse.fromJson(_result.data!);
@@ -352,7 +352,7 @@ class _OAuth2Api implements OAuth2Api {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ApplicationResponse _value;
     try {
       _value = ApplicationResponse.fromJson(_result.data!);
@@ -381,7 +381,7 @@ class _OAuth2Api implements OAuth2Api {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ApplicationPublicResponse _value;
     try {
       _value = ApplicationPublicResponse.fromJson(_result.data!);
@@ -411,7 +411,7 @@ class _OAuth2Api implements OAuth2Api {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late OAuth2ConsentResponse _value;
     try {
       _value = OAuth2ConsentResponse.fromJson(_result.data!);
@@ -455,7 +455,7 @@ class _OAuth2Api implements OAuth2Api {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late OAuth2IntrospectResponse _value;
     try {
       _value = OAuth2IntrospectResponse.fromJson(_result.data!);
@@ -487,7 +487,7 @@ class _OAuth2Api implements OAuth2Api {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late OAuth2TokenResponse _value;
     try {
       _value = OAuth2TokenResponse.fromJson(_result.data!);
@@ -554,7 +554,7 @@ class _OAuth2Api implements OAuth2Api {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late OAuth2UserInfoResponse _value;
     try {
       _value = OAuth2UserInfoResponse.fromJson(_result.data!);

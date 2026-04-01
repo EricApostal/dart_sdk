@@ -2,16 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'guild_member_profile_flags.dart';
 import 'int32_type.dart';
 import 'user_partial_response.dart';
 
-part 'guild_member_response.g.dart';
+part 'guild_member_response.mapper.dart';
 
-@JsonSerializable()
-class GuildMemberResponse {
+@MappableClass()
+class GuildMemberResponse with GuildMemberResponseMappable {
   const GuildMemberResponse({
     required this.user,
     required this.roles,
@@ -26,45 +26,22 @@ class GuildMemberResponse {
     this.profileFlags,
   });
 
-  factory GuildMemberResponse.fromJson(Map<String, Object?> json) =>
-      _$GuildMemberResponseFromJson(json);
-
   final UserPartialResponse user;
-
-  /// The nickname of the member in this guild
-  @JsonKey(includeIfNull: false)
-  final String? nick;
-
-  /// The hash of the member guild-specific avatar
-  @JsonKey(includeIfNull: false)
-  final String? avatar;
-
-  /// The hash of the member guild-specific banner
-  @JsonKey(includeIfNull: false)
-  final String? banner;
-
-  /// The accent colour of the member guild profile as an integer
-  @JsonKey(includeIfNull: false, name: 'accent_color')
-  final Int32Type? accentColor;
-
-  /// Array of role IDs the member has
   final List<String> roles;
-
-  /// ISO8601 timestamp of when the user joined the guild
-  @JsonKey(name: 'joined_at')
+  @MappableField(key: 'joined_at')
   final DateTime joinedAt;
-
-  /// Whether the member is muted in voice channels
   final bool mute;
-
-  /// Whether the member is deafened in voice channels
   final bool deaf;
-
-  /// ISO8601 timestamp until which the member is timed out
-  @JsonKey(includeIfNull: false, name: 'communication_disabled_until')
+  final String? nick;
+  final String? avatar;
+  final String? banner;
+  @MappableField(key: 'accent_color')
+  final Int32Type? accentColor;
+  @MappableField(key: 'communication_disabled_until')
   final DateTime? communicationDisabledUntil;
-  @JsonKey(includeIfNull: false, name: 'profile_flags')
+  @MappableField(key: 'profile_flags')
   final GuildMemberProfileFlags? profileFlags;
 
-  Map<String, Object?> toJson() => _$GuildMemberResponseToJson(this);
+  static GuildMemberResponse fromJson(Map<String, dynamic> json) =>
+      GuildMemberResponseMapper.fromJson(json);
 }

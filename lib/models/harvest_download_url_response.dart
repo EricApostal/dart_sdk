@@ -2,27 +2,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'harvest_download_url_response.g.dart';
+part 'harvest_download_url_response.mapper.dart';
 
-@JsonSerializable()
-class HarvestDownloadUrlResponse {
+@MappableClass()
+class HarvestDownloadUrlResponse with HarvestDownloadUrlResponseMappable {
   const HarvestDownloadUrlResponse({
     required this.downloadUrl,
     required this.expiresAt,
   });
 
-  factory HarvestDownloadUrlResponse.fromJson(Map<String, Object?> json) =>
-      _$HarvestDownloadUrlResponseFromJson(json);
-
-  /// The presigned URL to download the harvest archive
-  @JsonKey(name: 'download_url')
+  @MappableField(key: 'download_url')
   final String downloadUrl;
-
-  /// ISO 8601 timestamp when the harvest download expires
-  @JsonKey(name: 'expires_at')
+  @MappableField(key: 'expires_at')
   final String expiresAt;
 
-  Map<String, Object?> toJson() => _$HarvestDownloadUrlResponseToJson(this);
+  static HarvestDownloadUrlResponse fromJson(Map<String, dynamic> json) =>
+      HarvestDownloadUrlResponseMapper.fromJson(json);
 }

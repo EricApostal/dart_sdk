@@ -2,17 +2,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'report_admin_response_schema_message_context.dart';
 import 'report_status.dart';
 import 'report_type.dart';
 import 'snowflake_type.dart';
 
-part 'report_admin_response_schema.g.dart';
+part 'report_admin_response_schema.mapper.dart';
 
-@JsonSerializable()
-class ReportAdminResponseSchema {
+@MappableClass()
+class ReportAdminResponseSchema with ReportAdminResponseSchemaMappable {
   const ReportAdminResponseSchema({
     required this.reportId,
     required this.reporterId,
@@ -45,66 +45,63 @@ class ReportAdminResponseSchema {
     this.messageContext,
   });
 
-  factory ReportAdminResponseSchema.fromJson(Map<String, Object?> json) =>
-      _$ReportAdminResponseSchemaFromJson(json);
-
-  @JsonKey(name: 'report_id')
+  @MappableField(key: 'report_id')
   final SnowflakeType reportId;
-  @JsonKey(includeIfNull: true, name: 'reporter_id')
+  @MappableField(key: 'reporter_id')
   final SnowflakeType? reporterId;
-  @JsonKey(includeIfNull: true, name: 'reporter_tag')
+  @MappableField(key: 'reporter_tag')
   final String? reporterTag;
-  @JsonKey(includeIfNull: true, name: 'reporter_username')
+  @MappableField(key: 'reporter_username')
   final String? reporterUsername;
-  @JsonKey(includeIfNull: true, name: 'reporter_discriminator')
+  @MappableField(key: 'reporter_discriminator')
   final String? reporterDiscriminator;
-  @JsonKey(includeIfNull: true, name: 'reporter_email')
+  @MappableField(key: 'reporter_email')
   final String? reporterEmail;
-  @JsonKey(includeIfNull: true, name: 'reporter_full_legal_name')
+  @MappableField(key: 'reporter_full_legal_name')
   final String? reporterFullLegalName;
-  @JsonKey(includeIfNull: true, name: 'reporter_country_of_residence')
+  @MappableField(key: 'reporter_country_of_residence')
   final String? reporterCountryOfResidence;
-  @JsonKey(name: 'reported_at')
+  @MappableField(key: 'reported_at')
   final String reportedAt;
   final ReportStatus status;
-  @JsonKey(name: 'report_type')
+  @MappableField(key: 'report_type')
   final ReportType reportType;
-  @JsonKey(includeIfNull: true)
   final String? category;
-  @JsonKey(includeIfNull: true, name: 'additional_info')
+  @MappableField(key: 'additional_info')
   final String? additionalInfo;
-  @JsonKey(includeIfNull: true, name: 'reported_user_id')
+  @MappableField(key: 'reported_user_id')
   final SnowflakeType? reportedUserId;
-  @JsonKey(includeIfNull: true, name: 'reported_user_tag')
+  @MappableField(key: 'reported_user_tag')
   final String? reportedUserTag;
-  @JsonKey(includeIfNull: true, name: 'reported_user_username')
+  @MappableField(key: 'reported_user_username')
   final String? reportedUserUsername;
-  @JsonKey(includeIfNull: true, name: 'reported_user_discriminator')
+  @MappableField(key: 'reported_user_discriminator')
   final String? reportedUserDiscriminator;
-  @JsonKey(includeIfNull: true, name: 'reported_user_avatar_hash')
+  @MappableField(key: 'reported_user_avatar_hash')
   final String? reportedUserAvatarHash;
-  @JsonKey(includeIfNull: true, name: 'reported_guild_id')
+  @MappableField(key: 'reported_guild_id')
   final SnowflakeType? reportedGuildId;
-  @JsonKey(includeIfNull: true, name: 'reported_guild_name')
+  @MappableField(key: 'reported_guild_name')
   final String? reportedGuildName;
-  @JsonKey(includeIfNull: true, name: 'reported_message_id')
+  @MappableField(key: 'reported_message_id')
   final SnowflakeType? reportedMessageId;
-  @JsonKey(includeIfNull: true, name: 'reported_channel_id')
+  @MappableField(key: 'reported_channel_id')
   final SnowflakeType? reportedChannelId;
-  @JsonKey(includeIfNull: true, name: 'reported_channel_name')
+  @MappableField(key: 'reported_channel_name')
   final String? reportedChannelName;
-  @JsonKey(includeIfNull: true, name: 'reported_guild_invite_code')
+  @MappableField(key: 'reported_guild_invite_code')
   final String? reportedGuildInviteCode;
-  @JsonKey(includeIfNull: true, name: 'resolved_at')
+  @MappableField(key: 'resolved_at')
   final String? resolvedAt;
-  @JsonKey(includeIfNull: true, name: 'resolved_by_admin_id')
+  @MappableField(key: 'resolved_by_admin_id')
   final SnowflakeType? resolvedByAdminId;
-  @JsonKey(includeIfNull: true, name: 'public_comment')
+  @MappableField(key: 'public_comment')
   final String? publicComment;
-  @JsonKey(includeIfNull: false, name: 'mutual_dm_channel_id')
+  @MappableField(key: 'mutual_dm_channel_id')
   final SnowflakeType? mutualDmChannelId;
-  @JsonKey(includeIfNull: false, name: 'message_context')
+  @MappableField(key: 'message_context')
   final List<ReportAdminResponseSchemaMessageContext>? messageContext;
 
-  Map<String, Object?> toJson() => _$ReportAdminResponseSchemaToJson(this);
+  static ReportAdminResponseSchema fromJson(Map<String, dynamic> json) =>
+      ReportAdminResponseSchemaMapper.fromJson(json);
 }

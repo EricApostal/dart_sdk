@@ -2,7 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'dsa_report_request.dart';
 import 'dsa_report_user_request_report_type_report_type.dart';
@@ -10,10 +10,10 @@ import 'dsa_report_user_request_reporter_country_of_residence_reporter_country_o
 import 'snowflake_type.dart';
 import 'user_report_category_enum.dart';
 
-part 'dsa_report_user_request.g.dart';
+part 'dsa_report_user_request.mapper.dart';
 
-@JsonSerializable()
-class DsaReportUserRequest {
+@MappableClass()
+class DsaReportUserRequest with DsaReportUserRequestMappable {
   const DsaReportUserRequest({
     required this.ticket,
     required this.reporterFullLegalName,
@@ -26,39 +26,24 @@ class DsaReportUserRequest {
     this.userTag,
   });
 
-  factory DsaReportUserRequest.fromJson(Map<String, Object?> json) =>
-      _$DsaReportUserRequestFromJson(json);
-
-  /// Verification ticket obtained from email verification
   final String ticket;
-
-  /// Additional context or details about the report
-  @JsonKey(includeIfNull: false, name: 'additional_info')
-  final String? additionalInfo;
-
-  /// Full legal name of the person filing the report
-  @JsonKey(name: 'reporter_full_legal_name')
+  @MappableField(key: 'reporter_full_legal_name')
   final String reporterFullLegalName;
-
-  /// EU country code of the reporter residence
-  @JsonKey(name: 'reporter_country_of_residence')
+  @MappableField(key: 'reporter_country_of_residence')
   final DsaReportUserRequestReporterCountryOfResidenceReporterCountryOfResidence
   reporterCountryOfResidence;
-
-  /// Fluxer tag of the reporter if they have an account
-  @JsonKey(includeIfNull: false, name: 'reporter_fluxer_tag')
-  final String? reporterFluxerTag;
-
-  /// Type of report
-  @JsonKey(name: 'report_type')
+  @MappableField(key: 'report_type')
   final DsaReportUserRequestReportTypeReportType reportType;
   final UserReportCategoryEnum category;
-  @JsonKey(includeIfNull: false, name: 'user_id')
+  @MappableField(key: 'additional_info')
+  final String? additionalInfo;
+  @MappableField(key: 'reporter_fluxer_tag')
+  final String? reporterFluxerTag;
+  @MappableField(key: 'user_id')
   final SnowflakeType? userId;
-
-  /// Fluxer tag of the user being reported
-  @JsonKey(includeIfNull: false, name: 'user_tag')
+  @MappableField(key: 'user_tag')
   final String? userTag;
 
-  Map<String, Object?> toJson() => _$DsaReportUserRequestToJson(this);
+  static DsaReportUserRequest fromJson(Map<String, dynamic> json) =>
+      DsaReportUserRequestMapper.fromJson(json);
 }

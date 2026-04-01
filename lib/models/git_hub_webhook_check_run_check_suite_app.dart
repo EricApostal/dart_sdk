@@ -2,20 +2,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'git_hub_webhook_check_run_check_suite_app.g.dart';
+part 'git_hub_webhook_check_run_check_suite_app.mapper.dart';
 
-@JsonSerializable()
-class GitHubWebhookCheckRunCheckSuiteApp {
+@MappableClass()
+class GitHubWebhookCheckRunCheckSuiteApp
+    with GitHubWebhookCheckRunCheckSuiteAppMappable {
   const GitHubWebhookCheckRunCheckSuiteApp({required this.name});
-
-  factory GitHubWebhookCheckRunCheckSuiteApp.fromJson(
-    Map<String, Object?> json,
-  ) => _$GitHubWebhookCheckRunCheckSuiteAppFromJson(json);
 
   final String name;
 
-  Map<String, Object?> toJson() =>
-      _$GitHubWebhookCheckRunCheckSuiteAppToJson(this);
+  static GitHubWebhookCheckRunCheckSuiteApp fromJson(
+    Map<String, dynamic> json,
+  ) => GitHubWebhookCheckRunCheckSuiteAppMapper.fromJson(json);
 }

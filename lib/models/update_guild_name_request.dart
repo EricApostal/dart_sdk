@@ -2,24 +2,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'update_guild_name_request.g.dart';
+part 'update_guild_name_request.mapper.dart';
 
-@JsonSerializable()
-class UpdateGuildNameRequest {
+@MappableClass()
+class UpdateGuildNameRequest with UpdateGuildNameRequestMappable {
   const UpdateGuildNameRequest({required this.guildId, required this.name});
 
-  factory UpdateGuildNameRequest.fromJson(Map<String, Object?> json) =>
-      _$UpdateGuildNameRequestFromJson(json);
-
-  @JsonKey(name: 'guild_id')
+  @MappableField(key: 'guild_id')
   final SnowflakeType guildId;
-
-  /// New name for the guild
   final String name;
 
-  Map<String, Object?> toJson() => _$UpdateGuildNameRequestToJson(this);
+  static UpdateGuildNameRequest fromJson(Map<String, dynamic> json) =>
+      UpdateGuildNameRequestMapper.fromJson(json);
 }

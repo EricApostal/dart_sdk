@@ -2,25 +2,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'create_private_channel_request.g.dart';
+part 'create_private_channel_request.mapper.dart';
 
-@JsonSerializable()
-class CreatePrivateChannelRequest {
+@MappableClass()
+class CreatePrivateChannelRequest with CreatePrivateChannelRequestMappable {
   const CreatePrivateChannelRequest({this.recipientId, this.recipients});
 
-  factory CreatePrivateChannelRequest.fromJson(Map<String, Object?> json) =>
-      _$CreatePrivateChannelRequestFromJson(json);
-
-  @JsonKey(includeIfNull: false, name: 'recipient_id')
+  @MappableField(key: 'recipient_id')
   final SnowflakeType? recipientId;
-
-  /// Array of user IDs for creating a group DM (max 9)
-  @JsonKey(includeIfNull: false)
   final List<SnowflakeType>? recipients;
 
-  Map<String, Object?> toJson() => _$CreatePrivateChannelRequestToJson(this);
+  static CreatePrivateChannelRequest fromJson(Map<String, dynamic> json) =>
+      CreatePrivateChannelRequestMapper.fromJson(json);
 }

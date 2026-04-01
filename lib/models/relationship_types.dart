@@ -2,39 +2,34 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'relationship_types.mapper.dart';
 
 /// Relationship type
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum RelationshipTypes {
-  @JsonValue(1)
-  friend(1),
-  @JsonValue(2)
-  blocked(2),
-  @JsonValue(3)
-  incomingRequest(3),
-  @JsonValue(4)
-  outgoingRequest(4),
+  @MappableValue(1)
+  friend,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue(2)
+  blocked,
 
-  const RelationshipTypes(this.json);
+  @MappableValue(3)
+  incomingRequest,
 
-  factory RelationshipTypes.fromJson(int json) => values.firstWhere(
-    (e) => e.json == json,
-    orElse: () => $unknown,
-  );
+  @MappableValue(4)
+  outgoingRequest,
 
-  final int? json;
+  @MappableValue('unknown')
+  unknown;
 
-  int? toJson() => json;
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json?.toString() ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
+  /// Returns all defined enum values excluding the unknown value.
   static List<RelationshipTypes> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+      values.where((value) => value != RelationshipTypes.unknown).toList();
 }

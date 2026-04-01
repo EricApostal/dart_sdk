@@ -2,19 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'url_response.g.dart';
+part 'url_response.mapper.dart';
 
-@JsonSerializable()
-class UrlResponse {
+@MappableClass()
+class UrlResponse with UrlResponseMappable {
   const UrlResponse({required this.url});
 
-  factory UrlResponse.fromJson(Map<String, Object?> json) =>
-      _$UrlResponseFromJson(json);
-
-  /// The URL to redirect to
   final String url;
 
-  Map<String, Object?> toJson() => _$UrlResponseToJson(this);
+  static UrlResponse fromJson(Map<String, dynamic> json) =>
+      UrlResponseMapper.fromJson(json);
 }

@@ -2,17 +2,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'channel_overrides.dart';
 import 'snowflake_type.dart';
 import 'user_guild_settings_response_mute_config.dart';
 import 'user_notification_settings.dart';
 
-part 'user_guild_settings_response.g.dart';
+part 'user_guild_settings_response.mapper.dart';
 
-@JsonSerializable()
-class UserGuildSettingsResponse {
+@MappableClass()
+class UserGuildSettingsResponse with UserGuildSettingsResponseMappable {
   const UserGuildSettingsResponse({
     required this.guildId,
     required this.messageNotifications,
@@ -26,46 +26,25 @@ class UserGuildSettingsResponse {
     required this.version,
   });
 
-  factory UserGuildSettingsResponse.fromJson(Map<String, Object?> json) =>
-      _$UserGuildSettingsResponseFromJson(json);
-
-  /// The ID of the guild these settings apply to
-  @JsonKey(includeIfNull: true, name: 'guild_id')
+  @MappableField(key: 'guild_id')
   final SnowflakeType? guildId;
-
-  /// The default notification level for the guild
-  @JsonKey(name: 'message_notifications')
+  @MappableField(key: 'message_notifications')
   final UserNotificationSettings messageNotifications;
-
-  /// Whether the guild is muted
   final bool muted;
-
-  /// The mute configuration for the guild
-  @JsonKey(includeIfNull: true, name: 'mute_config')
+  @MappableField(key: 'mute_config')
   final UserGuildSettingsResponseMuteConfig? muteConfig;
-
-  /// Whether mobile push notifications are enabled
-  @JsonKey(name: 'mobile_push')
+  @MappableField(key: 'mobile_push')
   final bool mobilePush;
-
-  /// Whether @everyone mentions are suppressed
-  @JsonKey(name: 'suppress_everyone')
+  @MappableField(key: 'suppress_everyone')
   final bool suppressEveryone;
-
-  /// Whether role mentions are suppressed
-  @JsonKey(name: 'suppress_roles')
+  @MappableField(key: 'suppress_roles')
   final bool suppressRoles;
-
-  /// Whether muted channels are hidden in the sidebar
-  @JsonKey(name: 'hide_muted_channels')
+  @MappableField(key: 'hide_muted_channels')
   final bool hideMutedChannels;
-
-  /// Per-channel notification overrides
-  @JsonKey(includeIfNull: true, name: 'channel_overrides')
+  @MappableField(key: 'channel_overrides')
   final Map<String, ChannelOverrides>? channelOverrides;
-
-  /// The version number of these settings for sync
   final int version;
 
-  Map<String, Object?> toJson() => _$UserGuildSettingsResponseToJson(this);
+  static UserGuildSettingsResponse fromJson(Map<String, dynamic> json) =>
+      UserGuildSettingsResponseMapper.fromJson(json);
 }

@@ -2,19 +2,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'message_shred_status_request.g.dart';
+part 'message_shred_status_request.mapper.dart';
 
-@JsonSerializable()
-class MessageShredStatusRequest {
+@MappableClass()
+class MessageShredStatusRequest with MessageShredStatusRequestMappable {
   const MessageShredStatusRequest({required this.jobId});
 
-  factory MessageShredStatusRequest.fromJson(Map<String, Object?> json) =>
-      _$MessageShredStatusRequestFromJson(json);
-
-  @JsonKey(name: 'job_id')
+  @MappableField(key: 'job_id')
   final String jobId;
 
-  Map<String, Object?> toJson() => _$MessageShredStatusRequestToJson(this);
+  static MessageShredStatusRequest fromJson(Map<String, dynamic> json) =>
+      MessageShredStatusRequestMapper.fromJson(json);
 }

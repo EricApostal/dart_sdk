@@ -2,20 +2,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'sso_start_request.g.dart';
+part 'sso_start_request.mapper.dart';
 
-@JsonSerializable()
-class SsoStartRequest {
+@MappableClass()
+class SsoStartRequest with SsoStartRequestMappable {
   const SsoStartRequest({this.redirectTo});
 
-  factory SsoStartRequest.fromJson(Map<String, Object?> json) =>
-      _$SsoStartRequestFromJson(json);
-
-  /// URL to redirect to after SSO completion
-  @JsonKey(includeIfNull: false, name: 'redirect_to')
+  @MappableField(key: 'redirect_to')
   final String? redirectTo;
 
-  Map<String, Object?> toJson() => _$SsoStartRequestToJson(this);
+  static SsoStartRequest fromJson(Map<String, dynamic> json) =>
+      SsoStartRequestMapper.fromJson(json);
 }

@@ -2,19 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'enabled_toggle_request.g.dart';
+part 'enabled_toggle_request.mapper.dart';
 
-@JsonSerializable()
-class EnabledToggleRequest {
+@MappableClass()
+class EnabledToggleRequest with EnabledToggleRequestMappable {
   const EnabledToggleRequest({required this.enabled});
 
-  factory EnabledToggleRequest.fromJson(Map<String, Object?> json) =>
-      _$EnabledToggleRequestFromJson(json);
-
-  /// Whether to enable or disable the feature
   final bool enabled;
 
-  Map<String, Object?> toJson() => _$EnabledToggleRequestToJson(this);
+  static EnabledToggleRequest fromJson(Map<String, dynamic> json) =>
+      EnabledToggleRequestMapper.fromJson(json);
 }

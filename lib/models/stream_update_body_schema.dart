@@ -2,20 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'stream_update_body_schema.g.dart';
+part 'stream_update_body_schema.mapper.dart';
 
-@JsonSerializable()
-class StreamUpdateBodySchema {
+@MappableClass()
+class StreamUpdateBodySchema with StreamUpdateBodySchemaMappable {
   const StreamUpdateBodySchema({this.region});
 
-  factory StreamUpdateBodySchema.fromJson(Map<String, Object?> json) =>
-      _$StreamUpdateBodySchemaFromJson(json);
-
-  /// The preferred voice region for the stream (1-64 characters)
-  @JsonKey(includeIfNull: false)
   final String? region;
 
-  Map<String, Object?> toJson() => _$StreamUpdateBodySchemaToJson(this);
+  static StreamUpdateBodySchema fromJson(Map<String, dynamic> json) =>
+      StreamUpdateBodySchemaMapper.fromJson(json);
 }

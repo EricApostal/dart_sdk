@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'slack_webhook_request_attachments.dart';
 
-part 'slack_webhook_request.g.dart';
+part 'slack_webhook_request.mapper.dart';
 
-@JsonSerializable()
-class SlackWebhookRequest {
+@MappableClass()
+class SlackWebhookRequest with SlackWebhookRequestMappable {
   const SlackWebhookRequest({
     this.text,
     this.username,
@@ -17,24 +17,12 @@ class SlackWebhookRequest {
     this.attachments,
   });
 
-  factory SlackWebhookRequest.fromJson(Map<String, Object?> json) =>
-      _$SlackWebhookRequestFromJson(json);
-
-  /// Main text content of the message
-  @JsonKey(includeIfNull: false)
   final String? text;
-
-  /// Override the default username of the webhook
-  @JsonKey(includeIfNull: false)
   final String? username;
-
-  /// Override the default icon of the webhook
-  @JsonKey(includeIfNull: false, name: 'icon_url')
+  @MappableField(key: 'icon_url')
   final String? iconUrl;
-
-  /// Array of attachment objects
-  @JsonKey(includeIfNull: false)
   final List<SlackWebhookRequestAttachments>? attachments;
 
-  Map<String, Object?> toJson() => _$SlackWebhookRequestToJson(this);
+  static SlackWebhookRequest fromJson(Map<String, dynamic> json) =>
+      SlackWebhookRequestMapper.fromJson(json);
 }

@@ -2,14 +2,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'lookup_message_by_attachment_request.g.dart';
+part 'lookup_message_by_attachment_request.mapper.dart';
 
-@JsonSerializable()
-class LookupMessageByAttachmentRequest {
+@MappableClass()
+class LookupMessageByAttachmentRequest
+    with LookupMessageByAttachmentRequestMappable {
   const LookupMessageByAttachmentRequest({
     required this.channelId,
     required this.attachmentId,
@@ -17,18 +18,14 @@ class LookupMessageByAttachmentRequest {
     this.contextLimit,
   });
 
-  factory LookupMessageByAttachmentRequest.fromJson(
-    Map<String, Object?> json,
-  ) => _$LookupMessageByAttachmentRequestFromJson(json);
-
-  @JsonKey(name: 'channel_id')
+  @MappableField(key: 'channel_id')
   final SnowflakeType channelId;
-  @JsonKey(name: 'attachment_id')
+  @MappableField(key: 'attachment_id')
   final SnowflakeType attachmentId;
   final String filename;
-  @JsonKey(includeIfNull: false, name: 'context_limit')
+  @MappableField(key: 'context_limit')
   final int? contextLimit;
 
-  Map<String, Object?> toJson() =>
-      _$LookupMessageByAttachmentRequestToJson(this);
+  static LookupMessageByAttachmentRequest fromJson(Map<String, dynamic> json) =>
+      LookupMessageByAttachmentRequestMapper.fromJson(json);
 }

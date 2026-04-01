@@ -2,7 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 import 'guild_verification_level.dart';
@@ -15,10 +15,10 @@ import 'system_channel_flags.dart';
 import 'lookup_guild_response_guild_channels.dart';
 import 'lookup_guild_response_guild_roles.dart';
 
-part 'lookup_guild_response_guild.g.dart';
+part 'lookup_guild_response_guild.mapper.dart';
 
-@JsonSerializable()
-class LookupGuildResponseGuild {
+@MappableClass()
+class LookupGuildResponseGuild with LookupGuildResponseGuildMappable {
   const LookupGuildResponseGuild({
     required this.id,
     required this.ownerId,
@@ -45,50 +45,45 @@ class LookupGuildResponseGuild {
     required this.roles,
   });
 
-  factory LookupGuildResponseGuild.fromJson(Map<String, Object?> json) =>
-      _$LookupGuildResponseGuildFromJson(json);
-
   final SnowflakeType id;
-  @JsonKey(name: 'owner_id')
+  @MappableField(key: 'owner_id')
   final SnowflakeType ownerId;
   final String name;
-  @JsonKey(includeIfNull: true, name: 'vanity_url_code')
+  @MappableField(key: 'vanity_url_code')
   final String? vanityUrlCode;
-  @JsonKey(includeIfNull: true)
   final String? icon;
-  @JsonKey(includeIfNull: true)
   final String? banner;
-  @JsonKey(includeIfNull: true)
   final String? splash;
-  @JsonKey(includeIfNull: true, name: 'embed_splash')
+  @MappableField(key: 'embed_splash')
   final String? embedSplash;
   final List<String> features;
-  @JsonKey(name: 'verification_level')
+  @MappableField(key: 'verification_level')
   final GuildVerificationLevel verificationLevel;
-  @JsonKey(name: 'mfa_level')
+  @MappableField(key: 'mfa_level')
   final GuildMfaLevel mfaLevel;
-  @JsonKey(name: 'nsfw_level')
+  @MappableField(key: 'nsfw_level')
   final NsfwLevel nsfwLevel;
-  @JsonKey(name: 'explicit_content_filter')
+  @MappableField(key: 'explicit_content_filter')
   final GuildExplicitContentFilter explicitContentFilter;
-  @JsonKey(name: 'default_message_notifications')
+  @MappableField(key: 'default_message_notifications')
   final DefaultMessageNotifications defaultMessageNotifications;
-  @JsonKey(includeIfNull: true, name: 'afk_channel_id')
+  @MappableField(key: 'afk_channel_id')
   final SnowflakeType? afkChannelId;
-  @JsonKey(name: 'afk_timeout')
+  @MappableField(key: 'afk_timeout')
   final Int32Type afkTimeout;
-  @JsonKey(includeIfNull: true, name: 'system_channel_id')
+  @MappableField(key: 'system_channel_id')
   final SnowflakeType? systemChannelId;
-  @JsonKey(name: 'system_channel_flags')
+  @MappableField(key: 'system_channel_flags')
   final SystemChannelFlags systemChannelFlags;
-  @JsonKey(includeIfNull: true, name: 'rules_channel_id')
+  @MappableField(key: 'rules_channel_id')
   final SnowflakeType? rulesChannelId;
-  @JsonKey(name: 'disabled_operations')
+  @MappableField(key: 'disabled_operations')
   final Int32Type disabledOperations;
-  @JsonKey(name: 'member_count')
+  @MappableField(key: 'member_count')
   final Int32Type memberCount;
   final List<LookupGuildResponseGuildChannels> channels;
   final List<LookupGuildResponseGuildRoles> roles;
 
-  Map<String, Object?> toJson() => _$LookupGuildResponseGuildToJson(this);
+  static LookupGuildResponseGuild fromJson(Map<String, dynamic> json) =>
+      LookupGuildResponseGuildMapper.fromJson(json);
 }

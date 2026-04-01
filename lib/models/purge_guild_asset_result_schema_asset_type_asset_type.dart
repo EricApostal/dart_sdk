@@ -2,35 +2,33 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'purge_guild_asset_result_schema_asset_type_asset_type.mapper.dart';
 
 /// Type of guild asset
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum PurgeGuildAssetResultSchemaAssetTypeAssetType {
-  @JsonValue('emoji')
-  emoji('emoji'),
-  @JsonValue('sticker')
-  sticker('sticker'),
-  @JsonValue('unknown')
-  unknown('unknown'),
+  @MappableValue('emoji')
+  emoji,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue('sticker')
+  sticker,
 
-  const PurgeGuildAssetResultSchemaAssetTypeAssetType(this.json);
+  @MappableValue('unknown')
+  unknown;
 
-  factory PurgeGuildAssetResultSchemaAssetTypeAssetType.fromJson(String json) =>
-      values.firstWhere((e) => e.json == json, orElse: () => $unknown);
-
-  final String? json;
-
-  String toJson() => json ?? 'null';
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
+  /// Returns all defined enum values excluding the unknown value.
   static List<PurgeGuildAssetResultSchemaAssetTypeAssetType>
-  get $valuesDefined => values.where((value) => value != $unknown).toList();
+  get $valuesDefined => values
+      .where(
+        (value) =>
+            value != PurgeGuildAssetResultSchemaAssetTypeAssetType.unknown,
+      )
+      .toList();
 }

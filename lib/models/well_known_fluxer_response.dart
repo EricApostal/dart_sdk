@@ -2,7 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'well_known_fluxer_response_app_public.dart';
 import 'well_known_fluxer_response_captcha.dart';
@@ -17,10 +17,10 @@ import 'well_known_fluxer_response_public_key.dart';
 import 'well_known_fluxer_response_push.dart';
 import 'well_known_fluxer_response_sso.dart';
 
-part 'well_known_fluxer_response.g.dart';
+part 'well_known_fluxer_response.mapper.dart';
 
-@JsonSerializable()
-class WellKnownFluxerResponse {
+@MappableClass()
+class WellKnownFluxerResponse with WellKnownFluxerResponseMappable {
   const WellKnownFluxerResponse({
     required this.apiCodeVersion,
     required this.endpoints,
@@ -37,53 +37,23 @@ class WellKnownFluxerResponse {
     this.gateway,
   });
 
-  factory WellKnownFluxerResponse.fromJson(Map<String, Object?> json) =>
-      _$WellKnownFluxerResponseFromJson(json);
-
-  /// Version of the API server code
-  @JsonKey(name: 'api_code_version')
+  @MappableField(key: 'api_code_version')
   final int apiCodeVersion;
-
-  /// Endpoint URLs for various services
   final WellKnownFluxerResponseEndpoints endpoints;
-
-  /// Captcha configuration
   final WellKnownFluxerResponseCaptcha captcha;
-
-  /// Feature flags for this instance
   final WellKnownFluxerResponseFeatures features;
-
-  /// GIF provider configuration for clients
   final WellKnownFluxerResponseGif gif;
-
-  /// Single sign-on configuration
   final WellKnownFluxerResponseSso sso;
-
-  /// Limit configuration with rules and trait definitions
   final WellKnownFluxerResponseLimits limits;
-
-  /// Push notification configuration
   final WellKnownFluxerResponsePush push;
-
-  /// Public application configuration for client-side features
-  @JsonKey(name: 'app_public')
+  @MappableField(key: 'app_public')
   final WellKnownFluxerResponseAppPublic appPublic;
-
-  /// Federation configuration
-  @JsonKey(includeIfNull: false)
   final WellKnownFluxerResponseFederation? federation;
-
-  /// Public key for E2E encryption
-  @JsonKey(includeIfNull: false, name: 'public_key')
+  @MappableField(key: 'public_key')
   final WellKnownFluxerResponsePublicKey? publicKey;
-
-  /// OAuth2 endpoints for federation
-  @JsonKey(includeIfNull: false)
   final WellKnownFluxerResponseOauth2? oauth2;
-
-  /// Gateway session retry configuration
-  @JsonKey(includeIfNull: false)
   final WellKnownFluxerResponseGateway? gateway;
 
-  Map<String, Object?> toJson() => _$WellKnownFluxerResponseToJson(this);
+  static WellKnownFluxerResponse fromJson(Map<String, dynamic> json) =>
+      WellKnownFluxerResponseMapper.fromJson(json);
 }

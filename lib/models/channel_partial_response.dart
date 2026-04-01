@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'channel_partial_recipient_response.dart';
 
-part 'channel_partial_response.g.dart';
+part 'channel_partial_response.mapper.dart';
 
-@JsonSerializable()
-class ChannelPartialResponse {
+@MappableClass()
+class ChannelPartialResponse with ChannelPartialResponseMappable {
   const ChannelPartialResponse({
     required this.id,
     required this.type,
@@ -17,22 +17,11 @@ class ChannelPartialResponse {
     this.recipients,
   });
 
-  factory ChannelPartialResponse.fromJson(Map<String, Object?> json) =>
-      _$ChannelPartialResponseFromJson(json);
-
-  /// The unique identifier (snowflake) for this channel
   final String id;
-
-  /// The name of the channel
-  @JsonKey(includeIfNull: false)
-  final String? name;
-
-  /// The type of the channel
   final int type;
-
-  /// The recipients of the DM channel
-  @JsonKey(includeIfNull: false)
+  final String? name;
   final List<ChannelPartialRecipientResponse>? recipients;
 
-  Map<String, Object?> toJson() => _$ChannelPartialResponseToJson(this);
+  static ChannelPartialResponse fromJson(Map<String, dynamic> json) =>
+      ChannelPartialResponseMapper.fromJson(json);
 }

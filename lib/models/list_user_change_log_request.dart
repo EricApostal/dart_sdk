@@ -2,33 +2,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'list_user_change_log_request.g.dart';
+part 'list_user_change_log_request.mapper.dart';
 
-@JsonSerializable()
-class ListUserChangeLogRequest {
+@MappableClass()
+class ListUserChangeLogRequest with ListUserChangeLogRequestMappable {
   const ListUserChangeLogRequest({
     required this.userId,
     this.limit,
     this.pageToken,
   });
 
-  factory ListUserChangeLogRequest.fromJson(Map<String, Object?> json) =>
-      _$ListUserChangeLogRequestFromJson(json);
-
-  @JsonKey(name: 'user_id')
+  @MappableField(key: 'user_id')
   final SnowflakeType userId;
-
-  /// Maximum number of entries to return
-  @JsonKey(includeIfNull: false)
   final num? limit;
-
-  /// Pagination token for the next page of results
-  @JsonKey(includeIfNull: false, name: 'page_token')
+  @MappableField(key: 'page_token')
   final String? pageToken;
 
-  Map<String, Object?> toJson() => _$ListUserChangeLogRequestToJson(this);
+  static ListUserChangeLogRequest fromJson(Map<String, dynamic> json) =>
+      ListUserChangeLogRequestMapper.fromJson(json);
 }

@@ -2,37 +2,33 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'admin_archive_response_schema_subject_type_subject_type.mapper.dart';
 
 /// Type of subject being archived
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum AdminArchiveResponseSchemaSubjectTypeSubjectType {
-  @JsonValue('user')
-  user('user'),
-  @JsonValue('guild')
-  guild('guild'),
+  @MappableValue('user')
+  user,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue('guild')
+  guild,
 
-  const AdminArchiveResponseSchemaSubjectTypeSubjectType(this.json);
+  @MappableValue('unknown')
+  unknown;
 
-  factory AdminArchiveResponseSchemaSubjectTypeSubjectType.fromJson(
-    String json,
-  ) => values.firstWhere(
-    (e) => e.json == json,
-    orElse: () => $unknown,
-  );
-
-  final String? json;
-
-  String toJson() => json ?? 'null';
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
+  /// Returns all defined enum values excluding the unknown value.
   static List<AdminArchiveResponseSchemaSubjectTypeSubjectType>
-  get $valuesDefined => values.where((value) => value != $unknown).toList();
+  get $valuesDefined => values
+      .where(
+        (value) =>
+            value != AdminArchiveResponseSchemaSubjectTypeSubjectType.unknown,
+      )
+      .toList();
 }

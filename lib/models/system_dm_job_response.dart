@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'system_dm_job_response_status_status.dart';
 
-part 'system_dm_job_response.g.dart';
+part 'system_dm_job_response.mapper.dart';
 
-@JsonSerializable()
-class SystemDmJobResponse {
+@MappableClass()
+class SystemDmJobResponse with SystemDmJobResponseMappable {
   const SystemDmJobResponse({
     required this.jobId,
     required this.status,
@@ -25,54 +25,29 @@ class SystemDmJobResponse {
     this.lastError,
   });
 
-  factory SystemDmJobResponse.fromJson(Map<String, Object?> json) =>
-      _$SystemDmJobResponseFromJson(json);
-
-  /// Unique identifier for the job
-  @JsonKey(name: 'job_id')
+  @MappableField(key: 'job_id')
   final String jobId;
-
-  /// Current status of the system DM job
   final SystemDmJobResponseStatusStatus status;
-
-  /// Message content being sent
   final String content;
-
-  /// Total number of users targeted
-  @JsonKey(name: 'target_count')
+  @MappableField(key: 'target_count')
   final int targetCount;
-
-  /// Number of messages successfully sent
-  @JsonKey(name: 'sent_count')
+  @MappableField(key: 'sent_count')
   final int sentCount;
-
-  /// Number of messages that failed to send
-  @JsonKey(name: 'failed_count')
+  @MappableField(key: 'failed_count')
   final int failedCount;
-
-  /// ISO 8601 timestamp when the job was created
-  @JsonKey(name: 'created_at')
+  @MappableField(key: 'created_at')
   final String createdAt;
-
-  /// ISO 8601 timestamp when the job was approved
-  @JsonKey(includeIfNull: false, name: 'approved_at')
-  final String? approvedAt;
-
-  /// Registration date filter start
-  @JsonKey(includeIfNull: false, name: 'registration_start')
-  final String? registrationStart;
-
-  /// Registration date filter end
-  @JsonKey(includeIfNull: false, name: 'registration_end')
-  final String? registrationEnd;
-
-  /// List of excluded guild IDs
-  @JsonKey(name: 'excluded_guild_ids')
+  @MappableField(key: 'excluded_guild_ids')
   final List<String> excludedGuildIds;
-
-  /// Last error message if the job failed
-  @JsonKey(includeIfNull: false, name: 'last_error')
+  @MappableField(key: 'approved_at')
+  final String? approvedAt;
+  @MappableField(key: 'registration_start')
+  final String? registrationStart;
+  @MappableField(key: 'registration_end')
+  final String? registrationEnd;
+  @MappableField(key: 'last_error')
   final String? lastError;
 
-  Map<String, Object?> toJson() => _$SystemDmJobResponseToJson(this);
+  static SystemDmJobResponse fromJson(Map<String, dynamic> json) =>
+      SystemDmJobResponseMapper.fromJson(json);
 }

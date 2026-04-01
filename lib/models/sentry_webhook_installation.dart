@@ -2,18 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'sentry_webhook_installation.g.dart';
+part 'sentry_webhook_installation.mapper.dart';
 
-@JsonSerializable()
-class SentryWebhookInstallation {
+@MappableClass()
+class SentryWebhookInstallation with SentryWebhookInstallationMappable {
   const SentryWebhookInstallation({required this.uuid});
-
-  factory SentryWebhookInstallation.fromJson(Map<String, Object?> json) =>
-      _$SentryWebhookInstallationFromJson(json);
 
   final String uuid;
 
-  Map<String, Object?> toJson() => _$SentryWebhookInstallationToJson(this);
+  static SentryWebhookInstallation fromJson(Map<String, dynamic> json) =>
+      SentryWebhookInstallationMapper.fromJson(json);
 }

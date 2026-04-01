@@ -2,39 +2,36 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'scheduled_message_allowed_mentions_schema_parse_parse.mapper.dart';
 
 /// Types of mentions to parse from content
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum ScheduledMessageAllowedMentionsSchemaParseParse {
-  @JsonValue('users')
-  users('users'),
-  @JsonValue('roles')
-  roles('roles'),
-  @JsonValue('everyone')
-  everyone('everyone'),
+  @MappableValue('users')
+  users,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue('roles')
+  roles,
 
-  const ScheduledMessageAllowedMentionsSchemaParseParse(this.json);
+  @MappableValue('everyone')
+  everyone,
 
-  factory ScheduledMessageAllowedMentionsSchemaParseParse.fromJson(
-    String json,
-  ) => values.firstWhere(
-    (e) => e.json == json,
-    orElse: () => $unknown,
-  );
+  @MappableValue('unknown')
+  unknown;
 
-  final String? json;
-
-  String toJson() => json ?? 'null';
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
+  /// Returns all defined enum values excluding the unknown value.
   static List<ScheduledMessageAllowedMentionsSchemaParseParse>
-  get $valuesDefined => values.where((value) => value != $unknown).toList();
+  get $valuesDefined => values
+      .where(
+        (value) =>
+            value != ScheduledMessageAllowedMentionsSchemaParseParse.unknown,
+      )
+      .toList();
 }

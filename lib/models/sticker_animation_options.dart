@@ -2,37 +2,32 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'sticker_animation_options.mapper.dart';
 
 /// Sticker animation preference
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum StickerAnimationOptions {
-  @JsonValue(0)
-  alwaysAnimate(0),
-  @JsonValue(1)
-  animateOnInteraction(1),
-  @JsonValue(2)
-  neverAnimate(2),
+  @MappableValue(0)
+  alwaysAnimate,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue(1)
+  animateOnInteraction,
 
-  const StickerAnimationOptions(this.json);
+  @MappableValue(2)
+  neverAnimate,
 
-  factory StickerAnimationOptions.fromJson(int json) => values.firstWhere(
-    (e) => e.json == json,
-    orElse: () => $unknown,
-  );
+  @MappableValue('unknown')
+  unknown;
 
-  final int? json;
-
-  int? toJson() => json;
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json?.toString() ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
-  static List<StickerAnimationOptions> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+  /// Returns all defined enum values excluding the unknown value.
+  static List<StickerAnimationOptions> get $valuesDefined => values
+      .where((value) => value != StickerAnimationOptions.unknown)
+      .toList();
 }

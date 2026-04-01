@@ -2,12 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-import 'message_search_results_response_messages.dart';
 import 'message_search_indexing_response_indexing_indexing.dart';
+import 'message_search_results_response_messages.dart';
+import 'message_search_results_response.dart';
+import 'message_search_indexing_response.dart';
 
-part 'message_search_response.g.dart';
+part 'message_search_response.mapper.dart';
 
 class MessageSearchResponse {
   final Map<String, dynamic> _json;
@@ -21,17 +23,18 @@ class MessageSearchResponse {
 
   MessageSearchResponseMessageSearchResultsResponse
   toMessageSearchResultsResponse() =>
-      MessageSearchResponseMessageSearchResultsResponse.fromJson(_json);
+      MessageSearchResponseMessageSearchResultsResponseMapper.fromJson(_json);
   MessageSearchResponseMessageSearchIndexingResponse
   toMessageSearchIndexingResponse() =>
-      MessageSearchResponseMessageSearchIndexingResponse.fromJson(_json);
+      MessageSearchResponseMessageSearchIndexingResponseMapper.fromJson(_json);
 }
 
-@JsonSerializable()
-class MessageSearchResponseMessageSearchResultsResponse {
+@MappableClass()
+class MessageSearchResponseMessageSearchResultsResponse
+    with MessageSearchResponseMessageSearchResultsResponseMappable {
   final List<MessageSearchResultsResponseMessages> messages;
   final int total;
-  @JsonKey(name: 'hits_per_page')
+  @MappableField(key: 'hits_per_page')
   final int hitsPerPage;
   final int page;
 
@@ -41,27 +44,14 @@ class MessageSearchResponseMessageSearchResultsResponse {
     required this.hitsPerPage,
     required this.page,
   });
-
-  factory MessageSearchResponseMessageSearchResultsResponse.fromJson(
-    Map<String, dynamic> json,
-  ) => _$MessageSearchResponseMessageSearchResultsResponseFromJson(json);
-
-  Map<String, dynamic> toJson() =>
-      _$MessageSearchResponseMessageSearchResultsResponseToJson(this);
 }
 
-@JsonSerializable()
-class MessageSearchResponseMessageSearchIndexingResponse {
+@MappableClass()
+class MessageSearchResponseMessageSearchIndexingResponse
+    with MessageSearchResponseMessageSearchIndexingResponseMappable {
   final MessageSearchIndexingResponseIndexingIndexing indexing;
 
   const MessageSearchResponseMessageSearchIndexingResponse({
     required this.indexing,
   });
-
-  factory MessageSearchResponseMessageSearchIndexingResponse.fromJson(
-    Map<String, dynamic> json,
-  ) => _$MessageSearchResponseMessageSearchIndexingResponseFromJson(json);
-
-  Map<String, dynamic> toJson() =>
-      _$MessageSearchResponseMessageSearchIndexingResponseToJson(this);
 }

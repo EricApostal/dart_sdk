@@ -2,15 +2,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'guild_member_response.dart';
 import 'int32_type.dart';
 
-part 'list_guild_members_response.g.dart';
+part 'list_guild_members_response.mapper.dart';
 
-@JsonSerializable()
-class ListGuildMembersResponse {
+@MappableClass()
+class ListGuildMembersResponse with ListGuildMembersResponseMappable {
   const ListGuildMembersResponse({
     required this.members,
     required this.total,
@@ -18,13 +18,11 @@ class ListGuildMembersResponse {
     required this.offset,
   });
 
-  factory ListGuildMembersResponse.fromJson(Map<String, Object?> json) =>
-      _$ListGuildMembersResponseFromJson(json);
-
   final List<GuildMemberResponse> members;
   final Int32Type total;
   final Int32Type limit;
   final Int32Type offset;
 
-  Map<String, Object?> toJson() => _$ListGuildMembersResponseToJson(this);
+  static ListGuildMembersResponse fromJson(Map<String, dynamic> json) =>
+      ListGuildMembersResponseMapper.fromJson(json);
 }

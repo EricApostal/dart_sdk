@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'git_hub_webhook_head_commit_author.dart';
 
-part 'git_hub_webhook_head_commit.g.dart';
+part 'git_hub_webhook_head_commit.mapper.dart';
 
-@JsonSerializable()
-class GitHubWebhookHeadCommit {
+@MappableClass()
+class GitHubWebhookHeadCommit with GitHubWebhookHeadCommitMappable {
   const GitHubWebhookHeadCommit({
     required this.id,
     required this.url,
@@ -17,13 +17,11 @@ class GitHubWebhookHeadCommit {
     required this.author,
   });
 
-  factory GitHubWebhookHeadCommit.fromJson(Map<String, Object?> json) =>
-      _$GitHubWebhookHeadCommitFromJson(json);
-
   final String id;
   final String url;
   final String message;
   final GitHubWebhookHeadCommitAuthor author;
 
-  Map<String, Object?> toJson() => _$GitHubWebhookHeadCommitToJson(this);
+  static GitHubWebhookHeadCommit fromJson(Map<String, dynamic> json) =>
+      GitHubWebhookHeadCommitMapper.fromJson(json);
 }

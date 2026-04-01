@@ -2,27 +2,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'password_type.dart';
 import 'snowflake_type.dart';
 
-part 'guild_transfer_ownership_request.g.dart';
+part 'guild_transfer_ownership_request.mapper.dart';
 
-@JsonSerializable()
-class GuildTransferOwnershipRequest {
+@MappableClass()
+class GuildTransferOwnershipRequest with GuildTransferOwnershipRequestMappable {
   const GuildTransferOwnershipRequest({
     required this.newOwnerId,
     this.password,
   });
 
-  factory GuildTransferOwnershipRequest.fromJson(Map<String, Object?> json) =>
-      _$GuildTransferOwnershipRequestFromJson(json);
-
-  @JsonKey(name: 'new_owner_id')
+  @MappableField(key: 'new_owner_id')
   final SnowflakeType newOwnerId;
-  @JsonKey(includeIfNull: false)
   final PasswordType? password;
 
-  Map<String, Object?> toJson() => _$GuildTransferOwnershipRequestToJson(this);
+  static GuildTransferOwnershipRequest fromJson(Map<String, dynamic> json) =>
+      GuildTransferOwnershipRequestMapper.fromJson(json);
 }

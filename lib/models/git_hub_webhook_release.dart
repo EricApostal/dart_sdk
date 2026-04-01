@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'int32_type.dart';
 
-part 'git_hub_webhook_release.g.dart';
+part 'git_hub_webhook_release.mapper.dart';
 
-@JsonSerializable()
-class GitHubWebhookRelease {
+@MappableClass()
+class GitHubWebhookRelease with GitHubWebhookReleaseMappable {
   const GitHubWebhookRelease({
     required this.id,
     required this.tagName,
@@ -17,16 +17,13 @@ class GitHubWebhookRelease {
     this.body,
   });
 
-  factory GitHubWebhookRelease.fromJson(Map<String, Object?> json) =>
-      _$GitHubWebhookReleaseFromJson(json);
-
   final Int32Type id;
-  @JsonKey(name: 'tag_name')
+  @MappableField(key: 'tag_name')
   final String tagName;
-  @JsonKey(name: 'html_url')
+  @MappableField(key: 'html_url')
   final String htmlUrl;
-  @JsonKey(includeIfNull: false)
   final String? body;
 
-  Map<String, Object?> toJson() => _$GitHubWebhookReleaseToJson(this);
+  static GitHubWebhookRelease fromJson(Map<String, dynamic> json) =>
+      GitHubWebhookReleaseMapper.fromJson(json);
 }

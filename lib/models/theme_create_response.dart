@@ -2,19 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'theme_create_response.g.dart';
+part 'theme_create_response.mapper.dart';
 
-@JsonSerializable()
-class ThemeCreateResponse {
+@MappableClass()
+class ThemeCreateResponse with ThemeCreateResponseMappable {
   const ThemeCreateResponse({required this.id});
 
-  factory ThemeCreateResponse.fromJson(Map<String, Object?> json) =>
-      _$ThemeCreateResponseFromJson(json);
-
-  /// The unique identifier for the created theme
   final String id;
 
-  Map<String, Object?> toJson() => _$ThemeCreateResponseToJson(this);
+  static ThemeCreateResponse fromJson(Map<String, dynamic> json) =>
+      ThemeCreateResponseMapper.fromJson(json);
 }

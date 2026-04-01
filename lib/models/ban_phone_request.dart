@@ -2,20 +2,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'phone_number_type.dart';
 
-part 'ban_phone_request.g.dart';
+part 'ban_phone_request.mapper.dart';
 
-@JsonSerializable()
-class BanPhoneRequest {
+@MappableClass()
+class BanPhoneRequest with BanPhoneRequestMappable {
   const BanPhoneRequest({required this.phone});
-
-  factory BanPhoneRequest.fromJson(Map<String, Object?> json) =>
-      _$BanPhoneRequestFromJson(json);
 
   final PhoneNumberType phone;
 
-  Map<String, Object?> toJson() => _$BanPhoneRequestToJson(this);
+  static BanPhoneRequest fromJson(Map<String, dynamic> json) =>
+      BanPhoneRequestMapper.fromJson(json);
 }

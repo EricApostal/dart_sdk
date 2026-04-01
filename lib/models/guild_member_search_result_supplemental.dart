@@ -2,36 +2,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'join_source_type.dart';
 
-part 'guild_member_search_result_supplemental.g.dart';
+part 'guild_member_search_result_supplemental.mapper.dart';
 
-@JsonSerializable()
-class GuildMemberSearchResultSupplemental {
+@MappableClass()
+class GuildMemberSearchResultSupplemental
+    with GuildMemberSearchResultSupplementalMappable {
   const GuildMemberSearchResultSupplemental({
     required this.sourceInviteCode,
     required this.inviterId,
     this.joinSourceType,
   });
 
-  factory GuildMemberSearchResultSupplemental.fromJson(
-    Map<String, Object?> json,
-  ) => _$GuildMemberSearchResultSupplementalFromJson(json);
-
-  /// How the member joined
-  @JsonKey(includeIfNull: false, name: 'join_source_type')
+  @MappableField(key: 'source_invite_code')
+  final String? sourceInviteCode;
+  @MappableField(key: 'inviter_id')
+  final String? inviterId;
+  @MappableField(key: 'join_source_type')
   final JoinSourceType? joinSourceType;
 
-  /// Invite code used to join
-  @JsonKey(includeIfNull: true, name: 'source_invite_code')
-  final String? sourceInviteCode;
-
-  /// User ID of the member who sent the invite
-  @JsonKey(includeIfNull: true, name: 'inviter_id')
-  final String? inviterId;
-
-  Map<String, Object?> toJson() =>
-      _$GuildMemberSearchResultSupplementalToJson(this);
+  static GuildMemberSearchResultSupplemental fromJson(
+    Map<String, dynamic> json,
+  ) => GuildMemberSearchResultSupplementalMapper.fromJson(json);
 }

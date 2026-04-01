@@ -2,16 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'channel_partial_response.dart';
 import 'group_dm_invite_response_type_type.dart';
 import 'user_partial_response.dart';
 
-part 'group_dm_invite_response.g.dart';
+part 'group_dm_invite_response.mapper.dart';
 
-@JsonSerializable()
-class GroupDmInviteResponse {
+@MappableClass()
+class GroupDmInviteResponse with GroupDmInviteResponseMappable {
   const GroupDmInviteResponse({
     required this.code,
     required this.type,
@@ -22,30 +22,16 @@ class GroupDmInviteResponse {
     this.expiresAt,
   });
 
-  factory GroupDmInviteResponse.fromJson(Map<String, Object?> json) =>
-      _$GroupDmInviteResponseFromJson(json);
-
-  /// The unique invite code
   final String code;
-
-  /// The type of invite (group DM)
   final GroupDmInviteResponseTypeType type;
   final ChannelPartialResponse channel;
-
-  /// The user who created the invite
-  @JsonKey(includeIfNull: false)
-  final UserPartialResponse? inviter;
-
-  /// The current member count of the group DM
-  @JsonKey(name: 'member_count')
+  @MappableField(key: 'member_count')
   final int memberCount;
-
-  /// ISO8601 timestamp of when the invite expires
-  @JsonKey(includeIfNull: false, name: 'expires_at')
+  final bool temporary;
+  final UserPartialResponse? inviter;
+  @MappableField(key: 'expires_at')
   final DateTime? expiresAt;
 
-  /// Whether the invite grants temporary membership
-  final bool temporary;
-
-  Map<String, Object?> toJson() => _$GroupDmInviteResponseToJson(this);
+  static GroupDmInviteResponse fromJson(Map<String, dynamic> json) =>
+      GroupDmInviteResponseMapper.fromJson(json);
 }

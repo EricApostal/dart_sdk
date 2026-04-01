@@ -2,15 +2,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'int32_type.dart';
 import 'snowflake_type.dart';
 
-part 'o_auth2_introspect_response.g.dart';
+part 'o_auth2_introspect_response.mapper.dart';
 
-@JsonSerializable()
-class OAuth2IntrospectResponse {
+@MappableClass()
+class OAuth2IntrospectResponse with OAuth2IntrospectResponseMappable {
   const OAuth2IntrospectResponse({
     required this.active,
     this.scope,
@@ -22,31 +22,17 @@ class OAuth2IntrospectResponse {
     this.sub,
   });
 
-  factory OAuth2IntrospectResponse.fromJson(Map<String, Object?> json) =>
-      _$OAuth2IntrospectResponseFromJson(json);
-
-  /// Whether the token is currently active
   final bool active;
-
-  /// The space-separated list of scopes
-  @JsonKey(includeIfNull: false)
   final String? scope;
-  @JsonKey(includeIfNull: false, name: 'client_id')
+  @MappableField(key: 'client_id')
   final SnowflakeType? clientId;
-
-  /// The username of the token owner
-  @JsonKey(includeIfNull: false)
   final String? username;
-
-  /// The type of token
-  @JsonKey(includeIfNull: false, name: 'token_type')
+  @MappableField(key: 'token_type')
   final String? tokenType;
-  @JsonKey(includeIfNull: false)
   final Int32Type? exp;
-  @JsonKey(includeIfNull: false)
   final Int32Type? iat;
-  @JsonKey(includeIfNull: false)
   final SnowflakeType? sub;
 
-  Map<String, Object?> toJson() => _$OAuth2IntrospectResponseToJson(this);
+  static OAuth2IntrospectResponse fromJson(Map<String, dynamic> json) =>
+      OAuth2IntrospectResponseMapper.fromJson(json);
 }

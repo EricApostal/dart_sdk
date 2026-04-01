@@ -2,15 +2,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'list_archives_request_subject_type_subject_type.dart';
 import 'snowflake_type.dart';
 
-part 'list_archives_request.g.dart';
+part 'list_archives_request.mapper.dart';
 
-@JsonSerializable()
-class ListArchivesRequest {
+@MappableClass()
+class ListArchivesRequest with ListArchivesRequestMappable {
   const ListArchivesRequest({
     this.subjectType,
     this.subjectId,
@@ -19,24 +19,16 @@ class ListArchivesRequest {
     this.includeExpired,
   });
 
-  factory ListArchivesRequest.fromJson(Map<String, Object?> json) =>
-      _$ListArchivesRequestFromJson(json);
-
-  /// Type of archives to list
-  @JsonKey(includeIfNull: false, name: 'subject_type')
+  @MappableField(key: 'subject_type')
   final ListArchivesRequestSubjectTypeSubjectType? subjectType;
-  @JsonKey(includeIfNull: false, name: 'subject_id')
+  @MappableField(key: 'subject_id')
   final SnowflakeType? subjectId;
-  @JsonKey(includeIfNull: false, name: 'requested_by')
+  @MappableField(key: 'requested_by')
   final SnowflakeType? requestedBy;
-
-  /// Maximum number of archives to return
-  @JsonKey(includeIfNull: false)
   final num? limit;
-
-  /// Whether to include expired archives
-  @JsonKey(includeIfNull: false, name: 'include_expired')
+  @MappableField(key: 'include_expired')
   final bool? includeExpired;
 
-  Map<String, Object?> toJson() => _$ListArchivesRequestToJson(this);
+  static ListArchivesRequest fromJson(Map<String, dynamic> json) =>
+      ListArchivesRequestMapper.fromJson(json);
 }

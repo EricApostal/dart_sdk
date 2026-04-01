@@ -2,31 +2,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'create_connection_request_type_type.dart';
 import 'int32_type.dart';
 
-part 'create_connection_request.g.dart';
+part 'create_connection_request.mapper.dart';
 
-@JsonSerializable()
-class CreateConnectionRequest {
+@MappableClass()
+class CreateConnectionRequest with CreateConnectionRequestMappable {
   const CreateConnectionRequest({
     required this.type,
     required this.identifier,
     this.visibilityFlags,
   });
 
-  factory CreateConnectionRequest.fromJson(Map<String, Object?> json) =>
-      _$CreateConnectionRequestFromJson(json);
-
-  /// The type of connection to create
   final CreateConnectionRequestTypeType type;
-
-  /// The connection identifier (handle or domain)
   final String identifier;
-  @JsonKey(includeIfNull: false, name: 'visibility_flags')
+  @MappableField(key: 'visibility_flags')
   final Int32Type? visibilityFlags;
 
-  Map<String, Object?> toJson() => _$CreateConnectionRequestToJson(this);
+  static CreateConnectionRequest fromJson(Map<String, dynamic> json) =>
+      CreateConnectionRequestMapper.fromJson(json);
 }

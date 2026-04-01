@@ -2,28 +2,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 import 'suspicious_activity_flags.dart';
 
-part 'disable_for_suspicious_activity_request.g.dart';
+part 'disable_for_suspicious_activity_request.mapper.dart';
 
-@JsonSerializable()
-class DisableForSuspiciousActivityRequest {
+@MappableClass()
+class DisableForSuspiciousActivityRequest
+    with DisableForSuspiciousActivityRequestMappable {
   const DisableForSuspiciousActivityRequest({
     required this.userId,
     required this.flags,
   });
 
-  factory DisableForSuspiciousActivityRequest.fromJson(
-    Map<String, Object?> json,
-  ) => _$DisableForSuspiciousActivityRequestFromJson(json);
-
-  @JsonKey(name: 'user_id')
+  @MappableField(key: 'user_id')
   final SnowflakeType userId;
   final SuspiciousActivityFlags flags;
 
-  Map<String, Object?> toJson() =>
-      _$DisableForSuspiciousActivityRequestToJson(this);
+  static DisableForSuspiciousActivityRequest fromJson(
+    Map<String, dynamic> json,
+  ) => DisableForSuspiciousActivityRequestMapper.fromJson(json);
 }

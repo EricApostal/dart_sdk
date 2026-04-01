@@ -2,43 +2,48 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'user_settings_response_guild_folders_icon_icon.mapper.dart';
 
 /// Selected icon for the guild folder
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum UserSettingsResponseGuildFoldersIconIcon {
-  @JsonValue('folder')
-  folder('folder'),
-  @JsonValue('star')
-  star('star'),
-  @JsonValue('heart')
-  heart('heart'),
-  @JsonValue('bookmark')
-  bookmark('bookmark'),
-  @JsonValue('game_controller')
-  gameController('game_controller'),
-  @JsonValue('shield')
-  shield('shield'),
-  @JsonValue('music_note')
-  musicNote('music_note'),
+  @MappableValue('folder')
+  folder,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue('star')
+  star,
 
-  const UserSettingsResponseGuildFoldersIconIcon(this.json);
+  @MappableValue('heart')
+  heart,
 
-  factory UserSettingsResponseGuildFoldersIconIcon.fromJson(String json) =>
-      values.firstWhere((e) => e.json == json, orElse: () => $unknown);
+  @MappableValue('bookmark')
+  bookmark,
 
-  final String? json;
+  @MappableValue('game_controller')
+  gameController,
 
-  String toJson() => json ?? 'null';
+  @MappableValue('shield')
+  shield,
+
+  @MappableValue('music_note')
+  musicNote,
+
+  @MappableValue('unknown')
+  unknown;
+
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
+  /// Returns all defined enum values excluding the unknown value.
   static List<UserSettingsResponseGuildFoldersIconIcon> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+      values
+          .where(
+            (value) =>
+                value != UserSettingsResponseGuildFoldersIconIcon.unknown,
+          )
+          .toList();
 }

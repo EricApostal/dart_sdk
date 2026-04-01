@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'metadata_unit_unit.dart';
 
-part 'metadata.g.dart';
+part 'metadata.mapper.dart';
 
-@JsonSerializable()
-class Metadata {
+@MappableClass()
+class Metadata with MetadataMappable {
   const Metadata({
     required this.key,
     required this.label,
@@ -22,21 +22,16 @@ class Metadata {
     this.max,
   });
 
-  factory Metadata.fromJson(Map<String, Object?> json) =>
-      _$MetadataFromJson(json);
-
   final String key;
   final String label;
   final String description;
   final String category;
   final String scope;
   final bool isToggle;
-  @JsonKey(includeIfNull: false)
   final MetadataUnitUnit? unit;
-  @JsonKey(includeIfNull: false)
   final num? min;
-  @JsonKey(includeIfNull: false)
   final num? max;
 
-  Map<String, Object?> toJson() => _$MetadataToJson(this);
+  static Metadata fromJson(Map<String, dynamic> json) =>
+      MetadataMapper.fromJson(json);
 }

@@ -2,31 +2,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'password_type.dart';
 
-part 'password_change_complete_request.g.dart';
+part 'password_change_complete_request.mapper.dart';
 
-@JsonSerializable()
-class PasswordChangeCompleteRequest {
+@MappableClass()
+class PasswordChangeCompleteRequest with PasswordChangeCompleteRequestMappable {
   const PasswordChangeCompleteRequest({
     required this.ticket,
     required this.verificationProof,
     required this.newPassword,
   });
 
-  factory PasswordChangeCompleteRequest.fromJson(Map<String, Object?> json) =>
-      _$PasswordChangeCompleteRequestFromJson(json);
-
-  /// Password change ticket identifier
   final String ticket;
-
-  /// Proof token obtained from verifying the email code
-  @JsonKey(name: 'verification_proof')
+  @MappableField(key: 'verification_proof')
   final String verificationProof;
-  @JsonKey(name: 'new_password')
+  @MappableField(key: 'new_password')
   final PasswordType newPassword;
 
-  Map<String, Object?> toJson() => _$PasswordChangeCompleteRequestToJson(this);
+  static PasswordChangeCompleteRequest fromJson(Map<String, dynamic> json) =>
+      PasswordChangeCompleteRequestMapper.fromJson(json);
 }

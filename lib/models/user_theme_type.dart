@@ -2,39 +2,34 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'user_theme_type.mapper.dart';
 
 /// UI theme preference
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum UserThemeType {
-  @JsonValue('dark')
-  dark('dark'),
-  @JsonValue('coal')
-  coal('coal'),
-  @JsonValue('light')
-  light('light'),
-  @JsonValue('system')
-  system('system'),
+  @MappableValue('dark')
+  dark,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue('coal')
+  coal,
 
-  const UserThemeType(this.json);
+  @MappableValue('light')
+  light,
 
-  factory UserThemeType.fromJson(String json) => values.firstWhere(
-    (e) => e.json == json,
-    orElse: () => $unknown,
-  );
+  @MappableValue('system')
+  system,
 
-  final String? json;
+  @MappableValue('unknown')
+  unknown;
 
-  String toJson() => json ?? 'null';
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
+  /// Returns all defined enum values excluding the unknown value.
   static List<UserThemeType> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+      values.where((value) => value != UserThemeType.unknown).toList();
 }

@@ -2,15 +2,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 import 'int32_type.dart';
 
-part 'guild_update_response_guild.g.dart';
+part 'guild_update_response_guild.mapper.dart';
 
-@JsonSerializable()
-class GuildUpdateResponseGuild {
+@MappableClass()
+class GuildUpdateResponseGuild with GuildUpdateResponseGuildMappable {
   const GuildUpdateResponseGuild({
     required this.id,
     required this.name,
@@ -21,20 +21,16 @@ class GuildUpdateResponseGuild {
     required this.memberCount,
   });
 
-  factory GuildUpdateResponseGuild.fromJson(Map<String, Object?> json) =>
-      _$GuildUpdateResponseGuildFromJson(json);
-
   final SnowflakeType id;
   final String name;
   final List<String> features;
-  @JsonKey(name: 'owner_id')
+  @MappableField(key: 'owner_id')
   final SnowflakeType ownerId;
-  @JsonKey(includeIfNull: true)
   final String? icon;
-  @JsonKey(includeIfNull: true)
   final String? banner;
-  @JsonKey(name: 'member_count')
+  @MappableField(key: 'member_count')
   final Int32Type memberCount;
 
-  Map<String, Object?> toJson() => _$GuildUpdateResponseGuildToJson(this);
+  static GuildUpdateResponseGuild fromJson(Map<String, dynamic> json) =>
+      GuildUpdateResponseGuildMapper.fromJson(json);
 }

@@ -2,48 +2,52 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'message_snapshot_response_type_type.mapper.dart';
 
 /// The type of message
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum MessageSnapshotResponseTypeType {
   /// The name has been replaced because it contains a keyword. Original name: `DEFAULT`.
-  @JsonValue(0)
-  valueDefault(0),
-  @JsonValue(1)
-  recipientAdd(1),
-  @JsonValue(2)
-  recipientRemove(2),
-  @JsonValue(3)
-  call(3),
-  @JsonValue(4)
-  channelNameChange(4),
-  @JsonValue(5)
-  channelIconChange(5),
-  @JsonValue(6)
-  channelPinnedMessage(6),
-  @JsonValue(7)
-  userJoin(7),
-  @JsonValue(19)
-  reply(19),
+  @MappableValue(0)
+  valueDefault,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue(1)
+  recipientAdd,
 
-  const MessageSnapshotResponseTypeType(this.json);
+  @MappableValue(2)
+  recipientRemove,
 
-  factory MessageSnapshotResponseTypeType.fromJson(int json) =>
-      values.firstWhere((e) => e.json == json, orElse: () => $unknown);
+  /// The name has been replaced because it contains a keyword. Original name: `CALL`.
+  @MappableValue(3)
+  valueCall,
 
-  final int? json;
+  @MappableValue(4)
+  channelNameChange,
 
-  int? toJson() => json;
+  @MappableValue(5)
+  channelIconChange,
+
+  @MappableValue(6)
+  channelPinnedMessage,
+
+  @MappableValue(7)
+  userJoin,
+
+  @MappableValue(19)
+  reply,
+
+  @MappableValue('unknown')
+  unknown;
+
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json?.toString() ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
-  static List<MessageSnapshotResponseTypeType> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+  /// Returns all defined enum values excluding the unknown value.
+  static List<MessageSnapshotResponseTypeType> get $valuesDefined => values
+      .where((value) => value != MessageSnapshotResponseTypeType.unknown)
+      .toList();
 }

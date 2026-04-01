@@ -2,7 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'git_hub_webhook_answer.dart';
 import 'git_hub_webhook_check_run.dart';
@@ -20,10 +20,10 @@ import 'git_hub_webhook_repository.dart';
 import 'git_hub_webhook_review.dart';
 import 'git_hub_webhook_sender.dart';
 
-part 'git_hub_webhook.g.dart';
+part 'git_hub_webhook.mapper.dart';
 
-@JsonSerializable()
-class GitHubWebhook {
+@MappableClass()
+class GitHubWebhook with GitHubWebhookMappable {
   const GitHubWebhook({
     required this.sender,
     this.action,
@@ -47,48 +47,32 @@ class GitHubWebhook {
     this.review,
   });
 
-  factory GitHubWebhook.fromJson(Map<String, Object?> json) =>
-      _$GitHubWebhookFromJson(json);
-
-  @JsonKey(includeIfNull: false)
-  final String? action;
-  @JsonKey(includeIfNull: false)
-  final GitHubWebhookAnswer? answer;
-  @JsonKey(includeIfNull: false, name: 'check_run')
-  final GitHubWebhookCheckRun? checkRun;
-  @JsonKey(includeIfNull: false, name: 'check_suite')
-  final GitHubWebhookCheckSuite? checkSuite;
-  @JsonKey(includeIfNull: false)
-  final GitHubWebhookComment? comment;
-  @JsonKey(includeIfNull: false)
-  final List<GitHubWebhookCommits>? commits;
-  @JsonKey(includeIfNull: false)
-  final String? compare;
-  @JsonKey(includeIfNull: false)
-  final GitHubWebhookDiscussion? discussion;
-  @JsonKey(includeIfNull: false)
-  final bool? forced;
-  @JsonKey(includeIfNull: false)
-  final GitHubWebhookForkee? forkee;
-  @JsonKey(includeIfNull: false, name: 'head_commit')
-  final GitHubWebhookHeadCommit? headCommit;
-  @JsonKey(includeIfNull: false)
-  final GitHubWebhookIssue? issue;
-  @JsonKey(includeIfNull: false)
-  final GitHubWebhookMember? member;
-  @JsonKey(includeIfNull: false, name: 'pull_request')
-  final GitHubWebhookPullRequest? pullRequest;
-  @JsonKey(includeIfNull: false, name: 'ref_type')
-  final String? refType;
-  @JsonKey(includeIfNull: false)
-  final String? ref;
-  @JsonKey(includeIfNull: false)
-  final GitHubWebhookRelease? release;
-  @JsonKey(includeIfNull: false)
-  final GitHubWebhookRepository? repository;
-  @JsonKey(includeIfNull: false)
-  final GitHubWebhookReview? review;
   final GitHubWebhookSender sender;
+  final String? action;
+  final GitHubWebhookAnswer? answer;
+  @MappableField(key: 'check_run')
+  final GitHubWebhookCheckRun? checkRun;
+  @MappableField(key: 'check_suite')
+  final GitHubWebhookCheckSuite? checkSuite;
+  final GitHubWebhookComment? comment;
+  final List<GitHubWebhookCommits>? commits;
+  final String? compare;
+  final GitHubWebhookDiscussion? discussion;
+  final bool? forced;
+  final GitHubWebhookForkee? forkee;
+  @MappableField(key: 'head_commit')
+  final GitHubWebhookHeadCommit? headCommit;
+  final GitHubWebhookIssue? issue;
+  final GitHubWebhookMember? member;
+  @MappableField(key: 'pull_request')
+  final GitHubWebhookPullRequest? pullRequest;
+  @MappableField(key: 'ref_type')
+  final String? refType;
+  final String? ref;
+  final GitHubWebhookRelease? release;
+  final GitHubWebhookRepository? repository;
+  final GitHubWebhookReview? review;
 
-  Map<String, Object?> toJson() => _$GitHubWebhookToJson(this);
+  static GitHubWebhook fromJson(Map<String, dynamic> json) =>
+      GitHubWebhookMapper.fromJson(json);
 }

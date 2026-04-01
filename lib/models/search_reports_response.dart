@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'report_admin_response_schema.dart';
 
-part 'search_reports_response.g.dart';
+part 'search_reports_response.mapper.dart';
 
-@JsonSerializable()
-class SearchReportsResponse {
+@MappableClass()
+class SearchReportsResponse with SearchReportsResponseMappable {
   const SearchReportsResponse({
     required this.reports,
     required this.total,
@@ -17,13 +17,11 @@ class SearchReportsResponse {
     required this.limit,
   });
 
-  factory SearchReportsResponse.fromJson(Map<String, Object?> json) =>
-      _$SearchReportsResponseFromJson(json);
-
   final List<ReportAdminResponseSchema> reports;
   final num total;
   final num offset;
   final num limit;
 
-  Map<String, Object?> toJson() => _$SearchReportsResponseToJson(this);
+  static SearchReportsResponse fromJson(Map<String, dynamic> json) =>
+      SearchReportsResponseMapper.fromJson(json);
 }

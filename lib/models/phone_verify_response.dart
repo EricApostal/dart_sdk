@@ -2,20 +2,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'phone_verify_response.g.dart';
+part 'phone_verify_response.mapper.dart';
 
-@JsonSerializable()
-class PhoneVerifyResponse {
+@MappableClass()
+class PhoneVerifyResponse with PhoneVerifyResponseMappable {
   const PhoneVerifyResponse({required this.phoneToken});
 
-  factory PhoneVerifyResponse.fromJson(Map<String, Object?> json) =>
-      _$PhoneVerifyResponseFromJson(json);
-
-  /// Token to use when adding phone to account
-  @JsonKey(name: 'phone_token')
+  @MappableField(key: 'phone_token')
   final String phoneToken;
 
-  Map<String, Object?> toJson() => _$PhoneVerifyResponseToJson(this);
+  static PhoneVerifyResponse fromJson(Map<String, dynamic> json) =>
+      PhoneVerifyResponseMapper.fromJson(json);
 }

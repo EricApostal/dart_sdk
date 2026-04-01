@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'list_user_dm_channels_request.g.dart';
+part 'list_user_dm_channels_request.mapper.dart';
 
-@JsonSerializable()
-class ListUserDmChannelsRequest {
+@MappableClass()
+class ListUserDmChannelsRequest with ListUserDmChannelsRequestMappable {
   const ListUserDmChannelsRequest({
     required this.userId,
     this.before,
@@ -17,19 +17,12 @@ class ListUserDmChannelsRequest {
     this.limit,
   });
 
-  factory ListUserDmChannelsRequest.fromJson(Map<String, Object?> json) =>
-      _$ListUserDmChannelsRequestFromJson(json);
-
-  @JsonKey(name: 'user_id')
+  @MappableField(key: 'user_id')
   final SnowflakeType userId;
-  @JsonKey(includeIfNull: false)
   final SnowflakeType? before;
-  @JsonKey(includeIfNull: false)
   final SnowflakeType? after;
-
-  /// Maximum number of DM channels to return
-  @JsonKey(includeIfNull: false)
   final int? limit;
 
-  Map<String, Object?> toJson() => _$ListUserDmChannelsRequestToJson(this);
+  static ListUserDmChannelsRequest fromJson(Map<String, dynamic> json) =>
+      ListUserDmChannelsRequestMapper.fromJson(json);
 }

@@ -2,19 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'ok_response.g.dart';
+part 'ok_response.mapper.dart';
 
-@JsonSerializable()
-class OkResponse {
+@MappableClass()
+class OkResponse with OkResponseMappable {
   const OkResponse({required this.ok});
 
-  factory OkResponse.fromJson(Map<String, Object?> json) =>
-      _$OkResponseFromJson(json);
-
-  /// Whether the operation was successful
   final bool ok;
 
-  Map<String, Object?> toJson() => _$OkResponseToJson(this);
+  static OkResponse fromJson(Map<String, dynamic> json) =>
+      OkResponseMapper.fromJson(json);
 }

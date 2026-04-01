@@ -2,27 +2,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'swap_visionary_slots_request.g.dart';
+part 'swap_visionary_slots_request.mapper.dart';
 
-@JsonSerializable()
-class SwapVisionarySlotsRequest {
+@MappableClass()
+class SwapVisionarySlotsRequest with SwapVisionarySlotsRequestMappable {
   const SwapVisionarySlotsRequest({
     required this.slotIndexA,
     required this.slotIndexB,
   });
 
-  factory SwapVisionarySlotsRequest.fromJson(Map<String, Object?> json) =>
-      _$SwapVisionarySlotsRequestFromJson(json);
-
-  /// First slot index to swap (must be >= 1)
-  @JsonKey(name: 'slot_index_a')
+  @MappableField(key: 'slot_index_a')
   final int slotIndexA;
-
-  /// Second slot index to swap (must be >= 1)
-  @JsonKey(name: 'slot_index_b')
+  @MappableField(key: 'slot_index_b')
   final int slotIndexB;
 
-  Map<String, Object?> toJson() => _$SwapVisionarySlotsRequestToJson(this);
+  static SwapVisionarySlotsRequest fromJson(Map<String, dynamic> json) =>
+      SwapVisionarySlotsRequestMapper.fromJson(json);
 }

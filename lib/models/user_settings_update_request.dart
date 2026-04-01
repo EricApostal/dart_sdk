@@ -2,7 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'custom_status_payload.dart';
 import 'friend_source_flags.dart';
@@ -17,10 +17,10 @@ import 'user_settings_update_request_guild_folders.dart';
 import 'user_status_type.dart';
 import 'user_theme_type.dart';
 
-part 'user_settings_update_request.g.dart';
+part 'user_settings_update_request.mapper.dart';
 
-@JsonSerializable()
-class UserSettingsUpdateRequest {
+@MappableClass()
+class UserSettingsUpdateRequest with UserSettingsUpdateRequestMappable {
   const UserSettingsUpdateRequest({
     this.flags,
     this.status,
@@ -53,109 +53,61 @@ class UserSettingsUpdateRequest {
     this.defaultHideMutedChannels,
   });
 
-  factory UserSettingsUpdateRequest.fromJson(Map<String, Object?> json) =>
-      _$UserSettingsUpdateRequestFromJson(json);
-
-  @JsonKey(includeIfNull: false)
   final FriendSourceFlags? flags;
-  @JsonKey(includeIfNull: false)
   final UserStatusType? status;
-
-  /// When status resets
-  @JsonKey(includeIfNull: false, name: 'status_resets_at')
+  @MappableField(key: 'status_resets_at')
   final dynamic statusResetsAt;
-  @JsonKey(includeIfNull: false, name: 'status_resets_to')
+  @MappableField(key: 'status_resets_to')
   final UserStatusType? statusResetsTo;
-  @JsonKey(includeIfNull: false)
   final UserThemeType? theme;
-  @JsonKey(includeIfNull: false)
   final Locale? locale;
-
-  /// Guilds with DM restrictions
-  @JsonKey(includeIfNull: false, name: 'restricted_guilds')
+  @MappableField(key: 'restricted_guilds')
   final List<SnowflakeType>? restrictedGuilds;
-
-  /// Guilds with bot DM restrictions
-  @JsonKey(includeIfNull: false, name: 'bot_restricted_guilds')
+  @MappableField(key: 'bot_restricted_guilds')
   final List<SnowflakeType>? botRestrictedGuilds;
-
-  /// Default DM restriction for new guilds
-  @JsonKey(includeIfNull: false, name: 'default_guilds_restricted')
+  @MappableField(key: 'default_guilds_restricted')
   final bool? defaultGuildsRestricted;
-
-  /// Default bot DM restriction for new guilds
-  @JsonKey(includeIfNull: false, name: 'bot_default_guilds_restricted')
+  @MappableField(key: 'bot_default_guilds_restricted')
   final bool? botDefaultGuildsRestricted;
-
-  /// Display attachments inline
-  @JsonKey(includeIfNull: false, name: 'inline_attachment_media')
+  @MappableField(key: 'inline_attachment_media')
   final bool? inlineAttachmentMedia;
-
-  /// Display embed media inline
-  @JsonKey(includeIfNull: false, name: 'inline_embed_media')
+  @MappableField(key: 'inline_embed_media')
   final bool? inlineEmbedMedia;
-
-  /// Auto-play GIFs
-  @JsonKey(includeIfNull: false, name: 'gif_auto_play')
+  @MappableField(key: 'gif_auto_play')
   final bool? gifAutoPlay;
-
-  /// Render message embeds
-  @JsonKey(includeIfNull: false, name: 'render_embeds')
+  @MappableField(key: 'render_embeds')
   final bool? renderEmbeds;
-
-  /// Display reactions
-  @JsonKey(includeIfNull: false, name: 'render_reactions')
+  @MappableField(key: 'render_reactions')
   final bool? renderReactions;
-
-  /// Animate custom emoji
-  @JsonKey(includeIfNull: false, name: 'animate_emoji')
+  @MappableField(key: 'animate_emoji')
   final bool? animateEmoji;
-
-  /// Sticker animation preference
-  @JsonKey(includeIfNull: false, name: 'animate_stickers')
+  @MappableField(key: 'animate_stickers')
   final StickerAnimationOptions? animateStickers;
-
-  /// Spoiler rendering preference
-  @JsonKey(includeIfNull: false, name: 'render_spoilers')
+  @MappableField(key: 'render_spoilers')
   final RenderSpoilers? renderSpoilers;
-
-  /// Compact message display
-  @JsonKey(includeIfNull: false, name: 'message_display_compact')
+  @MappableField(key: 'message_display_compact')
   final bool? messageDisplayCompact;
-  @JsonKey(includeIfNull: false, name: 'friend_source_flags')
+  @MappableField(key: 'friend_source_flags')
   final FriendSourceFlags? friendSourceFlags;
-  @JsonKey(includeIfNull: false, name: 'incoming_call_flags')
+  @MappableField(key: 'incoming_call_flags')
   final IncomingCallFlags? incomingCallFlags;
-  @JsonKey(includeIfNull: false, name: 'group_dm_add_permission_flags')
+  @MappableField(key: 'group_dm_add_permission_flags')
   final GroupDmAddPermissionFlags? groupDmAddPermissionFlags;
-
-  /// Guild folder organization
-  @JsonKey(includeIfNull: false, name: 'guild_folders')
+  @MappableField(key: 'guild_folders')
   final List<UserSettingsUpdateRequestGuildFolders>? guildFolders;
-
-  /// Custom status
-  @JsonKey(includeIfNull: false, name: 'custom_status')
+  @MappableField(key: 'custom_status')
   final CustomStatusPayload? customStatus;
-
-  /// AFK timeout in seconds
-  @JsonKey(includeIfNull: false, name: 'afk_timeout')
+  @MappableField(key: 'afk_timeout')
   final int? afkTimeout;
-
-  /// Time format preference
-  @JsonKey(includeIfNull: false, name: 'time_format')
+  @MappableField(key: 'time_format')
   final TimeFormatTypes? timeFormat;
-
-  /// Developer mode enabled
-  @JsonKey(includeIfNull: false, name: 'developer_mode')
+  @MappableField(key: 'developer_mode')
   final bool? developerMode;
-
-  /// Trusted external link domains. Use "*" to trust all domains.
-  @JsonKey(includeIfNull: false, name: 'trusted_domains')
+  @MappableField(key: 'trusted_domains')
   final List<String>? trustedDomains;
-
-  /// Hide muted channels by default in new guilds
-  @JsonKey(includeIfNull: false, name: 'default_hide_muted_channels')
+  @MappableField(key: 'default_hide_muted_channels')
   final bool? defaultHideMutedChannels;
 
-  Map<String, Object?> toJson() => _$UserSettingsUpdateRequestToJson(this);
+  static UserSettingsUpdateRequest fromJson(Map<String, dynamic> json) =>
+      UserSettingsUpdateRequestMapper.fromJson(json);
 }

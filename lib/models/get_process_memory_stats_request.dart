@@ -2,19 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'get_process_memory_stats_request.g.dart';
+part 'get_process_memory_stats_request.mapper.dart';
 
-@JsonSerializable()
-class GetProcessMemoryStatsRequest {
+@MappableClass()
+class GetProcessMemoryStatsRequest with GetProcessMemoryStatsRequestMappable {
   const GetProcessMemoryStatsRequest({this.limit});
 
-  factory GetProcessMemoryStatsRequest.fromJson(Map<String, Object?> json) =>
-      _$GetProcessMemoryStatsRequestFromJson(json);
-
-  @JsonKey(includeIfNull: false)
   final int? limit;
 
-  Map<String, Object?> toJson() => _$GetProcessMemoryStatsRequestToJson(this);
+  static GetProcessMemoryStatsRequest fromJson(Map<String, dynamic> json) =>
+      GetProcessMemoryStatsRequestMapper.fromJson(json);
 }

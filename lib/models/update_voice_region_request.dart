@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'update_voice_region_request.g.dart';
+part 'update_voice_region_request.mapper.dart';
 
-@JsonSerializable()
-class UpdateVoiceRegionRequest {
+@MappableClass()
+class UpdateVoiceRegionRequest with UpdateVoiceRegionRequestMappable {
   const UpdateVoiceRegionRequest({
     required this.id,
     this.name,
@@ -23,47 +23,22 @@ class UpdateVoiceRegionRequest {
     this.allowedUserIds,
   });
 
-  factory UpdateVoiceRegionRequest.fromJson(Map<String, Object?> json) =>
-      _$UpdateVoiceRegionRequestFromJson(json);
-
-  /// Unique identifier for the voice region
   final String id;
-
-  /// Display name of the voice region
-  @JsonKey(includeIfNull: false)
   final String? name;
-
-  /// Emoji representing the region
-  @JsonKey(includeIfNull: false)
   final String? emoji;
-
-  /// Geographic latitude coordinate
-  @JsonKey(includeIfNull: false)
   final num? latitude;
-
-  /// Geographic longitude coordinate
-  @JsonKey(includeIfNull: false)
   final num? longitude;
-
-  /// Whether this is the default region
-  @JsonKey(includeIfNull: false, name: 'is_default')
+  @MappableField(key: 'is_default')
   final bool? isDefault;
-
-  /// Whether this region is restricted to VIP users
-  @JsonKey(includeIfNull: false, name: 'vip_only')
+  @MappableField(key: 'vip_only')
   final bool? vipOnly;
-
-  /// Guild features required to use this region
-  @JsonKey(includeIfNull: false, name: 'required_guild_features')
+  @MappableField(key: 'required_guild_features')
   final List<String>? requiredGuildFeatures;
-
-  /// Guild IDs explicitly allowed to use this region
-  @JsonKey(includeIfNull: false, name: 'allowed_guild_ids')
+  @MappableField(key: 'allowed_guild_ids')
   final List<SnowflakeType>? allowedGuildIds;
-
-  /// User IDs explicitly allowed to use this region
-  @JsonKey(includeIfNull: false, name: 'allowed_user_ids')
+  @MappableField(key: 'allowed_user_ids')
   final List<SnowflakeType>? allowedUserIds;
 
-  Map<String, Object?> toJson() => _$UpdateVoiceRegionRequestToJson(this);
+  static UpdateVoiceRegionRequest fromJson(Map<String, dynamic> json) =>
+      UpdateVoiceRegionRequestMapper.fromJson(json);
 }

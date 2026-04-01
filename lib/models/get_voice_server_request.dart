@@ -2,24 +2,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'get_voice_server_request.g.dart';
+part 'get_voice_server_request.mapper.dart';
 
-@JsonSerializable()
-class GetVoiceServerRequest {
+@MappableClass()
+class GetVoiceServerRequest with GetVoiceServerRequestMappable {
   const GetVoiceServerRequest({required this.regionId, required this.serverId});
 
-  factory GetVoiceServerRequest.fromJson(Map<String, Object?> json) =>
-      _$GetVoiceServerRequestFromJson(json);
-
-  /// ID of the region the server belongs to
-  @JsonKey(name: 'region_id')
+  @MappableField(key: 'region_id')
   final String regionId;
-
-  /// ID of the voice server to retrieve
-  @JsonKey(name: 'server_id')
+  @MappableField(key: 'server_id')
   final String serverId;
 
-  Map<String, Object?> toJson() => _$GetVoiceServerRequestToJson(this);
+  static GetVoiceServerRequest fromJson(Map<String, dynamic> json) =>
+      GetVoiceServerRequestMapper.fromJson(json);
 }

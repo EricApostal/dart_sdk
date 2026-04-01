@@ -2,15 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'message_reference_type.dart';
 import 'snowflake_type.dart';
 
-part 'scheduled_message_reference_schema.g.dart';
+part 'scheduled_message_reference_schema.mapper.dart';
 
-@JsonSerializable()
-class ScheduledMessageReferenceSchema {
+@MappableClass()
+class ScheduledMessageReferenceSchema
+    with ScheduledMessageReferenceSchemaMappable {
   const ScheduledMessageReferenceSchema({
     required this.messageId,
     this.channelId,
@@ -18,21 +19,14 @@ class ScheduledMessageReferenceSchema {
     this.type,
   });
 
-  factory ScheduledMessageReferenceSchema.fromJson(Map<String, Object?> json) =>
-      _$ScheduledMessageReferenceSchemaFromJson(json);
-
-  /// ID of the message being referenced
-  @JsonKey(name: 'message_id')
+  @MappableField(key: 'message_id')
   final String messageId;
-  @JsonKey(includeIfNull: false, name: 'channel_id')
+  @MappableField(key: 'channel_id')
   final SnowflakeType? channelId;
-  @JsonKey(includeIfNull: false, name: 'guild_id')
+  @MappableField(key: 'guild_id')
   final SnowflakeType? guildId;
-
-  /// The type of message reference
-  @JsonKey(includeIfNull: false)
   final MessageReferenceType? type;
 
-  Map<String, Object?> toJson() =>
-      _$ScheduledMessageReferenceSchemaToJson(this);
+  static ScheduledMessageReferenceSchema fromJson(Map<String, dynamic> json) =>
+      ScheduledMessageReferenceSchemaMapper.fromJson(json);
 }

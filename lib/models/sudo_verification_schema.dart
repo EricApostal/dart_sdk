@@ -2,15 +2,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'password_type.dart';
 import 'sudo_verification_schema_mfa_method_mfa_method.dart';
 
-part 'sudo_verification_schema.g.dart';
+part 'sudo_verification_schema.mapper.dart';
 
-@JsonSerializable()
-class SudoVerificationSchema {
+@MappableClass()
+class SudoVerificationSchema with SudoVerificationSchemaMappable {
   const SudoVerificationSchema({
     this.password,
     this.mfaMethod,
@@ -19,27 +19,16 @@ class SudoVerificationSchema {
     this.webauthnChallenge,
   });
 
-  factory SudoVerificationSchema.fromJson(Map<String, Object?> json) =>
-      _$SudoVerificationSchemaFromJson(json);
-
-  @JsonKey(includeIfNull: false)
   final PasswordType? password;
-
-  /// MFA method to use for verification
-  @JsonKey(includeIfNull: false, name: 'mfa_method')
+  @MappableField(key: 'mfa_method')
   final SudoVerificationSchemaMfaMethodMfaMethod? mfaMethod;
-
-  /// MFA verification code from authenticator app or SMS
-  @JsonKey(includeIfNull: false, name: 'mfa_code')
+  @MappableField(key: 'mfa_code')
   final String? mfaCode;
-
-  /// WebAuthn authentication response
-  @JsonKey(includeIfNull: false, name: 'webauthn_response')
+  @MappableField(key: 'webauthn_response')
   final dynamic webauthnResponse;
-
-  /// WebAuthn challenge string
-  @JsonKey(includeIfNull: false, name: 'webauthn_challenge')
+  @MappableField(key: 'webauthn_challenge')
   final String? webauthnChallenge;
 
-  Map<String, Object?> toJson() => _$SudoVerificationSchemaToJson(this);
+  static SudoVerificationSchema fromJson(Map<String, dynamic> json) =>
+      SudoVerificationSchemaMapper.fromJson(json);
 }

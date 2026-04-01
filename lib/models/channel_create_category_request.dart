@@ -2,17 +2,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'channel_create_category_request_type_type.dart';
 import 'channel_create_request.dart';
 import 'channel_overwrite_request.dart';
 import 'snowflake_type.dart';
 
-part 'channel_create_category_request.g.dart';
+part 'channel_create_category_request.mapper.dart';
 
-@JsonSerializable()
-class ChannelCreateCategoryRequest {
+@MappableClass()
+class ChannelCreateCategoryRequest with ChannelCreateCategoryRequestMappable {
   const ChannelCreateCategoryRequest({
     required this.type,
     required this.name,
@@ -25,40 +25,19 @@ class ChannelCreateCategoryRequest {
     this.nsfw,
   });
 
-  factory ChannelCreateCategoryRequest.fromJson(Map<String, Object?> json) =>
-      _$ChannelCreateCategoryRequestFromJson(json);
-
-  /// The channel topic (1-1024 characters)
-  @JsonKey(includeIfNull: false)
-  final String? topic;
-
-  /// External URL for link channels
-  @JsonKey(includeIfNull: false)
-  final String? url;
-
-  /// ID of the parent category for this channel
-  @JsonKey(includeIfNull: false, name: 'parent_id')
-  final SnowflakeType? parentId;
-
-  /// Voice channel bitrate in bits per second (8000-320000)
-  @JsonKey(includeIfNull: false)
-  final int? bitrate;
-
-  /// Maximum users allowed in voice channel (0-99, 0 means unlimited)
-  @JsonKey(includeIfNull: false, name: 'user_limit')
-  final int? userLimit;
-
-  /// Permission overwrites for roles and members
-  @JsonKey(includeIfNull: false, name: 'permission_overwrites')
-  final List<ChannelOverwriteRequest>? permissionOverwrites;
-
-  /// Whether the channel is marked as NSFW
-  @JsonKey(includeIfNull: false)
-  final bool? nsfw;
   final ChannelCreateCategoryRequestTypeType type;
-
-  /// The name of the category
   final String name;
+  final String? topic;
+  final String? url;
+  @MappableField(key: 'parent_id')
+  final SnowflakeType? parentId;
+  final int? bitrate;
+  @MappableField(key: 'user_limit')
+  final int? userLimit;
+  @MappableField(key: 'permission_overwrites')
+  final List<ChannelOverwriteRequest>? permissionOverwrites;
+  final bool? nsfw;
 
-  Map<String, Object?> toJson() => _$ChannelCreateCategoryRequestToJson(this);
+  static ChannelCreateCategoryRequest fromJson(Map<String, dynamic> json) =>
+      ChannelCreateCategoryRequestMapper.fromJson(json);
 }

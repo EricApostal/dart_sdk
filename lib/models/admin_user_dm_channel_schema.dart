@@ -2,15 +2,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'int32_type.dart';
 import 'snowflake_type.dart';
 
-part 'admin_user_dm_channel_schema.g.dart';
+part 'admin_user_dm_channel_schema.mapper.dart';
 
-@JsonSerializable()
-class AdminUserDmChannelSchema {
+@MappableClass()
+class AdminUserDmChannelSchema with AdminUserDmChannelSchemaMappable {
   const AdminUserDmChannelSchema({
     required this.channelId,
     required this.channelType,
@@ -19,19 +19,17 @@ class AdminUserDmChannelSchema {
     required this.isOpen,
   });
 
-  factory AdminUserDmChannelSchema.fromJson(Map<String, Object?> json) =>
-      _$AdminUserDmChannelSchemaFromJson(json);
-
-  @JsonKey(name: 'channel_id')
+  @MappableField(key: 'channel_id')
   final SnowflakeType channelId;
-  @JsonKey(includeIfNull: true, name: 'channel_type')
+  @MappableField(key: 'channel_type')
   final Int32Type? channelType;
-  @JsonKey(name: 'recipient_ids')
+  @MappableField(key: 'recipient_ids')
   final List<SnowflakeType> recipientIds;
-  @JsonKey(includeIfNull: true, name: 'last_message_id')
+  @MappableField(key: 'last_message_id')
   final SnowflakeType? lastMessageId;
-  @JsonKey(name: 'is_open')
+  @MappableField(key: 'is_open')
   final bool isOpen;
 
-  Map<String, Object?> toJson() => _$AdminUserDmChannelSchemaToJson(this);
+  static AdminUserDmChannelSchema fromJson(Map<String, dynamic> json) =>
+      AdminUserDmChannelSchemaMapper.fromJson(json);
 }

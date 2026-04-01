@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 
-part 'custom_status_payload.g.dart';
+part 'custom_status_payload.mapper.dart';
 
-@JsonSerializable()
-class CustomStatusPayload {
+@MappableClass()
+class CustomStatusPayload with CustomStatusPayloadMappable {
   const CustomStatusPayload({
     this.text,
     this.expiresAt,
@@ -17,24 +17,14 @@ class CustomStatusPayload {
     this.emojiName,
   });
 
-  factory CustomStatusPayload.fromJson(Map<String, Object?> json) =>
-      _$CustomStatusPayloadFromJson(json);
-
-  /// Custom status text (max 128 characters)
-  @JsonKey(includeIfNull: false)
   final String? text;
-
-  /// When the custom status expires
-  @JsonKey(includeIfNull: false, name: 'expires_at')
+  @MappableField(key: 'expires_at')
   final dynamic expiresAt;
-
-  /// ID of custom emoji to display
-  @JsonKey(includeIfNull: false, name: 'emoji_id')
+  @MappableField(key: 'emoji_id')
   final SnowflakeType? emojiId;
-
-  /// Unicode emoji or custom emoji name
-  @JsonKey(includeIfNull: false, name: 'emoji_name')
+  @MappableField(key: 'emoji_name')
   final String? emojiName;
 
-  Map<String, Object?> toJson() => _$CustomStatusPayloadToJson(this);
+  static CustomStatusPayload fromJson(Map<String, dynamic> json) =>
+      CustomStatusPayloadMapper.fromJson(json);
 }

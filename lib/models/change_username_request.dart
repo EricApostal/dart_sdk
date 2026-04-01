@@ -2,30 +2,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'int32_type.dart';
 import 'snowflake_type.dart';
 import 'username_type.dart';
 
-part 'change_username_request.g.dart';
+part 'change_username_request.mapper.dart';
 
-@JsonSerializable()
-class ChangeUsernameRequest {
+@MappableClass()
+class ChangeUsernameRequest with ChangeUsernameRequestMappable {
   const ChangeUsernameRequest({
     required this.userId,
     required this.username,
     this.discriminator,
   });
 
-  factory ChangeUsernameRequest.fromJson(Map<String, Object?> json) =>
-      _$ChangeUsernameRequestFromJson(json);
-
-  @JsonKey(name: 'user_id')
+  @MappableField(key: 'user_id')
   final SnowflakeType userId;
   final UsernameType username;
-  @JsonKey(includeIfNull: false)
   final Int32Type? discriminator;
 
-  Map<String, Object?> toJson() => _$ChangeUsernameRequestToJson(this);
+  static ChangeUsernameRequest fromJson(Map<String, dynamic> json) =>
+      ChangeUsernameRequestMapper.fromJson(json);
 }

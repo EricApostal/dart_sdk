@@ -2,35 +2,28 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'report_status.mapper.dart';
 
 /// The status of the report
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum ReportStatus {
-  @JsonValue(0)
-  pending(0),
-  @JsonValue(1)
-  resolved(1),
+  @MappableValue(0)
+  pending,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue(1)
+  resolved,
 
-  const ReportStatus(this.json);
+  @MappableValue('unknown')
+  unknown;
 
-  factory ReportStatus.fromJson(int json) => values.firstWhere(
-    (e) => e.json == json,
-    orElse: () => $unknown,
-  );
-
-  final int? json;
-
-  int? toJson() => json;
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json?.toString() ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
+  /// Returns all defined enum values excluding the unknown value.
   static List<ReportStatus> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+      values.where((value) => value != ReportStatus.unknown).toList();
 }

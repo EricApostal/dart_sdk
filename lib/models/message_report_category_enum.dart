@@ -2,55 +2,59 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'message_report_category_enum.mapper.dart';
 
 /// Category of the message report
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum MessageReportCategoryEnum {
-  @JsonValue('harassment')
-  harassment('harassment'),
-  @JsonValue('hate_speech')
-  hateSpeech('hate_speech'),
-  @JsonValue('violent_content')
-  violentContent('violent_content'),
-  @JsonValue('spam')
-  spam('spam'),
-  @JsonValue('nsfw_violation')
-  nsfwViolation('nsfw_violation'),
-  @JsonValue('illegal_activity')
-  illegalActivity('illegal_activity'),
-  @JsonValue('doxxing')
-  doxxing('doxxing'),
-  @JsonValue('self_harm')
-  selfHarm('self_harm'),
-  @JsonValue('child_safety')
-  childSafety('child_safety'),
-  @JsonValue('malicious_links')
-  maliciousLinks('malicious_links'),
-  @JsonValue('impersonation')
-  impersonation('impersonation'),
-  @JsonValue('other')
-  other('other'),
+  @MappableValue('harassment')
+  harassment,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue('hate_speech')
+  hateSpeech,
 
-  const MessageReportCategoryEnum(this.json);
+  @MappableValue('violent_content')
+  violentContent,
 
-  factory MessageReportCategoryEnum.fromJson(String json) => values.firstWhere(
-    (e) => e.json == json,
-    orElse: () => $unknown,
-  );
+  @MappableValue('spam')
+  spam,
 
-  final String? json;
+  @MappableValue('nsfw_violation')
+  nsfwViolation,
 
-  String toJson() => json ?? 'null';
+  @MappableValue('illegal_activity')
+  illegalActivity,
+
+  @MappableValue('doxxing')
+  doxxing,
+
+  @MappableValue('self_harm')
+  selfHarm,
+
+  @MappableValue('child_safety')
+  childSafety,
+
+  @MappableValue('malicious_links')
+  maliciousLinks,
+
+  @MappableValue('impersonation')
+  impersonation,
+
+  @MappableValue('other')
+  other,
+
+  @MappableValue('unknown')
+  unknown;
+
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
-  static List<MessageReportCategoryEnum> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+  /// Returns all defined enum values excluding the unknown value.
+  static List<MessageReportCategoryEnum> get $valuesDefined => values
+      .where((value) => value != MessageReportCategoryEnum.unknown)
+      .toList();
 }

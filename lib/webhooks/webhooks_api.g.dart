@@ -72,7 +72,7 @@ class _WebhooksApi implements WebhooksApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late WebhookResponse _value;
     try {
       _value = WebhookResponse.fromJson(_result.data!);
@@ -132,7 +132,7 @@ class _WebhooksApi implements WebhooksApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late WebhookResponse _value;
     try {
       _value = WebhookResponse.fromJson(_result.data!);
@@ -163,7 +163,7 @@ class _WebhooksApi implements WebhooksApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late WebhookResponse _value;
     try {
       _value = WebhookResponse.fromJson(_result.data!);
@@ -212,7 +212,7 @@ class _WebhooksApi implements WebhooksApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late WebhookTokenResponse _value;
     try {
       _value = WebhookTokenResponse.fromJson(_result.data!);
@@ -244,7 +244,7 @@ class _WebhooksApi implements WebhooksApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late WebhookTokenResponse _value;
     try {
       _value = WebhookTokenResponse.fromJson(_result.data!);
@@ -298,7 +298,7 @@ class _WebhooksApi implements WebhooksApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late MessageResponseSchema _value;
     try {
       _value = MessageResponseSchema.fromJson(_result.data!);

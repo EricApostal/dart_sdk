@@ -2,31 +2,30 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'well_known_fluxer_response_limits_version_version.mapper.dart';
 
 /// Wire format version
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum WellKnownFluxerResponseLimitsVersionVersion {
-  @JsonValue(2)
-  value2(2),
+  @MappableValue(2)
+  value2,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue('unknown')
+  unknown;
 
-  const WellKnownFluxerResponseLimitsVersionVersion(this.json);
-
-  factory WellKnownFluxerResponseLimitsVersionVersion.fromJson(int json) =>
-      values.firstWhere((e) => e.json == json, orElse: () => $unknown);
-
-  final int? json;
-
-  int? toJson() => json;
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json?.toString() ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
+  /// Returns all defined enum values excluding the unknown value.
   static List<WellKnownFluxerResponseLimitsVersionVersion> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+      values
+          .where(
+            (value) =>
+                value != WellKnownFluxerResponseLimitsVersionVersion.unknown,
+          )
+          .toList();
 }

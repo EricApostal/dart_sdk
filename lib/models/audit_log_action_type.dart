@@ -2,101 +2,127 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'audit_log_action_type.mapper.dart';
 
 /// The type of action that occurred
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum AuditLogActionType {
-  @JsonValue(1)
-  guildUpdate(1),
-  @JsonValue(10)
-  channelCreate(10),
-  @JsonValue(11)
-  channelUpdate(11),
-  @JsonValue(12)
-  channelDelete(12),
-  @JsonValue(13)
-  channelOverwriteCreate(13),
-  @JsonValue(14)
-  channelOverwriteUpdate(14),
-  @JsonValue(15)
-  channelOverwriteDelete(15),
-  @JsonValue(20)
-  memberKick(20),
-  @JsonValue(21)
-  memberPrune(21),
-  @JsonValue(22)
-  memberBanAdd(22),
-  @JsonValue(23)
-  memberBanRemove(23),
-  @JsonValue(24)
-  memberUpdate(24),
-  @JsonValue(25)
-  memberRoleUpdate(25),
-  @JsonValue(26)
-  memberMove(26),
-  @JsonValue(27)
-  memberDisconnect(27),
-  @JsonValue(28)
-  botAdd(28),
-  @JsonValue(30)
-  roleCreate(30),
-  @JsonValue(31)
-  roleUpdate(31),
-  @JsonValue(32)
-  roleDelete(32),
-  @JsonValue(40)
-  inviteCreate(40),
-  @JsonValue(41)
-  inviteUpdate(41),
-  @JsonValue(42)
-  inviteDelete(42),
-  @JsonValue(50)
-  webhookCreate(50),
-  @JsonValue(51)
-  webhookUpdate(51),
-  @JsonValue(52)
-  webhookDelete(52),
-  @JsonValue(60)
-  emojiCreate(60),
-  @JsonValue(61)
-  emojiUpdate(61),
-  @JsonValue(62)
-  emojiDelete(62),
-  @JsonValue(90)
-  stickerCreate(90),
-  @JsonValue(91)
-  stickerUpdate(91),
-  @JsonValue(92)
-  stickerDelete(92),
-  @JsonValue(72)
-  messageDelete(72),
-  @JsonValue(73)
-  messageBulkDelete(73),
-  @JsonValue(74)
-  messagePin(74),
-  @JsonValue(75)
-  messageUnpin(75),
+  @MappableValue(1)
+  guildUpdate,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue(10)
+  channelCreate,
 
-  const AuditLogActionType(this.json);
+  @MappableValue(11)
+  channelUpdate,
 
-  factory AuditLogActionType.fromJson(int json) => values.firstWhere(
-    (e) => e.json == json,
-    orElse: () => $unknown,
-  );
+  @MappableValue(12)
+  channelDelete,
 
-  final int? json;
+  @MappableValue(13)
+  channelOverwriteCreate,
 
-  int? toJson() => json;
+  @MappableValue(14)
+  channelOverwriteUpdate,
+
+  @MappableValue(15)
+  channelOverwriteDelete,
+
+  @MappableValue(20)
+  memberKick,
+
+  @MappableValue(21)
+  memberPrune,
+
+  @MappableValue(22)
+  memberBanAdd,
+
+  @MappableValue(23)
+  memberBanRemove,
+
+  @MappableValue(24)
+  memberUpdate,
+
+  @MappableValue(25)
+  memberRoleUpdate,
+
+  @MappableValue(26)
+  memberMove,
+
+  @MappableValue(27)
+  memberDisconnect,
+
+  @MappableValue(28)
+  botAdd,
+
+  @MappableValue(30)
+  roleCreate,
+
+  @MappableValue(31)
+  roleUpdate,
+
+  @MappableValue(32)
+  roleDelete,
+
+  @MappableValue(40)
+  inviteCreate,
+
+  @MappableValue(41)
+  inviteUpdate,
+
+  @MappableValue(42)
+  inviteDelete,
+
+  @MappableValue(50)
+  webhookCreate,
+
+  @MappableValue(51)
+  webhookUpdate,
+
+  @MappableValue(52)
+  webhookDelete,
+
+  @MappableValue(60)
+  emojiCreate,
+
+  @MappableValue(61)
+  emojiUpdate,
+
+  @MappableValue(62)
+  emojiDelete,
+
+  @MappableValue(90)
+  stickerCreate,
+
+  @MappableValue(91)
+  stickerUpdate,
+
+  @MappableValue(92)
+  stickerDelete,
+
+  @MappableValue(72)
+  messageDelete,
+
+  @MappableValue(73)
+  messageBulkDelete,
+
+  @MappableValue(74)
+  messagePin,
+
+  @MappableValue(75)
+  messageUnpin,
+
+  @MappableValue('unknown')
+  unknown;
+
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json?.toString() ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
+  /// Returns all defined enum values excluding the unknown value.
   static List<AuditLogActionType> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+      values.where((value) => value != AuditLogActionType.unknown).toList();
 }

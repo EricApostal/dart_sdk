@@ -35,7 +35,7 @@ class _InstanceApi implements InstanceApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late WellKnownFluxerResponse _value;
     try {
       _value = WellKnownFluxerResponse.fromJson(_result.data!);

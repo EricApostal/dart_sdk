@@ -2,39 +2,37 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'guild_update_request_splash_card_alignment_splash_card_alignment.mapper.dart';
 
 /// Alignment of the splash card (center, left, or right)
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum GuildUpdateRequestSplashCardAlignmentSplashCardAlignment {
-  @JsonValue(0)
-  center(0),
-  @JsonValue(1)
-  left(1),
-  @JsonValue(2)
-  right(2),
+  @MappableValue(0)
+  center,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue(1)
+  left,
 
-  const GuildUpdateRequestSplashCardAlignmentSplashCardAlignment(this.json);
+  @MappableValue(2)
+  right,
 
-  factory GuildUpdateRequestSplashCardAlignmentSplashCardAlignment.fromJson(
-    int json,
-  ) => values.firstWhere(
-    (e) => e.json == json,
-    orElse: () => $unknown,
-  );
+  @MappableValue('unknown')
+  unknown;
 
-  final int? json;
-
-  int? toJson() => json;
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json?.toString() ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
+  /// Returns all defined enum values excluding the unknown value.
   static List<GuildUpdateRequestSplashCardAlignmentSplashCardAlignment>
-  get $valuesDefined => values.where((value) => value != $unknown).toList();
+  get $valuesDefined => values
+      .where(
+        (value) =>
+            value !=
+            GuildUpdateRequestSplashCardAlignmentSplashCardAlignment.unknown,
+      )
+      .toList();
 }

@@ -2,30 +2,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'email_type.dart';
 import 'password_type.dart';
 
-part 'login_request.g.dart';
+part 'login_request.mapper.dart';
 
-@JsonSerializable()
-class LoginRequest {
+@MappableClass()
+class LoginRequest with LoginRequestMappable {
   const LoginRequest({
     required this.email,
     required this.password,
     this.inviteCode,
   });
 
-  factory LoginRequest.fromJson(Map<String, Object?> json) =>
-      _$LoginRequestFromJson(json);
-
   final EmailType email;
   final PasswordType password;
-
-  /// Guild invite code to join after login
-  @JsonKey(includeIfNull: false, name: 'invite_code')
+  @MappableField(key: 'invite_code')
   final String? inviteCode;
 
-  Map<String, Object?> toJson() => _$LoginRequestToJson(this);
+  static LoginRequest fromJson(Map<String, dynamic> json) =>
+      LoginRequestMapper.fromJson(json);
 }

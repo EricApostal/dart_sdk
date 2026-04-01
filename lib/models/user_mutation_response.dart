@@ -2,20 +2,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'user_admin_response_schema.dart';
 
-part 'user_mutation_response.g.dart';
+part 'user_mutation_response.mapper.dart';
 
-@JsonSerializable()
-class UserMutationResponse {
+@MappableClass()
+class UserMutationResponse with UserMutationResponseMappable {
   const UserMutationResponse({required this.user});
-
-  factory UserMutationResponse.fromJson(Map<String, Object?> json) =>
-      _$UserMutationResponseFromJson(json);
 
   final UserAdminResponseSchema user;
 
-  Map<String, Object?> toJson() => _$UserMutationResponseToJson(this);
+  static UserMutationResponse fromJson(Map<String, dynamic> json) =>
+      UserMutationResponseMapper.fromJson(json);
 }

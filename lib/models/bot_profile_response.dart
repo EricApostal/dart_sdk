@@ -2,12 +2,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'bot_profile_response.g.dart';
+part 'bot_profile_response.mapper.dart';
 
-@JsonSerializable()
-class BotProfileResponse {
+@MappableClass()
+class BotProfileResponse with BotProfileResponseMappable {
   const BotProfileResponse({
     required this.id,
     required this.username,
@@ -17,29 +17,13 @@ class BotProfileResponse {
     required this.bio,
   });
 
-  factory BotProfileResponse.fromJson(Map<String, Object?> json) =>
-      _$BotProfileResponseFromJson(json);
-
-  /// The unique identifier of the bot user
   final String id;
-
-  /// The username of the bot
   final String username;
-
-  /// The discriminator of the bot
   final String discriminator;
-
-  /// The avatar hash of the bot
-  @JsonKey(includeIfNull: true)
   final String? avatar;
-
-  /// The banner hash of the bot
-  @JsonKey(includeIfNull: true)
   final String? banner;
-
-  /// The bio or description of the bot
-  @JsonKey(includeIfNull: true)
   final String? bio;
 
-  Map<String, Object?> toJson() => _$BotProfileResponseToJson(this);
+  static BotProfileResponse fromJson(Map<String, dynamic> json) =>
+      BotProfileResponseMapper.fromJson(json);
 }

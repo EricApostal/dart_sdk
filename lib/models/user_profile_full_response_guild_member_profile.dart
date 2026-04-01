@@ -2,14 +2,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'int32_type.dart';
 
-part 'user_profile_full_response_guild_member_profile.g.dart';
+part 'user_profile_full_response_guild_member_profile.mapper.dart';
 
-@JsonSerializable()
-class UserProfileFullResponseGuildMemberProfile {
+@MappableClass()
+class UserProfileFullResponseGuildMemberProfile
+    with UserProfileFullResponseGuildMemberProfileMappable {
   const UserProfileFullResponseGuildMemberProfile({
     required this.bio,
     required this.pronouns,
@@ -17,26 +18,13 @@ class UserProfileFullResponseGuildMemberProfile {
     required this.accentColor,
   });
 
-  factory UserProfileFullResponseGuildMemberProfile.fromJson(
-    Map<String, Object?> json,
-  ) => _$UserProfileFullResponseGuildMemberProfileFromJson(json);
-
-  /// Guild-specific biography text
-  @JsonKey(includeIfNull: true)
   final String? bio;
-
-  /// Guild-specific pronouns
-  @JsonKey(includeIfNull: true)
   final String? pronouns;
-
-  /// Hash of the guild-specific banner image
-  @JsonKey(includeIfNull: true)
   final String? banner;
-
-  /// Guild-specific accent color
-  @JsonKey(includeIfNull: true, name: 'accent_color')
+  @MappableField(key: 'accent_color')
   final Int32Type? accentColor;
 
-  Map<String, Object?> toJson() =>
-      _$UserProfileFullResponseGuildMemberProfileToJson(this);
+  static UserProfileFullResponseGuildMemberProfile fromJson(
+    Map<String, dynamic> json,
+  ) => UserProfileFullResponseGuildMemberProfileMapper.fromJson(json);
 }

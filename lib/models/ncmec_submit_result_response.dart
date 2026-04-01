@@ -2,26 +2,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'ncmec_submit_result_response.g.dart';
+part 'ncmec_submit_result_response.mapper.dart';
 
-@JsonSerializable()
-class NcmecSubmitResultResponse {
+@MappableClass()
+class NcmecSubmitResultResponse with NcmecSubmitResultResponseMappable {
   const NcmecSubmitResultResponse({
     required this.success,
     required this.ncmecReportId,
     required this.error,
   });
 
-  factory NcmecSubmitResultResponse.fromJson(Map<String, Object?> json) =>
-      _$NcmecSubmitResultResponseFromJson(json);
-
   final bool success;
-  @JsonKey(includeIfNull: true, name: 'ncmec_report_id')
+  @MappableField(key: 'ncmec_report_id')
   final String? ncmecReportId;
-  @JsonKey(includeIfNull: true)
   final String? error;
 
-  Map<String, Object?> toJson() => _$NcmecSubmitResultResponseToJson(this);
+  static NcmecSubmitResultResponse fromJson(Map<String, dynamic> json) =>
+      NcmecSubmitResultResponseMapper.fromJson(json);
 }

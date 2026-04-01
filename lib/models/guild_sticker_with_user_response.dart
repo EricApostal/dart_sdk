@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'user_partial_response.dart';
 
-part 'guild_sticker_with_user_response.g.dart';
+part 'guild_sticker_with_user_response.mapper.dart';
 
-@JsonSerializable()
-class GuildStickerWithUserResponse {
+@MappableClass()
+class GuildStickerWithUserResponse with GuildStickerWithUserResponseMappable {
   const GuildStickerWithUserResponse({
     required this.id,
     required this.name,
@@ -19,24 +19,13 @@ class GuildStickerWithUserResponse {
     required this.user,
   });
 
-  factory GuildStickerWithUserResponse.fromJson(Map<String, Object?> json) =>
-      _$GuildStickerWithUserResponseFromJson(json);
-
-  /// The unique identifier for this sticker
   final String id;
-
-  /// The name of the sticker
   final String name;
-
-  /// The description of the sticker
   final String description;
-
-  /// Autocomplete/suggestion tags for the sticker
   final List<String> tags;
-
-  /// Whether this sticker is animated
   final bool animated;
   final UserPartialResponse user;
 
-  Map<String, Object?> toJson() => _$GuildStickerWithUserResponseToJson(this);
+  static GuildStickerWithUserResponse fromJson(Map<String, dynamic> json) =>
+      GuildStickerWithUserResponseMapper.fromJson(json);
 }

@@ -2,91 +2,112 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'dsa_report_user_request_reporter_country_of_residence_reporter_country_of_residence.mapper.dart';
 
 /// EU country code of the reporter residence
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum DsaReportUserRequestReporterCountryOfResidenceReporterCountryOfResidence {
-  @JsonValue('AT')
-  at('AT'),
-  @JsonValue('BE')
-  be('BE'),
-  @JsonValue('BG')
-  bg('BG'),
-  @JsonValue('HR')
-  hr('HR'),
-  @JsonValue('CY')
-  cy('CY'),
-  @JsonValue('CZ')
-  cz('CZ'),
-  @JsonValue('DK')
-  dk('DK'),
-  @JsonValue('EE')
-  ee('EE'),
-  @JsonValue('FI')
-  fi('FI'),
-  @JsonValue('FR')
-  fr('FR'),
-  @JsonValue('DE')
-  de('DE'),
-  @JsonValue('GR')
-  gr('GR'),
-  @JsonValue('HU')
-  hu('HU'),
-  @JsonValue('IE')
-  ie('IE'),
-  @JsonValue('IT')
-  it('IT'),
-  @JsonValue('LV')
-  lv('LV'),
-  @JsonValue('LT')
-  lt('LT'),
-  @JsonValue('LU')
-  lu('LU'),
-  @JsonValue('MT')
-  mt('MT'),
-  @JsonValue('NL')
-  nl('NL'),
-  @JsonValue('PL')
-  pl('PL'),
-  @JsonValue('PT')
-  pt('PT'),
-  @JsonValue('RO')
-  ro('RO'),
-  @JsonValue('SK')
-  sk('SK'),
-  @JsonValue('SI')
-  si('SI'),
-  @JsonValue('ES')
-  es('ES'),
-  @JsonValue('SE')
-  se('SE'),
+  @MappableValue('AT')
+  at,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue('BE')
+  be,
 
-  const DsaReportUserRequestReporterCountryOfResidenceReporterCountryOfResidence(
-    this.json,
-  );
+  @MappableValue('BG')
+  bg,
 
-  factory DsaReportUserRequestReporterCountryOfResidenceReporterCountryOfResidence.fromJson(
-    String json,
-  ) => values.firstWhere(
-    (e) => e.json == json,
-    orElse: () => $unknown,
-  );
+  @MappableValue('HR')
+  hr,
 
-  final String? json;
+  @MappableValue('CY')
+  cy,
 
-  String toJson() => json ?? 'null';
+  @MappableValue('CZ')
+  cz,
+
+  @MappableValue('DK')
+  dk,
+
+  @MappableValue('EE')
+  ee,
+
+  @MappableValue('FI')
+  fi,
+
+  @MappableValue('FR')
+  fr,
+
+  @MappableValue('DE')
+  de,
+
+  @MappableValue('GR')
+  gr,
+
+  @MappableValue('HU')
+  hu,
+
+  @MappableValue('IE')
+  ie,
+
+  @MappableValue('IT')
+  it,
+
+  @MappableValue('LV')
+  lv,
+
+  @MappableValue('LT')
+  lt,
+
+  @MappableValue('LU')
+  lu,
+
+  @MappableValue('MT')
+  mt,
+
+  @MappableValue('NL')
+  nl,
+
+  @MappableValue('PL')
+  pl,
+
+  @MappableValue('PT')
+  pt,
+
+  @MappableValue('RO')
+  ro,
+
+  @MappableValue('SK')
+  sk,
+
+  @MappableValue('SI')
+  si,
+
+  @MappableValue('ES')
+  es,
+
+  @MappableValue('SE')
+  se,
+
+  @MappableValue('unknown')
+  unknown;
+
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
+  /// Returns all defined enum values excluding the unknown value.
   static List<
     DsaReportUserRequestReporterCountryOfResidenceReporterCountryOfResidence
   >
-  get $valuesDefined => values.where((value) => value != $unknown).toList();
+  get $valuesDefined => values
+      .where(
+        (value) =>
+            value !=
+            DsaReportUserRequestReporterCountryOfResidenceReporterCountryOfResidence
+                .unknown,
+      )
+      .toList();
 }

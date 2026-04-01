@@ -2,33 +2,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'create_connection_request_type_type.mapper.dart';
 
 /// The type of connection to create
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum CreateConnectionRequestTypeType {
-  @JsonValue('bsky')
-  bsky('bsky'),
-  @JsonValue('domain')
-  domain('domain'),
+  @MappableValue('bsky')
+  bsky,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue('domain')
+  domain,
 
-  const CreateConnectionRequestTypeType(this.json);
+  @MappableValue('unknown')
+  unknown;
 
-  factory CreateConnectionRequestTypeType.fromJson(String json) =>
-      values.firstWhere((e) => e.json == json, orElse: () => $unknown);
-
-  final String? json;
-
-  String toJson() => json ?? 'null';
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
-  static List<CreateConnectionRequestTypeType> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+  /// Returns all defined enum values excluding the unknown value.
+  static List<CreateConnectionRequestTypeType> get $valuesDefined => values
+      .where((value) => value != CreateConnectionRequestTypeType.unknown)
+      .toList();
 }

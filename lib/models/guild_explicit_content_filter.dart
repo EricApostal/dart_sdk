@@ -2,37 +2,32 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'guild_explicit_content_filter.mapper.dart';
 
 /// Level of content filtering for explicit media
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum GuildExplicitContentFilter {
-  @JsonValue(0)
-  disabled(0),
-  @JsonValue(1)
-  membersWithoutRoles(1),
-  @JsonValue(2)
-  allMembers(2),
+  @MappableValue(0)
+  disabled,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue(1)
+  membersWithoutRoles,
 
-  const GuildExplicitContentFilter(this.json);
+  @MappableValue(2)
+  allMembers,
 
-  factory GuildExplicitContentFilter.fromJson(int json) => values.firstWhere(
-    (e) => e.json == json,
-    orElse: () => $unknown,
-  );
+  @MappableValue('unknown')
+  unknown;
 
-  final int? json;
-
-  int? toJson() => json;
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json?.toString() ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
-  static List<GuildExplicitContentFilter> get $valuesDefined =>
-      values.where((value) => value != $unknown).toList();
+  /// Returns all defined enum values excluding the unknown value.
+  static List<GuildExplicitContentFilter> get $valuesDefined => values
+      .where((value) => value != GuildExplicitContentFilter.unknown)
+      .toList();
 }

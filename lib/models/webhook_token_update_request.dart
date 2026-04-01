@@ -2,26 +2,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'base64_image_type.dart';
 
-part 'webhook_token_update_request.g.dart';
+part 'webhook_token_update_request.mapper.dart';
 
-@JsonSerializable()
-class WebhookTokenUpdateRequest {
+@MappableClass()
+class WebhookTokenUpdateRequest with WebhookTokenUpdateRequestMappable {
   const WebhookTokenUpdateRequest({this.name, this.avatar});
 
-  factory WebhookTokenUpdateRequest.fromJson(Map<String, Object?> json) =>
-      _$WebhookTokenUpdateRequestFromJson(json);
-
-  /// The new name of the webhook
-  @JsonKey(includeIfNull: false)
   final String? name;
-
-  /// The new avatar image as a base64-encoded data URI
-  @JsonKey(includeIfNull: false)
   final Base64ImageType? avatar;
 
-  Map<String, Object?> toJson() => _$WebhookTokenUpdateRequestToJson(this);
+  static WebhookTokenUpdateRequest fromJson(Map<String, dynamic> json) =>
+      WebhookTokenUpdateRequestMapper.fromJson(json);
 }

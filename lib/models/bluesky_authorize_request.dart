@@ -2,19 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'bluesky_authorize_request.g.dart';
+part 'bluesky_authorize_request.mapper.dart';
 
-@JsonSerializable()
-class BlueskyAuthorizeRequest {
+@MappableClass()
+class BlueskyAuthorizeRequest with BlueskyAuthorizeRequestMappable {
   const BlueskyAuthorizeRequest({required this.handle});
 
-  factory BlueskyAuthorizeRequest.fromJson(Map<String, Object?> json) =>
-      _$BlueskyAuthorizeRequestFromJson(json);
-
-  /// The Bluesky handle to connect (e.g. alice.bsky.social)
   final String handle;
 
-  Map<String, Object?> toJson() => _$BlueskyAuthorizeRequestToJson(this);
+  static BlueskyAuthorizeRequest fromJson(Map<String, dynamic> json) =>
+      BlueskyAuthorizeRequestMapper.fromJson(json);
 }

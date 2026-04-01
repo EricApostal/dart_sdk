@@ -2,7 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'default_message_notifications.dart';
 import 'guild_explicit_content_filter.dart';
@@ -16,10 +16,10 @@ import 'nsfw_level.dart';
 import 'snowflake_type.dart';
 import 'system_channel_flags.dart';
 
-part 'guild_response.g.dart';
+part 'guild_response.mapper.dart';
 
-@JsonSerializable()
-class GuildResponse {
+@MappableClass()
+class GuildResponse with GuildResponseMappable {
   const GuildResponse({
     required this.id,
     required this.name,
@@ -52,117 +52,58 @@ class GuildResponse {
     this.permissions,
   });
 
-  factory GuildResponse.fromJson(Map<String, Object?> json) =>
-      _$GuildResponseFromJson(json);
-
-  /// The unique identifier for this guild
   final String id;
-
-  /// The name of the guild
   final String name;
-
-  /// The hash of the guild icon
-  @JsonKey(includeIfNull: false)
-  final String? icon;
-
-  /// The hash of the guild banner
-  @JsonKey(includeIfNull: false)
-  final String? banner;
-
-  /// The width of the guild banner in pixels
-  @JsonKey(includeIfNull: false, name: 'banner_width')
-  final Int32Type? bannerWidth;
-
-  /// The height of the guild banner in pixels
-  @JsonKey(includeIfNull: false, name: 'banner_height')
-  final Int32Type? bannerHeight;
-
-  /// The hash of the guild splash screen
-  @JsonKey(includeIfNull: false)
-  final String? splash;
-
-  /// The width of the guild splash in pixels
-  @JsonKey(includeIfNull: false, name: 'splash_width')
-  final Int32Type? splashWidth;
-
-  /// The height of the guild splash in pixels
-  @JsonKey(includeIfNull: false, name: 'splash_height')
-  final Int32Type? splashHeight;
-
-  /// The alignment of the splash card
-  @JsonKey(name: 'splash_card_alignment')
+  @MappableField(key: 'splash_card_alignment')
   final GuildResponseSplashCardAlignmentSplashCardAlignment splashCardAlignment;
-
-  /// The hash of the embedded invite splash
-  @JsonKey(includeIfNull: false, name: 'embed_splash')
-  final String? embedSplash;
-
-  /// The width of the embedded invite splash in pixels
-  @JsonKey(includeIfNull: false, name: 'embed_splash_width')
-  final Int32Type? embedSplashWidth;
-
-  /// The height of the embedded invite splash in pixels
-  @JsonKey(includeIfNull: false, name: 'embed_splash_height')
-  final Int32Type? embedSplashHeight;
-
-  /// The vanity URL code for the guild
-  @JsonKey(includeIfNull: false, name: 'vanity_url_code')
-  final String? vanityUrlCode;
-
-  /// The ID of the guild owner
-  @JsonKey(name: 'owner_id')
+  @MappableField(key: 'owner_id')
   final String ownerId;
-
-  /// The ID of the channel where system messages are sent
-  @JsonKey(includeIfNull: false, name: 'system_channel_id')
-  final SnowflakeType? systemChannelId;
-  @JsonKey(name: 'system_channel_flags')
+  @MappableField(key: 'system_channel_flags')
   final SystemChannelFlags systemChannelFlags;
-
-  /// The ID of the rules channel
-  @JsonKey(includeIfNull: false, name: 'rules_channel_id')
-  final SnowflakeType? rulesChannelId;
-
-  /// The ID of the AFK voice channel
-  @JsonKey(includeIfNull: false, name: 'afk_channel_id')
-  final SnowflakeType? afkChannelId;
-
-  /// AFK timeout in seconds before moving users to the AFK channel
-  @JsonKey(name: 'afk_timeout')
+  @MappableField(key: 'afk_timeout')
   final int afkTimeout;
-
-  /// Array of guild feature flags
   final List<GuildFeatureSchema> features;
-
-  /// Required verification level for members to participate
-  @JsonKey(name: 'verification_level')
+  @MappableField(key: 'verification_level')
   final GuildVerificationLevel verificationLevel;
-
-  /// Required MFA level for moderation actions
-  @JsonKey(name: 'mfa_level')
+  @MappableField(key: 'mfa_level')
   final GuildMfaLevel mfaLevel;
-
-  /// The NSFW level of the guild
-  @JsonKey(name: 'nsfw_level')
+  @MappableField(key: 'nsfw_level')
   final NsfwLevel nsfwLevel;
-
-  /// Level of content filtering for explicit media
-  @JsonKey(name: 'explicit_content_filter')
+  @MappableField(key: 'explicit_content_filter')
   final GuildExplicitContentFilter explicitContentFilter;
-
-  /// Default notification level for new members
-  @JsonKey(name: 'default_message_notifications')
+  @MappableField(key: 'default_message_notifications')
   final DefaultMessageNotifications defaultMessageNotifications;
-  @JsonKey(name: 'disabled_operations')
+  @MappableField(key: 'disabled_operations')
   final GuildOperations disabledOperations;
-
-  /// ISO8601 timestamp controlling how far back members without Read Message History can access messages. When null, no historical access is allowed.
-  @JsonKey(includeIfNull: false, name: 'message_history_cutoff')
+  final String? icon;
+  final String? banner;
+  @MappableField(key: 'banner_width')
+  final Int32Type? bannerWidth;
+  @MappableField(key: 'banner_height')
+  final Int32Type? bannerHeight;
+  final String? splash;
+  @MappableField(key: 'splash_width')
+  final Int32Type? splashWidth;
+  @MappableField(key: 'splash_height')
+  final Int32Type? splashHeight;
+  @MappableField(key: 'embed_splash')
+  final String? embedSplash;
+  @MappableField(key: 'embed_splash_width')
+  final Int32Type? embedSplashWidth;
+  @MappableField(key: 'embed_splash_height')
+  final Int32Type? embedSplashHeight;
+  @MappableField(key: 'vanity_url_code')
+  final String? vanityUrlCode;
+  @MappableField(key: 'system_channel_id')
+  final SnowflakeType? systemChannelId;
+  @MappableField(key: 'rules_channel_id')
+  final SnowflakeType? rulesChannelId;
+  @MappableField(key: 'afk_channel_id')
+  final SnowflakeType? afkChannelId;
+  @MappableField(key: 'message_history_cutoff')
   final DateTime? messageHistoryCutoff;
-
-  /// The current user permissions in this guild
-  @JsonKey(includeIfNull: false)
   final String? permissions;
 
-  Map<String, Object?> toJson() => _$GuildResponseToJson(this);
+  static GuildResponse fromJson(Map<String, dynamic> json) =>
+      GuildResponseMapper.fromJson(json);
 }

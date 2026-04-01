@@ -2,14 +2,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'user_partial_response.dart';
 
-part 'guild_emoji_with_user_response.g.dart';
+part 'guild_emoji_with_user_response.mapper.dart';
 
-@JsonSerializable()
-class GuildEmojiWithUserResponse {
+@MappableClass()
+class GuildEmojiWithUserResponse with GuildEmojiWithUserResponseMappable {
   const GuildEmojiWithUserResponse({
     required this.id,
     required this.name,
@@ -17,18 +17,11 @@ class GuildEmojiWithUserResponse {
     required this.user,
   });
 
-  factory GuildEmojiWithUserResponse.fromJson(Map<String, Object?> json) =>
-      _$GuildEmojiWithUserResponseFromJson(json);
-
-  /// The unique identifier for this emoji
   final String id;
-
-  /// The name of the emoji
   final String name;
-
-  /// Whether this emoji is animated
   final bool animated;
   final UserPartialResponse user;
 
-  Map<String, Object?> toJson() => _$GuildEmojiWithUserResponseToJson(this);
+  static GuildEmojiWithUserResponse fromJson(Map<String, dynamic> json) =>
+      GuildEmojiWithUserResponseMapper.fromJson(json);
 }

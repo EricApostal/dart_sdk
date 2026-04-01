@@ -38,7 +38,7 @@ class _ReportsApi implements ReportsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ReportResponse _value;
     try {
       _value = ReportResponse.fromJson(_result.data!);
@@ -68,7 +68,7 @@ class _ReportsApi implements ReportsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late OkResponse _value;
     try {
       _value = OkResponse.fromJson(_result.data!);
@@ -98,7 +98,7 @@ class _ReportsApi implements ReportsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late TicketResponse _value;
     try {
       _value = TicketResponse.fromJson(_result.data!);
@@ -126,7 +126,7 @@ class _ReportsApi implements ReportsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ReportResponse _value;
     try {
       _value = ReportResponse.fromJson(_result.data!);
@@ -156,7 +156,7 @@ class _ReportsApi implements ReportsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ReportResponse _value;
     try {
       _value = ReportResponse.fromJson(_result.data!);
@@ -184,7 +184,7 @@ class _ReportsApi implements ReportsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, Object?>>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late ReportResponse _value;
     try {
       _value = ReportResponse.fromJson(_result.data!);

@@ -2,15 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'snowflake_type.dart';
 import 'voice_server_admin_response.dart';
 
-part 'voice_region_with_servers_response.g.dart';
+part 'voice_region_with_servers_response.mapper.dart';
 
-@JsonSerializable()
-class VoiceRegionWithServersResponse {
+@MappableClass()
+class VoiceRegionWithServersResponse
+    with VoiceRegionWithServersResponseMappable {
   const VoiceRegionWithServersResponse({
     required this.id,
     required this.name,
@@ -27,55 +28,27 @@ class VoiceRegionWithServersResponse {
     this.servers,
   });
 
-  factory VoiceRegionWithServersResponse.fromJson(Map<String, Object?> json) =>
-      _$VoiceRegionWithServersResponseFromJson(json);
-
-  /// Unique identifier for the voice region
   final String id;
-
-  /// Display name of the voice region
   final String name;
-
-  /// Emoji representing the region
   final String emoji;
-
-  /// Geographic latitude coordinate
   final num latitude;
-
-  /// Geographic longitude coordinate
   final num longitude;
-
-  /// Whether this is the default region
-  @JsonKey(name: 'is_default')
+  @MappableField(key: 'is_default')
   final bool isDefault;
-
-  /// Whether this region is restricted to VIP users
-  @JsonKey(name: 'vip_only')
+  @MappableField(key: 'vip_only')
   final bool vipOnly;
-
-  /// Guild features required to use this region
-  @JsonKey(name: 'required_guild_features')
+  @MappableField(key: 'required_guild_features')
   final List<String> requiredGuildFeatures;
-
-  /// Guild IDs explicitly allowed to use this region
-  @JsonKey(name: 'allowed_guild_ids')
+  @MappableField(key: 'allowed_guild_ids')
   final List<SnowflakeType> allowedGuildIds;
-
-  /// User IDs explicitly allowed to use this region
-  @JsonKey(name: 'allowed_user_ids')
+  @MappableField(key: 'allowed_user_ids')
   final List<SnowflakeType> allowedUserIds;
-
-  /// ISO 8601 timestamp when the region was created
-  @JsonKey(includeIfNull: true, name: 'created_at')
+  @MappableField(key: 'created_at')
   final String? createdAt;
-
-  /// ISO 8601 timestamp when the region was last updated
-  @JsonKey(includeIfNull: true, name: 'updated_at')
+  @MappableField(key: 'updated_at')
   final String? updatedAt;
-
-  /// Voice servers in this region
-  @JsonKey(includeIfNull: false)
   final List<VoiceServerAdminResponse>? servers;
 
-  Map<String, Object?> toJson() => _$VoiceRegionWithServersResponseToJson(this);
+  static VoiceRegionWithServersResponse fromJson(Map<String, dynamic> json) =>
+      VoiceRegionWithServersResponseMapper.fromJson(json);
 }

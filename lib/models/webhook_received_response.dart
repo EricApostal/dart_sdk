@@ -2,19 +2,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-part 'webhook_received_response.g.dart';
+part 'webhook_received_response.mapper.dart';
 
-@JsonSerializable()
-class WebhookReceivedResponse {
+@MappableClass()
+class WebhookReceivedResponse with WebhookReceivedResponseMappable {
   const WebhookReceivedResponse({required this.received});
 
-  factory WebhookReceivedResponse.fromJson(Map<String, Object?> json) =>
-      _$WebhookReceivedResponseFromJson(json);
-
-  /// Whether the webhook was successfully received
   final bool received;
 
-  Map<String, Object?> toJson() => _$WebhookReceivedResponseToJson(this);
+  static WebhookReceivedResponse fromJson(Map<String, dynamic> json) =>
+      WebhookReceivedResponseMapper.fromJson(json);
 }

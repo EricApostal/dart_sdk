@@ -2,17 +2,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
-import 'guild_invite_metadata_response_type_type.dart';
-import 'guild_invite_metadata_response_guild.dart';
 import 'channel_partial_response.dart';
-import 'user_partial_response.dart';
 import 'group_dm_invite_metadata_response_type_type.dart';
-import 'pack_invite_metadata_response_type_type.dart';
+import 'guild_invite_metadata_response_guild.dart';
+import 'guild_invite_metadata_response_type_type.dart';
 import 'pack_invite_metadata_response_pack.dart';
+import 'pack_invite_metadata_response_type_type.dart';
+import 'user_partial_response.dart';
+import 'guild_invite_metadata_response.dart';
+import 'group_dm_invite_metadata_response.dart';
+import 'pack_invite_metadata_response.dart';
 
-part 'invite_metadata_response_schema.g.dart';
+part 'invite_metadata_response_schema.mapper.dart';
 
 class InviteMetadataResponseSchema {
   final Map<String, dynamic> _json;
@@ -26,35 +29,42 @@ class InviteMetadataResponseSchema {
 
   InviteMetadataResponseSchemaGuildInviteMetadataResponse
   toGuildInviteMetadataResponse() =>
-      InviteMetadataResponseSchemaGuildInviteMetadataResponse.fromJson(_json);
+      InviteMetadataResponseSchemaGuildInviteMetadataResponseMapper.fromJson(
+        _json,
+      );
   InviteMetadataResponseSchemaGroupDmInviteMetadataResponse
   toGroupDmInviteMetadataResponse() =>
-      InviteMetadataResponseSchemaGroupDmInviteMetadataResponse.fromJson(_json);
+      InviteMetadataResponseSchemaGroupDmInviteMetadataResponseMapper.fromJson(
+        _json,
+      );
   InviteMetadataResponseSchemaPackInviteMetadataResponse
   toPackInviteMetadataResponse() =>
-      InviteMetadataResponseSchemaPackInviteMetadataResponse.fromJson(_json);
+      InviteMetadataResponseSchemaPackInviteMetadataResponseMapper.fromJson(
+        _json,
+      );
 }
 
-@JsonSerializable()
-class InviteMetadataResponseSchemaGuildInviteMetadataResponse {
+@MappableClass()
+class InviteMetadataResponseSchemaGuildInviteMetadataResponse
+    with InviteMetadataResponseSchemaGuildInviteMetadataResponseMappable {
   final String code;
   final GuildInviteMetadataResponseTypeType type;
   final GuildInviteMetadataResponseGuild guild;
   final ChannelPartialResponse channel;
   final UserPartialResponse? inviter;
-  @JsonKey(name: 'member_count')
+  @MappableField(key: 'member_count')
   final int memberCount;
-  @JsonKey(name: 'presence_count')
+  @MappableField(key: 'presence_count')
   final int presenceCount;
-  @JsonKey(name: 'expires_at')
+  @MappableField(key: 'expires_at')
   final DateTime? expiresAt;
   final bool temporary;
-  @JsonKey(name: 'created_at')
+  @MappableField(key: 'created_at')
   final DateTime createdAt;
   final int uses;
-  @JsonKey(name: 'max_uses')
+  @MappableField(key: 'max_uses')
   final int maxUses;
-  @JsonKey(name: 'max_age')
+  @MappableField(key: 'max_age')
   final int maxAge;
 
   const InviteMetadataResponseSchemaGuildInviteMetadataResponse({
@@ -72,30 +82,24 @@ class InviteMetadataResponseSchemaGuildInviteMetadataResponse {
     required this.maxUses,
     required this.maxAge,
   });
-
-  factory InviteMetadataResponseSchemaGuildInviteMetadataResponse.fromJson(
-    Map<String, dynamic> json,
-  ) => _$InviteMetadataResponseSchemaGuildInviteMetadataResponseFromJson(json);
-
-  Map<String, dynamic> toJson() =>
-      _$InviteMetadataResponseSchemaGuildInviteMetadataResponseToJson(this);
 }
 
-@JsonSerializable()
-class InviteMetadataResponseSchemaGroupDmInviteMetadataResponse {
+@MappableClass()
+class InviteMetadataResponseSchemaGroupDmInviteMetadataResponse
+    with InviteMetadataResponseSchemaGroupDmInviteMetadataResponseMappable {
   final String code;
   final GroupDmInviteMetadataResponseTypeType type;
   final ChannelPartialResponse channel;
   final UserPartialResponse? inviter;
-  @JsonKey(name: 'member_count')
+  @MappableField(key: 'member_count')
   final int memberCount;
-  @JsonKey(name: 'expires_at')
+  @MappableField(key: 'expires_at')
   final DateTime? expiresAt;
   final bool temporary;
-  @JsonKey(name: 'created_at')
+  @MappableField(key: 'created_at')
   final DateTime createdAt;
   final int uses;
-  @JsonKey(name: 'max_uses')
+  @MappableField(key: 'max_uses')
   final int maxUses;
 
   const InviteMetadataResponseSchemaGroupDmInviteMetadataResponse({
@@ -110,29 +114,22 @@ class InviteMetadataResponseSchemaGroupDmInviteMetadataResponse {
     required this.uses,
     required this.maxUses,
   });
-
-  factory InviteMetadataResponseSchemaGroupDmInviteMetadataResponse.fromJson(
-    Map<String, dynamic> json,
-  ) =>
-      _$InviteMetadataResponseSchemaGroupDmInviteMetadataResponseFromJson(json);
-
-  Map<String, dynamic> toJson() =>
-      _$InviteMetadataResponseSchemaGroupDmInviteMetadataResponseToJson(this);
 }
 
-@JsonSerializable()
-class InviteMetadataResponseSchemaPackInviteMetadataResponse {
+@MappableClass()
+class InviteMetadataResponseSchemaPackInviteMetadataResponse
+    with InviteMetadataResponseSchemaPackInviteMetadataResponseMappable {
   final String code;
   final PackInviteMetadataResponseTypeType type;
   final PackInviteMetadataResponsePack pack;
   final UserPartialResponse? inviter;
-  @JsonKey(name: 'expires_at')
+  @MappableField(key: 'expires_at')
   final DateTime? expiresAt;
   final bool temporary;
-  @JsonKey(name: 'created_at')
+  @MappableField(key: 'created_at')
   final DateTime createdAt;
   final int uses;
-  @JsonKey(name: 'max_uses')
+  @MappableField(key: 'max_uses')
   final int maxUses;
 
   const InviteMetadataResponseSchemaPackInviteMetadataResponse({
@@ -146,11 +143,4 @@ class InviteMetadataResponseSchemaPackInviteMetadataResponse {
     required this.uses,
     required this.maxUses,
   });
-
-  factory InviteMetadataResponseSchemaPackInviteMetadataResponse.fromJson(
-    Map<String, dynamic> json,
-  ) => _$InviteMetadataResponseSchemaPackInviteMetadataResponseFromJson(json);
-
-  Map<String, dynamic> toJson() =>
-      _$InviteMetadataResponseSchemaPackInviteMetadataResponseToJson(this);
 }

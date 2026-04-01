@@ -2,32 +2,31 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'message_search_indexing_response_indexing_indexing.mapper.dart';
 
 /// Indicates that one or more channels are being indexed
-@JsonEnum()
+@MappableEnum(defaultValue: 'unknown')
 enum MessageSearchIndexingResponseIndexingIndexing {
   /// The name has been replaced because it contains a keyword. Original name: `true`.
-  @JsonValue(true)
-  valueTrue(true),
+  @MappableValue(true)
+  valueTrue,
 
-  /// Default value for all unparsed values, allows backward compatibility when adding new values on the backend.
-  $unknown(null)
-  ;
+  @MappableValue('unknown')
+  unknown;
 
-  const MessageSearchIndexingResponseIndexingIndexing(this.json);
-
-  factory MessageSearchIndexingResponseIndexingIndexing.fromJson(bool json) =>
-      values.firstWhere((e) => e.json == json, orElse: () => $unknown);
-
-  final bool? json;
-
-  bool? toJson() => json;
+  String toJson() => toValue().toString();
 
   @override
-  String toString() => json?.toString() ?? super.toString();
+  String toString() => toValue().toString();
 
-  /// Returns all defined enum values excluding the $unknown value.
+  /// Returns all defined enum values excluding the unknown value.
   static List<MessageSearchIndexingResponseIndexingIndexing>
-  get $valuesDefined => values.where((value) => value != $unknown).toList();
+  get $valuesDefined => values
+      .where(
+        (value) =>
+            value != MessageSearchIndexingResponseIndexingIndexing.unknown,
+      )
+      .toList();
 }

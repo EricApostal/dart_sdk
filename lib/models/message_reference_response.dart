@@ -2,15 +2,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'message_reference_type.dart';
 import 'snowflake_type.dart';
 
-part 'message_reference_response.g.dart';
+part 'message_reference_response.mapper.dart';
 
-@JsonSerializable()
-class MessageReferenceResponse {
+@MappableClass()
+class MessageReferenceResponse with MessageReferenceResponseMappable {
   const MessageReferenceResponse({
     required this.channelId,
     required this.messageId,
@@ -18,21 +18,14 @@ class MessageReferenceResponse {
     this.guildId,
   });
 
-  factory MessageReferenceResponse.fromJson(Map<String, Object?> json) =>
-      _$MessageReferenceResponseFromJson(json);
-
-  /// The ID of the channel containing the referenced message
-  @JsonKey(name: 'channel_id')
+  @MappableField(key: 'channel_id')
   final String channelId;
-
-  /// The ID of the referenced message
-  @JsonKey(name: 'message_id')
+  @MappableField(key: 'message_id')
   final String messageId;
-
-  /// The ID of the guild containing the referenced message
-  @JsonKey(includeIfNull: false, name: 'guild_id')
-  final SnowflakeType? guildId;
   final MessageReferenceType type;
+  @MappableField(key: 'guild_id')
+  final SnowflakeType? guildId;
 
-  Map<String, Object?> toJson() => _$MessageReferenceResponseToJson(this);
+  static MessageReferenceResponse fromJson(Map<String, dynamic> json) =>
+      MessageReferenceResponseMapper.fromJson(json);
 }

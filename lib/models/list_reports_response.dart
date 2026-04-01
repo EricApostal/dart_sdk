@@ -2,20 +2,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_mappable/dart_mappable.dart';
 
 import 'report_admin_response_schema.dart';
 
-part 'list_reports_response.g.dart';
+part 'list_reports_response.mapper.dart';
 
-@JsonSerializable()
-class ListReportsResponse {
+@MappableClass()
+class ListReportsResponse with ListReportsResponseMappable {
   const ListReportsResponse({required this.reports});
-
-  factory ListReportsResponse.fromJson(Map<String, Object?> json) =>
-      _$ListReportsResponseFromJson(json);
 
   final List<ReportAdminResponseSchema> reports;
 
-  Map<String, Object?> toJson() => _$ListReportsResponseToJson(this);
+  static ListReportsResponse fromJson(Map<String, dynamic> json) =>
+      ListReportsResponseMapper.fromJson(json);
 }
