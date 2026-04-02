@@ -38,7 +38,11 @@ class WellKnownFluxerResponseLimitsMapper
   static List<String> _$traitDefinitions(WellKnownFluxerResponseLimits v) =>
       v.traitDefinitions;
   static const Field<WellKnownFluxerResponseLimits, List<String>>
-  _f$traitDefinitions = Field('traitDefinitions', _$traitDefinitions);
+  _f$traitDefinitions = Field(
+    'traitDefinitions',
+    _$traitDefinitions,
+    key: r'trait_definitions',
+  );
   static List<LimitRuleResponse> _$rules(WellKnownFluxerResponseLimits v) =>
       v.rules;
   static const Field<WellKnownFluxerResponseLimits, List<LimitRuleResponse>>
@@ -46,7 +50,7 @@ class WellKnownFluxerResponseLimitsMapper
   static String _$defaultsHash(WellKnownFluxerResponseLimits v) =>
       v.defaultsHash;
   static const Field<WellKnownFluxerResponseLimits, String> _f$defaultsHash =
-      Field('defaultsHash', _$defaultsHash);
+      Field('defaultsHash', _$defaultsHash, key: r'defaults_hash');
 
   @override
   final MappableFields<WellKnownFluxerResponseLimits> fields = const {

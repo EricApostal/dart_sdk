@@ -205,6 +205,10 @@ class GatewayConnection {
     final d = payload['d'];
     final s = payload['s'] as int?;
     final t = payload['t'] as String?;
+    final data = d;
+    if (d is Map) {
+      data["_type"] = t;
+    }
 
     _session.updateSequence(s);
 
@@ -216,7 +220,7 @@ class GatewayConnection {
         _session.updateLastAck();
       case GatewayOpcodes.dispatch:
         if (d is Map<String, dynamic>) {
-          _handleDispatch(t!, d);
+          _handleDispatch(data);
         }
       case GatewayOpcodes.heartbeat:
         _sendHeartbeat();
@@ -268,7 +272,8 @@ class GatewayConnection {
     }
   }
 
-  void _handleDispatch(String eventType, Map<String, dynamic> data) {
+  void _handleDispatch(Map<String, dynamic> data) {
+    final eventType = data["_type"];
     if (eventType == 'READY') {
       final sessionId = data['session_id'] as String;
       _session.setSession(sessionId);
@@ -282,7 +287,10 @@ class GatewayConnection {
     try {
       final event = _eventParser.parse(eventType, data);
       _eventController.add(event);
-    } catch (e) {
+    } catch (e, st) {
+      // todo: some proper logging here would be good
+      print(e);
+      print(st);
       _eventController.add(
         UnknownGatewayEvent(eventType: eventType, data: data),
       );

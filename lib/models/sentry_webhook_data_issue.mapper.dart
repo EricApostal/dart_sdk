@@ -31,6 +31,7 @@ class SentryWebhookDataIssueMapper
   static const Field<SentryWebhookDataIssue, String> _f$shortId = Field(
     'shortId',
     _$shortId,
+    key: r'short_id',
   );
   static String _$title(SentryWebhookDataIssue v) => v.title;
   static const Field<SentryWebhookDataIssue, String> _f$title = Field(
@@ -79,16 +80,19 @@ class SentryWebhookDataIssueMapper
   static const Field<SentryWebhookDataIssue, num> _f$userCount = Field(
     'userCount',
     _$userCount,
+    key: r'user_count',
   );
   static String _$firstSeen(SentryWebhookDataIssue v) => v.firstSeen;
   static const Field<SentryWebhookDataIssue, String> _f$firstSeen = Field(
     'firstSeen',
     _$firstSeen,
+    key: r'first_seen',
   );
   static String _$lastSeen(SentryWebhookDataIssue v) => v.lastSeen;
   static const Field<SentryWebhookDataIssue, String> _f$lastSeen = Field(
     'lastSeen',
     _$lastSeen,
+    key: r'last_seen',
   );
   static String? _$culprit(SentryWebhookDataIssue v) => v.culprit;
   static const Field<SentryWebhookDataIssue, String> _f$culprit = Field(

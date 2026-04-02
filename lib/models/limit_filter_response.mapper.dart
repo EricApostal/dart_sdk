@@ -31,7 +31,12 @@ class LimitFilterResponseMapper extends ClassMapperBase<LimitFilterResponse> {
   static List<String>? _$guildFeatures(LimitFilterResponse v) =>
       v.guildFeatures;
   static const Field<LimitFilterResponse, List<String>> _f$guildFeatures =
-      Field('guildFeatures', _$guildFeatures, opt: true);
+      Field(
+        'guildFeatures',
+        _$guildFeatures,
+        key: r'guild_features',
+        opt: true,
+      );
 
   @override
   final MappableFields<LimitFilterResponse> fields = const {

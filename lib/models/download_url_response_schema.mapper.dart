@@ -29,11 +29,13 @@ class DownloadUrlResponseSchemaMapper
   static const Field<DownloadUrlResponseSchema, String> _f$downloadUrl = Field(
     'downloadUrl',
     _$downloadUrl,
+    key: r'download_url',
   );
   static String _$expiresAt(DownloadUrlResponseSchema v) => v.expiresAt;
   static const Field<DownloadUrlResponseSchema, String> _f$expiresAt = Field(
     'expiresAt',
     _$expiresAt,
+    key: r'expires_at',
   );
 
   @override

@@ -29,7 +29,11 @@ class LimitConfigGetResponseLimitConfigMapper
   static List<String> _$traitDefinitions(LimitConfigGetResponseLimitConfig v) =>
       v.traitDefinitions;
   static const Field<LimitConfigGetResponseLimitConfig, List<String>>
-  _f$traitDefinitions = Field('traitDefinitions', _$traitDefinitions);
+  _f$traitDefinitions = Field(
+    'traitDefinitions',
+    _$traitDefinitions,
+    key: r'trait_definitions',
+  );
   static List<LimitConfigGetResponseLimitConfigRules> _$rules(
     LimitConfigGetResponseLimitConfig v,
   ) => v.rules;

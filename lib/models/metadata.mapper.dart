@@ -43,6 +43,7 @@ class MetadataMapper extends ClassMapperBase<Metadata> {
   static const Field<Metadata, bool> _f$isToggle = Field(
     'isToggle',
     _$isToggle,
+    key: r'is_toggle',
   );
   static MetadataUnitUnit? _$unit(Metadata v) => v.unit;
   static const Field<Metadata, MetadataUnitUnit> _f$unit = Field(

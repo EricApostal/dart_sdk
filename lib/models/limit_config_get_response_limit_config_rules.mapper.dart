@@ -45,7 +45,12 @@ class LimitConfigGetResponseLimitConfigRulesMapper
     LimitConfigGetResponseLimitConfigRules v,
   ) => v.modifiedFields;
   static const Field<LimitConfigGetResponseLimitConfigRules, List<String>>
-  _f$modifiedFields = Field('modifiedFields', _$modifiedFields, opt: true);
+  _f$modifiedFields = Field(
+    'modifiedFields',
+    _$modifiedFields,
+    key: r'modified_fields',
+    opt: true,
+  );
 
   @override
   final MappableFields<LimitConfigGetResponseLimitConfigRules> fields = const {

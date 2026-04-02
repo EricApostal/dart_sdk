@@ -41,6 +41,7 @@ class LimitConfigUpdateRequestLimitConfigMapper
   _f$traitDefinitions = Field(
     'traitDefinitions',
     _$traitDefinitions,
+    key: r'trait_definitions',
     opt: true,
   );
 

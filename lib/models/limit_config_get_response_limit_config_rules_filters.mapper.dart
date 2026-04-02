@@ -41,7 +41,12 @@ class LimitConfigGetResponseLimitConfigRulesFiltersMapper
     LimitConfigGetResponseLimitConfigRulesFilters,
     List<String>
   >
-  _f$guildFeatures = Field('guildFeatures', _$guildFeatures, opt: true);
+  _f$guildFeatures = Field(
+    'guildFeatures',
+    _$guildFeatures,
+    key: r'guild_features',
+    opt: true,
+  );
 
   @override
   final MappableFields<LimitConfigGetResponseLimitConfigRulesFilters> fields =
